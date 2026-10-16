@@ -45,6 +45,12 @@ English glosses (display only): Campaigns = Bonus, Deposit Bonus, Cashback, XMP,
 
 A post can match several topics; it is stored once and carries a `topics` list (see 6).
 
+Topic tagging is deterministic and text-based, not taken from the query that returned the post: after every fetch all posts are re-tagged from their own text. Keywords are matched case-insensitively; a keyword contained in a longer keyword (e.g. `ゼロ` inside `ゼロカット`) is masked so it does not count on its own; a few aliases (e.g. `滑って`) map to the same topic. Each post stores `topic_hits` (the exact keywords found) and the dashboard shows them as "Matched keywords". A post that contains keywords of several topics appears under each of them by design.
+
+### 3.1 Access gate
+
+The dashboard asks for an e-mail first. Accepted domains: `xmtrading.com`, `xm.com`, `trading-point.com`, `tradingpoint.com` (exact match, no subdomains). The address is kept in a cookie (180 days) and localStorage. This is a client-side soft gate: addresses are not verified and `docs/data/*.json` stays publicly reachable. Optional visitor logging (`LOG_URL` / `LOG_KEY` in `docs/index.html`) is off by default; see `tools/visitor-log/`.
+
 ## 4. Phase 1 test parameters
 
 - Threshold: `min_faves:10` (more than 10 likes), past 7 days, Japanese.

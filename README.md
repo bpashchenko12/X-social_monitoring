@@ -20,6 +20,10 @@ Token: `APIFY_TOKEN` env var or a git-ignored `.env` file (`APIFY_TOKEN=...`). N
 `--yes` required, per-call `maxTotalChargeUsd` cap, `budget_usd` ledger (`data/runs.jsonl`), disk cache by input hash.
 Actor `xquik/x-tweet-scraper`: about $0.15 per 1,000 tweets; a weekly refresh costs roughly $0.15.
 
+## Access gate
+
+The dashboard asks for a company e-mail (4 allowed domains) and remembers it in a cookie. It is a soft gate only (not secure). Optional visitor logging: [tools/visitor-log/README.md](tools/visitor-log/README.md); disabled while `LOG_URL` in `docs/index.html` is empty.
+
 ## Weekly refresh
 
 `.github/workflows/refresh.yml` runs Mondays 01:00 UTC (also manually). Requires the repository secret `APIFY_TOKEN`.

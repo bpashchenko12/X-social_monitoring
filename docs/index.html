@@ -839,7 +839,9 @@ body.modal-open{overflow:hidden}
   }
 
   // ---------- e-mail access gate (client-side only: a soft gate, not security) ----------
-  const LOG_URL = ""; // Google Apps Script web-app URL that records visitors (see tools/visitor-log/README.md)
+  // Visitor log: Supabase project URL + public "anon" key (insert-only table, see tools/visitor-log/README.md). Empty = logging off.
+  const LOG_URL = "";   // e.g. https://abcdefgh.supabase.co
+  const LOG_KEY = "";   // anon / publishable key (safe to publish: it can only insert)
   const ALLOWED_DOMAINS = ["xmtrading.com", "xm.com", "trading-point.com", "tradingpoint.com"];
   const ACCESS_KEY = "xm_access";
   const COOKIE_PATH = location.pathname.replace(/[^/]*$/, "") || "/";
@@ -865,10 +867,11 @@ body.modal-open{overflow:hidden}
   }
   function logVisit(email, kind) {
     try { sessionStorage.setItem("xm_logged", "1"); } catch (e) { /* ignore */ }
-    if (!LOG_URL) return;
+    if (!LOG_URL || !LOG_KEY) return;
     try {
-      fetch(LOG_URL, { method: "POST", mode: "no-cors", keepalive: true, headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify({ email, kind, ua: navigator.userAgent.slice(0, 200), lang: LANG, page: location.origin + location.pathname }) }).catch(() => {});
+      fetch(LOG_URL.replace(/\/+$/, "") + "/rest/v1/visits", { method: "POST", keepalive: true,
+        headers: { "Content-Type": "application/json", apikey: LOG_KEY, Authorization: "Bearer " + LOG_KEY, Prefer: "return=minimal" },
+        body: JSON.stringify({ email, kind, ua: navigator.userAgent.slice(0, 200), lang: LANG, page: (location.origin + location.pathname).slice(0, 200) }) }).catch(() => {});
     } catch (e) { /* logging must never break the page */ }
   }
   function askEmail() {

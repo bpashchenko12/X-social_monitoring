@@ -1,0 +1,80 @@
+{
+  "generated_at": "2026-10-16T06:51:45Z",
+  "latest_post_at": "2026-10-16T06:37:00Z",
+  "pending_enrichment": 0,
+  "schema_version": 1,
+  "topics": [
+    {
+      "id": "macro",
+      "name": "Overall Brand Mention",
+      "posts": 162
+    },
+    {
+      "id": "campaigns",
+      "name": "Campaigns & Cashback",
+      "posts": 92
+    },
+    {
+      "id": "competitions",
+      "name": "Competitions & Events",
+      "posts": 7
+    },
+    {
+      "id": "environment",
+      "name": "Trading Environment",
+      "posts": 44
+    },
+    {
+      "id": "deposit_withdrawal",
+      "name": "Deposit & Withdrawal",
+      "posts": 97
+    },
+    {
+      "id": "account_types",
+      "name": "Account Types",
+      "posts": 81
+    }
+  ],
+  "weeks": [
+    {
+      "file": "weeks/2026-W38.json",
+      "max_date": "2026-09-20T10:00:13Z",
+      "min_date": "2026-09-16T08:54:29Z",
+      "posts": 25,
+      "relevant_posts": 20,
+      "week": "2026-W38"
+    },
+    {
+      "file": "weeks/2026-W39.json",
+      "max_date": "2026-09-27T14:13:51Z",
+      "min_date": "2026-09-20T16:09:24Z",
+      "posts": 47,
+      "relevant_posts": 39,
+      "week": "2026-W39"
+    },
+    {
+      "file": "weeks/2026-W40.json",
+      "max_date": "2026-10-04T13:00:28Z",
+      "min_date": "2026-09-27T22:36:00Z",
+      "posts": 65,
+      "relevant_posts": 33,
+      "week": "2026-W40"
+    },
+    {
+      "file": "weeks/2026-W41.json",
+      "max_date": "2026-10-11T14:36:10Z",
+      "min_date": "2026-10-04T21:49:48Z",
+      "posts": 209,
+      "relevant_posts": 67,
+      "week": "2026-W41"
+    },
+    {
+      "file": "weeks/2026-W42.json",
+      "max_date": "2026-10-16T06:37:00Z",
+      "min_date": "2026-10-11T15:00:30Z",
+      "posts": 220,
+      "relevant_posts": 27,
+      "week": "2026-W42"
+    }
+  ]
+}

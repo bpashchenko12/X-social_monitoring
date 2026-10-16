@@ -1,0 +1,46 @@
+{
+  "window_days": 7,
+  "language": "ja",
+  "min_faves": 10,
+  "max_items": 200,
+  "sort": "Latest + Top",
+  "actor": "xquik~x-tweet-scraper",
+  "price_per_1k_usd": 0.15,
+  "min_billed_items": 1,
+  "run_overhead_usd": 0.01,
+  "budget_usd": 1.0,
+  "brand_base": ["XMTrading", "XMトレーディング", "XM"],
+  "brand_non_matches": ["SiriusXM", "XM Radio", "XM Satellite"],
+  "topics": [
+    {
+      "id": "macro",
+      "name": "Overall Brand Mention",
+      "keywords": []
+    },
+    {
+      "id": "campaigns",
+      "name": "Campaigns & Cashback",
+      "keywords": ["ボーナス", "入金ボーナス", "XMP", "キャッシュバック", "プロモ", "プロモーション"]
+    },
+    {
+      "id": "competitions",
+      "name": "Competitions & Events",
+      "keywords": ["コンテスト", "コンペ", "大会", "トレードバトル"]
+    },
+    {
+      "id": "environment",
+      "name": "Trading Environment",
+      "keywords": ["スプレッド", "滑る", "サーバー", "鯖落ち", "MT4", "MT5", "レバレッジ", "アプリ", "取引条件", "約定", "ゼロカット", "コピートレーディング", "コピトレ", "EA", "IB"]
+    },
+    {
+      "id": "deposit_withdrawal",
+      "name": "Deposit & Withdrawal",
+      "keywords": ["出金", "着金", "入金", "銀行", "クレカ", "クレジットカード"]
+    },
+    {
+      "id": "account_types",
+      "name": "Account Types",
+      "keywords": ["スタンダード", "Standard", "マイクロ", "Micro", "KIWAMI極", "KIWAMI", "極口座", "ゼロ", "ゼロ口座", "Zero", "口座"]
+    }
+  ]
+}

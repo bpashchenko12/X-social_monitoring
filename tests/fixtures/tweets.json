@@ -1,0 +1,44 @@
+[
+  {
+    "type": "tweet", "id": "1001", "url": "https://x.com/animal2432/status/1001",
+    "text": "【FXデビューの方へ】XMTradingを初めて使うなら必見！13,000円の入金不要ボーナス #PR #XMTrading https://affx.click/cxvob",
+    "retweetCount": 48, "replyCount": 12, "likeCount": 340, "quoteCount": 6, "viewCount": 18500,
+    "createdAt": "Wed Oct 14 14:59:00 +0000 2026", "lang": "ja", "bookmarkCount": 20,
+    "isRetweet": false, "isQuote": false,
+    "author": {"userName": "animal2432", "name": "animal", "followers": 5200},
+    "media": ["https://pbs.twimg.com/media/AAA.jpg"]
+  },
+  {
+    "type": "tweet", "id": "1002", "url": "https://x.com/xm_fan/status/1002",
+    "text": "XMの出金、昨日申請して今朝には着金してた。早い",
+    "retweetCount": 2, "replyCount": 1, "likeCount": 55, "quoteCount": 0, "viewCount": 4200,
+    "createdAt": "Wed Oct 14 15:00:00 +0000 2026", "lang": "ja", "bookmarkCount": 1,
+    "author": {"userName": "xm_fan", "name": "XM好き", "followers": 80},
+    "extendedEntities": {"media": [{"media_url_https": "https://pbs.twimg.com/media/BBB.jpg"}]}
+  },
+  {
+    "type": "tweet", "id": "1003", "url": "https://x.com/XM_account/status/1003",
+    "text": "今日は相場が荒れてますね。みなさん気をつけて",
+    "retweetCount": 0, "replyCount": 0, "likeCount": 30, "quoteCount": 0, "viewCount": 900,
+    "createdAt": "Thu Oct 15 01:00:00 +0000 2026", "lang": "ja", "bookmarkCount": 0,
+    "author": {"userName": "XM_account", "name": "XM", "followers": 10}
+  },
+  {
+    "type": "tweet", "id": "1004", "url": "https://x.com/radiofan/status/1004",
+    "text": "SiriusXM でJ-POPを聴きながらトレード",
+    "retweetCount": 0, "replyCount": 0, "likeCount": 12, "quoteCount": 0, "viewCount": null,
+    "createdAt": "Thu Oct 15 02:00:00 +0000 2026", "lang": "ja",
+    "author": {"userName": "radiofan", "name": "radio", "followers": 3}
+  },
+  {
+    "type": "mock_tweet", "id": "-1", "text": "mock placeholder",
+    "createdAt": "Thu Oct 15 02:00:00 +0000 2026"
+  },
+  {
+    "type": "tweet", "id": "1005", "url": "https://x.com/trader_k/status/1005",
+    "text": "XMPが貯まったのでボーナスに交換した。XMTradingありがとう",
+    "retweetCount": 1, "replyCount": 0, "likeCount": 18, "quoteCount": 0,
+    "createdAt": "Sun Oct 11 14:00:00 +0000 2026", "lang": "ja",
+    "author": {"userName": "trader_k", "name": "K"}
+  }
+]

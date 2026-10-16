@@ -1,0 +1,38 @@
+{
+  "posts": {
+    "2000000100857059327": {
+      "account_followers": 34386,
+      "account_handle": "demo_trader_25",
+      "account_name": "Demo Trader 25",
+      "bookmarks": 9,
+      "content_en": "Thanks to XM's negative balance protection I can trade with high leverage without worry. How about you?",
+      "content_original": "XMのゼロカットがあるから高レバでも安心して取引できる 皆さんはどうですか？",
+      "created_at": "2026-09-24T20:11:00Z",
+      "enriched_at": "2026-10-15T12:00:00Z",
+      "enriched_by": "demo",
+      "exclude_reason": null,
+      "first_seen": "2026-10-15T12:00:00Z",
+      "id": "2000000100857059327",
+      "image_url": null,
+      "impressions": 7008,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-15T12:00:00Z",
+      "likes": 147,
+      "metrics_updated_at": "2026-10-15T12:00:00Z",
+      "quotes": 4,
+      "relevant": true,
+      "replies": 6,
+      "retweets": 8,
+      "sentiment": "Positive",
+      "topics": [
+        "environment",
+        "macro"
+      ],
+      "url": "https://x.com/demo_trader_25/status/2000000100857059327",
+      "url_clicks": null
+    }
+  },
+  "schema_version": 1,
+  "week": "2026-W39"
+}

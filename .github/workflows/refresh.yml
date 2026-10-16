@@ -1,0 +1,38 @@
+name: Refresh X mention data
+
+on:
+  schedule:
+    - cron: "0 1 * * 1"   # Mondays 01:00 UTC (10:00 JST)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests
+        run: python -m unittest discover -s tests -t .
+      - name: Fetch (budget-guarded, capped per call)
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: python -m pipeline.run fetch --yes
+      - name: Rebuild manifest
+        run: python -m pipeline.run manifest
+      - name: Commit data
+        run: |
+          git config user.name "xm-monitor-bot"
+          git config user.email "xm-monitor-bot@users.noreply.github.com"
+          git add docs/data data/runs.jsonl
+          git diff --cached --quiet || git commit -m "data: weekly refresh $(date -u +%F)"
+          git push

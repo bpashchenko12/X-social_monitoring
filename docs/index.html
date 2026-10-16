@@ -166,6 +166,24 @@ td.date small{display:block;color:var(--muted)}
 td.mt{min-width:150px;max-width:200px}
 .tools .mob-sort{display:none}
 
+/* e-mail gate */
+.gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;overflow:auto;background:radial-gradient(1000px 500px at 80% -10%,#2a4a9a66,transparent),linear-gradient(135deg,var(--navy),var(--navy2))}
+.gate[hidden]{display:none}
+body.locked{overflow:hidden}
+.gate-card{position:relative;background:#fff;border-radius:18px;width:100%;max-width:440px;padding:28px;box-shadow:0 30px 70px -20px rgba(0,0,0,.5);display:grid;gap:10px}
+.gate-card .logo{background:var(--navy);border:0}
+.gate-lang{position:absolute;top:22px;right:22px}
+.gate-lang button{padding:4px 10px}
+.gate-card h2{margin:10px 0 0;font-size:22px;letter-spacing:-.2px}
+.gate-card p{margin:0;color:var(--muted)}
+.gate-card label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-top:6px}
+.gate-card input{width:100%;font-size:16px;min-height:46px}
+.gate-card input[aria-invalid=true]{border-color:var(--neg)}
+.gate-err{color:#b3262b;font-size:13px;min-height:18px;line-height:1.45}
+.gate-card .btn{justify-content:center;min-height:46px;font-size:15px}
+.gate-note{font-size:12px;line-height:1.55}
+.who{padding:14px 0 0}
+
 /* post modal */
 body.modal-open{overflow:hidden}
 .modal-bg{position:fixed;inset:0;background:rgba(11,27,58,.55);display:grid;place-items:center;padding:16px;z-index:50;backdrop-filter:blur(2px)}
@@ -236,11 +254,15 @@ body.modal-open{overflow:hidden}
   .acct .row{grid-template-columns:96px 1fr auto}
   /* toolbar */
   .tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px;align-items:end}
-  .tools .grow,.tools .check,.tools #csv{grid-column:1/-1}
+  .tools .grow,.tools #csv{grid-column:1/-1}
   .tools .f{min-width:0}
   .check{padding:6px 0;min-height:40px}
   .check input{width:20px;height:20px}
-  .tools .mob-sort{display:flex}
+  .tools .mob-sort{display:flex;grid-column:1/-1;order:1}
+  .tools .rows,.tools .check{order:2}
+  .tools #csv{order:3}
+  .tools .check{align-self:end}
+  select{padding-right:34px;text-overflow:ellipsis}
   .mob-sort .row2{display:flex;gap:8px}
   .mob-sort .row2 select{flex:1}
   .mob-sort .row2 .btn{padding:0 14px}
@@ -331,8 +353,25 @@ body.modal-open{overflow:hidden}
 
   <div id="content"></div>
 
+  <div class="foot who" id="who"></div>
   <footer class="foot" id="foot"></footer>
 </main>
+<div class="gate" id="gate" hidden>
+  <form class="gate-card" id="gate-form" novalidate>
+    <div class="logo" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round"/></svg></div>
+    <div class="seg gate-lang" role="group" aria-label="Language / 言語">
+      <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+      <button type="button" data-lang="ja" aria-pressed="false" lang="ja">日本語</button>
+    </div>
+    <h2 data-i18n="gateTitle">Sign in with your work e-mail</h2>
+    <p data-i18n="gateText">Enter your company e-mail address to open the dashboard.</p>
+    <label for="gate-email" data-i18n="gateLabel">Work e-mail</label>
+    <input type="email" id="gate-email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" required data-i18n-ph="gatePh" placeholder="name@xmtrading.com">
+    <div class="gate-err" id="gate-err" role="alert"></div>
+    <button class="btn primary" type="submit" data-i18n="gateBtn">Continue</button>
+    <p class="gate-note" data-i18n="gateNote">Your e-mail and visit time are recorded.</p>
+  </form>
+</div>
 <div class="toast" id="toast" role="status"></div>
 
 <script>
@@ -365,6 +404,11 @@ body.modal-open{overflow:hidden}
       cImpressions: "Impressions", cLikes: "Likes", cReplies: "Replies", cQuotes: "Quotes", cRetweets: "Retweets", cBookmarks: "Bookmarks", cClicks: "URL Clicks",
       sortBy: (c) => `Sort by ${c}`,
       close: "Close", cMatch: "Matched keywords", mkNone: "Brand mention only", sortLabel: "Sort by", dirTip: "Reverse order",
+      gateTitle: "Sign in with your work e-mail", gateText: "Enter your company e-mail address to open the dashboard. Access is limited to XM / Trading Point staff.",
+      gateLabel: "Work e-mail", gatePh: "name@xmtrading.com", gateBtn: "Continue",
+      gateBad: "This e-mail is not on the allowed list. Use an address ending in @xmtrading.com, @xm.com, @trading-point.com or @tradingpoint.com.",
+      gateNote: "Your e-mail and visit time are recorded for access tracking. A cookie keeps you signed in on this browser for 6 months.",
+      signedAs: (e) => `Signed in as ${e}`, signOut: "Sign out",
       Positive: "Positive", Negative: "Negative", Neutral: "Neutral", Pending: "Pending", all: "All",
       search: "Search", searchPh: "Search text, translation, account...", sentiment: "Sentiment", minLikes: "Min likes", rows: "Rows", hidePromo: "Hide PR / affiliate", exportCsv: "Export CSV",
       noMatch: "No posts match", clearFilters: "Try clearing the filters.", noTopicData: "There is no data for this topic in the selected date range.", showAll: "Show all data",
@@ -396,6 +440,11 @@ body.modal-open{overflow:hidden}
       cImpressions: "\u30a4\u30f3\u30d7\u30ec\u30c3\u30b7\u30e7\u30f3", cLikes: "\u3044\u3044\u306d", cReplies: "\u30ea\u30d7\u30e9\u30a4", cQuotes: "\u5f15\u7528", cRetweets: "\u30ea\u30dd\u30b9\u30c8", cBookmarks: "\u30d6\u30c3\u30af\u30de\u30fc\u30af", cClicks: "URL\u30af\u30ea\u30c3\u30af",
       sortBy: (c) => `${c}\u3067\u4e26\u3079\u66ff\u3048`,
       close: "閉じる", cMatch: "該当キーワード", mkNone: "ブランド言及のみ", sortLabel: "並び替え", dirTip: "順序を反転",
+      gateTitle: "会社のメールアドレスでログイン", gateText: "ダッシュボードを開くには会社のメールアドレスを入力してください。XM / Trading Point の関係者のみ利用できます。",
+      gateLabel: "会社メールアドレス", gatePh: "name@xmtrading.com", gateBtn: "続ける",
+      gateBad: "このメールアドレスは許可されていません。@xmtrading.com、@xm.com、@trading-point.com、@tradingpoint.com のいずれかで終わるアドレスを入力してください。",
+      gateNote: "アクセス管理のため、メールアドレスと訪問日時を記録します。Cookie により、このブラウザでは6か月間ログイン状態が保持されます。",
+      signedAs: (e) => `${e} としてログイン中`, signOut: "ログアウト",
       Positive: "\u30dd\u30b8\u30c6\u30a3\u30d6", Negative: "\u30cd\u30ac\u30c6\u30a3\u30d6", Neutral: "\u4e2d\u7acb", Pending: "\u672a\u5224\u5b9a", all: "\u3059\u3079\u3066",
       search: "\u691c\u7d22", searchPh: "\u672c\u6587\u30fb\u7ffb\u8a33\u30fb\u30a2\u30ab\u30a6\u30f3\u30c8\u3092\u691c\u7d22...", sentiment: "\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8", minLikes: "\u6700\u4f4e\u3044\u3044\u306d\u6570", rows: "\u8868\u793a\u4ef6\u6570", hidePromo: "PR\u30fb\u30a2\u30d5\u30a3\u30ea\u30a8\u30a4\u30c8\u3092\u975e\u8868\u793a", exportCsv: "CSV\u51fa\u529b",
       noMatch: "\u8a72\u5f53\u3059\u308b\u6295\u7a3f\u304c\u3042\u308a\u307e\u305b\u3093", clearFilters: "\u30d5\u30a3\u30eb\u30bf\u30fc\u3092\u89e3\u9664\u3057\u3066\u304f\u3060\u3055\u3044\u3002", noTopicData: "\u9078\u629e\u3057\u305f\u671f\u9593\u306b\u3053\u306e\u30c8\u30d4\u30c3\u30af\u306e\u30c7\u30fc\u30bf\u306f\u3042\u308a\u307e\u305b\u3093\u3002", showAll: "\u5168\u671f\u9593\u3092\u8868\u793a",
@@ -681,7 +730,7 @@ body.modal-open{overflow:hidden}
           <div class="f">${lbl("sf", "sentiment")}
             <select id="sf">${["all", "Positive", "Negative", "Neutral", "Pending"].map((s) => `<option value="${s}"${state.sentiment === s ? " selected" : ""}>${esc(t(s))}</option>`).join("")}</select></div>
           <div class="f">${lbl("ml", "minLikes")}<input type="number" id="ml" min="0" step="1" value="${state.minLikes}"></div>
-          <div class="f">${lbl("lm", "rows")}
+          <div class="f rows">${lbl("lm", "rows")}
             <select id="lm">${[[25, "25"], [50, "50"], [100, "100"], [0, t("all")]].map(([v, l]) => `<option value="${v}"${state.limit === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></div>
           <div class="f mob-sort">${lbl("sb", "sortLabel")}<div class="row2"><select id="sb">${COLS.filter((c) => c[2]).map((c) => `<option value="${c[0]}"${state.sort.key === c[0] ? " selected" : ""}>${esc(t(c[1]))}</option>`).join("")}</select><button class="btn" id="sd" title="${esc(t("dirTip"))}" aria-label="${esc(t("dirTip"))}">${state.sort.dir < 0 ? "&#9660;" : "&#9650;"}</button></div></div>
           <label class="check"><input type="checkbox" id="hp"${state.hidePromo ? " checked" : ""}> ${esc(t("hidePromo"))}</label>
@@ -745,6 +794,7 @@ body.modal-open{overflow:hidden}
     else if (t.dataset.lang) setLang(t.dataset.lang);
     else if (t.dataset.copy) { const txt = t.dataset.copy; const done = () => toast(I18N[LANG].qCopied); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(done, () => { const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (er) {} ta.remove(); }); }
     else if (t.id === "csv") exportCsv();
+    else if (t.id === "signout") { clearAccess(); location.reload(); }
     else if (t.id === "sd") { state.sort.dir = -state.sort.dir; renderContent(); writeHash(); }
     else if (t.id === "showall") { state.preset = "all"; refreshView(); }
     else if (t.id === "refresh") doRefresh();
@@ -775,8 +825,10 @@ body.modal-open{overflow:hidden}
     document.title = t("title");
     document.querySelectorAll("[data-i18n]").forEach((n) => { n.textContent = t(n.dataset.i18n); });
     document.querySelectorAll("[data-i18n-title]").forEach((n) => { n.title = t(n.dataset.i18nTitle); });
+    document.querySelectorAll("[data-i18n-ph]").forEach((n) => { n.placeholder = t(n.dataset.i18nPh); });
+    $("#who").innerHTML = USER ? `${esc(t("signedAs", USER))} &middot; <button class="more" id="signout">${esc(t("signOut"))}</button>` : "";
     $("#foot").textContent = t("footer");
-    document.querySelectorAll("#lang button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === LANG)));
+    document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === LANG)));
   }
   function setLang(l) {
     LANG = l === "ja" ? "ja" : "en";
@@ -786,9 +838,65 @@ body.modal-open{overflow:hidden}
     if (state.manifest) { renderChrome(); renderContent(); }
   }
 
+  // ---------- e-mail access gate (client-side only: a soft gate, not security) ----------
+  const LOG_URL = ""; // Google Apps Script web-app URL that records visitors (see tools/visitor-log/README.md)
+  const ALLOWED_DOMAINS = ["xmtrading.com", "xm.com", "trading-point.com", "tradingpoint.com"];
+  const ACCESS_KEY = "xm_access";
+  const COOKIE_PATH = location.pathname.replace(/[^/]*$/, "") || "/";
+  let USER = "";
+  const allowedEmail = (v) => {
+    const s = String(v || "").trim().toLowerCase();
+    const m = /^[a-z0-9._%+'-]+@([a-z0-9-]+(?:\.[a-z0-9-]+)+)$/.exec(s);
+    return m && s.length <= 254 && ALLOWED_DOMAINS.includes(m[1]) ? s : "";
+  };
+  function readAccess() {
+    let v = ""; const m = document.cookie.match(/(?:^|;\s*)xm_access=([^;]*)/);
+    if (m) { try { v = decodeURIComponent(m[1]); } catch (e) { v = ""; } }
+    if (!v) { try { v = localStorage.getItem(ACCESS_KEY) || ""; } catch (e) { v = ""; } }
+    return allowedEmail(v);
+  }
+  function saveAccess(em) {
+    document.cookie = `${ACCESS_KEY}=${encodeURIComponent(em)}; max-age=15552000; path=${COOKIE_PATH}; SameSite=Lax${location.protocol === "https:" ? "; Secure" : ""}`;
+    try { localStorage.setItem(ACCESS_KEY, em); } catch (e) { /* storage unavailable */ }
+  }
+  function clearAccess() {
+    document.cookie = `${ACCESS_KEY}=; max-age=0; path=${COOKIE_PATH}; SameSite=Lax`;
+    try { localStorage.removeItem(ACCESS_KEY); sessionStorage.removeItem("xm_logged"); } catch (e) { /* ignore */ }
+  }
+  function logVisit(email, kind) {
+    try { sessionStorage.setItem("xm_logged", "1"); } catch (e) { /* ignore */ }
+    if (!LOG_URL) return;
+    try {
+      fetch(LOG_URL, { method: "POST", mode: "no-cors", keepalive: true, headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ email, kind, ua: navigator.userAgent.slice(0, 200), lang: LANG, page: location.origin + location.pathname }) }).catch(() => {});
+    } catch (e) { /* logging must never break the page */ }
+  }
+  function askEmail() {
+    return new Promise((resolve) => {
+      const g = $("#gate"), f = $("#gate-form"), i = $("#gate-email"), err = $("#gate-err");
+      document.body.classList.add("locked"); g.hidden = false;
+      document.querySelectorAll("header.hero, main").forEach((n) => { n.inert = true; });
+      i.focus();
+      i.addEventListener("input", () => { err.textContent = ""; err.removeAttribute("data-i18n"); i.removeAttribute("aria-invalid"); });
+      f.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const em = allowedEmail(i.value);
+        if (!em) { i.setAttribute("aria-invalid", "true"); err.dataset.i18n = "gateBad"; err.textContent = t("gateBad"); i.focus(); return; }
+        saveAccess(em); logVisit(em, "signin");
+        g.hidden = true; document.body.classList.remove("locked");
+        document.querySelectorAll("header.hero, main").forEach((n) => { n.inert = false; });
+        resolve(em);
+      });
+    });
+  }
+
   // ---------- boot ----------
   (async function boot() {
-    readHash(); applyStatic(); skeleton();
+    readHash(); applyStatic();
+    USER = readAccess();
+    if (!USER) USER = await askEmail();
+    else { let seen = false; try { seen = !!sessionStorage.getItem("xm_logged"); } catch (e) { /* ignore */ } if (!seen) logVisit(USER, "visit"); }
+    applyStatic(); skeleton();
     try { await loadManifest(true); } catch (e) {
       $("#updated").innerHTML = `<i style='background:#e5484d'></i><span>${esc(t("noDataChip"))}</span>`;
       $("#content").innerHTML = `<div class="err"><b>${esc(t("errLoad"))}</b><br>${esc(e.message)}<br>${t("errHint")}</div>`; return;

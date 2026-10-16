@@ -1,5 +1,6 @@
 {
   "window_days": 7,
+  "initial_backfill_days": 30,
   "language": "ja",
   "min_faves": 10,
   "max_items": 200,

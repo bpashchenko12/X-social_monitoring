@@ -16,7 +16,7 @@ from datetime import date, datetime, time, timedelta
 from . import apify, enrich, export_csv, store
 from .common import UTC, load_config, load_env_token, now_utc, write_json_atomic
 from .normalize import apply_thresholds, normalize_items, redact_excluded
-from .queries import build_queries, sort_key
+from .queries import build_queries, search_spec, sort_key
 
 
 def _select(queries, only):
@@ -70,7 +70,7 @@ def cmd_fetch(args, cfg):
         print(f"[{q['id']}] items={len(items)} placeholders_dropped={dropped} below_threshold={below} irrelevant={excluded} "
               f"inserted={res['inserted']} updated={res['updated']} "
               f"{'cache' if meta['cached'] else '$%.4f' % meta['cost_usd']}")
-    store.rebuild_manifest(cfg["topics"])
+    store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
     print(f"done. spent this run ${spent_run:.4f}; ledger total ${apify.spent_usd():.4f}")
 
 
@@ -84,7 +84,7 @@ def cmd_enrich_import(args, cfg):
     with open(args.file, encoding="utf-8") as f:
         updates = json.load(f)
     res = enrich.import_updates(updates, by=args.by)
-    store.rebuild_manifest(cfg["topics"])
+    store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
     print(res)
 
 
@@ -94,7 +94,7 @@ def cmd_csv(args, cfg):
 
 
 def cmd_manifest(args, cfg):
-    m = store.rebuild_manifest(cfg["topics"])
+    m = store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
     print(json.dumps({"weeks": len(m["weeks"]), "topics": m["topics"], "pending": m["pending_enrichment"]},
                      ensure_ascii=False))
 

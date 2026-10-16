@@ -121,7 +121,7 @@ The published store IS the source of truth (no separate build copy). Week file =
 4. Null, not zero, for unknown metrics. Missing `impressions` is null.
 5. Mock/placeholder items returned by actors when a query is empty (`type != "tweet"` or id missing) are dropped.
 6. Writes are atomic (temp file + rename), UTF-8, `ensure_ascii=False`, 2-space indent, sorted keys.
-7. `manifest.json` is regenerated from the week files after every write: list of weeks with post counts and min/max date, per-topic counts, `generated_at`, `latest_post_at`.
+7. `manifest.json` is regenerated from the week files after every write: list of weeks with post counts and min/max date, per-topic counts, `generated_at`, `latest_post_at`, and a `search` block (brand terms, per-topic keywords and the exact query template, language, min likes, window, sort, max items) so the dashboard can show what is requested from X.
 8. Schema changes bump `schema_version` and ship with a migration.
 9. Enrichment is idempotent: only records with `content_en == null` or `sentiment == null` are queued.
 
@@ -169,6 +169,7 @@ Single static HTML file, vanilla JS + inline SVG charts, no external requests ex
 Layout and behaviour (derived from the Mock-up and Context):
 
 1. Header: product title, last-updated stamp (from manifest), Refresh button (re-fetches the JSON store with cache-busting; no API keys in the browser).
+   Each topic view has a collapsible "Search terms" panel (EN/JP) listing the must-mention brand terms, topic words, filters, the exact copyable query sent to the scraper, and the post-fetch relevance rule.
 2. Date range selector: presets (Last 7 / 14 / 30 days, All data) + custom from/to. Changing it reloads/filters automatically (week files are fetched on demand).
 3. Tabs: Overall Brand Mention + 5 topics, each titled "<name> TOP 100", with counts.
 4. KPI cards: Total Posts, Total Accounts, Total Likes, Total Impressions, Total Quotes (Mock-up) + Retweets, Replies, Bookmarks.

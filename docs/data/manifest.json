@@ -1,36 +1,111 @@
 {
-  "generated_at": "2026-10-16T06:51:45Z",
+  "generated_at": "2026-10-16T07:43:50Z",
   "latest_post_at": "2026-10-16T06:37:00Z",
   "pending_enrichment": 0,
   "schema_version": 1,
+  "search": {
+    "brand": [
+      "XMTrading",
+      "XMトレーディング",
+      "XM"
+    ],
+    "exclude_retweets": true,
+    "initial_backfill_days": 30,
+    "language": "ja",
+    "max_items": 200,
+    "min_faves": 10,
+    "queries": {
+      "account_types": "(XMTrading OR XMトレーディング OR XM) (スタンダード OR Standard OR マイクロ OR Micro OR KIWAMI極 OR KIWAMI OR 極口座 OR ゼロ OR ゼロ口座 OR Zero OR 口座) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "campaigns": "(XMTrading OR XMトレーディング OR XM) (ボーナス OR 入金ボーナス OR XMP OR キャッシュバック OR プロモ OR プロモーション) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "competitions": "(XMTrading OR XMトレーディング OR XM) (コンテスト OR コンペ OR 大会 OR トレードバトル) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "deposit_withdrawal": "(XMTrading OR XMトレーディング OR XM) (出金 OR 着金 OR 入金 OR 銀行 OR クレカ OR クレジットカード) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "environment": "(XMTrading OR XMトレーディング OR XM) (スプレッド OR 滑る OR サーバー OR 鯖落ち OR MT4 OR MT5 OR レバレッジ OR アプリ OR 取引条件 OR 約定 OR ゼロカット OR コピートレーディング OR コピトレ OR EA OR IB) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "macro": "(XMTrading OR XMトレーディング OR XM) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>"
+    },
+    "sort": "Latest + Top",
+    "window_days": 7
+  },
   "topics": [
     {
       "id": "macro",
+      "keywords": [],
       "name": "Overall Brand Mention",
       "posts": 162
     },
     {
       "id": "campaigns",
+      "keywords": [
+        "ボーナス",
+        "入金ボーナス",
+        "XMP",
+        "キャッシュバック",
+        "プロモ",
+        "プロモーション"
+      ],
       "name": "Campaigns & Cashback",
       "posts": 92
     },
     {
       "id": "competitions",
+      "keywords": [
+        "コンテスト",
+        "コンペ",
+        "大会",
+        "トレードバトル"
+      ],
       "name": "Competitions & Events",
       "posts": 7
     },
     {
       "id": "environment",
+      "keywords": [
+        "スプレッド",
+        "滑る",
+        "サーバー",
+        "鯖落ち",
+        "MT4",
+        "MT5",
+        "レバレッジ",
+        "アプリ",
+        "取引条件",
+        "約定",
+        "ゼロカット",
+        "コピートレーディング",
+        "コピトレ",
+        "EA",
+        "IB"
+      ],
       "name": "Trading Environment",
       "posts": 44
     },
     {
       "id": "deposit_withdrawal",
+      "keywords": [
+        "出金",
+        "着金",
+        "入金",
+        "銀行",
+        "クレカ",
+        "クレジットカード"
+      ],
       "name": "Deposit & Withdrawal",
       "posts": 97
     },
     {
       "id": "account_types",
+      "keywords": [
+        "スタンダード",
+        "Standard",
+        "マイクロ",
+        "Micro",
+        "KIWAMI極",
+        "KIWAMI",
+        "極口座",
+        "ゼロ",
+        "ゼロ口座",
+        "Zero",
+        "口座"
+      ],
       "name": "Account Types",
       "posts": 81
     }

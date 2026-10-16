@@ -69,6 +69,27 @@ h2.title{font-size:30px;line-height:1.15;margin:20px 0 4px;font-weight:800;lette
 h2.title small{color:var(--accent);font-weight:800}
 .sub{color:var(--muted);margin:0 0 16px}
 
+/* search terms */
+.qbox{padding:0;margin:0 0 14px;overflow:hidden}
+.qbox>summary{cursor:pointer;padding:13px 18px;font-weight:700;display:flex;gap:10px;align-items:center;list-style:none;user-select:none}
+.qbox>summary::-webkit-details-marker{display:none}
+.qbox>summary::before{content:"\25B8";color:var(--accent);transition:.15s}
+.qbox[open]>summary::before{transform:rotate(90deg)}
+.qbox>summary small{font-weight:500;color:var(--muted)}
+.qbody{padding:2px 18px 16px;display:grid;gap:12px}
+.qrow{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:start;font-size:13px}
+.qrow>b{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em;padding-top:5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip2{background:var(--accent-soft);color:#1d3fa8;border-radius:999px;padding:3px 11px;font-size:12.5px;font-weight:600}
+.chip2.brand{background:var(--navy);color:#fff}
+.chip2.flt{background:#eef1f6;color:#344056;font-weight:500}
+.qcode{display:flex;gap:10px;align-items:flex-start;background:#0f1a33;color:#d8e2ff;border-radius:10px;padding:11px 14px}
+.qcode code{flex:1;font:12.5px/1.55 ui-monospace,SFMono-Regular,Menlo,monospace;white-space:pre-wrap;word-break:break-word}
+.qcode button{all:unset;cursor:pointer;color:#9db8ff;font-size:12px;font-weight:700;white-space:nowrap}
+.qcode button:hover{color:#fff}
+.qnote{color:var(--muted);font-size:12.5px;line-height:1.6}
+@media (max-width:700px){.qrow{grid-template-columns:1fr;gap:4px}}
+
 /* kpis */
 .kpis{display:grid;grid-template-columns:repeat(8,1fr);gap:12px}
 .kpi{padding:14px 16px;position:relative;overflow:hidden}
@@ -231,6 +252,13 @@ td.date small{display:block;color:var(--muted)}
       toastReloaded: "Data reloaded", toastFail: (m) => `Reload failed: ${m}`, toastOrder: "'From' must be before 'To'", toastExported: (n) => `Exported ${n} rows`,
       errLoad: "Could not load data.", errHint: "Run the pipeline and publish <code>docs/data</code>.",
       footer: "Impressions = X view count at the time of the last fetch; counters keep growing for recent posts. URL clicks are not available from public X data. \"Top\" is re-ranked here by the metric you choose. Sentiment is the tone toward XMTrading; translations are machine-generated. Times are shown in JST.",
+      qTitle: "Search terms for this topic", qSub: "what is requested from X",
+      qMust: "Must mention (any of)", qTopicWords: "and one topic word (any of)", qBrandOnly: "none - every post that mentions the brand",
+      qFilters: "Filters", qExact: "Exact query sent to the scraper", qCopy: "Copy", qCopied: "Copied",
+      qLang: "Japanese posts only", qNoRt: "No retweets", qMinLikes: (n) => `At least ${n} likes`,
+      qWindow: (d, b) => `Last ${d} days per weekly refresh` + (b ? ` (first load: ${b} days)` : ""), qSort: (s) => `Sort: ${s}`, qMax: (n) => `Up to ${n} posts per request`,
+      qAfter: "After fetching", qAfterTxt: "Each post is checked again: the text itself must contain XMTrading / XM\u30c8\u30ec\u30fc\u30c7\u30a3\u30f3\u30b0 / #XM / @XM..., and a bare \"XM\" counts only next to a trading word (bonus, deposit, leverage...). Other posts (e.g. Gundam XM-01, RC cars) are dropped and not published. One post can match several topics.",
+      qSince: "since: is replaced by the actual start date on every run.",
       topics: {},
     },
     ja: {
@@ -254,6 +282,13 @@ td.date small{display:block;color:var(--muted)}
       toastReloaded: "\u30c7\u30fc\u30bf\u3092\u518d\u8aad\u307f\u8fbc\u307f\u3057\u307e\u3057\u305f", toastFail: (m) => `\u518d\u8aad\u307f\u8fbc\u307f\u306b\u5931\u6557: ${m}`, toastOrder: "\u300c\u958b\u59cb\u300d\u306f\u300c\u7d42\u4e86\u300d\u3088\u308a\u524d\u306b\u3057\u3066\u304f\u3060\u3055\u3044", toastExported: (n) => `${n}\u4ef6\u3092\u51fa\u529b\u3057\u307e\u3057\u305f`,
       errLoad: "\u30c7\u30fc\u30bf\u3092\u8aad\u307f\u8fbc\u3081\u307e\u305b\u3093\u3067\u3057\u305f\u3002", errHint: "\u30d1\u30a4\u30d7\u30e9\u30a4\u30f3\u3092\u5b9f\u884c\u3057\u3001<code>docs/data</code> \u3092\u516c\u958b\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
       footer: "\u30a4\u30f3\u30d7\u30ec\u30c3\u30b7\u30e7\u30f3\uff1d\u6700\u7d42\u53d6\u5f97\u6642\u70b9\u306eX\u306e\u8868\u793a\u56de\u6570\uff08\u6700\u8fd1\u306e\u6295\u7a3f\u306f\u5897\u52a0\u3057\u7d9a\u3051\u307e\u3059\uff09\u3002URL\u30af\u30ea\u30c3\u30af\u6570\u306fX\u306e\u516c\u958b\u30c7\u30fc\u30bf\u3067\u306f\u53d6\u5f97\u3067\u304d\u307e\u305b\u3093\u3002\u300cTOP\u300d\u306f\u9078\u629e\u3057\u305f\u6307\u6a19\u3067\u518d\u30e9\u30f3\u30ad\u30f3\u30b0\u3057\u3066\u3044\u307e\u3059\u3002\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8\u306fXMTrading\u306b\u5bfe\u3059\u308b\u30c8\u30fc\u30f3\u3067\u3001\u7ffb\u8a33\u306f\u6a5f\u68b0\u7ffb\u8a33\u3067\u3059\u3002\u6642\u523b\u306fJST\u3067\u8868\u793a\u3057\u3066\u3044\u307e\u3059\u3002",
+      qTitle: "このトピックの検索キーワード", qSub: "Xに送信している条件",
+      qMust: "必須ワード（いずれか）", qTopicWords: "かつトピックワード（いずれか）", qBrandOnly: "なし（ブランドに言及する全投稿）",
+      qFilters: "絞り込み条件", qExact: "スクレイパーに送信する実際のクエリ", qCopy: "コピー", qCopied: "コピーしました",
+      qLang: "日本語の投稿のみ", qNoRt: "リポストを除外", qMinLikes: (n) => `いいね${n}件以上`,
+      qWindow: (d, b) => `週次更新で直近${d}日間` + (b ? `（初回は${b}日間）` : ""), qSort: (s) => `並び順: ${s}`, qMax: (n) => `1リクエストあたり最大${n}件`,
+      qAfter: "取得後のチェック", qAfterTxt: "取得した各投稿を再確認します。本文にXMTrading / XMトレーディング / #XM / @XM… が含まれること、単独の「XM」は取引関連語（ボーナス・入金・レバレッジなど）と一緒の場合のみ対象です。それ以外（ガンダムXM-01、ラジコン等）は除外し、公開しません。1つの投稿が複数のトピックに該当する場合があります。",
+      qSince: "since: は実行のたびに実際の開始日に置き換わります。",
       topics: { macro: "\u5168\u4f53\u30d6\u30e9\u30f3\u30c9\u8a00\u53ca", campaigns: "\u30ad\u30e3\u30f3\u30da\u30fc\u30f3\u30fb\u30ad\u30e3\u30c3\u30b7\u30e5\u30d0\u30c3\u30af", competitions: "\u30b3\u30f3\u30c6\u30b9\u30c8\u30fb\u30a4\u30d9\u30f3\u30c8", environment: "\u53d6\u5f15\u74b0\u5883", deposit_withdrawal: "\u5165\u51fa\u91d1", account_types: "\u53e3\u5ea7\u30bf\u30a4\u30d7" },
     },
   };
@@ -267,7 +302,7 @@ td.date small{display:block;color:var(--muted)}
   const state = {
     manifest: null, weeks: new Map(), all: [],
     tab: "macro", preset: "7", from: "", to: "",
-    sort: { key: "impressions", dir: -1 }, limit: 100,
+    qOpen: true, sort: { key: "impressions", dir: -1 }, limit: 100,
     q: "", sentiment: "all", minLikes: 0, hidePromo: false, open: new Set(),
   };
 
@@ -418,6 +453,22 @@ td.date small{display:block;color:var(--muted)}
       <td class="num"><span class="dash" title="${esc(t("notAvail"))}">-</span></td></tr>`;
   }
 
+  function searchPanel(topic) {
+    const s = state.manifest.search; if (!s) return "";
+    const q = (s.queries || {})[topic.id]; const kw = topic.keywords || [];
+    const chips = (arr, cls) => `<div class="chips">${arr.map((x) => `<span class="chip2 ${cls}">${esc(x)}</span>`).join("")}</div>`;
+    const flt = [t("qLang"), t("qNoRt"), t("qMinLikes", s.min_faves), t("qWindow", s.window_days, s.initial_backfill_days), t("qSort", s.sort), t("qMax", s.max_items)];
+    return `<details class="panel qbox" id="qbox"${state.qOpen ? " open" : ""}>
+      <summary>&#128270; ${esc(t("qTitle"))} <small>${esc(t("qSub"))}</small></summary>
+      <div class="qbody">
+        <div class="qrow"><b>${esc(t("qMust"))}</b>${chips(s.brand || [], "brand")}</div>
+        <div class="qrow"><b>${esc(t("qTopicWords"))}</b>${kw.length ? chips(kw, "") : `<span class="qnote">${esc(t("qBrandOnly"))}</span>`}</div>
+        <div class="qrow"><b>${esc(t("qFilters"))}</b>${chips(flt, "flt")}</div>
+        ${q ? `<div class="qrow"><b>${esc(t("qExact"))}</b><div><div class="qcode"><code>${esc(q)}</code><button data-copy="${esc(q)}">${esc(t("qCopy"))}</button></div><div class="qnote" style="margin-top:5px">${esc(t("qSince"))}</div></div></div>` : ""}
+        <div class="qrow"><b>${esc(t("qAfter"))}</b><div class="qnote">${esc(t("qAfterTxt"))}</div></div>
+      </div></details>`;
+  }
+
   function renderContent() {
     const m = state.manifest; const topic = m.topics.find((t) => t.id === state.tab) || m.topics[0];
     const { rows, every, matched, total } = visiblePosts();
@@ -437,6 +488,7 @@ td.date small{display:block;color:var(--muted)}
     $("#content").innerHTML = `
       <h2 class="title">${esc(topicName(topic))} <small>${esc(lim)}</small></h2>
       <p class="sub">${esc(t("shown", rows.length, matched))}${matched !== total ? esc(t("inTopic", total)) : ""}${esc(t("sortedBy", sortCol ? t(sortCol[1]) : state.sort.key))}</p>
+      ${searchPanel(topic)}
       <section class="kpis" aria-label="Totals">${kp.map(([k, v, hl]) => `<div class="panel kpi${hl ? " hl" : ""}"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join("")}</section>
       <section class="charts">
         <div class="panel card"><h3>${esc(t("sentRatio"))}</h3>${donut(sentimentCounts(every))}</div>
@@ -509,10 +561,12 @@ td.date small{display:block;color:var(--muted)}
     else if (t.dataset.sort) { const k = t.dataset.sort; state.sort = state.sort.key === k ? { key: k, dir: -state.sort.dir } : { key: k, dir: -1 }; renderContent(); writeHash(); }
     else if (t.dataset.more) { const id = t.dataset.more; state.open.has(id) ? state.open.delete(id) : state.open.add(id); renderContent(); }
     else if (t.dataset.lang) setLang(t.dataset.lang);
+    else if (t.dataset.copy) { const txt = t.dataset.copy; const done = () => toast(I18N[LANG].qCopied); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(done, () => { const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (er) {} ta.remove(); }); }
     else if (t.id === "csv") exportCsv();
     else if (t.id === "showall") { state.preset = "all"; refreshView(); }
     else if (t.id === "refresh") doRefresh();
   });
+  document.addEventListener("toggle", (e) => { if (e.target.id === "qbox") state.qOpen = e.target.open; }, true);
   document.addEventListener("change", (e) => {
     const el = e.target;
     if (el.id === "from" || el.id === "to") { const f = $("#from").value, to = $("#to").value; if (f && to && f <= to) { state.preset = "custom"; state.from = f; state.to = to; refreshView(); } else if (f && to) toast(t("toastOrder")); }

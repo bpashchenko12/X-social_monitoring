@@ -78,7 +78,7 @@ def iter_posts(weeks_dir=WEEKS_DIR):
             yield p
 
 
-def rebuild_manifest(topics_meta, weeks_dir=WEEKS_DIR, data_dir=DATA_DIR):
+def rebuild_manifest(topics_meta, weeks_dir=WEEKS_DIR, data_dir=DATA_DIR, search=None):
     """Regenerate manifest.json from week files (SPEC 6.3 rule 7)."""
     weeks, topic_counts, pending, latest = [], {t["id"]: 0 for t in topics_meta}, 0, None
     for path in sorted(glob.glob(os.path.join(weeks_dir, "*.json"))):
@@ -106,7 +106,9 @@ def rebuild_manifest(topics_meta, weeks_dir=WEEKS_DIR, data_dir=DATA_DIR):
         "schema_version": SCHEMA_VERSION,
         "generated_at": iso(now_utc()),
         "latest_post_at": latest,
-        "topics": [{"id": t["id"], "name": t["name"], "posts": topic_counts[t["id"]]} for t in topics_meta],
+        "topics": [{"id": t["id"], "name": t["name"], "posts": topic_counts[t["id"]],
+                    "keywords": list(t.get("keywords", []))} for t in topics_meta],
+        "search": search,
         "pending_enrichment": pending,
         "weeks": weeks,
     }

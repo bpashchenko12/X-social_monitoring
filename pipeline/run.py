@@ -28,6 +28,12 @@ def _select(queries, only):
     return [q for q in queries if q["id"] in only]
 
 
+def _finalize(cfg):
+    """Re-tag topics from post text, then regenerate the manifest."""
+    store.retag_all(cfg["topics"])
+    return store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
+
+
 def cmd_plan(args, cfg):
     qs = _select(build_queries(cfg, args.today), args.only)
     spent = apify.spent_usd()
@@ -70,7 +76,7 @@ def cmd_fetch(args, cfg):
         print(f"[{q['id']}] items={len(items)} placeholders_dropped={dropped} below_threshold={below} irrelevant={excluded} "
               f"inserted={res['inserted']} updated={res['updated']} "
               f"{'cache' if meta['cached'] else '$%.4f' % meta['cost_usd']}")
-    store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
+    _finalize(cfg)
     print(f"done. spent this run ${spent_run:.4f}; ledger total ${apify.spent_usd():.4f}")
 
 
@@ -84,7 +90,7 @@ def cmd_enrich_import(args, cfg):
     with open(args.file, encoding="utf-8") as f:
         updates = json.load(f)
     res = enrich.import_updates(updates, by=args.by)
-    store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
+    _finalize(cfg)
     print(res)
 
 
@@ -94,7 +100,7 @@ def cmd_csv(args, cfg):
 
 
 def cmd_manifest(args, cfg):
-    m = store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
+    m = _finalize(cfg)
     print(json.dumps({"weeks": len(m["weeks"]), "topics": m["topics"], "pending": m["pending_enrichment"]},
                      ensure_ascii=False))
 

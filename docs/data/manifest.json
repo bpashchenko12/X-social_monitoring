@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T07:43:50Z",
+  "generated_at": "2026-10-16T07:55:52Z",
   "latest_post_at": "2026-10-16T06:37:00Z",
   "pending_enrichment": 0,
   "schema_version": 1,
@@ -30,7 +30,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 162
+      "posts": 186
     },
     {
       "id": "campaigns",
@@ -43,7 +43,7 @@
         "プロモーション"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 92
+      "posts": 91
     },
     {
       "id": "competitions",
@@ -76,7 +76,7 @@
         "IB"
       ],
       "name": "Trading Environment",
-      "posts": 44
+      "posts": 31
     },
     {
       "id": "deposit_withdrawal",
@@ -89,7 +89,7 @@
         "クレジットカード"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 97
+      "posts": 55
     },
     {
       "id": "account_types",
@@ -107,7 +107,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 81
+      "posts": 80
     }
   ],
   "weeks": [

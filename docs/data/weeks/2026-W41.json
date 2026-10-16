@@ -118,9 +118,14 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金"
+        ]
+      },
       "topics": [
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/lee0521_lee/status/2106875762426933465",
       "url_clicks": null
@@ -181,11 +186,20 @@
       "replies": 1,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス",
+          "XMP"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/kaigaitoushibiz/status/2106995328293408959",
       "url_clicks": null
@@ -215,9 +229,14 @@
       "replies": 1,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/reimu_FXgold/status/2107004787929895138",
       "url_clicks": null
@@ -247,11 +266,14 @@
       "replies": 1,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "account_types",
-        "campaigns",
-        "environment",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/horie_EA/status/2107009897741316547",
       "url_clicks": null
@@ -281,11 +303,22 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/FXmillionSchool/status/2107020672631464288",
       "url_clicks": null
@@ -315,10 +348,15 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/animal2432/status/2107022274268406023",
       "url_clicks": null
@@ -348,11 +386,19 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2107022489767596481",
       "url_clicks": null
@@ -382,10 +428,18 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ],
+        "environment": [
+          "取引条件"
+        ]
+      },
       "topics": [
+        "macro",
         "campaigns",
-        "environment",
-        "macro"
+        "environment"
       ],
       "url": "https://x.com/animal2432/status/2107022825983008846",
       "url_clicks": null
@@ -415,9 +469,14 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/TraderHAYA/status/2107023918146129989",
       "url_clicks": null
@@ -447,11 +506,23 @@
       "replies": 0,
       "retweets": 4,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ],
+        "environment": [
+          "取引条件"
+        ]
+      },
       "topics": [
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
         "environment",
-        "macro"
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/ForexFanclub/status/2107031132076466681",
       "url_clicks": null
@@ -481,9 +552,14 @@
       "replies": 19,
       "retweets": 1,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/SHS07243068/status/2107058792433438854",
       "url_clicks": null
@@ -513,10 +589,18 @@
       "replies": 0,
       "retweets": 16,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ],
+        "environment": [
+          "EA"
+        ]
+      },
       "topics": [
+        "macro",
         "campaigns",
-        "environment",
-        "macro"
+        "environment"
       ],
       "url": "https://x.com/eatraderslabo/status/2107059392231440404",
       "url_clicks": null
@@ -577,6 +661,7 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Negative",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -608,10 +693,18 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/nobita810305/status/2107077780261495036",
       "url_clicks": null
@@ -641,10 +734,14 @@
       "replies": 1,
       "retweets": 3,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "environment",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/fx_boltac/status/2107080424388469216",
       "url_clicks": null
@@ -767,10 +864,15 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/fxmqltrader/status/2107113029142040838",
       "url_clicks": null
@@ -862,10 +964,18 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "deposit_withdrawal": [
+          "出金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/komyo_tweet/status/2107217043074547728",
       "url_clicks": null
@@ -926,11 +1036,22 @@
       "replies": 0,
       "retweets": 1,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "スタンダード"
+        ],
+        "campaigns": [
+          "ボーナス"
+        ],
+        "environment": [
+          "スプレッド"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
         "environment",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/TraderHAYA/status/2107242730690871431",
       "url_clicks": null
@@ -960,10 +1081,19 @@
       "replies": 17,
       "retweets": 4,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "出金",
+          "入金"
+        ]
+      },
       "topics": [
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/reimu_FXgold/status/2107258555044917522",
       "url_clicks": null
@@ -993,9 +1123,14 @@
       "replies": 7,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/urapinoco/status/2107262561808941416",
       "url_clicks": null
@@ -1087,9 +1222,14 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/10LotFX/status/2107272212218782169",
       "url_clicks": null
@@ -1119,9 +1259,14 @@
       "replies": 0,
       "retweets": 1,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/TraderHAYA/status/2107278954881224928",
       "url_clicks": null
@@ -1151,9 +1296,16 @@
       "replies": 1,
       "retweets": 1,
       "sentiment": "Negative",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金",
+          "入金",
+          "銀行"
+        ]
+      },
       "topics": [
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/reimu_FXgold/status/2107285480601731321",
       "url_clicks": null
@@ -1183,11 +1335,19 @@
       "replies": 0,
       "retweets": 15,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "マイクロ",
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
-        "environment",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/eatraderslabo/status/2107334955915428342",
       "url_clicks": null
@@ -1217,10 +1377,20 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス",
+          "プロモ"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/lee0521_lee/status/2107343343265226945",
       "url_clicks": null
@@ -1312,12 +1482,27 @@
       "replies": 1,
       "retweets": 6,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "スタンダード",
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ],
+        "environment": [
+          "スプレッド"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
         "environment",
-        "macro"
+        "deposit_withdrawal",
+        "account_types"
       ],
       "url": "https://x.com/TraderHAYA/status/2107383275601924402",
       "url_clicks": null
@@ -1378,10 +1563,18 @@
       "replies": 6,
       "retweets": 7,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/skafuo/status/2107388318153662910",
       "url_clicks": null
@@ -1411,10 +1604,15 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/animal2432/status/2107395017790861629",
       "url_clicks": null
@@ -1444,6 +1642,7 @@
       "replies": 0,
       "retweets": 3,
       "sentiment": "Positive",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -1475,11 +1674,19 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2107395860489515488",
       "url_clicks": null
@@ -1602,9 +1809,15 @@
       "replies": 0,
       "retweets": 1,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金",
+          "入金"
+        ]
+      },
       "topics": [
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/kiss_of_Murder/status/2107431234960015512",
       "url_clicks": null
@@ -1696,10 +1909,15 @@
       "replies": 1,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "入金",
+          "銀行"
+        ]
+      },
       "topics": [
-        "deposit_withdrawal",
-        "environment",
-        "macro"
+        "macro",
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/m_m_ea/status/2107517730933104704",
       "url_clicks": null
@@ -1729,6 +1947,7 @@
       "replies": 0,
       "retweets": 4,
       "sentiment": "Neutral",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -1760,10 +1979,18 @@
       "replies": 0,
       "retweets": 1,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "deposit_withdrawal": [
+          "出金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/komyo_tweet/status/2107582231317516542",
       "url_clicks": null
@@ -1886,10 +2113,19 @@
       "replies": 0,
       "retweets": 1,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "deposit_withdrawal": [
+          "出金",
+          "銀行"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/lee0521_lee/status/2107603054463971472",
       "url_clicks": null
@@ -1950,10 +2186,14 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "environment",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/EA_Trader_waon/status/2107630366567854346",
       "url_clicks": null
@@ -1983,9 +2223,18 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ],
+        "environment": [
+          "ゼロカット"
+        ]
+      },
       "topics": [
+        "macro",
         "campaigns",
-        "macro"
+        "environment"
       ],
       "url": "https://x.com/SVJr9NMt0MdY4TI/status/2107659135995244556",
       "url_clicks": null
@@ -2108,9 +2357,15 @@
       "replies": 8,
       "retweets": 0,
       "sentiment": "Negative",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金",
+          "着金"
+        ]
+      },
       "topics": [
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/reimu_FXgold/status/2107692223760634087",
       "url_clicks": null
@@ -2140,9 +2395,14 @@
       "replies": 2,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/syahudesuyowww/status/2107733575554785502",
       "url_clicks": null
@@ -2172,10 +2432,14 @@
       "replies": 8,
       "retweets": 1,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
-        "deposit_withdrawal",
-        "environment",
-        "macro"
+        "macro",
+        "deposit_withdrawal"
       ],
       "url": "https://x.com/m_m_ea/status/2107741980432433641",
       "url_clicks": null
@@ -2205,9 +2469,14 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ]
+      },
       "topics": [
-        "account_types",
-        "macro"
+        "macro",
+        "account_types"
       ],
       "url": "https://x.com/yousuwo_miteiru/status/2107743523789586765",
       "url_clicks": null
@@ -2237,11 +2506,23 @@
       "replies": 0,
       "retweets": 1,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/forexbrokerjp/status/2107775938846994943",
       "url_clicks": null
@@ -2364,10 +2645,15 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/animal2432/status/2107815494460067846",
       "url_clicks": null
@@ -2428,9 +2714,17 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "KIWAMI極",
+          "KIWAMI",
+          "極口座",
+          "口座"
+        ]
+      },
       "topics": [
-        "account_types",
-        "macro"
+        "macro",
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2107870527432143167",
       "url_clicks": null
@@ -2460,10 +2754,22 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "スタンダード",
+          "KIWAMI極",
+          "KIWAMI",
+          "極口座",
+          "口座"
+        ],
+        "environment": [
+          "スプレッド"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "environment",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/flove_fxtrader/status/2107939270237577397",
       "url_clicks": null
@@ -2555,6 +2861,7 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -2617,9 +2924,14 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/reimu_FXgold/status/2108030538674036880",
       "url_clicks": null
@@ -2711,9 +3023,17 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "KIWAMI極",
+          "KIWAMI",
+          "極口座",
+          "口座"
+        ]
+      },
       "topics": [
-        "account_types",
-        "macro"
+        "macro",
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2108116793722359889",
       "url_clicks": null
@@ -2743,10 +3063,15 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/animal2432/status/2108117045175013757",
       "url_clicks": null
@@ -2807,10 +3132,19 @@
       "replies": 3,
       "retweets": 1,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "deposit_withdrawal": [
+          "出金",
+          "着金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/fxdeneet/status/2108189043842510903",
       "url_clicks": null
@@ -2995,10 +3329,19 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "deposit_withdrawal": [
+          "出金",
+          "着金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/komyo_tweet/status/2108298151505613037",
       "url_clicks": null
@@ -3059,6 +3402,7 @@
       "replies": 1,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -3374,9 +3718,14 @@
       "replies": 2,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "competitions": [
+          "コンテスト"
+        ]
+      },
       "topics": [
-        "competitions",
-        "macro"
+        "macro",
+        "competitions"
       ],
       "url": "https://x.com/harukaze329712/status/2108462265792123252",
       "url_clicks": null
@@ -3468,11 +3817,23 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2108466433768435881",
       "url_clicks": null
@@ -3533,6 +3894,7 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -3689,9 +4051,14 @@
       "replies": 2,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/Pirori_FX/status/2108505895630258540",
       "url_clicks": null
@@ -3721,12 +4088,19 @@
       "replies": 1,
       "retweets": 2,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "environment": [
+          "MT4",
+          "MT5"
+        ]
+      },
       "topics": [
-        "account_types",
-        "campaigns",
-        "deposit_withdrawal",
+        "macro",
         "environment",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/trend_liner/status/2108519994976084315",
       "url_clicks": null
@@ -3943,6 +4317,7 @@
       "replies": 12,
       "retweets": 5,
       "sentiment": "Neutral",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -4067,6 +4442,7 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {},
       "topics": [
         "macro"
       ],
@@ -4532,9 +4908,14 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "environment": [
+          "MT5"
+        ]
+      },
       "topics": [
-        "environment",
-        "macro"
+        "macro",
+        "environment"
       ],
       "url": "https://x.com/animal2432/status/2108840681682948569",
       "url_clicks": null
@@ -4564,11 +4945,19 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2108841592807448796",
       "url_clicks": null
@@ -4598,11 +4987,23 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2108841900866421122",
       "url_clicks": null
@@ -5450,11 +5851,22 @@
       "replies": 0,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "competitions": [
+          "コンテスト"
+        ],
+        "deposit_withdrawal": [
+          "出金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "competitions",
         "deposit_withdrawal",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/lee0521_lee/status/2109072235621486876",
       "url_clicks": null
@@ -5862,10 +6274,15 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス",
+          "入金ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "deposit_withdrawal",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/animal2432/status/2109179944035352591",
       "url_clicks": null
@@ -5895,12 +6312,22 @@
       "replies": 0,
       "retweets": 2,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "campaigns": [
+          "ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
       "topics": [
-        "account_types",
+        "macro",
         "campaigns",
         "deposit_withdrawal",
-        "environment",
-        "macro"
+        "account_types"
       ],
       "url": "https://x.com/animal2432/status/2109180748054032882",
       "url_clicks": null
@@ -6054,9 +6481,14 @@
       "replies": 1,
       "retweets": 0,
       "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "ゼロ"
+        ]
+      },
       "topics": [
-        "account_types",
-        "macro"
+        "macro",
+        "account_types"
       ],
       "url": "https://x.com/fukuda_CEO/status/2109211372261384404",
       "url_clicks": null
@@ -6086,9 +6518,14 @@
       "replies": 1,
       "retweets": 0,
       "sentiment": "Neutral",
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ]
+      },
       "topics": [
-        "campaigns",
-        "macro"
+        "macro",
+        "campaigns"
       ],
       "url": "https://x.com/kaorin1995free/status/2109212151894483175",
       "url_clicks": null

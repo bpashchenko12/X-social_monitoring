@@ -3,6 +3,7 @@ import glob
 import os
 
 from .common import WEEKS_DIR, DATA_DIR, iso, now_utc, parse_dt, read_json, week_key, write_json_atomic
+from .topics import matched_keywords
 
 SCHEMA_VERSION = 1
 METRIC_FIELDS = ("likes", "retweets", "replies", "quotes", "bookmarks")
@@ -76,6 +77,28 @@ def iter_posts(weeks_dir=WEEKS_DIR):
         data = read_json(path)
         for p in data["posts"].values():
             yield p
+
+
+def retag_all(topics_meta, weeks_dir=WEEKS_DIR):
+    """Set `topics` / `topic_hits` of every relevant post from its own text (SPEC 5.4).
+    Returns the number of posts whose tags changed."""
+    changed = 0
+    for path in sorted(glob.glob(os.path.join(weeks_dir, "*.json"))):
+        data = read_json(path)
+        dirty = False
+        for p in data["posts"].values():
+            if not p.get("relevant", True):
+                continue
+            hits = matched_keywords(p["content_original"], topics_meta)
+            topics = [t["id"] for t in topics_meta if not t["keywords"] or t["id"] in hits]
+            hits = {t: hits[t] for t in topics if t in hits}
+            if p.get("topics") != topics or p.get("topic_hits") != hits:
+                p["topics"], p["topic_hits"] = topics, hits
+                dirty = True
+                changed += 1
+        if dirty:
+            write_json_atomic(path, data)
+    return changed
 
 
 def rebuild_manifest(topics_meta, weeks_dir=WEEKS_DIR, data_dir=DATA_DIR, search=None):

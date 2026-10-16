@@ -12,6 +12,7 @@ from pipeline.common import load_config, parse_dt, week_key
 from pipeline.normalize import apply_thresholds, normalize_items
 from pipeline.queries import build_queries
 from pipeline.relevance import check_relevance, is_promo
+from pipeline.topics import assign_topics, matched_keywords
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CFG = load_config()
@@ -199,6 +200,49 @@ class StoreTests(unittest.TestCase):
         self.assertEqual(len(rows), 4)  # header + 3 relevant
         self.assertEqual(rows[1][5], "18500")  # sorted by impressions desc
         self.assertEqual(rows[1][11], "")  # URL clicks blank
+
+
+class TopicTaggingTests(unittest.TestCase):
+    T = CFG["topics"]
+
+    def tags(self, text):
+        return [t for t in assign_topics(text, self.T) if t != "macro"]
+
+    def test_macro_always(self):
+        self.assertEqual(assign_topics("XMはいい", self.T), ["macro"])
+
+    def test_handle_and_url_do_not_match(self):
+        self.assertEqual(self.tags("@m_m_ea XMいいね https://x.com/EA_trader/status/1"), [])
+
+    def test_latin_word_boundary(self):
+        self.assertEqual(self.tags("XM at the idea of area"), [])
+        self.assertEqual(self.tags("XMでEAを動かす"), ["environment"])
+
+    def test_longer_keyword_masks_shorter_other_topic(self):
+        self.assertEqual(self.tags("XMのゼロカットは安心"), ["environment"])
+        self.assertEqual(self.tags("XMの入金ボーナス"), ["campaigns"])
+        self.assertEqual(self.tags("XMの入金と出金"), ["deposit_withdrawal"])
+
+    def test_genuine_overlap_is_kept(self):
+        self.assertEqual(self.tags("XMのボーナスで出金できた"), ["campaigns", "deposit_withdrawal"])
+
+    def test_alias_inflection(self):
+        self.assertEqual(self.tags("XMでSLが滑ってマイナス"), ["environment"])
+        self.assertEqual(matched_keywords("XMで滑った", self.T), {"environment": ["滑る"]})
+
+    def test_retag_all_is_authoritative(self):
+        tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(tmp.cleanup)
+        weeks = os.path.join(tmp.name, "weeks")
+        posts, _ = normalize_items(FIX, "environment", CFG["brand_non_matches"], FETCHED)
+        store.upsert_posts(posts, weeks)
+        n = store.retag_all(self.T, weeks)
+        self.assertGreater(n, 0)
+        for p in store.iter_posts(weeks):
+            if p["relevant"]:
+                self.assertEqual(p["topics"], assign_topics(p["content_original"], self.T))
+                self.assertIn("macro", p["topics"])
+        self.assertEqual(store.retag_all(self.T, weeks), 0)  # idempotent
 
 
 class FakeResp(BytesIO):

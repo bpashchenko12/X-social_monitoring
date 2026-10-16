@@ -161,9 +161,128 @@ td.date small{display:block;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.mk{display:inline-block;margin:0 4px 4px 0;padding:2px 8px;border-radius:999px;background:#eef1f6;color:#4d586c;font-size:11.5px;font-weight:600;line-height:1.5}
+.mk.on{background:var(--accent-soft);color:#1d3fa8}
+td.mt{min-width:150px;max-width:200px}
+.mob-sort{display:none}
+
+/* post modal */
+body.modal-open{overflow:hidden}
+.modal-bg{position:fixed;inset:0;background:rgba(11,27,58,.55);display:grid;place-items:center;padding:16px;z-index:50;backdrop-filter:blur(2px)}
+.modal{background:#fff;border-radius:16px;width:100%;max-width:760px;max-height:calc(100vh - 32px);display:flex;flex-direction:column;box-shadow:0 24px 60px -12px rgba(11,27,58,.45)}
+.mhead{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line)}
+.mhead b{font-size:16px}
+.mmeta{margin-top:4px;color:var(--muted);font-size:12.5px;display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.mclose{border:0;background:var(--bg);border-radius:10px;width:40px;height:40px;font-size:24px;line-height:1;cursor:pointer;flex:0 0 auto}
+.mclose:hover{background:#e4e8f0}
+.mbody{overflow:auto;padding:16px 20px;display:grid;gap:16px;-webkit-overflow-scrolling:touch}
+.mbody h4{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.mtext{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7;font-size:15px}
+.mmetrics{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.mm{background:var(--bg);border-radius:10px;padding:8px 10px;min-width:0}
+.mm span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mm b{font-size:15px}
+.mimg{max-width:100%;max-height:320px;border-radius:12px;border:1px solid var(--line);display:block}
+.mfoot{display:flex;gap:10px;justify-content:flex-end;padding:12px 20px;border-top:1px solid var(--line)}
+.mfoot .btn{text-decoration:none;justify-content:center}
 
 @media (max-width:1100px){.kpis{grid-template-columns:repeat(4,1fr)}.charts{grid-template-columns:1fr 1fr}.charts .card:last-child{grid-column:1/-1}}
-@media (max-width:700px){.wrap{padding:0 14px}.kpis{grid-template-columns:repeat(2,1fr)}.charts{grid-template-columns:1fr}h2.title{font-size:24px}.hero .wrap{padding-bottom:56px}input[type=search]{min-width:0;width:100%}}
+
+/* ---------- mobile ---------- */
+@media (max-width:700px){
+  body{font-size:14px}
+  .wrap{padding:0 12px}
+  input[type=date],input[type=search],input[type=number],select{font-size:16px;min-height:42px;width:100%;min-width:0}
+  .btn,.seg button{min-height:40px}
+  /* header */
+  .hero .wrap{gap:12px;padding-top:16px;padding-bottom:54px}
+  .logo{width:38px;height:38px;border-radius:10px}
+  .hero .wrap>div:nth-child(2){flex:1 1 0;min-width:0}
+  .hero h1{font-size:18px;line-height:1.25}
+  .hero p{font-size:12px;line-height:1.4}
+  .spacer{display:none}
+  .hero .seg button{padding:6px 12px;min-height:36px}
+  .chip{flex:1 1 auto;min-width:0;justify-content:center;font-size:12px;padding:7px 10px}
+  .chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  #refresh{padding:8px 12px}
+  /* date bar */
+  .controls{margin-top:-34px}
+  .bar{padding:14px;gap:14px}
+  .bar>div{width:100%}
+  #presets{display:flex;width:100%}
+  #presets button{flex:1;padding:8px 2px;font-size:13px;white-space:nowrap}
+  .dates{display:grid;grid-template-columns:1fr auto 1fr}
+  .range-note{font-size:12px}
+  /* tabs: one swipeable row */
+  .tabs{flex-wrap:nowrap;overflow-x:auto;margin:16px -12px 4px;padding:2px 12px 8px;gap:8px;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;white-space:nowrap;scroll-snap-align:center;min-height:42px}
+  h2.title{font-size:22px;margin-top:14px}
+  .sub{font-size:13px}
+  /* search terms */
+  .qbox>summary{padding:12px 14px;flex-wrap:wrap;gap:2px 10px}
+  .qbody{padding:2px 14px 14px}
+  .qrow{grid-template-columns:1fr;gap:4px}
+  .qrow>b{padding-top:0}
+  .qcode{flex-direction:column;gap:8px}
+  .qcode code{width:100%}
+  /* kpis and charts */
+  .kpis{grid-template-columns:repeat(2,1fr);gap:10px}
+  .kpi{padding:12px 14px}
+  .kpi .v{font-size:22px}
+  .charts{grid-template-columns:1fr;gap:12px}
+  .card{padding:14px}
+  .donut-wrap{justify-content:center}
+  .acct .row{grid-template-columns:96px 1fr auto}
+  /* toolbar */
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:14px;align-items:end}
+  .tools .grow,.tools .check,.tools #csv{grid-column:1/-1}
+  .tools .f{min-width:0}
+  .check{padding:6px 0;min-height:40px}
+  .check input{width:20px;height:20px}
+  .mob-sort{display:flex}
+  .mob-sort .row2{display:flex;gap:8px}
+  .mob-sort .row2 select{flex:1}
+  .mob-sort .row2 .btn{padding:0 14px}
+  #csv{justify-content:center;min-height:44px}
+  /* table -> cards */
+  .scroll{max-height:none;overflow:visible}
+  table,tbody{display:block;min-width:0;width:100%}
+  thead{display:none}
+  tbody tr{display:flex;flex-wrap:wrap;align-items:center;gap:8px 8px;padding:14px;background:#fff;border-bottom:8px solid var(--bg)}
+  tbody tr:nth-child(even),tbody tr:hover{background:#fff}
+  tbody td{display:block;padding:0;border:0;min-width:0}
+  td.rank{order:1;width:auto;font-weight:800;color:var(--navy)}
+  td.rank::before{content:"#"}
+  td.date{order:2;flex:1;font-size:13px}
+  td.date small{display:inline;margin-left:6px}
+  td.s{order:3;margin-left:auto}
+  td.acc{order:4;flex:0 0 100%}
+  td.acc b{max-width:100%;font-size:15px}
+  td.acc a{font-size:13px}
+  td.o{order:5;flex:0 0 100%}
+  td.e{order:6;flex:0 0 100%;background:var(--bg);border-radius:10px;padding:10px 12px}
+  td.e::before{content:attr(data-label);display:block;font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;margin-bottom:2px}
+  td.mt{order:7;flex:0 0 100%;max-width:none;min-width:0}
+  td.m{order:8;flex:1 1 calc(33.333% - 8px);min-width:84px;text-align:left;background:var(--bg);border-radius:10px;padding:7px 10px;font-weight:700;font-size:14px}
+  td.m::before{content:attr(data-label);display:block;font-size:10px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);font-weight:700;white-space:nowrap}
+  td.im{order:9;flex:0 0 auto}
+  td.lk{order:9;flex:1}
+  td.lk .linkbtn{width:100%;justify-content:center;min-height:44px;border-radius:10px;background:var(--accent-soft);font-size:14px}
+  td.clk{display:none}
+  .txt{max-width:none;min-width:0;font-size:14.5px;line-height:1.55}
+  .more{padding:6px 0;font-size:13px}
+  .thumb{width:56px;height:56px}
+  .foot{padding:18px 0 32px}
+  .toast{width:calc(100% - 24px);text-align:center;bottom:16px}
+  .modal-bg{padding:0;place-items:end stretch}
+  .modal{max-width:none;max-height:92vh;border-radius:18px 18px 0 0}
+  .mhead,.mbody,.mfoot{padding-left:16px;padding-right:16px}
+  .mmetrics{grid-template-columns:repeat(3,1fr)}
+  .mfoot{flex-direction:column-reverse}
+  .mfoot .btn{min-height:46px}
+}
+@media (max-width:360px){.kpi .k{font-size:10px}.kpis{gap:8px}td.m{flex-basis:calc(50% - 8px)}}
 </style>
 </head>
 <body>
@@ -245,6 +364,7 @@ td.date small{display:block;color:var(--muted)}
       cRank: "#", cDate: "Date (JST)", cAccount: "Account", cOrig: "Original (JP)", cEn: "English (LLM translation)", cSent: "Sentiment", cImage: "Image", cPost: "Post",
       cImpressions: "Impressions", cLikes: "Likes", cReplies: "Replies", cQuotes: "Quotes", cRetweets: "Retweets", cBookmarks: "Bookmarks", cClicks: "URL Clicks",
       sortBy: (c) => `Sort by ${c}`,
+      close: "Close", cMatch: "Matched keywords", mkNone: "Brand mention only", sortLabel: "Sort by", dirTip: "Reverse order",
       Positive: "Positive", Negative: "Negative", Neutral: "Neutral", Pending: "Pending", all: "All",
       search: "Search", searchPh: "Search text, translation, account...", sentiment: "Sentiment", minLikes: "Min likes", rows: "Rows", hidePromo: "Hide PR / affiliate", exportCsv: "Export CSV",
       noMatch: "No posts match", clearFilters: "Try clearing the filters.", noTopicData: "There is no data for this topic in the selected date range.", showAll: "Show all data",
@@ -257,7 +377,7 @@ td.date small{display:block;color:var(--muted)}
       qFilters: "Filters", qExact: "Exact query sent to the scraper", qCopy: "Copy", qCopied: "Copied",
       qLang: "Japanese posts only", qNoRt: "No retweets", qMinLikes: (n) => `At least ${n} likes`,
       qWindow: (d, b) => `Last ${d} days per weekly refresh` + (b ? ` (first load: ${b} days)` : ""), qSort: (s) => `Sort: ${s}`, qMax: (n) => `Up to ${n} posts per request`,
-      qAfter: "After fetching", qAfterTxt: "Each post is checked again: the text itself must contain XMTrading / XM\u30c8\u30ec\u30fc\u30c7\u30a3\u30f3\u30b0 / #XM / @XM..., and a bare \"XM\" counts only next to a trading word (bonus, deposit, leverage...). Other posts (e.g. Gundam XM-01, RC cars) are dropped and not published. One post can match several topics.",
+      qAfter: "After fetching", qAfterTxt: "Each post is checked again: the text itself must contain XMTrading / XM\u30c8\u30ec\u30fc\u30c7\u30a3\u30f3\u30b0 / #XM / @XM..., and a bare \"XM\" counts only next to a trading word (bonus, deposit, leverage...). Other posts (e.g. Gundam XM-01, RC cars) are dropped and not published. A post is listed under a topic when its own text contains one of that topic's words (see the \"Matched keywords\" column), not merely because the query returned it. A post with words from several topics appears under each of them, so topic counts add up to more than the total.",
       qSince: "since: is replaced by the actual start date on every run.",
       topics: {},
     },
@@ -275,6 +395,7 @@ td.date small{display:block;color:var(--muted)}
       cRank: "#", cDate: "\u65e5\u6642\uff08JST\uff09", cAccount: "\u30a2\u30ab\u30a6\u30f3\u30c8", cOrig: "\u539f\u6587\uff08JP\uff09", cEn: "\u82f1\u8a33\uff08LLM\u7ffb\u8a33\uff09", cSent: "\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8", cImage: "\u753b\u50cf", cPost: "\u6295\u7a3f",
       cImpressions: "\u30a4\u30f3\u30d7\u30ec\u30c3\u30b7\u30e7\u30f3", cLikes: "\u3044\u3044\u306d", cReplies: "\u30ea\u30d7\u30e9\u30a4", cQuotes: "\u5f15\u7528", cRetweets: "\u30ea\u30dd\u30b9\u30c8", cBookmarks: "\u30d6\u30c3\u30af\u30de\u30fc\u30af", cClicks: "URL\u30af\u30ea\u30c3\u30af",
       sortBy: (c) => `${c}\u3067\u4e26\u3079\u66ff\u3048`,
+      close: "閉じる", cMatch: "該当キーワード", mkNone: "ブランド言及のみ", sortLabel: "並び替え", dirTip: "順序を反転",
       Positive: "\u30dd\u30b8\u30c6\u30a3\u30d6", Negative: "\u30cd\u30ac\u30c6\u30a3\u30d6", Neutral: "\u4e2d\u7acb", Pending: "\u672a\u5224\u5b9a", all: "\u3059\u3079\u3066",
       search: "\u691c\u7d22", searchPh: "\u672c\u6587\u30fb\u7ffb\u8a33\u30fb\u30a2\u30ab\u30a6\u30f3\u30c8\u3092\u691c\u7d22...", sentiment: "\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8", minLikes: "\u6700\u4f4e\u3044\u3044\u306d\u6570", rows: "\u8868\u793a\u4ef6\u6570", hidePromo: "PR\u30fb\u30a2\u30d5\u30a3\u30ea\u30a8\u30a4\u30c8\u3092\u975e\u8868\u793a", exportCsv: "CSV\u51fa\u529b",
       noMatch: "\u8a72\u5f53\u3059\u308b\u6295\u7a3f\u304c\u3042\u308a\u307e\u305b\u3093", clearFilters: "\u30d5\u30a3\u30eb\u30bf\u30fc\u3092\u89e3\u9664\u3057\u3066\u304f\u3060\u3055\u3044\u3002", noTopicData: "\u9078\u629e\u3057\u305f\u671f\u9593\u306b\u3053\u306e\u30c8\u30d4\u30c3\u30af\u306e\u30c7\u30fc\u30bf\u306f\u3042\u308a\u307e\u305b\u3093\u3002", showAll: "\u5168\u671f\u9593\u3092\u8868\u793a",
@@ -287,7 +408,7 @@ td.date small{display:block;color:var(--muted)}
       qFilters: "絞り込み条件", qExact: "スクレイパーに送信する実際のクエリ", qCopy: "コピー", qCopied: "コピーしました",
       qLang: "日本語の投稿のみ", qNoRt: "リポストを除外", qMinLikes: (n) => `いいね${n}件以上`,
       qWindow: (d, b) => `週次更新で直近${d}日間` + (b ? `（初回は${b}日間）` : ""), qSort: (s) => `並び順: ${s}`, qMax: (n) => `1リクエストあたり最大${n}件`,
-      qAfter: "取得後のチェック", qAfterTxt: "取得した各投稿を再確認します。本文にXMTrading / XMトレーディング / #XM / @XM… が含まれること、単独の「XM」は取引関連語（ボーナス・入金・レバレッジなど）と一緒の場合のみ対象です。それ以外（ガンダムXM-01、ラジコン等）は除外し、公開しません。1つの投稿が複数のトピックに該当する場合があります。",
+      qAfter: "取得後のチェック", qAfterTxt: "取得した各投稿を再確認します。本文にXMTrading / XMトレーディング / #XM / @XM… が含まれること、単独の「XM」は取引関連語（ボーナス・入金・レバレッジなど）と一緒の場合のみ対象です。それ以外（ガンダムXM-01、ラジコン等）は除外し、公開しません。投稿は、本文にそのトピックのワードが含まれる場合に限り該当トピックに分類されます（「該当キーワード」列を参照）。複数トピックのワードを含む投稿はそれぞれに表示されるため、トピック別件数の合計は全体を上回ります。",
       qSince: "since: は実行のたびに実際の開始日に置き換わります。",
       topics: { macro: "\u5168\u4f53\u30d6\u30e9\u30f3\u30c9\u8a00\u53ca", campaigns: "\u30ad\u30e3\u30f3\u30da\u30fc\u30f3\u30fb\u30ad\u30e3\u30c3\u30b7\u30e5\u30d0\u30c3\u30af", competitions: "\u30b3\u30f3\u30c6\u30b9\u30c8\u30fb\u30a4\u30d9\u30f3\u30c8", environment: "\u53d6\u5f15\u74b0\u5883", deposit_withdrawal: "\u5165\u51fa\u91d1", account_types: "\u53e3\u5ea7\u30bf\u30a4\u30d7" },
     },
@@ -373,7 +494,11 @@ td.date small{display:block;color:var(--muted)}
     $("#from").value = state.from; $("#to").value = state.to;
     const cnt = {}; const inr = inRange();
     m.topics.forEach((tp) => (cnt[tp.id] = forTab(inr, tp.id).length));
-    $("#tabs").innerHTML = m.topics.map((tp) => `<button class="tab" role="tab" data-t="${esc(tp.id)}" aria-selected="${tp.id === state.tab}">${esc(topicName(tp))}<span class="n">${cnt[tp.id]}</span></button>`).join("");
+    const tabsEl = $("#tabs"); const keepX = tabsEl.scrollLeft;
+    tabsEl.innerHTML = m.topics.map((tp) => `<button class="tab" role="tab" data-t="${esc(tp.id)}" aria-selected="${tp.id === state.tab}">${esc(topicName(tp))}<span class="n">${cnt[tp.id]}</span></button>`).join("");
+    tabsEl.scrollLeft = keepX;
+    const selTab = tabsEl.querySelector("[aria-selected=true]");
+    if (selTab && tabsEl.scrollWidth > tabsEl.clientWidth && (selTab.offsetLeft < keepX || selTab.offsetLeft + selTab.offsetWidth > keepX + tabsEl.clientWidth)) tabsEl.scrollLeft = selTab.offsetLeft - (tabsEl.clientWidth - selTab.offsetWidth) / 2;
     $("#rangeNote").textContent = state.from ? t("showingRange", state.from, state.to) + (m.pending_enrichment ? t("awaiting", m.pending_enrichment) : "") : "";
   }
 
@@ -426,15 +551,22 @@ td.date small{display:block;color:var(--muted)}
 
   const COLS = [
     ["rank", "cRank", false], ["created_at", "cDate", true], ["account", "cAccount", false], ["orig", "cOrig", false], ["en", "cEn", false],
-    ["sentiment", "cSent", false], ["image", "cImage", false], ["url", "cPost", false],
+    ["match", "cMatch", false], ["sentiment", "cSent", false], ["image", "cImage", false], ["url", "cPost", false],
     ["impressions", "cImpressions", true], ["likes", "cLikes", true], ["replies", "cReplies", true], ["quotes", "cQuotes", true], ["retweets", "cRetweets", true], ["bookmarks", "cBookmarks", true], ["clicks", "cClicks", false],
   ];
 
   function txtCell(p, field, pendingLabel) {
     const txt = p[field];
     if (txt == null || txt === "") return `<span class="pending">${pendingLabel}</span>`;
-    const long = txt.length > 140 || txt.split("\n").length > 3; const open = state.open.has(p.id + field);
-    return `<div class="txt${open ? " open" : ""}" lang="${field === "content_en" ? "en" : "ja"}">${esc(txt)}</div>${long ? `<button class="more" data-more="${esc(p.id + field)}">${open ? t("less") : t("more")}</button>` : ""}`;
+    const long = txt.length > 140 || txt.split("\n").length > 3;
+    return `<div class="txt" lang="${field === "content_en" ? "en" : "ja"}">${esc(txt)}</div>${long ? `<button class="more" data-modal="${esc(p.id)}" aria-haspopup="dialog">${esc(t("more"))}</button>` : ""}`;
+  }
+
+  function matchCell(p) {
+    const hits = p.topic_hits || {};
+    const chips = state.manifest.topics.filter((tp) => hits[tp.id] && hits[tp.id].length).map((tp) =>
+      `<span class="mk${tp.id === state.tab || state.tab === "macro" ? " on" : ""}">${esc(topicName(tp))}: ${esc(hits[tp.id].join(", "))}</span>`);
+    return chips.length ? chips.join("") : `<span class="pending">${esc(t("mkNone"))}</span>`;
   }
 
   function rowHtml(p, i) {
@@ -444,14 +576,62 @@ td.date small{display:block;color:var(--muted)}
       <td class="rank">${i + 1}</td>
       <td class="date">${jstDay(p.created_at)}<small>${jstTime(p.created_at)}</small></td>
       <td class="acc"><b title="${esc(p.account_name)}">${esc(p.account_name)}</b><a href="https://x.com/${encodeURIComponent(p.account_handle)}" target="_blank" rel="noopener noreferrer">@${esc(p.account_handle)}</a>${p.is_promo ? `<br><span class="badge" title="${esc(t("promoTip"))}">${esc(t("promo"))}</span>` : ""}</td>
-      <td>${txtCell(p, "content_original", "")}</td>
-      <td>${txtCell(p, "content_en", esc(t("trPending")))}</td>
-      <td>${sent}</td>
-      <td>${img ? `<a href="${esc(img)}" target="_blank" rel="noopener noreferrer"><img class="thumb" loading="lazy" referrerpolicy="no-referrer" src="${esc(img)}" alt="${esc(t("imgAlt"))}" onerror="this.closest('a').outerHTML='<span class=dash>-</span>'"></a>` : `<span class="dash">-</span>`}</td>
-      <td>${url ? `<a class="linkbtn" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${t("open")}</a>` : "-"}</td>
-      <td class="num">${fmt(p.impressions)}</td><td class="num">${fmt(p.likes)}</td><td class="num">${fmt(p.replies)}</td><td class="num">${fmt(p.quotes)}</td><td class="num">${fmt(p.retweets)}</td><td class="num">${fmt(p.bookmarks)}</td>
-      <td class="num"><span class="dash" title="${esc(t("notAvail"))}">-</span></td></tr>`;
+      <td class="o">${txtCell(p, "content_original", "")}</td>
+      <td class="e" data-label="${esc(t("cEn"))}">${txtCell(p, "content_en", esc(t("trPending")))}</td>
+      <td class="mt">${matchCell(p)}</td>
+      <td class="s">${sent}</td>
+      <td class="im">${img ? `<a href="${esc(img)}" target="_blank" rel="noopener noreferrer"><img class="thumb" loading="lazy" referrerpolicy="no-referrer" src="${esc(img)}" alt="${esc(t("imgAlt"))}" onerror="this.closest('a').outerHTML='<span class=dash>-</span>'"></a>` : `<span class="dash">-</span>`}</td>
+      <td class="lk">${url ? `<a class="linkbtn" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${t("open")}</a>` : "-"}</td>
+      ${[["impressions", "cImpressions"], ["likes", "cLikes"], ["replies", "cReplies"], ["quotes", "cQuotes"], ["retweets", "cRetweets"], ["bookmarks", "cBookmarks"]].map(([k, lk]) => `<td class="num m" data-label="${esc(t(lk))}">${fmt(p[k])}</td>`).join("")}
+      <td class="num clk"><span class="dash" title="${esc(t("notAvail"))}">-</span></td></tr>`;
   }
+
+  // ---------- post modal ----------
+  let modalOpener = null;
+  function openModal(id, opener) {
+    const p = state.all.find((x) => x.id === id); if (!p) return;
+    const sent = p.sentiment && SENT.includes(p.sentiment) ? `<span class="pill ${p.sentiment}">${esc(sentLabel(p.sentiment))}</span>` : `<span class="pill pend">${esc(t("Pending"))}</span>`;
+    const url = safeUrl(p.url), img = safeUrl(p.image_url);
+    const metrics = [["cImpressions", "impressions"], ["cLikes", "likes"], ["cReplies", "replies"], ["cQuotes", "quotes"], ["cRetweets", "retweets"], ["cBookmarks", "bookmarks"]]
+      .map(([lk, k]) => `<div class="mm"><span>${esc(t(lk))}</span><b>${fmt(p[k])}</b></div>`).join("");
+    const sec = (label, body) => `<section><h4>${esc(label)}</h4>${body}</section>`;
+    const root = document.createElement("div");
+    root.className = "modal-bg"; root.id = "modal";
+    root.innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+      <div class="mhead"><div><b id="mtitle">${esc(p.account_name)}</b> <a href="https://x.com/${encodeURIComponent(p.account_handle)}" target="_blank" rel="noopener noreferrer">@${esc(p.account_handle)}</a><div class="mmeta">${jstDay(p.created_at)} ${jstTime(p.created_at)} JST ${sent}${p.is_promo ? ` <span class="badge">${esc(t("promo"))}</span>` : ""}</div></div>
+        <button class="mclose" data-close aria-label="${esc(t("close"))}">&times;</button></div>
+      <div class="mbody">
+        ${sec(t("cOrig"), `<div class="mtext" lang="ja">${esc(p.content_original)}</div>`)}
+        ${sec(t("cEn"), p.content_en ? `<div class="mtext" lang="en">${esc(p.content_en)}</div>` : `<span class="pending">${esc(t("trPending"))}</span>`)}
+        ${sec(t("cMatch"), `<div>${matchCell(p)}</div>`)}
+        <div class="mmetrics">${metrics}</div>
+        ${img ? `<a href="${esc(img)}" target="_blank" rel="noopener noreferrer"><img class="mimg" loading="lazy" referrerpolicy="no-referrer" src="${esc(img)}" alt="${esc(t("imgAlt"))}" onerror="this.closest('a').remove()"></a>` : ""}
+      </div>
+      <div class="mfoot">${url ? `<a class="btn primary" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(t("open"))}</a>` : ""}<button class="btn" data-close>${esc(t("close"))}</button></div>
+    </div>`;
+    closeModal(true);
+    modalOpener = opener || null;
+    document.body.appendChild(root);
+    document.body.classList.add("modal-open");
+    root.querySelector(".mclose").focus();
+  }
+  function closeModal(silent) {
+    const m = $("#modal"); if (!m) return;
+    m.remove(); document.body.classList.remove("modal-open");
+    if (!silent && modalOpener && document.contains(modalOpener)) modalOpener.focus();
+    modalOpener = null;
+  }
+  document.addEventListener("mousedown", (e) => { if (e.target.id === "modal") closeModal(); });
+  document.addEventListener("keydown", (e) => {
+    const m = $("#modal"); if (!m) return;
+    if (e.key === "Escape") { closeModal(); return; }
+    if (e.key === "Tab") {
+      const f = [...m.querySelectorAll("a[href],button")]; if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
 
   function searchPanel(topic) {
     const s = state.manifest.search; if (!s) return "";
@@ -503,6 +683,7 @@ td.date small{display:block;color:var(--muted)}
           <div class="f">${lbl("ml", "minLikes")}<input type="number" id="ml" min="0" step="1" value="${state.minLikes}"></div>
           <div class="f">${lbl("lm", "rows")}
             <select id="lm">${[[25, "25"], [50, "50"], [100, "100"], [0, t("all")]].map(([v, l]) => `<option value="${v}"${state.limit === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></div>
+          <div class="f mob-sort">${lbl("sb", "sortLabel")}<div class="row2"><select id="sb">${COLS.filter((c) => c[2]).map((c) => `<option value="${c[0]}"${state.sort.key === c[0] ? " selected" : ""}>${esc(t(c[1]))}</option>`).join("")}</select><button class="btn" id="sd" title="${esc(t("dirTip"))}" aria-label="${esc(t("dirTip"))}">${state.sort.dir < 0 ? "&#9660;" : "&#9650;"}</button></div></div>
           <label class="check"><input type="checkbox" id="hp"${state.hidePromo ? " checked" : ""}> ${esc(t("hidePromo"))}</label>
           <button class="btn primary" id="csv"${rows.length ? "" : " disabled"}>&#8681; ${esc(t("exportCsv"))}</button>
         </div>
@@ -559,10 +740,12 @@ td.date small{display:block;color:var(--muted)}
     if (t.dataset.p) { state.preset = t.dataset.p; refreshView(); }
     else if (t.dataset.t) { state.tab = t.dataset.t; renderChrome(); renderContent(); writeHash(); }
     else if (t.dataset.sort) { const k = t.dataset.sort; state.sort = state.sort.key === k ? { key: k, dir: -state.sort.dir } : { key: k, dir: -1 }; renderContent(); writeHash(); }
-    else if (t.dataset.more) { const id = t.dataset.more; state.open.has(id) ? state.open.delete(id) : state.open.add(id); renderContent(); }
+    else if (t.dataset.modal) openModal(t.dataset.modal, t);
+    else if (t.dataset.close !== undefined) closeModal();
     else if (t.dataset.lang) setLang(t.dataset.lang);
     else if (t.dataset.copy) { const txt = t.dataset.copy; const done = () => toast(I18N[LANG].qCopied); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(done, () => { const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (er) {} ta.remove(); }); }
     else if (t.id === "csv") exportCsv();
+    else if (t.id === "sd") { state.sort.dir = -state.sort.dir; renderContent(); writeHash(); }
     else if (t.id === "showall") { state.preset = "all"; refreshView(); }
     else if (t.id === "refresh") doRefresh();
   });
@@ -571,6 +754,7 @@ td.date small{display:block;color:var(--muted)}
     const el = e.target;
     if (el.id === "from" || el.id === "to") { const f = $("#from").value, to = $("#to").value; if (f && to && f <= to) { state.preset = "custom"; state.from = f; state.to = to; refreshView(); } else if (f && to) toast(t("toastOrder")); }
     else if (el.id === "sf") { state.sentiment = el.value; renderContent(); }
+    else if (el.id === "sb") { state.sort = { key: el.value, dir: -1 }; renderContent(); writeHash(); }
     else if (el.id === "lm") { state.limit = Number(el.value); renderContent(); }
     else if (el.id === "ml") { state.minLikes = Math.max(0, Number(el.value) || 0); renderContent(); }
     else if (el.id === "hp") { state.hidePromo = el.checked; renderContent(); }
@@ -596,6 +780,7 @@ td.date small{display:block;color:var(--muted)}
   }
   function setLang(l) {
     LANG = l === "ja" ? "ja" : "en";
+    closeModal(true);
     try { localStorage.setItem("xm_lang", LANG); } catch (e) { /* storage unavailable */ }
     applyStatic();
     if (state.manifest) { renderChrome(); renderContent(); }

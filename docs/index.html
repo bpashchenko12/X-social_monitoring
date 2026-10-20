@@ -161,9 +161,13 @@ td.date small{display:block;color:var(--muted)}
 .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:10px 16px;border-radius:10px;opacity:0;transition:.25s;pointer-events:none;z-index:30}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.mk{display:inline-block;margin:0 4px 4px 0;padding:2px 8px;border-radius:999px;background:#eef1f6;color:#4d586c;font-size:11.5px;font-weight:600;line-height:1.5}
-.mk.on{background:var(--accent-soft);color:#1d3fa8}
-td.mt{min-width:150px;max-width:200px}
+.mk{display:block;margin:0 0 9px}
+.mk:last-child{margin-bottom:0}
+.mk-t{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:0 0 4px;line-height:1.3}
+.mk-w{display:inline-block;margin:0 4px 4px 0;padding:1px 9px;border-radius:999px;background:#eef1f6;color:#4d586c;font-size:12px;font-weight:600;line-height:1.6;white-space:nowrap}
+.mk.on .mk-t{color:#1d3fa8}
+.mk.on .mk-w{background:var(--accent-soft);color:#1d3fa8}
+td.mt{min-width:170px;max-width:230px}
 .tools .mob-sort{display:none}
 /* toolbar controls: one height, aligned labels, consistent look */
 .tools{gap:12px 14px;align-items:flex-end;background:#fbfcfe}
@@ -647,7 +651,7 @@ body.modal-open{overflow:hidden}
   function matchCell(p) {
     const hits = p.topic_hits || {};
     const chips = state.manifest.topics.filter((tp) => hits[tp.id] && hits[tp.id].length).map((tp) =>
-      `<span class="mk${tp.id === state.tab || state.tab === "macro" ? " on" : ""}">${esc(topicName(tp))}: ${esc(hits[tp.id].join(", "))}</span>`);
+      `<div class="mk${tp.id === state.tab || state.tab === "macro" ? " on" : ""}"><span class="mk-t">${esc(topicName(tp))}</span>${hits[tp.id].map((w) => `<span class="mk-w">${esc(w)}</span>`).join("")}</div>`);
     return chips.length ? chips.join("") : `<span class="pending">${esc(t("mkNone"))}</span>`;
   }
 

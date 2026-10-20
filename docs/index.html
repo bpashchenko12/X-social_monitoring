@@ -165,23 +165,53 @@ td.date small{display:block;color:var(--muted)}
 .mk.on{background:var(--accent-soft);color:#1d3fa8}
 td.mt{min-width:150px;max-width:200px}
 .tools .mob-sort{display:none}
+/* toolbar controls: one height, aligned labels, consistent look */
+.tools{gap:12px 14px;align-items:flex-end;background:#fbfcfe}
+.tools .f{min-width:0}
+.tools .lbl{display:block;margin:0 0 6px;line-height:1.2}
+.tools input[type=search],.tools input[type=number],.tools select,.tools .btn,.tools .check{height:42px;min-height:42px;border:1px solid var(--line);border-radius:10px;background-color:#fff;transition:border-color .15s,box-shadow .15s,background-color .15s}
+.tools input[type=search],.tools input[type=number],.tools select{width:100%;padding:0 12px;box-shadow:inset 0 1px 1px rgba(16,24,40,.03)}
+.tools input[type=search],.tools input[type=number],.tools select{-webkit-appearance:none;appearance:none}
+.tools input[type=search]{min-width:0;padding-left:38px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3.5-3.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:12px center}
+.tools input[type=search]::-webkit-search-cancel-button{-webkit-appearance:none}
+.tools input[type=number]{width:92px}
+.tools select{min-width:112px;padding-right:34px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.tools input:hover,.tools select:hover{border-color:#c6cee0}
+.tools input:focus,.tools select:focus{outline:0;border-color:var(--accent);box-shadow:0 0 0 3px #3b6cff26}
+.tools .check{display:inline-flex;align-items:center;gap:9px;padding:0 14px;margin:0;cursor:pointer;user-select:none;white-space:nowrap;font-weight:500}
+.tools .check:hover{border-color:#c6cee0}
+.tools .check:has(input:checked){background:var(--accent-soft);border-color:#b9c9ff;color:#1d3fa8}
+.tools .check input{width:16px;height:16px;min-height:0;margin:0;accent-color:var(--accent);box-shadow:none}
+.tools .btn{padding:0 18px;white-space:nowrap}
+.tools .btn.primary{border-color:var(--accent);background:linear-gradient(180deg,#4a78ff,#3b6cff);box-shadow:0 6px 14px -8px #3b6cffcc}
+.tools .btn.primary:hover{background:linear-gradient(180deg,#4170ff,#2f5cf0)}
+.tools .btn:disabled{box-shadow:none}
 
 /* e-mail gate */
 .gate{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:20px;overflow:auto;background:radial-gradient(1000px 500px at 80% -10%,#2a4a9a66,transparent),linear-gradient(135deg,var(--navy),var(--navy2))}
 .gate[hidden]{display:none}
 body.locked{overflow:hidden}
-.gate-card{position:relative;background:#fff;border-radius:18px;width:100%;max-width:440px;padding:28px;box-shadow:0 30px 70px -20px rgba(0,0,0,.5);display:grid;gap:10px}
-.gate-card .logo{background:var(--navy);border:0}
-.gate-lang{position:absolute;top:22px;right:22px}
-.gate-lang button{padding:4px 10px}
-.gate-card h2{margin:10px 0 0;font-size:22px;letter-spacing:-.2px}
-.gate-card p{margin:0;color:var(--muted)}
-.gate-card label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-top:6px}
-.gate-card input{width:100%;font-size:16px;min-height:46px}
-.gate-card input[aria-invalid=true]{border-color:var(--neg)}
-.gate-err{color:#b3262b;font-size:13px;min-height:18px;line-height:1.45}
-.gate-card .btn{justify-content:center;min-height:46px;font-size:15px}
-.gate-note{font-size:12px;line-height:1.55}
+.gate-card{position:relative;background:#fff;border-radius:22px;width:100%;max-width:440px;padding:32px 32px 26px;box-shadow:0 40px 80px -24px rgba(0,0,0,.55),0 0 0 1px #ffffff14;display:grid;gap:12px;animation:gate-in .35s ease-out}
+@keyframes gate-in{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+.gate-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}
+.gate-card .logo{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--navy2));border:0;box-shadow:0 8px 18px -8px var(--navy)}
+.gate-lang button{padding:5px 12px;font-size:13px}
+.gate-card h2{margin:4px 0 0;font-size:24px;line-height:1.25;letter-spacing:-.3px;font-weight:800}
+.gate-card p{margin:0;color:var(--muted);line-height:1.6}
+.gate-card label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-top:10px}
+.gate-card input{width:100%;font-size:16px;min-height:50px;padding:10px 14px 10px 44px;border:1.5px solid #d5dbe8;border-radius:12px;background:#f8f9fc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='M4 7l8 6 8-6'/%3E%3C/svg%3E") no-repeat 14px center;transition:border-color .15s,box-shadow .15s,background-color .15s}
+.gate-card input::placeholder{color:#9aa3b5}
+.gate-card input:hover{border-color:#b8c1d6}
+.gate-card input:focus{outline:0;background-color:#fff;border-color:var(--accent);box-shadow:0 0 0 4px #3b6cff26}
+.gate-card input[aria-invalid=true]{border-color:var(--neg);box-shadow:0 0 0 4px #e5484d1f}
+.gate-err{color:#b3262b;background:#fff3f3;border:1px solid #f5c2c4;border-radius:10px;padding:9px 12px;font-size:13px;line-height:1.45}
+.gate-err:empty{display:none}
+.gate-card .btn{justify-content:center;min-height:50px;font-size:15px;border-radius:12px;margin-top:6px;background:linear-gradient(180deg,#4a78ff,#3b6cff);box-shadow:0 10px 20px -10px #3b6cffcc;letter-spacing:.2px}
+.gate-card .btn:hover{background:linear-gradient(180deg,#4170ff,#2f5cf0);transform:translateY(-1px)}
+.gate-card .btn:active{transform:none}
+.gate-note{font-size:12px;line-height:1.55;margin-top:6px;padding-top:14px;border-top:1px solid var(--line);display:flex;gap:8px;align-items:flex-start}
+.gate-note::before{content:"";flex:none;width:14px;height:14px;margin-top:2px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa3b5' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='11' width='16' height='10' rx='2'/%3E%3Cpath d='M8 11V7a4 4 0 018 0v4'/%3E%3C/svg%3E") no-repeat center/contain}
+@media (max-width:480px){.gate-card{padding:24px 20px 20px;border-radius:18px}.gate-card h2{font-size:21px}}
 .who{padding:14px 0 0}
 
 /* post modal */
@@ -358,10 +388,12 @@ body.modal-open{overflow:hidden}
 </main>
 <div class="gate" id="gate" hidden>
   <form class="gate-card" id="gate-form" novalidate>
-    <div class="logo" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round"/></svg></div>
-    <div class="seg gate-lang" role="group" aria-label="Language / 言語">
-      <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
-      <button type="button" data-lang="ja" aria-pressed="false" lang="ja">日本語</button>
+    <div class="gate-top">
+      <div class="logo" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round"/></svg></div>
+      <div class="seg gate-lang" role="group" aria-label="Language / 言語">
+        <button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button>
+        <button type="button" data-lang="ja" aria-pressed="false" lang="ja">日本語</button>
+      </div>
     </div>
     <h2 data-i18n="gateTitle">Sign in with your work e-mail</h2>
     <p data-i18n="gateText">Enter your company e-mail address to open the dashboard.</p>

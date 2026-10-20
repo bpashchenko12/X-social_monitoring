@@ -27,6 +27,10 @@ jobs:
         env:
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: python -m pipeline.run fetch --yes
+      - name: Fetch competitors (budget-guarded)
+        env:
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: python -m pipeline.run competitors-fetch --yes
       - name: Rebuild manifest
         run: python -m pipeline.run manifest
       - name: Commit data

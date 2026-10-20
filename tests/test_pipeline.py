@@ -338,3 +338,76 @@ class XquikShapeTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CompetitorTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from pipeline import competitors
+        cls.C = competitors
+        cls.comp = competitors.load_competitors()
+        cls.cfgs = {c["brand"]["id"]: c for c in competitors.all_brand_cfgs(CFG, cls.comp)}
+        cls.brands = {b["id"]: b for b in cls.comp["brands"]}
+
+    def test_lint_clean(self):
+        self.assertEqual(self.C.lint_all(date(2026, 10, 20), CFG, self.comp), [])
+
+    def test_every_query_has_brand_anchor_and_six_queries(self):
+        for bid, cfg in self.cfgs.items():
+            qs = build_queries(cfg, date(2026, 10, 20))
+            self.assertEqual([q["id"] for q in qs],
+                             ["macro", "campaigns", "competitions", "environment", "deposit_withdrawal", "account_types"])
+            for q in qs:
+                self.assertTrue(q["query"].startswith("("), q["query"])
+                self.assertIn("lang:ja -filter:retweets min_faves:10 since:2026-10-13", q["query"])
+                self.assertLessEqual(len(q["query"]), 480)
+        q = {x["id"]: x["query"] for x in build_queries(self.cfgs["exness"], date(2026, 10, 20))}
+        self.assertTrue(q["macro"].startswith("(Exness OR エクスネス) lang:ja"))
+        self.assertIn('"Raw Spread"', q["account_types"])
+        t = {x["id"]: x["query"] for x in build_queries(self.cfgs["titanfx"], date(2026, 10, 20))}
+        self.assertIn('"Titan FX"', t["macro"])
+        self.assertIn('"Zeroスタンダード"', t["account_types"])
+
+    def test_xm_queries_unchanged_by_quoting_rules(self):
+        q = {x["id"]: x["query"] for x in build_queries(CFG, date(2026, 10, 15))}
+        self.assertNotIn('"', q["account_types"])
+
+    def test_relevance_hfm(self):
+        r = self.C.make_relevance(self.brands["hfm"])
+        self.assertTrue(r("HFMで出金したら3時間で着金しました")[0])
+        self.assertTrue(r("HF Markets のボーナス")[0])
+        self.assertFalse(r("HFMさんリモート出演の生放送ありがとうございました")[0])   # radio, no trading context
+        self.assertFalse(r("HFM大運動会の参加エントリー開始 #HFM")[0])             # rejected context
+        self.assertFalse(r("#HFM #GOODJOG おはようございます")[0])                 # a bare token is not its own context
+        self.assertFalse(r("今日の相場は荒れてますね 出金したい")[0])               # no brand in text
+
+    def test_relevance_other_brands_and_official(self):
+        ex = self.C.make_relevance(self.brands["exness"])
+        self.assertTrue(ex("エクスネスの出金早い")[0])
+        self.assertTrue(ex("今日のexnessスプレッド")[0])
+        self.assertFalse(ex("おはよ♡ https://t.co/x")[0])
+        tf = self.C.make_relevance(self.brands["titanfx"])
+        self.assertTrue(tf("TitanFXの入金方法")[0])
+        self.assertTrue(tf("Titan FX Social")[0])
+        self.assertFalse(tf("【XAU/USD市場見通し】 金価格は反発")[0])
+        self.assertTrue(tf("【XAU/USD市場見通し】 金価格は反発", "TitanFXJP")[0])
+        self.assertTrue(tf("【XAU/USD市場見通し】 金価格は反発", "titanfxjp")[0])
+
+    def test_tag_ignore_and_phrase_tagging(self):
+        cfg = self.cfgs["exness"]
+        self.assertNotIn("deposit_withdrawal", assign_topics("日本の中央銀行が利上げ。Exnessで早く決済した", cfg["topics"]))
+        self.assertIn("deposit_withdrawal", assign_topics("Exnessで銀行出金した", cfg["topics"]))
+        self.assertIn("account_types", assign_topics("exness raw spread 口座", cfg["topics"]))
+        self.assertIn("account_types", assign_topics("Exnessのraw spreadは狭い", cfg["topics"]))
+
+    def test_brand_store_paths(self):
+        d, w = self.C.brand_dirs("hfm")
+        self.assertTrue(d.endswith(os.path.join("docs", "data", "competitors", "hfm")))
+        self.assertTrue(w.endswith("weeks"))
+
+    def test_normalize_with_custom_relevance_gets_handle(self):
+        item = {"id": "1", "text": "市場見通し", "createdAt": "Mon Oct 19 01:00:00 +0000 2026",
+                "author": {"userName": "TitanFXJP", "name": "Titan FX JP"}, "likeCount": 30, "viewCount": 100}
+        rel = self.C.make_relevance(self.brands["titanfx"])
+        posts, _ = normalize_items([item], "macro", (), FETCHED, rel)
+        self.assertTrue(posts[0]["relevant"])

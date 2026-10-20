@@ -1,0 +1,171 @@
+{
+  "brand": {
+    "color": "#0c8599",
+    "id": "exness",
+    "name": "Exness"
+  },
+  "generated_at": "2026-10-20T09:41:27Z",
+  "latest_post_at": "2026-10-20T09:11:02Z",
+  "pending_enrichment": 0,
+  "schema_version": 1,
+  "search": {
+    "brand": [
+      "Exness",
+      "エクスネス"
+    ],
+    "exclude_retweets": true,
+    "initial_backfill_days": 30,
+    "language": "ja",
+    "max_items": 200,
+    "min_faves": 10,
+    "queries": {
+      "account_types": "(Exness OR エクスネス) (スタンダード OR スタンダード口座 OR スタンダードセント OR スタンダードセント口座 OR ロースプレッド OR ロースプレッド口座 OR \"Raw Spread\" OR ゼロ口座 OR Zero OR プロ口座 OR Pro OR 口座) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "campaigns": "(Exness OR エクスネス) (ボーナス OR 入金ボーナス OR キャッシュバック OR プロモ OR プロモーション OR キャンペーン OR リワード OR \"Exness Rewards\" OR リワードプログラム) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "competitions": "(Exness OR エクスネス) (コンテスト OR コンペ OR コンペティション OR 大会 OR トレード大会 OR トレードチャレンジ OR イベント OR チャレンジ) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "deposit_withdrawal": "(Exness OR エクスネス) (出金 OR 着金 OR 入金 OR 入金方法 OR 銀行 OR クレカ OR クレジットカード OR bitwallet OR 入出金 OR 決済) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "environment": "(Exness OR エクスネス) (スプレッド OR 滑る OR スリッページ OR サーバー OR 鯖落ち OR MT4 OR MT5 OR レバレッジ OR アプリ OR \"Exness Trade\" OR 取引条件 OR 約定 OR ゼロカット OR EA OR IB) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "macro": "(Exness OR エクスネス) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>"
+    },
+    "sort": "Latest + Top",
+    "window_days": 7
+  },
+  "topics": [
+    {
+      "id": "macro",
+      "keywords": [],
+      "name": "Overall Brand Mention",
+      "posts": 62
+    },
+    {
+      "id": "campaigns",
+      "keywords": [
+        "ボーナス",
+        "入金ボーナス",
+        "キャッシュバック",
+        "プロモ",
+        "プロモーション",
+        "キャンペーン",
+        "リワード",
+        "Exness Rewards",
+        "リワードプログラム"
+      ],
+      "name": "Campaigns & Cashback",
+      "posts": 7
+    },
+    {
+      "id": "competitions",
+      "keywords": [
+        "コンテスト",
+        "コンペ",
+        "コンペティション",
+        "大会",
+        "トレード大会",
+        "トレードチャレンジ",
+        "イベント",
+        "チャレンジ"
+      ],
+      "name": "Competitions & Events",
+      "posts": 1
+    },
+    {
+      "id": "environment",
+      "keywords": [
+        "スプレッド",
+        "滑る",
+        "スリッページ",
+        "サーバー",
+        "鯖落ち",
+        "MT4",
+        "MT5",
+        "レバレッジ",
+        "アプリ",
+        "Exness Trade",
+        "取引条件",
+        "約定",
+        "ゼロカット",
+        "EA",
+        "IB"
+      ],
+      "name": "Trading Environment",
+      "posts": 16
+    },
+    {
+      "id": "deposit_withdrawal",
+      "keywords": [
+        "出金",
+        "着金",
+        "入金",
+        "入金方法",
+        "銀行",
+        "クレカ",
+        "クレジットカード",
+        "bitwallet",
+        "入出金",
+        "決済"
+      ],
+      "name": "Deposit & Withdrawal",
+      "posts": 13
+    },
+    {
+      "id": "account_types",
+      "keywords": [
+        "スタンダード",
+        "スタンダード口座",
+        "スタンダードセント",
+        "スタンダードセント口座",
+        "ロースプレッド",
+        "ロースプレッド口座",
+        "Raw Spread",
+        "ゼロ口座",
+        "Zero",
+        "プロ口座",
+        "Pro",
+        "口座"
+      ],
+      "name": "Account Types",
+      "posts": 12
+    }
+  ],
+  "weeks": [
+    {
+      "file": "weeks/2026-W39.json",
+      "max_date": "2026-09-27T08:14:11Z",
+      "min_date": "2026-09-20T16:09:24Z",
+      "posts": 14,
+      "relevant_posts": 14,
+      "week": "2026-W39"
+    },
+    {
+      "file": "weeks/2026-W40.json",
+      "max_date": "2026-10-04T13:39:40Z",
+      "min_date": "2026-09-28T07:28:28Z",
+      "posts": 13,
+      "relevant_posts": 13,
+      "week": "2026-W40"
+    },
+    {
+      "file": "weeks/2026-W41.json",
+      "max_date": "2026-10-11T10:40:23Z",
+      "min_date": "2026-10-05T01:00:02Z",
+      "posts": 20,
+      "relevant_posts": 19,
+      "week": "2026-W41"
+    },
+    {
+      "file": "weeks/2026-W42.json",
+      "max_date": "2026-10-18T14:35:27Z",
+      "min_date": "2026-10-12T00:18:41Z",
+      "posts": 77,
+      "relevant_posts": 10,
+      "week": "2026-W42"
+    },
+    {
+      "file": "weeks/2026-W43.json",
+      "max_date": "2026-10-20T09:11:02Z",
+      "min_date": "2026-10-18T15:53:50Z",
+      "posts": 53,
+      "relevant_posts": 6,
+      "week": "2026-W43"
+    }
+  ]
+}

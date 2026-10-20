@@ -1,0 +1,526 @@
+{
+  "posts": {
+    "2101705294971846895": {
+      "account_followers": 2147,
+      "account_handle": "reimu_FXgold",
+      "account_name": "れいむ",
+      "bookmarks": 3,
+      "content_en": "To my small-capital high-leverage scalping friends: many people seem to scalp on XM and the like, but consider other brokers 😂 For scalping I use Exness, which has narrow spreads! There's cashback too, so it's good value 😊",
+      "content_original": "少額ハイレバスキャ仲間へ\n\nXMとかでスキャやってる人多いみたいだけど、ブローカー検討してみて😂\n私は、スキャならスプレッドが狭いexness使ってます！キャッシュバックもあるのでお得かと😊\nhttps://t.co/k7fBk89zb4",
+      "created_at": "2026-09-20T16:09:24Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2101705294971846895",
+      "image_url": null,
+      "impressions": 2145,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:19Z",
+      "likes": 11,
+      "metrics_updated_at": "2026-10-20T08:54:19Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 2,
+      "retweets": 0,
+      "sentiment": "Positive",
+      "topic_hits": {
+        "campaigns": [
+          "キャッシュバック"
+        ],
+        "environment": [
+          "スプレッド"
+        ]
+      },
+      "topics": [
+        "macro",
+        "campaigns",
+        "environment"
+      ],
+      "url": "https://x.com/reimu_FXgold/status/2101705294971846895",
+      "url_clicks": null
+    },
+    "2102054840369324236": {
+      "account_followers": 10016,
+      "account_handle": "kojiryman",
+      "account_name": "こじりーまん",
+      "bookmarks": 0,
+      "content_en": "Hmm hmm. I'm starting to understand things. With an instant account's daily trailing-type loss limit, the very first trade is crucial. With a trailing drawdown, a loss disqualifies you even while you're in unrealized profit - a ridiculous rule. So one trade a day across multiple accounts is better. No, just use Exness normally. Free me quickly!",
+      "content_original": "うむうむ。\n色々わかってきたぞ。\nインスタント口座の日次トレーリング型損失の場合は最初の1発目が超肝心やね。\n損失出すとトレールだと含み益のまま失格になるわけわからん仕様なので。\nなので複数口座で1日1回トレードがベター。\nいや、もう普通にエクスネスでいいじゃん。\n早く俺を解放しろ！",
+      "created_at": "2026-09-21T15:18:22Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2102054840369324236",
+      "image_url": null,
+      "impressions": 3006,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:47Z",
+      "likes": 15,
+      "metrics_updated_at": "2026-10-20T08:54:47Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 1,
+      "retweets": 0,
+      "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ]
+      },
+      "topics": [
+        "macro",
+        "account_types"
+      ],
+      "url": "https://x.com/kojiryman/status/2102054840369324236",
+      "url_clicks": null
+    },
+    "2102346204428538073": {
+      "account_followers": 10016,
+      "account_handle": "kojiryman",
+      "account_name": "こじりーまん",
+      "bookmarks": 0,
+      "content_en": "Well, time to lift my very heavy butt and revive Exness... The accounts that were stealth-frozen. All deposits and withdrawals are rejected, and both Exness operations and the support of the deposit provider keep passing me around saying 'it's a system problem on the other side'.",
+      "content_original": "さて、おっもーーーーーーい腰を上げてエクスネス復活させるか…。\nステルス凍結してる口座達。\n入出金全て弾かれてエクスネス運営も入金に使ったところのサポートも全て「あちら側のシステムトラブルになります」でたらい回しにされてる件。",
+      "created_at": "2026-09-22T10:36:09Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2102346204428538073",
+      "image_url": null,
+      "impressions": 3908,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:47Z",
+      "likes": 14,
+      "metrics_updated_at": "2026-10-20T08:54:47Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 1,
+      "retweets": 0,
+      "sentiment": "Negative",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "deposit_withdrawal": [
+          "出金",
+          "入金",
+          "入出金"
+        ]
+      },
+      "topics": [
+        "macro",
+        "deposit_withdrawal",
+        "account_types"
+      ],
+      "url": "https://x.com/kojiryman/status/2102346204428538073",
+      "url_clicks": null
+    },
+    "2102354338261958983": {
+      "account_followers": 838,
+      "account_handle": "rakkofx",
+      "account_name": "らっこ𝕏",
+      "bookmarks": 0,
+      "content_en": "First trade of Silver Week. My Exness card verification wouldn't pass and I was waiting for a reply from support. Use better image recognition, Exness!",
+      "content_original": "シルバーウィーク初取引\n\nexnessのカード認証がなかなか通らなくてサポートからの返事待ちだった。画像認識もっといいの使いなよ〜exness！ https://t.co/t0tcbWg0K5",
+      "created_at": "2026-09-22T11:08:28Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2102354338261958983",
+      "image_url": "https://pbs.twimg.com/media/HS0QH-5aQAAZJFy.jpg",
+      "impressions": 91,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:01Z",
+      "likes": 10,
+      "metrics_updated_at": "2026-10-20T08:54:01Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 0,
+      "sentiment": "Negative",
+      "topic_hits": {},
+      "topics": [
+        "macro"
+      ],
+      "url": "https://x.com/rakkofx/status/2102354338261958983",
+      "url_clicks": null
+    },
+    "2102506301284843858": {
+      "account_followers": 1048,
+      "account_handle": "imomaru212",
+      "account_name": "いもまる",
+      "bookmarks": 0,
+      "content_en": "Daily +252 🙌 I thought I couldn't open a position because Exness was about to close, but it seems a leverage limit was applied. Because I used too much high leverage? 5x leverage is lol",
+      "content_original": "日次252🙌\n\nexness閉場前だからポジれないのかと思ってたが、レバレッジ制限かけられたっぽい。\nハイレバやりすぎたから？\n\nレバレッジ5倍は草 https://t.co/stVsPMSOdb",
+      "created_at": "2026-09-22T21:12:19Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2102506301284843858",
+      "image_url": "https://pbs.twimg.com/media/HS2aVkdbEAA7Kd3.jpg",
+      "impressions": 3000,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:19Z",
+      "likes": 10,
+      "metrics_updated_at": "2026-10-20T08:54:19Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 2,
+      "retweets": 0,
+      "sentiment": "Negative",
+      "topic_hits": {
+        "environment": [
+          "レバレッジ"
+        ]
+      },
+      "topics": [
+        "macro",
+        "environment"
+      ],
+      "url": "https://x.com/imomaru212/status/2102506301284843858",
+      "url_clicks": null
+    },
+    "2102709126879146091": {
+      "account_followers": 2662,
+      "account_handle": "ATSUUFX",
+      "account_name": "ATSUSHI",
+      "bookmarks": 15,
+      "content_en": "Trading gold on an XM KIWAMI account at 1 lot with 100,000 yen, a stop-out occurs after about $5.5 of adverse movement, so I had Gemini verify against IC and EBC. I thought IC would be the cheapest, but never expected EBC to win outright. EBC fixes leverage at 500x unless it's a special time such as before the weekend close. IC has HMR (margin rule), but it isn't as frequent as Exness, where leverage gets restricted before you notice. I'm concerned about EBC's recent blunder of being expelled from the Financial Commission. IC's weak points are deposits/withdrawals and support. [Corrected comparison table of effective drawdown tolerance and cost (100 oz / 15,000 yen = $1 conversion)] Accounts compared: (1) XM KIWAMI; (2) IC Markets (Raw/MT); (3) IC Markets (cTrader); (4) EBC Financial (PRO). Account funds: XM and IC are 100,000 yen at 1000x leverage; EBC is 500x leverage so 200,000 yen is assumed. Stop-loss (SL rate): XM 20% (9,000 yen remaining); both IC accounts 50% (22,500 yen remaining); EBC 30% (27,000 yen remaining). Initial trading cost (spread + commission): (1) about $1.50 (about 2,250 yen); (2) about $1.20 (about 1,800 yen); (3) about $1.10 (about 1,650 yen); (4) about $0.80 (about 1,200 yen). Effective tolerable loss (balance - cost - SL amount): (1) 88,750 yen; (2) 75,700 yen; (3) 75,850 yen; (4) 171,800 yen. Effective tolerable price range: (1) about $5.91 (measured $5.5-5.6); (2) about $5.04; (3) about $5.05; (4) about $11.45. Total round-trip cost per lot: (1) about $15.00 (2,250 yen); (2) about $12.00 (1,800 yen); (3) about $11.00 (1,650 yen); (4) about $8.00 (1,200 yen). Comparison of tolerance per account (with XM as the baseline): XM (100k / 1,000x / SL 20%) - effective tolerance about $5.5 to 5.9. Because you start in the minus by the spread the moment you enter, it falls short of the theoretical value ($6.07) and is stopped out near $5.5. IC Markets (100k / 1,000x / SL 50%) - effective tolerance about $4.7 to 5.0. Because the stop-out level is a high 50% (a balance of 22,500 yen is required), after deducting spread and commission it goes 0.8-0.9 dollars earlier than XM (below $5 to right around $5). It doesn't hold even $5.5, let alone $6. EBC Financial (200k / 500x / SL 30%) - effective tolerance about $11.0 to 11.4. Leverage drops to 500x (required margin 90,000 yen), but the advantage of raising funds to 200,000 yen is very large. The extremely narrow spread/commission cost (about $0.80) also contributes, and it can withstand about twice XM (the $11 range). Difference in total cost (per entry): EBC Pro about $8.00 (almost half of XM); IC cTrader about $11.00; IC Raw (MT4/5) about $12.00; XM KIWAMI about $15.00. For high-leverage, short-range scalping or tight fund management, the picture is 'XM, which can hold on to the limit with SL 20%' versus 'EBC, which withstands $11 with 200,000 yen funds while keeping trading costs lowest'.",
+      "content_original": "XM極み口座\nゴールド\n10万円1ロット\n\nでトレードして、5.5ドルくらい逆行するとロスカされるんですが、ICとEBCでジェミニに検証させました。\n\nICが最安かと思ってましたが、まさかのEBC大勝利とは思いませんでした。\n\nEBCは週末閉場前とか特別な時間でなければレバ500倍固定。ICはHMRがありますが、エクスネスみたいに気付いたらレバ制限ってほど頻繁ではない。\n\nEBCは最近Financial Commissionから除名されたやらかしが気になります。ICは入出金やサポートが弱いというところです。\n\n【実質耐え幅・コストの修正比較表（100オンス / 1.5万円＝1ドル換算）】\n\n比較口座\n\n❶XM KIWAMI極口座\n❷IC Markets (Raw/MT)\n❸IC Markets (cTrader)\n❹EBC Financial (PRO口座)\n\n口座資金\nXM、ICはレバ1000倍で10万円\nEBCはレバ500倍なので20万円とする\n\nストップロス (SL率)\nXMは20% (残9,000円)\nICの2口座は50% (残22,500円)\nEBCは30% (残27,000円)\n\n初期取引コスト (スプレッド+手数料)\n❶約 $1.50 (約2,250円)\n❷約 $1.20 (約1,800円)\n❸約 $1.10 (約1,650円)\n❹約 $0.80 (約1,200円)\n\n実質許容損失 (残高 - Cost - SL金)\n❶88,750円\n❷75,700円\n❸75,850円\n❹171,800円\n\n実質耐えられる値幅\n❶約 5.91 ドル (実測5.5〜5.6ドル)\n❷約 5.04 ドル\n❸約 5.05 ドル\n❹約 11.45 ドル\n\n1ロット往復トータルコスト\n❶約 $15.00 (2,250円)\n❷約 $12.00 (1,800円)\n❸約 $11.00 (1,650円)\n❹約 $8.00 (1,200円)\n\n各口座の耐え幅比較（XMを基準とした場合）\nXM (10万 / 1,000倍 / SL 20%)\n\n◽️実質耐え幅：約 5.5 〜 5.9 ドル\nエントリーした瞬間にスプレッド分マイナスからスタートするため、理論上の理論値（6.07ドル）から目減りし、5.5ドル付近でロスカットとなります。\n\n◽️IC Markets (10万 / 1,000倍 / SL 50%)\n実質耐え幅：約 4.7 〜 5.0 ドル\n\nロスカット水準が50%（残高22,500円が必要）と高いため、スプレッドや手数料を差し引くとXMよりもさらに0.8〜0.9ドル早く（5ドル未満〜5ドルジャスト付近で）飛びます。 6ドルどころか5.5ドルも持ちません。\n\n◽️EBC Financial (20万 / 500倍 / SL 30%)\n実質耐え幅：約 11.0 〜 11.4 ドル\n\nレバレッジは500倍（必要証拠金9万円）に下がりますが、資金を20万円に増やしているアドバンテージが非常に大きいです。スプレッド・手数料コストが極めて狭い（約0.8ドル分）ことも寄与し、XMの約2倍（11ドル台）まで耐えることが可能です。\n\n◽️トータルコストの差（1回エントリーするごと）\n\nEBC Pro口座：約 $8.00（XMのほぼ半額）\nIC cTrader：約 $11.00\nIC Raw (MT4/5)：約 $12.00\nXM KIWAMI極：約 $15.00\n\nハイレバ短尺のスキャルピングやギリギリの資金管理をする場合、「SL 20%でギリギリまで粘れるXM」と「資金20万で11ドル耐えつつ取引コストを最安に抑えられるEBC」という構図になります。",
+      "created_at": "2026-09-23T10:38:16Z",
+      "enriched_at": "2026-10-20T09:41:27Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2102709126879146091",
+      "image_url": null,
+      "impressions": 4266,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:47Z",
+      "likes": 14,
+      "metrics_updated_at": "2026-10-20T08:54:47Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 1,
+      "sentiment": "Negative",
+      "topic_hits": {
+        "account_types": [
+          "Pro",
+          "口座"
+        ],
+        "deposit_withdrawal": [
+          "出金",
+          "入出金"
+        ],
+        "environment": [
+          "スプレッド",
+          "MT4",
+          "レバレッジ"
+        ]
+      },
+      "topics": [
+        "macro",
+        "environment",
+        "deposit_withdrawal",
+        "account_types"
+      ],
+      "url": "https://x.com/ATSUUFX/status/2102709126879146091",
+      "url_clicks": null
+    },
+    "2102725606681280880": {
+      "account_followers": 21639,
+      "account_handle": "smile_danjer",
+      "account_name": "人生楽して暮らしたい",
+      "bookmarks": 18,
+      "content_en": "Exness is easy to use for BTC, FX and precious metals 👍 It makes trading FX on overseas exchanges not worth it 😂 Swap-free, no commission! Only the spread, and the spread is very narrow!! FX changes with the environment 🫡 There's a demo account too, so try it! See the free note in the repost 🆓",
+      "content_original": "BTCも為替も貴金属も\nエクスネス使いやすいです👍\n\n海外取引所でFXとかやってられなくなる件😂\nスワップフリーに、売買手数料なし！\n\nあるのは、スプレッドのみ！\nスプレッドはめっちゃ狭い！！\n\nFXは環境で変わる🫡\n\nデモ口座もあるから、お試しでやってみて😁💪\n\nリポストの無料note見て🆓🆓",
+      "created_at": "2026-09-23T11:43:46Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2102725606681280880",
+      "image_url": null,
+      "impressions": 12826,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:47Z",
+      "likes": 58,
+      "metrics_updated_at": "2026-10-20T08:54:47Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 2,
+      "sentiment": "Positive",
+      "topic_hits": {
+        "account_types": [
+          "口座"
+        ],
+        "environment": [
+          "スプレッド"
+        ]
+      },
+      "topics": [
+        "macro",
+        "environment",
+        "account_types"
+      ],
+      "url": "https://x.com/smile_danjer/status/2102725606681280880",
+      "url_clicks": null
+    },
+    "2102917856631705615": {
+      "account_followers": 1048,
+      "account_handle": "imomaru212",
+      "account_name": "いもまる",
+      "bookmarks": 1,
+      "content_en": "This was caused by a debit card withdrawal error. Support is dealing with it... sorry for the fuss. Until it's lifted, Exness is closed for business for me.",
+      "content_original": "これ、デビットカードの引き落としエラーのせいでした。\nサポートで対応して貰ってます…お騒がせしました。\n\n解除されるまでexnessは一旦、強制閉店。",
+      "created_at": "2026-09-24T00:27:42Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2102917856631705615",
+      "image_url": null,
+      "impressions": 3598,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:01Z",
+      "likes": 14,
+      "metrics_updated_at": "2026-10-20T08:54:01Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 4,
+      "retweets": 0,
+      "sentiment": "Neutral",
+      "topic_hits": {},
+      "topics": [
+        "macro"
+      ],
+      "url": "https://x.com/imomaru212/status/2102917856631705615",
+      "url_clicks": null
+    },
+    "2103043415487418685": {
+      "account_followers": 378,
+      "account_handle": "komyo_tweet",
+      "account_name": "こうみょー",
+      "bookmarks": 1,
+      "content_en": "I got an email from Revolut in very large, presbyopia-friendly letters, but the content seems harsh. Until a few years ago I could deposit to both XM and EXNESS. I could still deposit to AXIORY this month, but maybe it's no longer possible? I envied withdrawing directly from prop firms to Revolut, but that may be blocked too...",
+      "content_original": "Revolutからめっちゃ大きい字で老眼に優しい感じのメール来たけど内容はなんか厳しそうですね💦\n\n数年前まではXMにもEXNESSにも入金出来たんですけどね😓\n\nAXIORYは今月まだ入金出来たけどもう無理なんやろか？🤔\n\nプロップからRevolutに直接出金っての羨ましかったけどそれも塞がれるんかな？😥 https://t.co/AkDTTJgFXd",
+      "created_at": "2026-09-24T08:46:37Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2103043415487418685",
+      "image_url": "https://pbs.twimg.com/media/HS-C1Y7agAA6Xy-.jpg",
+      "impressions": 2587,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:42Z",
+      "likes": 11,
+      "metrics_updated_at": "2026-10-20T08:54:42Z",
+      "quotes": 1,
+      "relevant": true,
+      "replies": 1,
+      "retweets": 0,
+      "sentiment": "Neutral",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金",
+          "入金"
+        ]
+      },
+      "topics": [
+        "macro",
+        "deposit_withdrawal"
+      ],
+      "url": "https://x.com/komyo_tweet/status/2103043415487418685",
+      "url_clicks": null
+    },
+    "2103074643708100735": {
+      "account_followers": 10016,
+      "account_handle": "kojiryman",
+      "account_name": "こじりーまん",
+      "bookmarks": 1,
+      "content_en": "Exness finally came back after 450 million years, but the gold spread has been made terrible.",
+      "content_original": "4億5千万年ぶりにエクスネス復旧したんだけどゴルミのスプめちゃくちゃ改悪されてるやん。 https://t.co/vhsYZr2v7O",
+      "created_at": "2026-09-24T10:50:42Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2103074643708100735",
+      "image_url": "https://pbs.twimg.com/media/HS-fPYJaMAAXjsA.jpg",
+      "impressions": 11317,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:01Z",
+      "likes": 24,
+      "metrics_updated_at": "2026-10-20T08:54:01Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 1,
+      "retweets": 0,
+      "sentiment": "Negative",
+      "topic_hits": {},
+      "topics": [
+        "macro"
+      ],
+      "url": "https://x.com/kojiryman/status/2103074643708100735",
+      "url_clicks": null
+    },
+    "2103768579007193111": {
+      "account_followers": 3860,
+      "account_handle": "chibihime0707",
+      "account_name": "-------------博多ちびひめ🍀*゜---------------------------",
+      "bookmarks": 0,
+      "content_en": "I got logged out of Exness suddenly and can't log in now - is anyone else having this?",
+      "content_original": "exness急にログアウトされて今ログインできない方いたりする？？",
+      "created_at": "2026-09-26T08:48:10Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2103768579007193111",
+      "image_url": null,
+      "impressions": 1957,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:01Z",
+      "likes": 14,
+      "metrics_updated_at": "2026-10-20T08:54:01Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 1,
+      "retweets": 0,
+      "sentiment": "Negative",
+      "topic_hits": {},
+      "topics": [
+        "macro"
+      ],
+      "url": "https://x.com/chibihime0707/status/2103768579007193111",
+      "url_clicks": null
+    },
+    "2104019327783710792": {
+      "account_followers": 10016,
+      "account_handle": "kojiryman",
+      "account_name": "こじりーまん",
+      "bookmarks": 0,
+      "content_en": "It's been 2 days since I contacted FundedElite and no reply yet. Exness replied immediately, so the difference is big.",
+      "content_original": "FundedEliteに問い合わせてから2日経つ。\n返事はまだない。\nエクスネスは即返ってきただけにこの差は大きい。",
+      "created_at": "2026-09-27T01:24:33Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2104019327783710792",
+      "image_url": null,
+      "impressions": 4865,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:01Z",
+      "likes": 24,
+      "metrics_updated_at": "2026-10-20T08:54:01Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 2,
+      "retweets": 1,
+      "sentiment": "Positive",
+      "topic_hits": {},
+      "topics": [
+        "macro"
+      ],
+      "url": "https://x.com/kojiryman/status/2104019327783710792",
+      "url_clicks": null
+    },
+    "2104047452475253154": {
+      "account_followers": 3459,
+      "account_handle": "nobita810305",
+      "account_name": "チキントレーダーぼる",
+      "bookmarks": 1,
+      "content_en": "Hmm 😕 I think I'll take profit. Gold can't really surge, and the downside is wide 😭 I can't close at this time, so I handle it by withdrawing profit plus principal. If it gaps up and keeps running I'd just be lucky, but if it falls it'll be a bad start on Monday, so I decided. With Exness you can do this, so holding over isn't scary 😏",
+      "content_original": "んーーー😕\n\n利確しておくかな🧑‍🩰\n\nゴールドは、どう考えても爆上げは難しい上に下が広い😭\n\n今の時間に利確自体は出来ないので、利益ってプラス元金出金で対応してます👩🏻‍🏫\n\n奇跡的に上窓でそのまま走るなら🏃‍➡️ラッキーなだけで下がった時にはやっぱりな的な感じで月曜から嫌なスタートになりそうなので決めました。\n\nエクスネスはこれが出来るから持ち越しても怖く無いですよね😏\n\n上窓から爆上げは無いよなぁ😓",
+      "created_at": "2026-09-27T03:16:18Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2104047452475253154",
+      "image_url": "https://pbs.twimg.com/media/HTMT4yjbIAAPpAE.jpg",
+      "impressions": 7291,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:42Z",
+      "likes": 25,
+      "metrics_updated_at": "2026-10-20T08:54:42Z",
+      "quotes": 1,
+      "relevant": true,
+      "replies": 1,
+      "retweets": 1,
+      "sentiment": "Positive",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金"
+        ]
+      },
+      "topics": [
+        "macro",
+        "deposit_withdrawal"
+      ],
+      "url": "https://x.com/nobita810305/status/2104047452475253154",
+      "url_clicks": null
+    },
+    "2104122414812844268": {
+      "account_followers": 587,
+      "account_handle": "akaushi65",
+      "account_name": "ライブハウス武",
+      "bookmarks": 3,
+      "content_en": "I'm discouraged, so this is the end for September. With a 300,000 yen deposit (borrowed from a friend) I made +245,678 yen. Considering I started mid-month and in an extreme state, I think I did well. When next month's slot is back, I'll start trading with a new broker. Please tell me your recommended brokers. Currently Exness.",
+      "content_original": "萎えたので、\n9月はこれで終わりになると思います。\n30万入金（友人から借金）で\n+245,678円でした。\n中旬スタートと極限状態ということ考えると健闘したと思います。\n来月枠が復活したら新しいブローカーで取引を始めます。\nみなさんのオススメのブローカーを教えてください。\n現在エクスネスです https://t.co/GGoZnzcyIz",
+      "created_at": "2026-09-27T08:14:11Z",
+      "enriched_at": "2026-10-20T09:25:48Z",
+      "enriched_by": "copilot",
+      "exclude_reason": null,
+      "first_seen": "2026-10-20T08:54:01Z",
+      "id": "2104122414812844268",
+      "image_url": "https://pbs.twimg.com/media/HTNYLsqbUAA_gd6.jpg",
+      "impressions": 4755,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-10-20T08:54:42Z",
+      "likes": 32,
+      "metrics_updated_at": "2026-10-20T08:54:42Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 5,
+      "retweets": 1,
+      "sentiment": "Neutral",
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
+      "topics": [
+        "macro",
+        "deposit_withdrawal"
+      ],
+      "url": "https://x.com/akaushi65/status/2104122414812844268",
+      "url_clicks": null
+    }
+  },
+  "schema_version": 1,
+  "week": "2026-W39"
+}

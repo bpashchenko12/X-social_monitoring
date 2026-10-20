@@ -21,7 +21,7 @@ def export_queue(weeks_dir=WEEKS_DIR, limit=None):
     return queue[:limit] if limit else queue
 
 
-def import_updates(updates, weeks_dir=WEEKS_DIR, by="copilot"):
+def import_updates(updates, weeks_dir=WEEKS_DIR, by="copilot", brand_name="XMTrading"):
     """updates: list of {id, content_en, sentiment, [relevant], [exclude_reason]}. Returns counts."""
     by_id = {}
     for u in updates:
@@ -42,7 +42,7 @@ def import_updates(updates, weeks_dir=WEEKS_DIR, by="copilot"):
                 p["sentiment"] = u["sentiment"]
             if u.get("relevant") is False:
                 p["relevant"] = False
-                p["exclude_reason"] = u.get("exclude_reason") or "llm: judged not about XMTrading"
+                p["exclude_reason"] = u.get("exclude_reason") or f"llm: judged not about {brand_name}"
                 redact_excluded(p)
                 p["content_en"] = None
             p["enriched_at"] = now

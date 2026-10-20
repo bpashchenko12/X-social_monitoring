@@ -24,7 +24,9 @@ a:hover{text-decoration:underline}
 /* header */
 .hero{background:radial-gradient(1200px 400px at 85% -20%,#2a4a9a55,transparent),linear-gradient(135deg,var(--navy),var(--navy2));color:#fff}
 .wrap{max-width:1360px;margin:0 auto;padding:0 24px}
-.hero .wrap{display:flex;align-items:center;gap:18px;padding-top:22px;padding-bottom:64px;flex-wrap:wrap}
+[hidden]{display:none!important}
+.hero .wrap{display:flex;align-items:center;gap:18px;padding-top:22px;padding-bottom:14px;flex-wrap:wrap}
+.hero .wrap.hero-nav{display:block;padding-top:0;padding-bottom:58px}
 .logo{width:44px;height:44px;border-radius:12px;background:#ffffff14;display:grid;place-items:center;border:1px solid #ffffff22}
 .hero h1{margin:0;font-size:22px;letter-spacing:.2px;font-weight:700}
 .hero p{margin:2px 0 0;color:#b9c4e0;font-size:13px}
@@ -43,6 +45,88 @@ a:hover{text-decoration:underline}
 .hero .seg button[aria-pressed=true]{color:#3b2d00}
 .btn:disabled{opacity:.5;cursor:default}
 
+/* view switch (hero) and brand pills */
+.views{display:flex;gap:6px;border-bottom:1px solid #ffffff26;overflow-x:auto;scrollbar-width:none}
+.views::-webkit-scrollbar{display:none}
+.vt{border:0;background:transparent;color:#b9c4e0;font-weight:700;font-size:15px;padding:10px 18px 12px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;display:flex;gap:8px;align-items:center;white-space:nowrap;transition:.15s}
+.vt:hover{color:#fff}
+.vt[aria-current=page]{color:#fff;border-bottom-color:var(--gold)}
+.vt .vn{font-size:11.5px;background:#ffffff26;border-radius:999px;padding:0 8px;line-height:1.6}
+.brands{display:flex;gap:8px;overflow-x:auto;margin:18px 0 0;padding:2px 2px 6px;scrollbar-width:none}
+.brands::-webkit-scrollbar{display:none}
+.bp{flex:0 0 auto;display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 14px 8px 12px;font-weight:700;cursor:pointer;white-space:nowrap;transition:.15s}
+.bp i{width:10px;height:10px;border-radius:50%;background:var(--bc,var(--navy))}
+.bp:hover{border-color:var(--bc,#c6cee0)}
+.bp[aria-pressed=true]{background:var(--bc,var(--navy));border-color:var(--bc,var(--navy));color:#fff}
+.bp[aria-pressed=true] i{background:#fff}
+.bp .n{font-size:12px;background:var(--bg);color:var(--muted);border-radius:999px;padding:1px 8px}
+.bp[aria-pressed=true] .n{background:#ffffff30;color:#fff}
+.bp.ov{--bc:var(--navy)}
+.crumbs{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;color:var(--muted);margin:18px 0 0}
+.crumbs button{all:unset;cursor:pointer;color:var(--accent);font-weight:600}
+.crumbs button:hover{text-decoration:underline}
+.crumbs button:focus-visible{outline:2px solid var(--accent);border-radius:4px}
+.crumbs b{color:var(--ink)}
+.crumbs+h2.title{margin-top:6px}
+.bdot{display:inline-block;width:.45em;height:.45em;border-radius:50%;margin-right:10px;vertical-align:.14em;background:var(--accent)}
+.badge.off{background:#e1ebff;color:#1d3fa8}
+
+/* competitors overview */
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:6px}
+a.bcard{display:block;color:inherit;background:var(--surface);border:1px solid #eef1f7;border-top:4px solid var(--bc);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;transition:.15s}
+a.bcard:hover{transform:translateY(-2px);text-decoration:none;box-shadow:0 10px 26px -10px rgba(16,24,40,.25)}
+a.bcard.bench{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-top-color:var(--gold)}
+.bcard .bn{font-weight:800;font-size:17px;display:flex;align-items:center;gap:8px}
+.bcard .bn small{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.7;margin-left:auto}
+.bdot2{width:10px;height:10px;border-radius:50%;background:var(--bc);display:inline-block;flex:none}
+.bcard.bench .bdot2{background:var(--gold)}
+.bcard .big{font-size:36px;font-weight:800;letter-spacing:-1px;margin:8px 0 0;line-height:1}
+.bcard .big span{font-size:13px;font-weight:600;letter-spacing:0;opacity:.6}
+.bmini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 12px}
+.bmini span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.04em;font-weight:700;opacity:.6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bmini b{font-size:15px}
+.sbar{display:flex;height:8px;border-radius:6px;overflow:hidden;background:var(--bg)}
+.sbar i{display:block;height:100%}
+.snote{font-size:12px;opacity:.7;margin-top:6px;line-height:1.4}
+.bcard .go{margin-top:12px;font-weight:700;font-size:13px;color:var(--bc)}
+.bcard.bench .go{color:var(--gold)}
+.ovbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:0 0 14px}
+.ovbar .check{display:inline-flex;align-items:center;gap:9px;padding:0 14px;height:40px;background:#fff;border:1px solid var(--line);border-radius:10px;cursor:pointer;user-select:none;font-weight:500}
+.ovbar .check:has(input:checked){background:var(--accent-soft);border-color:#b9c9ff;color:#1d3fa8}
+.ovbar .check input{accent-color:var(--accent);margin:0}
+.ovgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;margin-top:14px}
+.ovgrid>*,.bgrid>*{min-width:0}
+.card h3 small{text-transform:none;letter-spacing:0;font-weight:500;margin-left:6px}
+.mxw{overflow-x:auto}
+.mx{border-collapse:separate;border-spacing:0 4px;width:100%;min-width:520px}
+.mx th{font-size:12px;text-align:center;font-weight:700;color:var(--muted);padding:4px 6px;white-space:nowrap}
+.mx th[scope=row]{text-align:left;color:var(--ink);font-size:13px;font-weight:600;white-space:normal;padding-right:10px}
+.mx tr.tot th[scope=row]{font-weight:800}
+.mx .bdot2{margin-right:6px}
+.mx td{padding:0 3px}
+.mx td button{all:unset;box-sizing:border-box;display:block;width:100%;text-align:center;padding:8px 4px;border-radius:9px;cursor:pointer;background:color-mix(in srgb,var(--bc) var(--h,0%),#f3f5fa);transition:.12s}
+.mx td button:hover{box-shadow:inset 0 0 0 2px var(--bc)}
+.mx td button:focus-visible{outline:2px solid var(--accent)}
+.mx td button:disabled{cursor:default;box-shadow:none;color:#aab2c3}
+.mx td b{font-size:14px}
+.mx td small{display:block;font-size:10.5px;color:var(--muted);line-height:1.1}
+.mx tr.tot td button{background:#e9edf6;font-weight:800}
+.trend{width:100%;height:auto}
+.tleg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12.5px}
+.tleg span{display:inline-flex;align-items:center;gap:6px}
+.tleg i{width:14px;height:3px;border-radius:2px;background:var(--bc);display:inline-block}
+.tleg .bm i{width:18px;height:0;background:none;border-top:3px dashed var(--bc);border-radius:0}
+.tleg .bm small{color:var(--muted)}
+.bchip{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:12px;padding:2px 10px;border-radius:999px;background:color-mix(in srgb,var(--bc) 14%,#fff);color:var(--bc)}
+.feedh{margin:22px 0 -4px;font-size:15px}
+td.acc .bchip{margin-bottom:4px}
+@media (max-width:1100px){.bgrid{grid-template-columns:repeat(2,1fr)}.ovgrid{grid-template-columns:1fr}}
+@media (max-width:700px){
+  .vt{font-size:14px;padding:9px 12px 11px}
+  .bgrid{grid-template-columns:1fr}
+  .ovbar .check{width:100%}
+}
+
 /* control bar */
 .controls{margin-top:-40px;position:relative;z-index:5}
 .panel{background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid #eef1f7}
@@ -58,7 +142,9 @@ input[type=number]{width:84px}
 .range-note{color:var(--muted);font-size:12.5px}
 
 /* tabs */
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 6px}
+.tabs{display:flex;gap:8px;flex-wrap:nowrap;overflow-x:auto;margin:16px 0 6px;padding:2px 2px 8px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;white-space:nowrap}
 .tab{border:1px solid var(--line);background:var(--surface);border-radius:12px;padding:10px 14px;cursor:pointer;font-weight:600;display:flex;gap:10px;align-items:center;transition:.15s}
 .tab:hover{border-color:#c6cee0}
 .tab[aria-selected=true]{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 8px 18px -10px var(--navy)}
@@ -247,7 +333,8 @@ body.modal-open{overflow:hidden}
   input[type=date],input[type=search],input[type=number],select{font-size:16px;min-height:42px;width:100%;min-width:0}
   .btn,.seg button{min-height:40px}
   /* header */
-  .hero .wrap{gap:12px;padding-top:16px;padding-bottom:54px}
+  .hero .wrap{gap:12px;padding-top:16px;padding-bottom:10px}
+  .hero .wrap.hero-nav{padding-top:0;padding-bottom:46px}
   .logo{width:38px;height:38px;border-radius:10px}
   .hero .wrap>div:nth-child(2){flex:1 1 0;min-width:0}
   .hero h1{font-size:18px;line-height:1.25}
@@ -296,6 +383,8 @@ body.modal-open{overflow:hidden}
   .tools .rows,.tools .check{order:2}
   .tools #csv{order:3}
   .tools .check{align-self:end}
+  .tools>*{min-width:0}
+  .tools .check{white-space:normal;line-height:1.3;grid-column:1/-1;height:auto;min-height:44px;padding:8px 14px}
   select{padding-right:34px;text-overflow:ellipsis}
   .mob-sort .row2{display:flex;gap:8px}
   .mob-sort .row2 select{flex:1}
@@ -346,8 +435,8 @@ body.modal-open{overflow:hidden}
   <div class="wrap">
     <div class="logo" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19" stroke="#ffd166" stroke-width="2.6" stroke-linecap="round"/></svg></div>
     <div>
-      <h1 data-i18n="title">XMTrading X Mention Monitor</h1>
-      <p data-i18n="subtitle">Japanese posts mentioning XMTrading, including affiliates - ranked by engagement</p>
+      <h1 id="h1">XMTrading X Mention Monitor</h1>
+      <p id="sub1">Japanese posts mentioning XMTrading, including affiliates - ranked by engagement</p>
     </div>
     <div class="spacer"></div>
     <div class="seg" id="lang" role="group" aria-label="Language / 言語">
@@ -357,6 +446,7 @@ body.modal-open{overflow:hidden}
     <span class="chip" id="updated"><i></i><span>Loading...</span></span>
     <button class="btn ghost" id="refresh" data-i18n-title="refreshTip" title="Reload the published data">&#8635; <span data-i18n="refresh">Refresh data</span></button>
   </div>
+  <div class="wrap hero-nav"><nav class="views" id="views" aria-label="View"></nav></div>
 </header>
 
 <main class="wrap">
@@ -383,6 +473,7 @@ body.modal-open{overflow:hidden}
     </div>
   </section>
 
+  <nav class="brands" id="brands" aria-label="Competitor" hidden></nav>
   <nav class="tabs" id="tabs" role="tablist" aria-label="Topic"></nav>
 
   <div id="content"></div>
@@ -498,20 +589,58 @@ body.modal-open{overflow:hidden}
       topics: { macro: "\u5168\u4f53\u30d6\u30e9\u30f3\u30c9\u8a00\u53ca", campaigns: "\u30ad\u30e3\u30f3\u30da\u30fc\u30f3\u30fb\u30ad\u30e3\u30c3\u30b7\u30e5\u30d0\u30c3\u30af", competitions: "\u30b3\u30f3\u30c6\u30b9\u30c8\u30fb\u30a4\u30d9\u30f3\u30c8", environment: "\u53d6\u5f15\u74b0\u5883", deposit_withdrawal: "\u5165\u51fa\u91d1", account_types: "\u53e3\u5ea7\u30bf\u30a4\u30d7" },
     },
   };
+  Object.assign(I18N.en, {
+    navXm: "XM Monitor", navComp: "Competitors", titleComp: "Competitor X Mention Monitor", subtitleComp: "Japanese posts mentioning competing brokers - ranked by engagement",
+    ovTab: "Overview", official: "Official", officialTip: "Posted by the brand's own X account", hideOfficial: "Hide official accounts",
+    ovTitle: "Competitor overview", ovSub: (a, b) => `Posts from ${a} to ${b}. XM is shown as the benchmark.`, ovBench: "benchmark", ovBenchTip: "Dashed line: XMTrading, shown for comparison", ovOpen: "Open brand", ovOpenXm: "Open XM Monitor",
+    ovSent: (p, n, u) => `${p} positive \u00b7 ${n} negative \u00b7 ${u} neutral`, ovSentPending: "Sentiment pending",
+    ovOfficial: (o, n) => `${o} of ${n} posts from the official account`, ovNoOfficial: "No official-account posts",
+    ovMatrix: "Mentions by topic", ovMatrixHint: "Share of each brand's posts. Click a number to open the posts.", ovTotal: "All mentions",
+    ovTrend: "Posts per day (JST)", ovTop: "Posts across competitors", ovTopNone: "No competitor posts in this date range.",
+    footerComp: "Competitor data comes from the same pipeline as the XM Monitor: Japanese posts with at least 10 likes whose own text names the brand. \"Official\" marks posts from the brand's own X account; they are kept but can be hidden. Sentiment is the tone toward the named brand; translations are machine-generated. Impressions = X view count at the last fetch. Times are shown in JST.",
+    qAfterTxtBrand: (n) => `Each post is checked again: the text itself must contain ${n}, and a bare short name counts only next to a trading word. Look-alike meanings (for example a radio station with the same initials) are dropped and not published. Posts from the brand's own official account are always kept and marked Official. A post is listed under a topic when its own text contains one of that topic's words (see "Matched keywords"), so topic counts add up to more than the total.`,
+  });
+  Object.assign(I18N.ja, {
+    navXm: "XM モニター", navComp: "競合比較", titleComp: "競合 X メンションモニター", subtitleComp: "競合ブローカーを言及する日本語投稿 ― エンゲージメント順",
+    ovTab: "概要", official: "公式", officialTip: "ブランド公式Xアカウントの投稿", hideOfficial: "公式アカウントを非表示",
+    ovTitle: "競合の概要", ovSub: (a, b) => `${a} 〜 ${b} の投稿。XMを基準として表示しています。`, ovBench: "基準", ovBenchTip: "破線：比較用のXMTrading", ovOpen: "ブランドを開く", ovOpenXm: "XMモニターを開く",
+    ovSent: (p, n, u) => `ポジティブ${p} \u00b7 ネガティブ${n} \u00b7 中立${u}`, ovSentPending: "センチメント未判定",
+    ovOfficial: (o, n) => `${n}件中${o}件が公式アカウントの投稿`, ovNoOfficial: "公式アカウントの投稿なし",
+    ovMatrix: "トピック別の言及数", ovMatrixHint: "各ブランドの投稿に占める割合です。数字をクリックすると投稿を表示します。", ovTotal: "全言及",
+    ovTrend: "日別投稿数（JST）", ovTop: "競合の投稿一覧", ovTopNone: "この期間の競合投稿はありません。",
+    footerComp: "競合データはXMモニターと同じパイプラインで収集しています（いいね10件以上で、本文にブランド名を含む日本語投稿）。「公式」はブランド公式Xアカウントの投稿で、保持されますが非表示にできます。センチメントは該当ブランドに対するトーン、翻訳は機械翻訳です。インプレッション＝最終取得時点の表示回数。時刻はJSTです。",
+    qAfterTxtBrand: (n) => `取得した各投稿を再確認します。本文に${n}が含まれること、短い名称のみの場合は取引関連語と一緒の場合のみ対象です。同じ頭文字の別の意味（例：ラジオ局）は除外し、公開しません。ブランド公式アカウントの投稿は常に保持し「公式」と表示します。投稿は、本文にそのトピックのワードが含まれる場合に該当トピックへ分類されるため（「該当キーワード」列を参照）、トピック別件数の合計は全体を上回ります。`,
+  });
   const savedLang = (() => { try { return localStorage.getItem("xm_lang"); } catch (e) { return null; } })();
   const initLang = qs.get("lang") || savedLang || ((navigator.language || "").toLowerCase().startsWith("ja") ? "ja" : "en");
   let LANG = initLang === "ja" ? "ja" : "en";
   const t = (k, ...a) => { const v = (I18N[LANG][k] !== undefined ? I18N[LANG][k] : I18N.en[k]); return typeof v === "function" ? v(...a) : v; };
   const topicName = (tp) => (I18N[LANG].topics || {})[tp.id] || tp.name;
-  const topicHeading = (tp) => (tp.id === "macro" ? t("hMacro") : t("hTopic", topicName(tp)));
+  const topicHeading = (tp) => {
+    const b = state.view === "comp" ? brandById(state.brand) : null;
+    const base = tp.id === "macro" ? t("hMacro") : t("hTopic", topicName(tp));
+    return b ? `${b.name}: ${base}` : base;
+  };
   const sentLabel = (s) => t(s);
 
   const state = {
-    manifest: null, weeks: new Map(), all: [],
+    view: "xm", brand: "overview", index: null,
+    manifest: null, all: [],
     tab: "macro", preset: "7", from: "", to: "",
-    qOpen: true, sort: { key: "impressions", dir: -1 }, limit: 100,
-    q: "", sentiment: "all", minLikes: 0, hidePromo: false, open: new Set(),
+    qOpen: false, sort: { key: "impressions", dir: -1 }, limit: 100,
+    q: "", sentiment: "all", minLikes: 0, hidePromo: false, hideOfficial: false, open: new Set(),
   };
+  // one dataset per store: "xm" (data/) and one per competitor (data/competitors/<id>/)
+  const DS = new Map();
+  const dsOf = (key) => {
+    let d = DS.get(key);
+    if (!d) { d = { key, prefix: key === "xm" ? "" : `competitors/${key}/`, manifest: null, weeks: new Map(), all: [] }; DS.set(key, d); }
+    return d;
+  };
+  const brandById = (id) => (state.index ? state.index.brands.find((b) => b.id === id) : null) || null;
+  const isOverview = () => state.view === "comp" && state.brand === "overview";
+  const curKey = () => (state.view === "comp" && state.brand !== "overview" ? state.brand : "xm");
+  const activeKeys = () => (state.view !== "comp" ? ["xm"] : (isOverview() ? ["xm"] : []).concat(state.index.brands.map((b) => b.id)));
 
   // ---------- helpers ----------
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -531,37 +660,53 @@ body.modal-open{overflow:hidden}
   }
 
   // ---------- data ----------
-  async function loadManifest(bust) {
-    state.manifest = await getJSON("manifest.json", bust);
-    if (bust) state.weeks.clear();
+  async function loadDs(key, bust) {
+    const d = dsOf(key);
+    if (bust || !d.manifest) {
+      d.manifest = await getJSON(d.prefix + "manifest.json", bust);
+      if (bust) d.weeks.clear();
+    }
+    return d;
+  }
+  async function loadIndex(bust) {
+    try { state.index = await getJSON("competitors/index.json", bust); if (!state.index.brands || !state.index.brands.length) state.index = null; } catch (e) { state.index = null; }
   }
 
-  function resolveRange() {
-    const m = state.manifest;
-    const latest = m.latest_post_at ? jstDay(m.latest_post_at) : null;
-    const earliest = m.weeks.length ? jstDay(m.weeks.map((w) => w.min_date).filter(Boolean).sort()[0]) : null;
+  function resolveRange(keys) {
+    const ms = keys.map((k) => dsOf(k).manifest);
+    const lat = ms.map((m) => m.latest_post_at).filter(Boolean).sort();
+    const latest = lat.length ? jstDay(lat[lat.length - 1]) : null;
+    const mins = [].concat(...ms.map((m) => m.weeks.map((w) => w.min_date).filter(Boolean))).sort();
+    const earliest = mins.length ? jstDay(mins[0]) : null;
     if (!latest) { state.from = state.to = ""; return; }
     if (state.preset === "all") { state.from = earliest; state.to = latest; }
     else if (state.preset !== "custom") { state.to = latest; state.from = addDays(latest, -(Number(state.preset) - 1)); }
   }
 
-  async function ensureWeeks() {
-    const need = state.manifest.weeks.filter((w) => w.min_date && jstDay(w.min_date) <= state.to && jstDay(w.max_date) >= state.from && !state.weeks.has(w.week));
-    await Promise.all(need.map(async (w) => { const d = await getJSON(w.file, false); state.weeks.set(w.week, Object.values(d.posts)); }));
-    state.all = [].concat(...state.weeks.values()).filter((p) => p.relevant !== false);
+  async function ensureWeeks(keys) {
+    await Promise.all(keys.map(async (k) => {
+      const d = dsOf(k);
+      const need = d.manifest.weeks.filter((w) => w.min_date && jstDay(w.min_date) <= state.to && jstDay(w.max_date) >= state.from && !d.weeks.has(w.week));
+      await Promise.all(need.map(async (w) => { const j = await getJSON(d.prefix + w.file, false); d.weeks.set(w.week, Object.values(j.posts)); }));
+      if (k !== "xm") { const b = brandById(k); d.weeks.forEach((arr) => arr.forEach((p) => { p._b = b; })); }
+      d.all = [].concat(...d.weeks.values()).filter((p) => p.relevant !== false);
+    }));
   }
 
-  const inRange = () => state.all.filter((p) => { const d = jstDay(p.created_at); return d >= state.from && d <= state.to; });
+  const inRangeOf = (arr) => arr.filter((p) => { const d = jstDay(p.created_at); return d >= state.from && d <= state.to; });
+  const inRange = () => inRangeOf(state.all);
   const forTab = (arr, tab) => arr.filter((p) => p.topics.includes(tab));
 
+  const overviewPosts = () => [].concat(...state.index.brands.map((b) => inRangeOf(dsOf(b.id).all)));
   function visiblePosts() {
-    let a = forTab(inRange(), state.tab);
+    let a = isOverview() ? overviewPosts() : forTab(inRange(), state.tab);
     const total = a.length;
     const q = state.q.trim().toLowerCase();
     if (q) a = a.filter((p) => (p.content_original + " " + (p.content_en || "") + " " + p.account_handle + " " + p.account_name).toLowerCase().includes(q));
     if (state.sentiment !== "all") a = a.filter((p) => (state.sentiment === "Pending" ? !p.sentiment : p.sentiment === state.sentiment));
     if (state.minLikes > 0) a = a.filter((p) => p.likes >= state.minLikes);
     if (state.hidePromo) a = a.filter((p) => !p.is_promo);
+    if (state.hideOfficial && state.view === "comp") a = a.filter((p) => !p.is_official);
     const { key, dir } = state.sort;
     a = a.slice().sort((x, y) => dir * (val(x, key) - val(y, key)) || (y.likes - x.likes));
     const matched = a.length;
@@ -571,21 +716,47 @@ body.modal-open{overflow:hidden}
   }
 
   // ---------- rendering ----------
+  function renderNav() {
+    const comp = state.view === "comp" && !!state.index;
+    const views = [["xm", t("navXm"), ""]].concat(state.index ? [["comp", t("navComp"), state.index.brands.length]] : []);
+    $("#views").innerHTML = views.map(([v, l, n]) => `<button class="vt" data-view="${v}"${v === "comp" && state.view !== "comp" ? ` data-brand="overview"` : ""} aria-current="${state.view === v ? "page" : "false"}">${esc(l)}${n !== "" ? `<span class="vn">${n}</span>` : ""}</button>`).join("");
+    const bb = $("#brands");
+    bb.hidden = !comp;
+    if (!comp) { bb.innerHTML = ""; return; }
+    const keep = bb.scrollLeft;
+    bb.innerHTML = `<button class="bp ov" data-brand="overview" aria-pressed="${state.brand === "overview"}">&#9638; ${esc(t("ovTab"))}</button>` +
+      state.index.brands.map((b) => `<button class="bp" data-brand="${esc(b.id)}" style="--bc:${esc(b.color)}" aria-pressed="${state.brand === b.id}"><i></i>${esc(b.name)}<span class="n">${inRangeOf(dsOf(b.id).all).length}</span></button>`).join("");
+    bb.scrollLeft = keep;
+  }
+
+  function renderTitles() {
+    const comp = state.view === "comp";
+    $("#h1").textContent = t(comp ? "titleComp" : "title");
+    $("#sub1").textContent = t(comp ? "subtitleComp" : "subtitle");
+    document.title = t(comp ? "titleComp" : "title");
+    $("#foot").textContent = t(comp ? "footerComp" : "footer");
+  }
+
   function renderChrome() {
     const m = state.manifest;
+    const ms = activeKeys().map((k) => dsOf(k).manifest);
+    const gen = ms.map((x) => x.generated_at).filter(Boolean).sort().pop();
+    const pend = ms.reduce((s, x) => s + (x.pending_enrichment || 0), 0);
     const u = $("#updated");
     u.className = "chip" + (IS_DEMO ? " demo" : "");
-    u.innerHTML = `<i></i><span>${IS_DEMO ? esc(t("demo")) + " &middot; " : ""}${esc(t("updated", m.generated_at ? jstShift(m.generated_at).slice(0, 16).replace("T", " ") + " JST" : "-"))}</span>`;
+    u.innerHTML = `<i></i><span>${IS_DEMO ? esc(t("demo")) + " &middot; " : ""}${esc(t("updated", gen ? jstShift(gen).slice(0, 16).replace("T", " ") + " JST" : "-"))}</span>`;
+    renderTitles(); renderNav();
     document.querySelectorAll("#presets button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.p === state.preset)));
     $("#from").value = state.from; $("#to").value = state.to;
     const cnt = {}; const inr = inRange();
     m.topics.forEach((tp) => (cnt[tp.id] = forTab(inr, tp.id).length));
     const tabsEl = $("#tabs"); const keepX = tabsEl.scrollLeft;
+    tabsEl.hidden = isOverview();
     tabsEl.innerHTML = m.topics.map((tp) => `<button class="tab" role="tab" data-t="${esc(tp.id)}" aria-selected="${tp.id === state.tab}">${esc(topicName(tp))}<span class="n">${cnt[tp.id]}</span></button>`).join("");
     tabsEl.scrollLeft = keepX;
     const selTab = tabsEl.querySelector("[aria-selected=true]");
     if (selTab && tabsEl.scrollWidth > tabsEl.clientWidth && (selTab.offsetLeft < keepX || selTab.offsetLeft + selTab.offsetWidth > keepX + tabsEl.clientWidth)) tabsEl.scrollLeft = selTab.offsetLeft - (tabsEl.clientWidth - selTab.offsetWidth) / 2;
-    $("#rangeNote").textContent = state.from ? t("showingRange", state.from, state.to) + (m.pending_enrichment ? t("awaiting", m.pending_enrichment) : "") : "";
+    $("#rangeNote").textContent = state.from ? t("showingRange", state.from, state.to) + (pend ? t("awaiting", pend) : "") : "";
   }
 
   function sentimentCounts(rows) {
@@ -622,7 +793,7 @@ body.modal-open{overflow:hidden}
     const bars = series.map(([d, n], i) => {
       const h = max ? ((H - 50) * n) / max : 0; const x = pad + i * ((W - pad * 2) / series.length) + 1.5;
       const lbl = series.length <= 8 || i % Math.ceil(series.length / 5) === 0 ? `<text x="${x + bw / 2}" y="${H - 6}" font-size="9.5" text-anchor="middle" fill="#667085">${d.slice(5)}</text>` : "";
-      return `<g><rect x="${x}" y="${H - 22 - h}" width="${bw}" height="${Math.max(h, n ? 2 : 0)}" rx="3" fill="#3b6cff"><title>${d}: ${t("nPosts", n)}</title></rect>${n && series.length <= 16 ? `<text x="${x + bw / 2}" y="${H - 26 - h}" font-size="10" text-anchor="middle" fill="#344056" font-weight="700">${n}</text>` : ""}${lbl}</g>`;
+      return `<g><rect x="${x}" y="${H - 22 - h}" width="${bw}" height="${Math.max(h, n ? 2 : 0)}" rx="3" style="fill:var(--accent)"><title>${d}: ${t("nPosts", n)}</title></rect>${n && series.length <= 16 ? `<text x="${x + bw / 2}" y="${H - 26 - h}" font-size="10" text-anchor="middle" fill="#344056" font-weight="700">${n}</text>` : ""}${lbl}</g>`;
     }).join("");
     return `<svg class="bars" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("perDay"))}"><line x1="${pad}" x2="${W - pad}" y1="${H - 22}" y2="${H - 22}" stroke="#e4e8f0"/>${bars}</svg>`;
   }
@@ -645,7 +816,7 @@ body.modal-open{overflow:hidden}
     const txt = p[field];
     if (txt == null || txt === "") return `<span class="pending">${pendingLabel}</span>`;
     const long = txt.length > 140 || txt.split("\n").length > 3;
-    return `<div class="txt" lang="${field === "content_en" ? "en" : "ja"}">${esc(txt)}</div>${long ? `<button class="more" data-modal="${esc(p.id)}" aria-haspopup="dialog">${esc(t("more"))}</button>` : ""}`;
+    return `<div class="txt" lang="${field === "content_en" ? "en" : "ja"}">${esc(txt)}</div>${long ? `<button class="more" data-modal="${esc(p.id)}"${p._b ? ` data-bk="${esc(p._b.id)}"` : ""} aria-haspopup="dialog">${esc(t("more"))}</button>` : ""}`;
   }
 
   function matchCell(p) {
@@ -661,7 +832,7 @@ body.modal-open{overflow:hidden}
     return `<tr>
       <td class="rank">${i + 1}</td>
       <td class="date">${jstDay(p.created_at)}<small>${jstTime(p.created_at)}</small></td>
-      <td class="acc"><b title="${esc(p.account_name)}">${esc(p.account_name)}</b><a href="https://x.com/${encodeURIComponent(p.account_handle)}" target="_blank" rel="noopener noreferrer">@${esc(p.account_handle)}</a>${p.is_promo ? `<br><span class="badge" title="${esc(t("promoTip"))}">${esc(t("promo"))}</span>` : ""}</td>
+      <td class="acc">${isOverview() && p._b ? `<span class="bchip" style="--bc:${esc(p._b.color)}">${esc(p._b.name)}</span><br>` : ""}<b title="${esc(p.account_name)}">${esc(p.account_name)}</b><a href="https://x.com/${encodeURIComponent(p.account_handle)}" target="_blank" rel="noopener noreferrer">@${esc(p.account_handle)}</a>${p.is_promo ? `<br><span class="badge" title="${esc(t("promoTip"))}">${esc(t("promo"))}</span>` : ""}${p.is_official ? `<br><span class="badge off" title="${esc(t("officialTip"))}">${esc(t("official"))}</span>` : ""}</td>
       <td class="o">${txtCell(p, "content_original", "")}</td>
       <td class="e" data-label="${esc(t("cEn"))}">${txtCell(p, "content_en", esc(t("trPending")))}</td>
       <td class="mt">${matchCell(p)}</td>
@@ -674,8 +845,8 @@ body.modal-open{overflow:hidden}
 
   // ---------- post modal ----------
   let modalOpener = null;
-  function openModal(id, opener) {
-    const p = state.all.find((x) => x.id === id); if (!p) return;
+  function openModal(id, opener, bk) {
+    const p = (bk ? dsOf(bk).all : state.all).find((x) => x.id === id); if (!p) return;
     const sent = p.sentiment && SENT.includes(p.sentiment) ? `<span class="pill ${p.sentiment}">${esc(sentLabel(p.sentiment))}</span>` : `<span class="pill pend">${esc(t("Pending"))}</span>`;
     const url = safeUrl(p.url), img = safeUrl(p.image_url);
     const metrics = [["cImpressions", "impressions"], ["cLikes", "likes"], ["cReplies", "replies"], ["cQuotes", "quotes"], ["cRetweets", "retweets"], ["cBookmarks", "bookmarks"]]
@@ -684,7 +855,7 @@ body.modal-open{overflow:hidden}
     const root = document.createElement("div");
     root.className = "modal-bg"; root.id = "modal";
     root.innerHTML = `<div class="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
-      <div class="mhead"><div><b id="mtitle">${esc(p.account_name)}</b> <a href="https://x.com/${encodeURIComponent(p.account_handle)}" target="_blank" rel="noopener noreferrer">@${esc(p.account_handle)}</a><div class="mmeta">${jstDay(p.created_at)} ${jstTime(p.created_at)} JST ${sent}${p.is_promo ? ` <span class="badge">${esc(t("promo"))}</span>` : ""}</div></div>
+      <div class="mhead"><div><b id="mtitle">${esc(p.account_name)}</b> <a href="https://x.com/${encodeURIComponent(p.account_handle)}" target="_blank" rel="noopener noreferrer">@${esc(p.account_handle)}</a><div class="mmeta">${p._b ? `<span class="bchip" style="--bc:${esc(p._b.color)}">${esc(p._b.name)}</span> ` : ""}${jstDay(p.created_at)} ${jstTime(p.created_at)} JST ${sent}${p.is_promo ? ` <span class="badge">${esc(t("promo"))}</span>` : ""}${p.is_official ? ` <span class="badge off">${esc(t("official"))}</span>` : ""}</div></div>
         <button class="mclose" data-close aria-label="${esc(t("close"))}">&times;</button></div>
       <div class="mbody">
         ${sec(t("cOrig"), `<div class="mtext" lang="ja">${esc(p.content_original)}</div>`)}
@@ -731,16 +902,11 @@ body.modal-open{overflow:hidden}
         <div class="qrow"><b>${esc(t("qTopicWords"))}</b>${kw.length ? chips(kw, "") : `<span class="qnote">${esc(t("qBrandOnly"))}</span>`}</div>
         <div class="qrow"><b>${esc(t("qFilters"))}</b>${chips(flt, "flt")}</div>
         ${q ? `<div class="qrow"><b>${esc(t("qExact"))}</b><div><div class="qcode"><code>${esc(q)}</code><button data-copy="${esc(q)}">${esc(t("qCopy"))}</button></div><div class="qnote" style="margin-top:5px">${esc(t("qSince"))}</div></div></div>` : ""}
-        <div class="qrow"><b>${esc(t("qAfter"))}</b><div class="qnote">${esc(t("qAfterTxt"))}</div></div>
+        <div class="qrow"><b>${esc(t("qAfter"))}</b><div class="qnote">${esc(state.view === "comp" ? t("qAfterTxtBrand", (s.brand || []).join(" / ")) : t("qAfterTxt"))}</div></div>
       </div></details>`;
   }
 
-  function renderContent() {
-    const m = state.manifest; const topic = m.topics.find((t) => t.id === state.tab) || m.topics[0];
-    const { rows, every, matched, total } = visiblePosts();
-    const sum = (k) => every.reduce((s, p) => s + (p[k] || 0), 0);
-    const accounts = new Set(every.map((p) => p.account_handle)).size;
-    const kp = [[t("kPosts"), fmt(every.length), 1], [t("kAccounts"), fmt(accounts), 1], [t("kImpressions"), fmt(sum("impressions")), 0], [t("kLikes"), fmt(sum("likes")), 0], [t("kRetweets"), fmt(sum("retweets")), 0], [t("kReplies"), fmt(sum("replies")), 0], [t("kQuotes"), fmt(sum("quotes")), 0], [t("kBookmarks"), fmt(sum("bookmarks")), 0]];
+  function feedHtml(rows, total) {
     const head = COLS.map(([k, lk, sortable]) => {
       const label = esc(t(lk));
       const num = ["impressions", "likes", "replies", "quotes", "retweets", "bookmarks", "clicks"].includes(k);
@@ -749,18 +915,7 @@ body.modal-open{overflow:hidden}
       return `<th class="${num ? "num" : ""}" aria-sort="${on ? (state.sort.dir < 0 ? "descending" : "ascending") : "none"}"><button data-sort="${k}" title="${esc(t("sortBy", t(lk)))}">${label} <span class="arrow">${arrow}</span></button></th>`;
     }).join("");
     const lbl = (id, key) => `<label class="lbl" for="${id}" style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700">${esc(t(key))}</label>`;
-    const sortCol = COLS.find((c) => c[0] === state.sort.key);
-    $("#content").innerHTML = `
-      <h2 class="title">${esc(topicHeading(topic))}</h2>
-      <p class="sub">${esc(t("shown", rows.length, matched))}${matched !== total ? esc(t("inTopic", total)) : ""}${esc(t("sortedBy", sortCol ? t(sortCol[1]) : state.sort.key))}</p>
-      ${searchPanel(topic)}
-      <section class="kpis" aria-label="Totals">${kp.map(([k, v, hl]) => `<div class="panel kpi${hl ? " hl" : ""}"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join("")}</section>
-      <section class="charts">
-        <div class="panel card"><h3>${esc(t("sentRatio"))}</h3>${donut(sentimentCounts(every))}</div>
-        <div class="panel card"><h3>${esc(t("perDay"))}</h3>${dailyChart(every)}</div>
-        <div class="panel card"><h3>${esc(t("topAcc"))}</h3>${topAccounts(every)}</div>
-      </section>
-      <section class="panel" style="margin-top:14px;overflow:hidden">
+    return `<section class="panel" style="margin-top:14px;overflow:hidden">
         <div class="tools">
           <div class="f grow">${lbl("q", "search")}<input type="search" id="q" placeholder="${esc(t("searchPh"))}" value="${esc(state.q)}"></div>
           <div class="f">${lbl("sf", "sentiment")}
@@ -770,6 +925,7 @@ body.modal-open{overflow:hidden}
             <select id="lm">${[[25, "25"], [50, "50"], [100, "100"], [0, t("all")]].map(([v, l]) => `<option value="${v}"${state.limit === v ? " selected" : ""}>${esc(l)}</option>`).join("")}</select></div>
           <div class="f mob-sort">${lbl("sb", "sortLabel")}<div class="row2"><select id="sb">${COLS.filter((c) => c[2]).map((c) => `<option value="${c[0]}"${state.sort.key === c[0] ? " selected" : ""}>${esc(t(c[1]))}</option>`).join("")}</select><button class="btn" id="sd" title="${esc(t("dirTip"))}" aria-label="${esc(t("dirTip"))}">${state.sort.dir < 0 ? "&#9660;" : "&#9650;"}</button></div></div>
           <label class="check"><input type="checkbox" id="hp"${state.hidePromo ? " checked" : ""}> ${esc(t("hidePromo"))}</label>
+          ${state.view === "comp" && !isOverview() ? `<label class="check"><input type="checkbox" id="ho"${state.hideOfficial ? " checked" : ""}> ${esc(t("hideOfficial"))}</label>` : ""}
           <button class="btn primary" id="csv"${rows.length ? "" : " disabled"}>&#8681; ${esc(t("exportCsv"))}</button>
         </div>
         <div class="scroll">${rows.length ? `<table><thead><tr>${head}</tr></thead><tbody>${rows.map(rowHtml).join("")}</tbody></table>` :
@@ -777,16 +933,137 @@ body.modal-open{overflow:hidden}
       </section>`;
   }
 
+  function renderContent() {
+    const m = state.manifest; const topic = m.topics.find((t) => t.id === state.tab) || m.topics[0];
+    const { rows, every, matched, total } = visiblePosts();
+    const sum = (k) => every.reduce((s, p) => s + (p[k] || 0), 0);
+    const accounts = new Set(every.map((p) => p.account_handle)).size;
+    const kp = [[t("kPosts"), fmt(every.length), 1], [t("kAccounts"), fmt(accounts), 1], [t("kImpressions"), fmt(sum("impressions")), 0], [t("kLikes"), fmt(sum("likes")), 0], [t("kRetweets"), fmt(sum("retweets")), 0], [t("kReplies"), fmt(sum("replies")), 0], [t("kQuotes"), fmt(sum("quotes")), 0], [t("kBookmarks"), fmt(sum("bookmarks")), 0]];
+    const sortCol = COLS.find((c) => c[0] === state.sort.key);
+    const bc = state.view === "comp" ? brandById(state.brand) : null;
+    const content = $("#content");
+    if (bc) content.style.setProperty("--accent", bc.color); else content.style.removeProperty("--accent");
+    const crumbs = bc ? `<nav class="crumbs" aria-label="Breadcrumb"><button data-brand="overview">${esc(t("navComp"))}</button><span>/</span><button data-brand="${esc(bc.id)}" data-tab="macro">${esc(bc.name)}</button><span>/</span><b>${esc(topicName(topic))}</b></nav>` : "";
+    content.innerHTML = `
+      ${crumbs}
+      <h2 class="title">${bc ? `<span class="bdot"></span>` : ""}${esc(topicHeading(topic))}</h2>
+      <p class="sub">${esc(t("shown", rows.length, matched))}${matched !== total ? esc(t("inTopic", total)) : ""}${esc(t("sortedBy", sortCol ? t(sortCol[1]) : state.sort.key))}</p>
+      ${searchPanel(topic)}
+      <section class="kpis" aria-label="Totals">${kp.map(([k, v, hl]) => `<div class="panel kpi${hl ? " hl" : ""}"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join("")}</section>
+      <section class="charts">
+        <div class="panel card"><h3>${esc(t("sentRatio"))}</h3>${donut(sentimentCounts(every))}</div>
+        <div class="panel card"><h3>${esc(t("perDay"))}</h3>${dailyChart(every)}</div>
+        <div class="panel card"><h3>${esc(t("topAcc"))}</h3>${topAccounts(every)}</div>
+      </section>
+      ${feedHtml(rows, total)}`;
+  }
+
+  // ---------- competitors overview ----------
+  function overviewSets() {
+    const sets = state.index.brands.map((b) => ({ key: b.id, name: b.name, color: b.color }));
+    sets.push({ key: "xm", name: "XM", color: "#0b1b3a", bench: true });
+    return sets.map((s) => {
+      const all = inRangeOf(dsOf(s.key).all);
+      const posts = state.hideOfficial && !s.bench ? all.filter((p) => !p.is_official) : all;
+      return Object.assign(s, { all, posts, official: all.filter((p) => p.is_official).length });
+    });
+  }
+  const goAttrs = (s) => (s.bench ? `data-view="xm"` : `data-view="comp" data-brand="${esc(s.key)}"`);
+
+  function trendChart(sets) {
+    const days = []; for (let d = state.from; d && d <= state.to; d = addDays(d, 1)) days.push(d);
+    if (!days.length) return `<div class="empty" style="padding:30px">${esc(t("noData"))}</div>`;
+    const series = sets.map((s) => { const m = {}; s.posts.forEach((p) => { const d = jstDay(p.created_at); m[d] = (m[d] || 0) + 1; }); return days.map((d) => m[d] || 0); });
+    const W = 520, H = 220, pl = 30, pr = 10, pt = 12, pb = 26;
+    const max = Math.max(1, ...[].concat(...series));
+    const x = (i) => pl + (days.length > 1 ? (i * (W - pl - pr)) / (days.length - 1) : (W - pl - pr) / 2);
+    const y = (v) => pt + (H - pt - pb) * (1 - v / max);
+    const grid = [0, max / 2, max].map((v) => `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e8f0"/><text x="${pl - 6}" y="${y(v) + 3.5}" font-size="10" text-anchor="end" fill="#667085">${Math.round(v)}</text>`).join("");
+    const step = Math.max(1, Math.ceil(days.length / 6));
+    const xl = days.map((d, i) => (i % step === 0 ? `<text x="${x(i)}" y="${H - 8}" font-size="10" text-anchor="middle" fill="#667085">${d.slice(5)}</text>` : "")).join("");
+    const lines = sets.map((s, k) => `<polyline fill="none" stroke="${esc(s.color)}" stroke-width="${s.bench ? 2 : 2.4}" stroke-linejoin="round" stroke-linecap="round"${s.bench ? ` stroke-dasharray="5 4"` : ""} points="${series[k].map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ")}"><title>${esc(s.name)}</title></polyline>`).join("");
+    const leg = sets.map((s, k) => `<span${s.bench ? ` class="bm" title="${esc(t("ovBenchTip"))}"` : ""} style="--bc:${esc(s.color)}"><i></i>${esc(s.name)}${s.bench ? ` <small>(${esc(t("ovBench"))})</small>` : ""} <b>${series[k].reduce((a, b) => a + b, 0)}</b></span>`).join("");
+    return `<svg class="trend" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("ovTrend"))}">${grid}${xl}${lines}</svg><div class="tleg">${leg}</div>`;
+  }
+
+  function renderOverview() {
+    const sets = overviewSets();
+    const content = $("#content"); content.style.removeProperty("--accent");
+    const cards = sets.map((s) => {
+      const c = sentimentCounts(s.posts); const tot = s.posts.length;
+      const sum = (k) => s.posts.reduce((a, p) => a + (p[k] || 0), 0);
+      const accounts = new Set(s.posts.map((p) => p.account_handle)).size;
+      const seg = tot ? ["Positive", "Negative", "Neutral", "Pending"].filter((k) => c[k]).map((k) => `<i style="width:${((c[k] / tot) * 100).toFixed(1)}%;background:${SENT_COLOR[k]}" title="${esc(sentLabel(k))}: ${c[k]}"></i>`).join("") : "";
+      const rated = c.Positive + c.Negative + c.Neutral;
+      return `<a class="bcard${s.bench ? " bench" : ""}" href="${s.bench ? "#view=xm" : "#view=comp&brand=" + encodeURIComponent(s.key)}" ${goAttrs(s)} style="--bc:${esc(s.color)}">
+        <div class="bn"><i class="bdot2"></i>${esc(s.name)}${s.bench ? `<small>${esc(t("ovBench"))}</small>` : ""}</div>
+        <div class="big">${fmt(tot)}<span> ${esc(t("postsWord"))}</span></div>
+        <div class="bmini"><div><span>${esc(t("kAccounts"))}</span><b>${fmt(accounts)}</b></div><div><span>${esc(t("kImpressions"))}</span><b>${fmt(sum("impressions"))}</b></div><div><span>${esc(t("kLikes"))}</span><b>${fmt(sum("likes"))}</b></div></div>
+        <div class="sbar">${seg}</div><div class="snote">${esc(rated ? t("ovSent", c.Positive, c.Negative, c.Neutral) : t("ovSentPending"))}</div>
+        ${s.bench ? "" : `<div class="snote">${esc(s.official ? t("ovOfficial", s.official, s.all.length) : t("ovNoOfficial"))}</div>`}
+        <div class="go">${esc(t(s.bench ? "ovOpenXm" : "ovOpen"))} &rarr;</div></a>`;
+    }).join("");
+
+    const topics = state.manifest.topics;
+    const counts = {}; sets.forEach((s) => { counts[s.key] = {}; topics.forEach((tp) => { counts[s.key][tp.id] = forTab(s.posts, tp.id).length; }); });
+    const mxHead = sets.map((s) => `<th scope="col" style="--bc:${esc(s.color)}"><i class="bdot2"></i>${esc(s.name)}</th>`).join("");
+    const mxRows = topics.map((tp) => {
+      const total = tp.id === "macro";
+      const cells = sets.map((s) => {
+        const n = counts[s.key][tp.id], all = counts[s.key].macro;
+        const max = Math.max(1, ...topics.filter((x) => x.id !== "macro").map((x) => counts[s.key][x.id]));
+        const share = !total && all ? Math.round((n / all) * 100) : null;
+        return `<td><button ${goAttrs(s)} data-tab="${esc(tp.id)}" style="--bc:${esc(s.color)};--h:${total ? 0 : Math.round((n / max) * 45)}%"${n ? "" : " disabled"}><b>${fmt(n)}</b>${share != null ? `<small>${share}%</small>` : ""}</button></td>`;
+      }).join("");
+      return `<tr class="${total ? "tot" : ""}"><th scope="row">${esc(total ? t("ovTotal") : topicName(tp))}</th>${cells}</tr>`;
+    }).join("");
+
+    const feed = visiblePosts();
+
+    content.innerHTML = `
+      <nav class="crumbs" aria-label="Breadcrumb"><button data-view="comp" data-brand="overview">${esc(t("navComp"))}</button><span>/</span><b>${esc(t("ovTab"))}</b></nav>
+      <h2 class="title">${esc(t("ovTitle"))}</h2>
+      <p class="sub">${esc(t("ovSub", state.from, state.to))}</p>
+      <div class="ovbar"><label class="check"><input type="checkbox" id="ho"${state.hideOfficial ? " checked" : ""}> ${esc(t("hideOfficial"))}</label></div>
+      <section class="bgrid" aria-label="${esc(t("ovTitle"))}">${cards}</section>
+      <section class="ovgrid">
+        <div class="panel card"><h3>${esc(t("ovMatrix"))}<small>${esc(t("ovMatrixHint"))}</small></h3><div class="mxw"><table class="mx"><thead><tr><th></th>${mxHead}</tr></thead><tbody>${mxRows}</tbody></table></div></div>
+        <div class="panel card"><h3>${esc(t("ovTrend"))}</h3>${trendChart(sets)}</div>
+      </section>
+      <h3 class="feedh">${esc(t("ovTop"))}</h3>
+      ${feedHtml(feed.rows, feed.total)}`;
+  }
+  const renderBody = () => (isOverview() ? renderOverview() : renderContent());
+
   function skeleton() {
     $("#content").innerHTML = `<div class="panel card" style="margin-top:24px"><div class="skeleton" style="width:40%;height:28px"></div><br><div class="skeleton"></div><br><div class="skeleton" style="width:80%"></div><br><div class="skeleton" style="width:60%"></div></div>`;
   }
 
-  async function refreshView() {
+  async function refreshView(bust) {
     try {
-      resolveRange(); await ensureWeeks(); renderChrome(); renderContent(); writeHash();
+      const keys = activeKeys();
+      await Promise.all(keys.map((k) => loadDs(k, bust)));
+      resolveRange(keys); await ensureWeeks(keys);
+      const d = dsOf(curKey());
+      state.manifest = d.manifest; state.all = d.all;
+      if (!state.manifest.topics.some((x) => x.id === state.tab)) state.tab = state.manifest.topics[0].id;
+      renderChrome(); renderBody(); writeHash();
+      return true;
     } catch (e) {
+      refreshView.err = e;
       $("#content").innerHTML = `<div class="err"><b>${esc(t("errLoad"))}</b><br>${esc(e.message)}<br>${t("errHint")}</div>`;
+      return false;
     }
+  }
+
+  function go(view, brand, tab) {
+    if (brand) state.view = "comp";
+    if (view) state.view = view;
+    if (brand) state.brand = brand;
+    if (tab) state.tab = tab;
+    if (state.view === "comp" && !state.index) state.view = "xm";
+    closeModal(true);
+    refreshView(); window.scrollTo(0, 0);
   }
 
   // ---------- CSV ----------
@@ -795,23 +1072,30 @@ body.modal-open{overflow:hidden}
     const names = Object.fromEntries(state.manifest.topics.map((t) => [t.id, t.name]));
     const cell = (v) => { let s = v == null ? "" : String(v); if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; return `"${s.replace(/"/g, '""')}"`; };
     const { rows } = visiblePosts();
-    const lines = [CSV_HEAD.map(cell).join(",")].concat(rows.map((p) => [
+    const ov = isOverview();
+    const lines = [(ov ? ["Brand"].concat(CSV_HEAD) : CSV_HEAD).map(cell).join(",")].concat(rows.map((p) => (ov ? [p._b ? p._b.name : ""] : []).concat([
       jstDay(p.created_at) + " " + jstTime(p.created_at), `${p.account_name} (@${p.account_handle})`, p.lang, p.content_original, p.content_en, p.impressions, p.likes, p.retweets, p.replies, p.quotes, p.bookmarks, "", p.url, p.image_url,
-      p.topics.map((t) => names[t] || t).join(", "), p.sentiment].map(cell).join(",")));
+      p.topics.map((t) => names[t] || t).join(", "), p.sentiment]).map(cell).join(",")));
     const blob = new Blob(["\ufeff" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = `xm-${state.tab}-${state.from}_${state.to}.csv`; document.body.appendChild(a); a.click(); a.remove();
+    a.download = `${isOverview() ? "competitors" : curKey()}-${isOverview() ? "all" : state.tab}-${state.from}_${state.to}.csv`; document.body.appendChild(a); a.click(); a.remove();
     setTimeout(() => URL.revokeObjectURL(a.href), 1000); toast(t("toastExported", rows.length));
   }
 
   // ---------- state in URL hash ----------
-  function writeHash() {
-    const h = new URLSearchParams({ tab: state.tab, range: state.preset, sort: state.sort.key, dir: state.sort.dir < 0 ? "desc" : "asc" });
+  function hashNow() {
+    const h = new URLSearchParams();
+    if (state.view === "comp") { h.set("view", "comp"); h.set("brand", state.brand); }
+    if (!isOverview()) h.set("tab", state.tab);
+    h.set("range", state.preset); h.set("sort", state.sort.key); h.set("dir", state.sort.dir < 0 ? "desc" : "asc");
     if (state.preset === "custom") { h.set("from", state.from); h.set("to", state.to); }
-    history.replaceState(null, "", "#" + h.toString());
+    return h.toString();
   }
+  function writeHash() { history.replaceState(null, "", "#" + hashNow()); }
   function readHash() {
     const h = new URLSearchParams(location.hash.slice(1));
+    if (h.get("view") === "comp") state.view = "comp";
+    if (/^[a-z0-9_-]{1,32}$/.test(h.get("brand") || "")) state.brand = h.get("brand");
     if (h.get("tab")) state.tab = h.get("tab");
     const r = h.get("range"); if (r && ["7", "14", "30", "all", "custom"].includes(r)) state.preset = r;
     if (state.preset === "custom" && /^\d{4}-\d\d-\d\d$/.test(h.get("from") || "") && /^\d{4}-\d\d-\d\d$/.test(h.get("to") || "")) { state.from = h.get("from"); state.to = h.get("to"); } else if (state.preset === "custom") state.preset = "7";
@@ -822,48 +1106,55 @@ body.modal-open{overflow:hidden}
   // ---------- events ----------
   document.addEventListener("click", (e) => {
     const t = e.target.closest("button, a"); if (!t) return;
-    if (t.dataset.p) { state.preset = t.dataset.p; refreshView(); }
+    if (t.dataset.view || t.dataset.brand) { e.preventDefault(); go(t.dataset.view, t.dataset.brand, t.dataset.tab); }
+    else if (t.dataset.p) { state.preset = t.dataset.p; refreshView(); }
     else if (t.dataset.t) { state.tab = t.dataset.t; renderChrome(); renderContent(); writeHash(); }
-    else if (t.dataset.sort) { const k = t.dataset.sort; state.sort = state.sort.key === k ? { key: k, dir: -state.sort.dir } : { key: k, dir: -1 }; renderContent(); writeHash(); }
-    else if (t.dataset.modal) openModal(t.dataset.modal, t);
+    else if (t.dataset.sort) { const k = t.dataset.sort; state.sort = state.sort.key === k ? { key: k, dir: -state.sort.dir } : { key: k, dir: -1 }; renderBody(); writeHash(); }
+    else if (t.dataset.modal) openModal(t.dataset.modal, t, t.dataset.bk);
     else if (t.dataset.close !== undefined) closeModal();
     else if (t.dataset.lang) setLang(t.dataset.lang);
     else if (t.dataset.copy) { const txt = t.dataset.copy; const done = () => toast(I18N[LANG].qCopied); (navigator.clipboard ? navigator.clipboard.writeText(txt) : Promise.reject()).then(done, () => { const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (er) {} ta.remove(); }); }
     else if (t.id === "csv") exportCsv();
     else if (t.id === "signout") { clearAccess(); location.reload(); }
-    else if (t.id === "sd") { state.sort.dir = -state.sort.dir; renderContent(); writeHash(); }
+    else if (t.id === "sd") { state.sort.dir = -state.sort.dir; renderBody(); writeHash(); }
     else if (t.id === "showall") { state.preset = "all"; refreshView(); }
     else if (t.id === "refresh") doRefresh();
+  });
+  window.addEventListener("hashchange", () => {
+    const cur = location.hash.slice(1); if (cur === hashNow()) return;
+    state.view = "xm"; state.brand = "overview"; state.sort = { key: "impressions", dir: -1 };
+    readHash(); if (state.view === "comp" && !state.index) state.view = "xm";
+    closeModal(true); refreshView();
   });
   document.addEventListener("toggle", (e) => { if (e.target.id === "qbox") state.qOpen = e.target.open; }, true);
   document.addEventListener("change", (e) => {
     const el = e.target;
     if (el.id === "from" || el.id === "to") { const f = $("#from").value, to = $("#to").value; if (f && to && f <= to) { state.preset = "custom"; state.from = f; state.to = to; refreshView(); } else if (f && to) toast(t("toastOrder")); }
-    else if (el.id === "sf") { state.sentiment = el.value; renderContent(); }
-    else if (el.id === "sb") { state.sort = { key: el.value, dir: -1 }; renderContent(); writeHash(); }
-    else if (el.id === "lm") { state.limit = Number(el.value); renderContent(); }
-    else if (el.id === "ml") { state.minLikes = Math.max(0, Number(el.value) || 0); renderContent(); }
-    else if (el.id === "hp") { state.hidePromo = el.checked; renderContent(); }
+    else if (el.id === "sf") { state.sentiment = el.value; renderBody(); }
+    else if (el.id === "sb") { state.sort = { key: el.value, dir: -1 }; renderBody(); writeHash(); }
+    else if (el.id === "lm") { state.limit = Number(el.value); renderBody(); }
+    else if (el.id === "ml") { state.minLikes = Math.max(0, Number(el.value) || 0); renderBody(); }
+    else if (el.id === "hp") { state.hidePromo = el.checked; renderBody(); }
+    else if (el.id === "ho") { state.hideOfficial = el.checked; renderBody(); }
   });
   let qTimer;
   document.addEventListener("input", (e) => {
     if (e.target.id !== "q") return; const v = e.target.value; clearTimeout(qTimer);
-    qTimer = setTimeout(() => { state.q = v; const pos = e.target.selectionStart; renderContent(); const el = $("#q"); el.focus(); el.setSelectionRange(pos, pos); }, 200);
+    qTimer = setTimeout(() => { state.q = v; const pos = e.target.selectionStart; renderBody(); const el = $("#q"); el.focus(); el.setSelectionRange(pos, pos); }, 200);
   });
 
   async function doRefresh() {
     const b = $("#refresh"); b.disabled = true;
-    try { await loadManifest(true); await refreshView(); toast(t("toastReloaded")); } catch (e) { toast(t("toastFail", e.message)); } finally { b.disabled = false; }
+    try { await loadIndex(true); if (!(await refreshView(true))) throw refreshView.err; toast(t("toastReloaded")); } catch (e) { toast(t("toastFail", e.message)); } finally { b.disabled = false; }
   }
 
   function applyStatic() {
     document.documentElement.lang = LANG;
-    document.title = t("title");
+    renderTitles();
     document.querySelectorAll("[data-i18n]").forEach((n) => { n.textContent = t(n.dataset.i18n); });
     document.querySelectorAll("[data-i18n-title]").forEach((n) => { n.title = t(n.dataset.i18nTitle); });
     document.querySelectorAll("[data-i18n-ph]").forEach((n) => { n.placeholder = t(n.dataset.i18nPh); });
     $("#who").innerHTML = USER ? `${esc(t("signedAs", USER))} &middot; <button class="more" id="signout">${esc(t("signOut"))}</button>` : "";
-    $("#foot").textContent = t("footer");
     document.querySelectorAll("[data-lang]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lang === LANG)));
   }
   function setLang(l) {
@@ -871,7 +1162,7 @@ body.modal-open{overflow:hidden}
     closeModal(true);
     try { localStorage.setItem("xm_lang", LANG); } catch (e) { /* storage unavailable */ }
     applyStatic();
-    if (state.manifest) { renderChrome(); renderContent(); }
+    if (state.manifest) { renderChrome(); renderBody(); }
   }
 
   // ---------- e-mail access gate (client-side only: a soft gate, not security) ----------
@@ -936,12 +1227,10 @@ body.modal-open{overflow:hidden}
     if (!USER) USER = await askEmail();
     else { let seen = false; try { seen = !!sessionStorage.getItem("xm_logged"); } catch (e) { /* ignore */ } if (!seen) logVisit(USER, "visit"); }
     applyStatic(); skeleton();
-    try { await loadManifest(true); } catch (e) {
-      $("#updated").innerHTML = `<i style='background:#e5484d'></i><span>${esc(t("noDataChip"))}</span>`;
-      $("#content").innerHTML = `<div class="err"><b>${esc(t("errLoad"))}</b><br>${esc(e.message)}<br>${t("errHint")}</div>`; return;
-    }
-    if (!state.manifest.topics.some((t) => t.id === state.tab)) state.tab = state.manifest.topics[0].id;
-    await refreshView();
+    await loadIndex(true);
+    if (state.view === "comp" && !state.index) state.view = "xm";
+    if (state.view === "comp" && state.brand !== "overview" && !brandById(state.brand)) state.brand = "overview";
+    if (!(await refreshView(true))) $("#updated").innerHTML = `<i style='background:#e5484d'></i><span>${esc(t("noDataChip"))}</span>`;
   })();
 })();
 </script>

@@ -19,15 +19,18 @@ def clean_text(text):
 
 
 def _find(term, text):
-    if _LATIN.fullmatch(term):
-        return re.search(r"(?<![A-Za-z0-9])" + re.escape(term) + r"(?![A-Za-z0-9])", text, re.I) is not None
+    if term.isascii():  # Latin word or phrase ("Raw Spread"): case-insensitive, whole-word
+        body = re.escape(term).replace(r"\ ", r"\s?")
+        return re.search(r"(?<![A-Za-z0-9])" + body + r"(?![A-Za-z0-9])", text, re.I) is not None
     return term in text
 
 
 def _terms(topic):
-    """{keyword: [keyword + aliases]} for one topic."""
+    """{keyword: [keyword + aliases]} for one topic. Keywords listed in `tag_ignore` are still
+    searched for (they are in the query) but never tag a post (e.g. 銀行 <- 中央銀行)."""
     al = topic.get("aliases", {})
-    return {k: [k] + list(al.get(k, [])) for k in topic["keywords"]}
+    skip = set(topic.get("tag_ignore", []))
+    return {k: [k] + list(al.get(k, [])) for k in topic["keywords"] if k not in skip}
 
 
 def _mask(text, terms, topic_id, topics):

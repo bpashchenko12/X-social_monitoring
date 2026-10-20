@@ -101,8 +101,8 @@ def retag_all(topics_meta, weeks_dir=WEEKS_DIR):
     return changed
 
 
-def rebuild_manifest(topics_meta, weeks_dir=WEEKS_DIR, data_dir=DATA_DIR, search=None):
-    """Regenerate manifest.json from week files (SPEC 6.3 rule 7)."""
+def rebuild_manifest(topics_meta, weeks_dir=WEEKS_DIR, data_dir=DATA_DIR, search=None, extra=None):
+    """Regenerate manifest.json from week files (SPEC 6.3 rule 7). `extra` keys are merged in (e.g. brand)."""
     weeks, topic_counts, pending, latest = [], {t["id"]: 0 for t in topics_meta}, 0, None
     for path in sorted(glob.glob(os.path.join(weeks_dir, "*.json"))):
         data = read_json(path)
@@ -135,5 +135,7 @@ def rebuild_manifest(topics_meta, weeks_dir=WEEKS_DIR, data_dir=DATA_DIR, search
         "pending_enrichment": pending,
         "weeks": weeks,
     }
+    if extra:
+        manifest.update(extra)
     write_json_atomic(os.path.join(data_dir, "manifest.json"), manifest)
     return manifest

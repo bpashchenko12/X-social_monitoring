@@ -1,0 +1,68 @@
+{
+  "_comment": "Competitor brands (SPEC section 11). Shared settings (language, min_faves, window, actor, budget) come from queries.json; topic ids/names come from there too. To add a competitor: append one object to `brands` (see SPEC 11.8).",
+  "tag_ignore": ["銀行", "決済"],
+  "topic_aliases": {
+    "滑る": ["滑っ", "滑り"],
+    "ゼロカット": ["ゼロカ"]
+  },
+  "brands": [
+    {
+      "id": "hfm",
+      "name": "HFM",
+      "color": "#e8590c",
+      "query_terms": ["HFM", "HF Markets", "HotForex"],
+      "text_terms": {
+        "strong": ["HF Markets", "HFMarkets", "HotForex", "HFMアプリ", "HFMロイヤルティ", "HFMコピー"],
+        "bare": ["HFM"],
+        "context_extra": ["コピトレ", "コピートレード", "垢BAN", "垢バン", "アカBAN", "アカウント停止", "アカウント凍結", "没収"]
+      },
+      "non_matches": [],
+      "exclude_terms": ["広島", "ラジオ"],
+      "reject_terms": ["大運動会", "リスナー", "ゴッジ", "グッジョグ", "広島FM", "ラジオ"],
+      "topics": {
+        "campaigns": ["ボーナス", "入金ボーナス", "キャッシュバック", "プロモ", "プロモーション", "キャンペーン", "リワード", "ロイヤルティ", "HFMロイヤルティ"],
+        "competitions": ["コンテスト", "デモコンテスト", "トレーダーズアワード", "トレードコンテスト", "大会", "トレードイベント", "取引イベント"],
+        "environment": ["スプレッド", "滑る", "スリッページ", "サーバー", "鯖落ち", "MT4", "MT5", "レバレッジ", "アプリ", "取引条件", "約定", "ゼロカット", "EA", "IB", "HFMアプリ"],
+        "deposit_withdrawal": ["出金", "着金", "入金", "入金方法", "銀行", "クレカ", "クレジットカード", "bitwallet", "入出金"],
+        "account_types": ["InfinityX", "インフィニティ", "Cent", "セント口座", "Zero", "ゼロ口座", "Pro", "プロ口座", "Premium", "プレミアム口座", "Katana", "Katana口座", "HFMコピー口座", "口座"]
+      }
+    },
+    {
+      "id": "exness",
+      "name": "Exness",
+      "color": "#0c8599",
+      "query_terms": ["Exness", "エクスネス"],
+      "text_terms": {
+        "strong": ["Exness", "エクスネス"],
+        "bare": []
+      },
+      "non_matches": [],
+      "topics": {
+        "campaigns": ["ボーナス", "入金ボーナス", "キャッシュバック", "プロモ", "プロモーション", "キャンペーン", "リワード", "Exness Rewards", "リワードプログラム"],
+        "competitions": ["コンテスト", "コンペ", "コンペティション", "大会", "トレード大会", "トレードチャレンジ", "イベント", "チャレンジ"],
+        "environment": ["スプレッド", "滑る", "スリッページ", "サーバー", "鯖落ち", "MT4", "MT5", "レバレッジ", "アプリ", "Exness Trade", "取引条件", "約定", "ゼロカット", "EA", "IB"],
+        "deposit_withdrawal": ["出金", "着金", "入金", "入金方法", "銀行", "クレカ", "クレジットカード", "bitwallet", "入出金", "決済"],
+        "account_types": ["スタンダード", "スタンダード口座", "スタンダードセント", "スタンダードセント口座", "ロースプレッド", "ロースプレッド口座", "Raw Spread", "ゼロ口座", "Zero", "プロ口座", "Pro", "口座"]
+      }
+    },
+    {
+      "id": "titanfx",
+      "name": "Titan FX",
+      "color": "#5f3dc4",
+      "query_terms": ["TitanFX", "Titan FX", "タイタンFX"],
+      "text_terms": {
+        "strong": ["TitanFX", "Titan FX", "タイタンFX"],
+        "bare": []
+      },
+      "non_matches": [],
+      "official_handles": ["TitanFXJP"],
+      "topics": {
+        "campaigns": ["ボーナス", "入金ボーナス", "キャッシュバック", "無限キャッシュバック", "プロモ", "プロモーション", "キャンペーン", "ポイント祭", "入金キャンペーン"],
+        "competitions": ["コンテスト", "TITAN FXコンテスト", "デモトレードチャレンジ", "ボーダレス", "トレーディングコンペ", "トレードコンテスト", "トーナメント", "大会", "トレードバトル"],
+        "environment": ["スプレッド", "滑る", "スリッページ", "サーバー", "鯖落ち", "MT4", "MT5", "レバレッジ", "アプリ", "Titan FX Social", "取引条件", "約定", "ゼロカット", "EA", "IB", "Zero Point"],
+        "deposit_withdrawal": ["出金", "着金", "入金", "入金方法", "銀行", "クレカ", "クレジットカード", "bitwallet", "入出金", "決済"],
+        "account_types": ["Zeroスタンダード", "ゼロスタンダード", "Zeroスタンダード口座", "Zeroブレード", "ゼロブレード", "Zeroブレード口座", "Zeroマイクロ", "ゼロマイクロ", "Zeroマイクロ口座", "スタンダード口座", "ブレード口座", "マイクロ口座", "口座"]
+      }
+    }
+  ]
+}

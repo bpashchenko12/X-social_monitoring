@@ -55,7 +55,8 @@ def redact_excluded(p):
     return p
 
 
-def normalize_item(item, topic_id, non_matches=(), fetched_at=None):
+def normalize_item(item, topic_id, non_matches=(), fetched_at=None, relevance=None):
+    """`relevance`: optional callable (text, handle) -> (bool, reason) replacing the XM brand filter."""
     fetched_at = fetched_at or now_utc()
     author = item.get("author") or {}
     handle = author.get("userName") or author.get("username") or author.get("screen_name") or ""
@@ -64,7 +65,7 @@ def normalize_item(item, topic_id, non_matches=(), fetched_at=None):
     if created is None:
         return None
     pid = str(item["id"])
-    relevant, reason = check_relevance(text, non_matches)
+    relevant, reason = relevance(text, handle) if relevance else check_relevance(text, non_matches)
     url = f"https://x.com/{handle}/status/{pid}" if handle else (item.get("url") or f"https://x.com/i/status/{pid}")
     return {
         "id": pid,
@@ -104,14 +105,14 @@ def apply_thresholds(posts, min_likes, since_dt):
     return kept, len(posts) - len(kept)
 
 
-def normalize_items(items, topic_id, non_matches=(), fetched_at=None):
+def normalize_items(items, topic_id, non_matches=(), fetched_at=None, relevance=None):
     """Return (posts, dropped_count) - placeholders and unparsable rows are dropped."""
     posts, dropped = [], 0
     for it in items:
         if not is_real_tweet(it):
             dropped += 1
             continue
-        p = normalize_item(it, topic_id, non_matches, fetched_at)
+        p = normalize_item(it, topic_id, non_matches, fetched_at, relevance)
         if p is None:
             dropped += 1
         else:

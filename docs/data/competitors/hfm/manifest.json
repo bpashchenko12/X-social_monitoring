@@ -1,0 +1,180 @@
+{
+  "brand": {
+    "color": "#e8590c",
+    "id": "hfm",
+    "name": "HFM"
+  },
+  "generated_at": "2026-10-20T09:41:27Z",
+  "latest_post_at": "2026-10-20T09:21:37Z",
+  "pending_enrichment": 0,
+  "schema_version": 1,
+  "search": {
+    "brand": [
+      "HFM",
+      "HF Markets",
+      "HotForex"
+    ],
+    "exclude_retweets": true,
+    "initial_backfill_days": 30,
+    "language": "ja",
+    "max_items": 200,
+    "min_faves": 10,
+    "queries": {
+      "account_types": "(HFM OR \"HF Markets\" OR HotForex) (InfinityX OR インフィニティ OR Cent OR セント口座 OR Zero OR ゼロ口座 OR Pro OR プロ口座 OR Premium OR プレミアム口座 OR Katana OR \"Katana口座\" OR \"HFMコピー口座\" OR 口座) -広島 -ラジオ lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "campaigns": "(HFM OR \"HF Markets\" OR HotForex) (ボーナス OR 入金ボーナス OR キャッシュバック OR プロモ OR プロモーション OR キャンペーン OR リワード OR ロイヤルティ OR \"HFMロイヤルティ\") -広島 -ラジオ lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "competitions": "(HFM OR \"HF Markets\" OR HotForex) (コンテスト OR デモコンテスト OR トレーダーズアワード OR トレードコンテスト OR 大会 OR トレードイベント OR 取引イベント) -広島 -ラジオ lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "deposit_withdrawal": "(HFM OR \"HF Markets\" OR HotForex) (出金 OR 着金 OR 入金 OR 入金方法 OR 銀行 OR クレカ OR クレジットカード OR bitwallet OR 入出金) -広島 -ラジオ lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "environment": "(HFM OR \"HF Markets\" OR HotForex) (スプレッド OR 滑る OR スリッページ OR サーバー OR 鯖落ち OR MT4 OR MT5 OR レバレッジ OR アプリ OR 取引条件 OR 約定 OR ゼロカット OR EA OR IB OR \"HFMアプリ\") -広島 -ラジオ lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "macro": "(HFM OR \"HF Markets\" OR HotForex) -広島 -ラジオ lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>"
+    },
+    "sort": "Latest + Top",
+    "window_days": 7
+  },
+  "topics": [
+    {
+      "id": "macro",
+      "keywords": [],
+      "name": "Overall Brand Mention",
+      "posts": 55
+    },
+    {
+      "id": "campaigns",
+      "keywords": [
+        "ボーナス",
+        "入金ボーナス",
+        "キャッシュバック",
+        "プロモ",
+        "プロモーション",
+        "キャンペーン",
+        "リワード",
+        "ロイヤルティ",
+        "HFMロイヤルティ"
+      ],
+      "name": "Campaigns & Cashback",
+      "posts": 11
+    },
+    {
+      "id": "competitions",
+      "keywords": [
+        "コンテスト",
+        "デモコンテスト",
+        "トレーダーズアワード",
+        "トレードコンテスト",
+        "大会",
+        "トレードイベント",
+        "取引イベント"
+      ],
+      "name": "Competitions & Events",
+      "posts": 6
+    },
+    {
+      "id": "environment",
+      "keywords": [
+        "スプレッド",
+        "滑る",
+        "スリッページ",
+        "サーバー",
+        "鯖落ち",
+        "MT4",
+        "MT5",
+        "レバレッジ",
+        "アプリ",
+        "取引条件",
+        "約定",
+        "ゼロカット",
+        "EA",
+        "IB",
+        "HFMアプリ"
+      ],
+      "name": "Trading Environment",
+      "posts": 11
+    },
+    {
+      "id": "deposit_withdrawal",
+      "keywords": [
+        "出金",
+        "着金",
+        "入金",
+        "入金方法",
+        "銀行",
+        "クレカ",
+        "クレジットカード",
+        "bitwallet",
+        "入出金"
+      ],
+      "name": "Deposit & Withdrawal",
+      "posts": 16
+    },
+    {
+      "id": "account_types",
+      "keywords": [
+        "InfinityX",
+        "インフィニティ",
+        "Cent",
+        "セント口座",
+        "Zero",
+        "ゼロ口座",
+        "Pro",
+        "プロ口座",
+        "Premium",
+        "プレミアム口座",
+        "Katana",
+        "Katana口座",
+        "HFMコピー口座",
+        "口座"
+      ],
+      "name": "Account Types",
+      "posts": 11
+    }
+  ],
+  "weeks": [
+    {
+      "file": "weeks/2026-W38.json",
+      "max_date": "2026-09-20T12:42:59Z",
+      "min_date": "2026-09-20T00:26:27Z",
+      "posts": 5,
+      "relevant_posts": 1,
+      "week": "2026-W38"
+    },
+    {
+      "file": "weeks/2026-W39.json",
+      "max_date": "2026-09-27T13:37:02Z",
+      "min_date": "2026-09-20T17:58:59Z",
+      "posts": 64,
+      "relevant_posts": 13,
+      "week": "2026-W39"
+    },
+    {
+      "file": "weeks/2026-W40.json",
+      "max_date": "2026-10-04T14:19:49Z",
+      "min_date": "2026-09-27T22:36:45Z",
+      "posts": 56,
+      "relevant_posts": 10,
+      "week": "2026-W40"
+    },
+    {
+      "file": "weeks/2026-W41.json",
+      "max_date": "2026-10-11T12:50:31Z",
+      "min_date": "2026-10-04T22:40:56Z",
+      "posts": 60,
+      "relevant_posts": 9,
+      "week": "2026-W41"
+    },
+    {
+      "file": "weeks/2026-W42.json",
+      "max_date": "2026-10-18T14:56:53Z",
+      "min_date": "2026-10-11T17:49:35Z",
+      "posts": 222,
+      "relevant_posts": 19,
+      "week": "2026-W42"
+    },
+    {
+      "file": "weeks/2026-W43.json",
+      "max_date": "2026-10-20T09:21:37Z",
+      "min_date": "2026-10-18T15:23:16Z",
+      "posts": 98,
+      "relevant_posts": 3,
+      "week": "2026-W43"
+    }
+  ]
+}

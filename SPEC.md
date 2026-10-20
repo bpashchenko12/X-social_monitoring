@@ -188,19 +188,64 @@ Layout and behaviour (derived from the Mock-up and Context):
 10. Responsive (desktop first, usable on tablet/mobile), keyboard-accessible, empty/loading/error states.
 11. Design: clean analytics look - dark navy header, light surface, one accent colour, semantic sentiment colours (green / red / grey), rounded cards, subtle shadows, tabular numbers, sticky table header.
 
-## 11. Automation and deployment
+## 11. Competitors view
 
-- `refresh.yml`: weekly cron (Monday 01:00 UTC = 10:00 JST) + `workflow_dispatch`. Steps: checkout, run `pipeline/run.py --yes`, commit `docs/data` + ledger, push. Secret `APIFY_TOKEN` in repo secrets.
+A second dashboard view ("Competitors") tracks X posts about other brokers (HFM, Exness, Titan FX). It reuses the XM pipeline, the topic taxonomy, the week-file format and the same actor; only the query terms and relevance rules are per brand. Real scraped posts only.
+
+### 11.1 Files
+
+- `config/competitors.json`: one object per brand in `brands` (`id`, `name`, `color`, `query_terms`, `text_terms{strong,bare,context_extra}`, `non_matches`, `exclude_terms`, `reject_terms`, `topics{}`) plus top-level `tag_ignore` and `topic_aliases`. Language, `min_faves`, window, actor and budget come from `config/queries.json`.
+- Store: `docs/data/competitors/index.json` (brand list) and `docs/data/competitors/<id>/{manifest.json,weeks/YYYY-Www.json}`. Week files have the same shape as the XM store (section 6).
+
+### 11.2 Queries and cost
+
+Per brand, one macro query and five topic queries (same base conditions as section 3, brand terms from `query_terms`). `competitors-plan` prints them with the estimated cost; `competitors-fetch --yes` runs them through the same cache, per-call cap and `budget_usd` ledger as `fetch`. One run for all brands costs about $0.26.
+
+### 11.3 Relevance
+
+A post is kept only if it names the brand in its text: a `strong` term, or a `bare` term together with a `context_extra` trading word. Author name/handle matches, `non_matches` (unrelated words) and `exclude_terms`/`reject_terms` (other brands as the subject, job ads, bots) are dropped. Excluded posts are stored as redacted stubs (`relevant:false`, `exclude_reason`) so they are not re-fetched or re-reviewed. `competitors-lint` checks the config and the query lengths.
+
+### 11.4 Enrichment rules
+
+- Same export/import cycle as section 8, with `enrich-export --scope xm <brand id> ...` (no scope = everything) and updates carrying `scope`.
+- Translation is complete and faithful: no summaries, no "[truncated]" or "(rest omitted)" markers, no guessed endings. Tables and lists are translated in full; URLs, hashtags, handles, numbers and codes are unchanged.
+- Slang or terms whose meaning cannot be established are left in the original script and flagged in parentheses instead of being guessed.
+- Sentiment is the tone toward that brand. A post comparing brands is labelled per brand store: the same post may be Positive for one brand and Negative for another. Official brand posts are Neutral (an award win is Positive).
+- Numbers in the translation are checked against the original before import.
+
+### 11.5 Dashboard
+
+View switch "XM Monitor | Competitors". Competitors view: brand pills and an overview matrix (posts, accounts, impressions, sentiment, per-topic counts per brand), then per-brand pages with the same tabs, KPIs, charts, filters, table and CSV as section 10. Hash routing keeps the selected view, brand and tab in the URL.
+
+### 11.6 CSV and CI
+
+The dashboard "Export CSV" works on every brand tab with the same columns as section 10.9; the `csv` command exports the XM topics only. `refresh.yml` runs `competitors-fetch --yes` after the XM fetch and commits `docs/data`.
+
+### 11.7 Data policy
+
+Only posts returned by the scraper are published. Test inputs in `tests/fixtures/` are synthetic, exist solely for unit tests of the relevance filter and normaliser, and are never written to `docs/` or `data/`.
+
+### 11.8 Adding a competitor
+
+1. Append an object to `brands` in `config/competitors.json` (unique `id`, name, colour, `query_terms`, `text_terms`, `non_matches`, `topics`).
+2. `python3 -m pipeline.run competitors-lint`, then `competitors-plan` (free) to review queries and cost.
+3. `python3 -m pipeline.run competitors-fetch --yes`.
+4. Review excluded and kept posts, adjust the terms, re-run the fetch (cached input costs nothing).
+5. Enrich (`enrich-export --scope <id>`, translate in full, `enrich-import`), then `python3 -m pipeline.run manifest`.
+
+## 12. Automation and deployment
+
+- `refresh.yml`: weekly cron (Monday 01:00 UTC = 10:00 JST) + `workflow_dispatch`. Steps: checkout, unit tests, `fetch --yes`, `competitors-fetch --yes`, `manifest`, commit `docs/data` + ledger, push. Secret `APIFY_TOKEN` in repo secrets.
 - Pages: serve from `main` branch `/docs`. Public access accepted by the owner (business-org account, public repo).
 - New posts arrive un-enriched; enrichment is a separate explicit step (section 8).
 
-## 12. Test plan
+## 13. Test plan
 
 Automated (no credits, fixtures only): query builder (all 6 queries match Proposal text), normaliser (field mapping, missing fields, media, mock items), relevance filter (positive and negative cases incl. username-only match, XMP, SiriusXM), store (insert, upsert, topic merge, week partitioning at JST boundary, atomic write, manifest), budget guard and cache (no second call for same input), CSV export.
 Dashboard: loaded in a real browser against fixture data, verify tabs, date filter, sort, search, CSV, empty state, and no console errors.
 Live: 1 probe call, then the Phase 1 pull.
 
-## 13. Requirements traceability
+## 14. Requirements traceability
 
 | Source requirement | Where |
 |--------------------|-------|
@@ -217,9 +262,10 @@ Live: 1 probe call, then the Phase 1 pull.
 | Sentiment ratio visual | 10.5 |
 | Stored data (db/warehouse) rather than frontend-only | 6 |
 | Apify API key, minimal credit use (user request) | 5 |
-| GitHub Pages HTML (user request) | 10, 11 |
+| GitHub Pages HTML (user request) | 10, 12 |
+| Competitor monitoring (HFM, Exness, Titan FX), real data only (user request) | 11 |
 
-## 14. Discrepancies found in the source documents (and decisions)
+## 15. Discrepancies found in the source documents (and decisions)
 
 1. Proposal's macro query has spaces (`lang: JA - filter:retweets`) -> normalised to `lang:ja -filter:retweets`.
 2. Schema "Topic Category" values omit Account types, though Topic 5 exists -> `account_types` added.

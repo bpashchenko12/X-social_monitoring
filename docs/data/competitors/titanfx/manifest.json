@@ -1,0 +1,175 @@
+{
+  "brand": {
+    "color": "#5f3dc4",
+    "id": "titanfx",
+    "name": "Titan FX"
+  },
+  "generated_at": "2026-10-20T09:41:27Z",
+  "latest_post_at": "2026-10-20T09:16:08Z",
+  "pending_enrichment": 0,
+  "schema_version": 1,
+  "search": {
+    "brand": [
+      "TitanFX",
+      "Titan FX",
+      "タイタンFX"
+    ],
+    "exclude_retweets": true,
+    "initial_backfill_days": 30,
+    "language": "ja",
+    "max_items": 200,
+    "min_faves": 10,
+    "queries": {
+      "account_types": "(TitanFX OR \"Titan FX\" OR \"タイタンFX\") (\"Zeroスタンダード\" OR ゼロスタンダード OR \"Zeroスタンダード口座\" OR \"Zeroブレード\" OR ゼロブレード OR \"Zeroブレード口座\" OR \"Zeroマイクロ\" OR ゼロマイクロ OR \"Zeroマイクロ口座\" OR スタンダード口座 OR ブレード口座 OR マイクロ口座 OR 口座) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "campaigns": "(TitanFX OR \"Titan FX\" OR \"タイタンFX\") (ボーナス OR 入金ボーナス OR キャッシュバック OR 無限キャッシュバック OR プロモ OR プロモーション OR キャンペーン OR ポイント祭 OR 入金キャンペーン) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "competitions": "(TitanFX OR \"Titan FX\" OR \"タイタンFX\") (コンテスト OR \"TITAN FXコンテスト\" OR デモトレードチャレンジ OR ボーダレス OR トレーディングコンペ OR トレードコンテスト OR トーナメント OR 大会 OR トレードバトル) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "deposit_withdrawal": "(TitanFX OR \"Titan FX\" OR \"タイタンFX\") (出金 OR 着金 OR 入金 OR 入金方法 OR 銀行 OR クレカ OR クレジットカード OR bitwallet OR 入出金 OR 決済) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "environment": "(TitanFX OR \"Titan FX\" OR \"タイタンFX\") (スプレッド OR 滑る OR スリッページ OR サーバー OR 鯖落ち OR MT4 OR MT5 OR レバレッジ OR アプリ OR \"Titan FX Social\" OR 取引条件 OR 約定 OR ゼロカット OR EA OR IB OR \"Zero Point\") lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "macro": "(TitanFX OR \"Titan FX\" OR \"タイタンFX\") lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>"
+    },
+    "sort": "Latest + Top",
+    "window_days": 7
+  },
+  "topics": [
+    {
+      "id": "macro",
+      "keywords": [],
+      "name": "Overall Brand Mention",
+      "posts": 66
+    },
+    {
+      "id": "campaigns",
+      "keywords": [
+        "ボーナス",
+        "入金ボーナス",
+        "キャッシュバック",
+        "無限キャッシュバック",
+        "プロモ",
+        "プロモーション",
+        "キャンペーン",
+        "ポイント祭",
+        "入金キャンペーン"
+      ],
+      "name": "Campaigns & Cashback",
+      "posts": 9
+    },
+    {
+      "id": "competitions",
+      "keywords": [
+        "コンテスト",
+        "TITAN FXコンテスト",
+        "デモトレードチャレンジ",
+        "ボーダレス",
+        "トレーディングコンペ",
+        "トレードコンテスト",
+        "トーナメント",
+        "大会",
+        "トレードバトル"
+      ],
+      "name": "Competitions & Events",
+      "posts": 2
+    },
+    {
+      "id": "environment",
+      "keywords": [
+        "スプレッド",
+        "滑る",
+        "スリッページ",
+        "サーバー",
+        "鯖落ち",
+        "MT4",
+        "MT5",
+        "レバレッジ",
+        "アプリ",
+        "Titan FX Social",
+        "取引条件",
+        "約定",
+        "ゼロカット",
+        "EA",
+        "IB",
+        "Zero Point"
+      ],
+      "name": "Trading Environment",
+      "posts": 6
+    },
+    {
+      "id": "deposit_withdrawal",
+      "keywords": [
+        "出金",
+        "着金",
+        "入金",
+        "入金方法",
+        "銀行",
+        "クレカ",
+        "クレジットカード",
+        "bitwallet",
+        "入出金",
+        "決済"
+      ],
+      "name": "Deposit & Withdrawal",
+      "posts": 4
+    },
+    {
+      "id": "account_types",
+      "keywords": [
+        "Zeroスタンダード",
+        "ゼロスタンダード",
+        "Zeroスタンダード口座",
+        "Zeroブレード",
+        "ゼロブレード",
+        "Zeroブレード口座",
+        "Zeroマイクロ",
+        "ゼロマイクロ",
+        "Zeroマイクロ口座",
+        "スタンダード口座",
+        "ブレード口座",
+        "マイクロ口座",
+        "口座"
+      ],
+      "name": "Account Types",
+      "posts": 3
+    }
+  ],
+  "weeks": [
+    {
+      "file": "weeks/2026-W39.json",
+      "max_date": "2026-09-25T09:03:18Z",
+      "min_date": "2026-09-21T06:49:16Z",
+      "posts": 16,
+      "relevant_posts": 16,
+      "week": "2026-W39"
+    },
+    {
+      "file": "weeks/2026-W40.json",
+      "max_date": "2026-10-02T01:23:57Z",
+      "min_date": "2026-09-28T00:05:22Z",
+      "posts": 15,
+      "relevant_posts": 15,
+      "week": "2026-W40"
+    },
+    {
+      "file": "weeks/2026-W41.json",
+      "max_date": "2026-10-09T11:28:35Z",
+      "min_date": "2026-10-04T22:40:36Z",
+      "posts": 19,
+      "relevant_posts": 16,
+      "week": "2026-W41"
+    },
+    {
+      "file": "weeks/2026-W42.json",
+      "max_date": "2026-10-18T10:14:09Z",
+      "min_date": "2026-10-11T18:59:00Z",
+      "posts": 64,
+      "relevant_posts": 14,
+      "week": "2026-W42"
+    },
+    {
+      "file": "weeks/2026-W43.json",
+      "max_date": "2026-10-20T09:16:08Z",
+      "min_date": "2026-10-18T21:29:00Z",
+      "posts": 32,
+      "relevant_posts": 5,
+      "week": "2026-W43"
+    }
+  ]
+}

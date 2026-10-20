@@ -13,7 +13,7 @@ python3 -m pipeline.run csv                 # exports/<topic>.csv
 python3 -m pipeline.run manifest            # rebuild manifests (XM + competitors)
 python3 -m pipeline.run competitors-lint    # validate config/competitors.json
 python3 -m pipeline.run competitors-plan    # free dry run for competitors
-python3 -m pipeline.run competitors-fetch --yes   # paid; HFM, Exness, Titan FX
+python3 -m pipeline.run competitors-fetch --yes   # paid; HFM, Exness, Titan FX, Vantage, XS
 python3 -m unittest discover -s tests -t .  # tests
 ```
 

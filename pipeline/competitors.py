@@ -25,8 +25,11 @@ _CONTEXT_BASE = _CONTEXT.pattern.replace(_BROKER_NAMES, "")
 assert _CONTEXT_BASE != _CONTEXT.pattern
 
 
-def _context_regex(extra):
-    pat = _CONTEXT_BASE + ("|" + "|".join(re.escape(_norm(x)) for x in extra) if extra else "")
+def _context_regex(extra, only=False):
+    words = "|".join(re.escape(_norm(x)) for x in extra) if extra else ""
+    if only:  # ambiguous brand name: ONLY these words count as trading context
+        return re.compile(words or r"(?!)", re.I)
+    pat = _CONTEXT_BASE + ("|" + words if words else "")
     return re.compile(pat, re.I)
 
 
@@ -102,7 +105,7 @@ def make_relevance(brand):
     bare = re.compile("|".join(_term_regex(t) for t in tt["bare"]), re.I) if tt.get("bare") else None
     non = [_norm(p) for p in brand.get("non_matches", [])]
     official = {h.lower().lstrip("@") for h in brand.get("official_handles", [])}
-    context = _context_regex(tt.get("context_extra", []))
+    context = _context_regex(tt.get("context_extra", []), tt.get("context_only", False))
     reject = [_norm(x).lower() for x in brand.get("reject_terms", [])]
     name = brand["name"]
 

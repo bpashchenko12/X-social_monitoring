@@ -1,0 +1,150 @@
+{
+  "brand": {
+    "color": "#d6336c",
+    "id": "vantage",
+    "name": "Vantage"
+  },
+  "generated_at": "2026-10-20T15:25:15Z",
+  "latest_post_at": "2026-10-20T14:22:52Z",
+  "pending_enrichment": 0,
+  "schema_version": 1,
+  "search": {
+    "brand": [
+      "Vantage",
+      "Vantage Trading",
+      "ヴァンテージ",
+      "Vantage Markets"
+    ],
+    "exclude_retweets": true,
+    "initial_backfill_days": 30,
+    "language": "ja",
+    "max_items": 200,
+    "min_faves": 10,
+    "queries": {
+      "account_types": "(Vantage OR \"Vantage Trading\" OR ヴァンテージ OR \"Vantage Markets\") (スタンダード OR スタンダード口座 OR \"Standard STP\" OR ECN OR \"ECN口座\" OR \"Raw ECN\" OR RAW OR プレミアム口座 OR \"Premium STP\" OR 口座) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "campaigns": "(Vantage OR \"Vantage Trading\" OR ヴァンテージ OR \"Vantage Markets\") (ボーナス OR 入金ボーナス OR キャッシュバック OR プロモ OR プロモーション OR キャンペーン OR リワード OR ポイント OR 特典 OR ミッション) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "competitions": "(Vantage OR \"Vantage Trading\" OR ヴァンテージ OR \"Vantage Markets\") (コンテスト OR コンペ OR トレードコンテスト OR トレード大会 OR 大会 OR トレードチャレンジ OR チャレンジ OR トーナメント OR イベント) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "deposit_withdrawal": "(Vantage OR \"Vantage Trading\" OR ヴァンテージ OR \"Vantage Markets\") (出金 OR 着金 OR 入金 OR 入金方法 OR 銀行 OR クレカ OR クレジットカード OR bitwallet OR 入出金 OR 決済) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "environment": "(Vantage OR \"Vantage Trading\" OR ヴァンテージ OR \"Vantage Markets\") (スプレッド OR 滑る OR スリッページ OR サーバー OR 鯖落ち OR MT4 OR MT5 OR レバレッジ OR アプリ OR ヴァンテージアプリ OR TradingView OR 取引条件 OR 約定 OR ゼロカット OR EA OR IB) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "macro": "(Vantage OR \"Vantage Trading\" OR ヴァンテージ OR \"Vantage Markets\") lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>"
+    },
+    "sort": "Latest + Top",
+    "window_days": 7
+  },
+  "topics": [
+    {
+      "id": "macro",
+      "keywords": [],
+      "name": "Overall Brand Mention",
+      "posts": 5
+    },
+    {
+      "id": "campaigns",
+      "keywords": [
+        "ボーナス",
+        "入金ボーナス",
+        "キャッシュバック",
+        "プロモ",
+        "プロモーション",
+        "キャンペーン",
+        "リワード",
+        "ポイント",
+        "特典",
+        "ミッション"
+      ],
+      "name": "Campaigns & Cashback",
+      "posts": 0
+    },
+    {
+      "id": "competitions",
+      "keywords": [
+        "コンテスト",
+        "コンペ",
+        "トレードコンテスト",
+        "トレード大会",
+        "大会",
+        "トレードチャレンジ",
+        "チャレンジ",
+        "トーナメント",
+        "イベント"
+      ],
+      "name": "Competitions & Events",
+      "posts": 0
+    },
+    {
+      "id": "environment",
+      "keywords": [
+        "スプレッド",
+        "滑る",
+        "スリッページ",
+        "サーバー",
+        "鯖落ち",
+        "MT4",
+        "MT5",
+        "レバレッジ",
+        "アプリ",
+        "ヴァンテージアプリ",
+        "TradingView",
+        "取引条件",
+        "約定",
+        "ゼロカット",
+        "EA",
+        "IB"
+      ],
+      "name": "Trading Environment",
+      "posts": 1
+    },
+    {
+      "id": "deposit_withdrawal",
+      "keywords": [
+        "出金",
+        "着金",
+        "入金",
+        "入金方法",
+        "銀行",
+        "クレカ",
+        "クレジットカード",
+        "bitwallet",
+        "入出金",
+        "決済"
+      ],
+      "name": "Deposit & Withdrawal",
+      "posts": 1
+    },
+    {
+      "id": "account_types",
+      "keywords": [
+        "スタンダード",
+        "スタンダード口座",
+        "Standard STP",
+        "ECN",
+        "ECN口座",
+        "Raw ECN",
+        "RAW",
+        "プレミアム口座",
+        "Premium STP",
+        "口座"
+      ],
+      "name": "Account Types",
+      "posts": 2
+    }
+  ],
+  "weeks": [
+    {
+      "file": "weeks/2026-W42.json",
+      "max_date": "2026-10-18T13:28:59Z",
+      "min_date": "2026-10-13T03:52:53Z",
+      "posts": 172,
+      "relevant_posts": 3,
+      "week": "2026-W42"
+    },
+    {
+      "file": "weeks/2026-W43.json",
+      "max_date": "2026-10-20T14:22:52Z",
+      "min_date": "2026-10-18T22:15:12Z",
+      "posts": 71,
+      "relevant_posts": 2,
+      "week": "2026-W43"
+    }
+  ]
+}

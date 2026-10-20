@@ -1,0 +1,159 @@
+{
+  "brand": {
+    "color": "#1c7ed6",
+    "id": "xs",
+    "name": "XS"
+  },
+  "generated_at": "2026-10-20T15:25:15Z",
+  "latest_post_at": "2026-10-20T14:34:58Z",
+  "pending_enrichment": 0,
+  "schema_version": 1,
+  "search": {
+    "brand": [
+      "XS",
+      "XS.com",
+      "エックスエス"
+    ],
+    "exclude_retweets": true,
+    "initial_backfill_days": 30,
+    "language": "ja",
+    "max_items": 200,
+    "min_faves": 10,
+    "queries": {
+      "account_types": "(XS OR XS.com OR エックスエス) (スタンダード OR スタンダード口座 OR Standard OR セント口座 OR Cent OR プロ口座 OR Pro OR エリート OR エリート口座 OR Elite OR クラシック OR クラシック口座 OR Classic OR エクストラ OR エクストラ口座 OR Extra OR 口座) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "campaigns": "(XS OR XS.com OR エックスエス) (ボーナス OR 入金ボーナス OR キャッシュバック OR プロモ OR プロモーション OR キャンペーン OR リワード OR 賞金 OR 抽選会 OR 特典) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "competitions": "(XS OR XS.com OR エックスエス) (コンテスト OR トレード大会 OR デモ口座トレード大会 OR デモトレード大会 OR リアルトレード大会 OR 大会 OR トレードコンペ OR コンペ OR チャレンジ OR イベント OR 抽選会) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "deposit_withdrawal": "(XS OR XS.com OR エックスエス) (出金 OR 着金 OR 入金 OR 入金方法 OR 銀行 OR クレカ OR クレジットカード OR bitwallet OR 入出金 OR 決済 OR ウォレット) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "environment": "(XS OR XS.com OR エックスエス) (スプレッド OR 滑る OR スリッページ OR サーバー OR 鯖落ち OR MT4 OR MT5 OR レバレッジ OR アプリ OR 取引条件 OR 約定 OR ゼロカット OR EA OR IB OR コピートレード OR コピー取引) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "macro": "(XS OR XS.com OR エックスエス) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>"
+    },
+    "sort": "Latest + Top",
+    "window_days": 7
+  },
+  "topics": [
+    {
+      "id": "macro",
+      "keywords": [],
+      "name": "Overall Brand Mention",
+      "posts": 14
+    },
+    {
+      "id": "campaigns",
+      "keywords": [
+        "ボーナス",
+        "入金ボーナス",
+        "キャッシュバック",
+        "プロモ",
+        "プロモーション",
+        "キャンペーン",
+        "リワード",
+        "賞金",
+        "抽選会",
+        "特典"
+      ],
+      "name": "Campaigns & Cashback",
+      "posts": 3
+    },
+    {
+      "id": "competitions",
+      "keywords": [
+        "コンテスト",
+        "トレード大会",
+        "デモ口座トレード大会",
+        "デモトレード大会",
+        "リアルトレード大会",
+        "大会",
+        "トレードコンペ",
+        "コンペ",
+        "チャレンジ",
+        "イベント",
+        "抽選会"
+      ],
+      "name": "Competitions & Events",
+      "posts": 0
+    },
+    {
+      "id": "environment",
+      "keywords": [
+        "スプレッド",
+        "滑る",
+        "スリッページ",
+        "サーバー",
+        "鯖落ち",
+        "MT4",
+        "MT5",
+        "レバレッジ",
+        "アプリ",
+        "取引条件",
+        "約定",
+        "ゼロカット",
+        "EA",
+        "IB",
+        "コピートレード",
+        "コピー取引"
+      ],
+      "name": "Trading Environment",
+      "posts": 4
+    },
+    {
+      "id": "deposit_withdrawal",
+      "keywords": [
+        "出金",
+        "着金",
+        "入金",
+        "入金方法",
+        "銀行",
+        "クレカ",
+        "クレジットカード",
+        "bitwallet",
+        "入出金",
+        "決済",
+        "ウォレット"
+      ],
+      "name": "Deposit & Withdrawal",
+      "posts": 6
+    },
+    {
+      "id": "account_types",
+      "keywords": [
+        "スタンダード",
+        "スタンダード口座",
+        "Standard",
+        "セント口座",
+        "Cent",
+        "プロ口座",
+        "Pro",
+        "エリート",
+        "エリート口座",
+        "Elite",
+        "クラシック",
+        "クラシック口座",
+        "Classic",
+        "エクストラ",
+        "エクストラ口座",
+        "Extra",
+        "口座"
+      ],
+      "name": "Account Types",
+      "posts": 4
+    }
+  ],
+  "weeks": [
+    {
+      "file": "weeks/2026-W42.json",
+      "max_date": "2026-10-18T14:04:26Z",
+      "min_date": "2026-10-13T02:14:56Z",
+      "posts": 275,
+      "relevant_posts": 9,
+      "week": "2026-W42"
+    },
+    {
+      "file": "weeks/2026-W43.json",
+      "max_date": "2026-10-20T14:34:58Z",
+      "min_date": "2026-10-18T15:07:16Z",
+      "posts": 118,
+      "relevant_posts": 5,
+      "week": "2026-W43"
+    }
+  ]
+}

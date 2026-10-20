@@ -393,6 +393,22 @@ class CompetitorTests(unittest.TestCase):
         self.assertTrue(tf("【XAU/USD市場見通し】 金価格は反発", "TitanFXJP")[0])
         self.assertTrue(tf("【XAU/USD市場見通し】 金価格は反発", "titanfxjp")[0])
 
+    def test_relevance_vantage(self):
+        v = self.C.make_relevance(self.brands["vantage"])
+        self.assertTrue(v("Vantage FXの出金が遅い")[0])
+        self.assertTrue(v("vantage fxいつまでたってもメンテナンスが終わらない")[0])
+        self.assertFalse(v("ヴァンテージ キャラ使ってたらチャンピオン取れた #Apex")[0])
+        self.assertFalse(v("Aston Martin Vantage 納車しました")[0])
+        self.assertFalse(v("今日の相場は荒れてますね 出金したい")[0])
+
+    def test_relevance_xs(self):
+        x = self.C.make_relevance(self.brands["xs"])
+        self.assertTrue(x("XSの出金スピードが改善されました")[0])
+        self.assertTrue(x("XSスタンダード口座、レバ2000倍です")[0])
+        self.assertFalse(x("Tシャツ XSサイズ入荷しました")[0])
+        self.assertFalse(x("ジャージ（サイズは先着順ですがXSが多め）プレゼント")[0])
+        self.assertFalse(x("スロット ＸＳ 全台系 パチスロ")[0])
+
     def test_tag_ignore_and_phrase_tagging(self):
         cfg = self.cfgs["exness"]
         self.assertNotIn("deposit_withdrawal", assign_topics("日本の中央銀行が利上げ。Exnessで早く決済した", cfg["topics"]))

@@ -190,7 +190,7 @@ Layout and behaviour (derived from the Mock-up and Context):
 
 ## 11. Competitors view
 
-A second dashboard view ("Competitors") tracks X posts about other brokers (HFM, Exness, Titan FX). It reuses the XM pipeline, the topic taxonomy, the week-file format and the same actor; only the query terms and relevance rules are per brand. Real scraped posts only.
+A second dashboard view ("Competitors") tracks X posts about other brokers (HFM, Exness, Titan FX, Vantage, XS). It reuses the XM pipeline, the topic taxonomy, the week-file format and the same actor; only the query terms and relevance rules are per brand. Real scraped posts only.
 
 ### 11.1 Files
 
@@ -263,7 +263,7 @@ Live: 1 probe call, then the Phase 1 pull.
 | Stored data (db/warehouse) rather than frontend-only | 6 |
 | Apify API key, minimal credit use (user request) | 5 |
 | GitHub Pages HTML (user request) | 10, 12 |
-| Competitor monitoring (HFM, Exness, Titan FX), real data only (user request) | 11 |
+| Competitor monitoring (HFM, Exness, Titan FX, Vantage, XS), real data only (user request) | 11 |
 
 ## 15. Discrepancies found in the source documents (and decisions)
 

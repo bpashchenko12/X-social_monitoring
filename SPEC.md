@@ -177,7 +177,7 @@ Layout and behaviour (derived from the Mock-up and Context):
 1. Header: product title, last-updated stamp (from manifest), Refresh button (re-fetches the JSON store with cache-busting; no API keys in the browser).
    Each topic view has a collapsible "Search terms" panel (EN/JP) listing the must-mention brand terms, topic words, filters, the exact copyable query sent to the scraper, and the post-fetch relevance rule.
 2. Date range selector: presets (Last 7 / 14 / 30 days, All data) + custom from/to. Changing it reloads/filters automatically (week files are fetched on demand).
-3. Tabs: Overall Brand Mention + 5 topics, each titled "<name> TOP 100", with counts.
+3. Tabs: Overall Brand Mention + 5 topics, each titled "Overall Top Brand Mentions" or "Top <name> Mentions" (no fixed count: a 7-day window yields fewer than 100 posts with engagement), with counts.
 4. KPI cards: Total Posts, Total Accounts, Total Likes, Total Impressions, Total Quotes (Mock-up) + Retweets, Replies, Bookmarks.
 5. Sentiment: donut chart with Positive / Negative / Neutral percentages (Mock-up pie), "pending" shown separately if not enriched.
 6. Extra charts: posts per day (JST), top accounts by engagement.

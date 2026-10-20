@@ -125,6 +125,15 @@ td.acc .bchip{margin-bottom:4px}
   .vt{font-size:14px;padding:9px 12px 11px}
   .bgrid{grid-template-columns:1fr}
   .ovbar .check{width:100%}
+  .mx{min-width:0;width:max-content;border-spacing:0 3px}
+  .mx th{font-size:11px;padding:4px 2px;min-width:54px}
+  .mx th[scope=col] .bdot2{display:block;margin:0 auto 3px}
+  .mx th:first-child{position:sticky;left:0;z-index:2;background:var(--surface);min-width:0;width:92px;max-width:92px}
+  .mx th[scope=row]{font-size:12px;line-height:1.25;padding:0 8px 0 0;box-shadow:6px 0 6px -4px #0000001a}
+  .mx td{padding:0 2px}
+  .mx td button{padding:6px 2px}
+  .mx td b{font-size:13px}
+  .mx td small{font-size:10px}
 }
 
 /* control bar */
@@ -336,20 +345,23 @@ body.modal-open{overflow:hidden}
   .hero .wrap{gap:12px;padding-top:16px;padding-bottom:10px}
   .hero .wrap.hero-nav{padding-top:0;padding-bottom:46px}
   .logo{width:38px;height:38px;border-radius:10px}
-  .hero .wrap>div:nth-child(2){flex:1 1 0;min-width:0}
+  .hero .wrap>div:nth-child(2){flex:1 1 calc(100% - 52px);min-width:0}
   .hero h1{font-size:18px;line-height:1.25}
   .hero p{font-size:12px;line-height:1.4}
   .spacer{display:none}
   .hero .seg button{padding:6px 12px;min-height:36px}
-  .chip{flex:1 1 auto;min-width:0;justify-content:center;font-size:12px;padding:7px 10px}
+  #lang{order:2;flex:0 0 auto}
+  #refresh{order:3;flex:1 1 0;min-width:0;justify-content:center;padding:8px 12px}
+  .chip{order:4;flex:0 0 100%;min-width:0;justify-content:center;font-size:12px;padding:7px 10px}
   .chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  #refresh{padding:8px 12px}
   /* date bar */
   .controls{margin-top:-34px}
   .bar{padding:14px;gap:14px}
   .bar>div{width:100%}
   #presets{display:flex;width:100%}
   #presets button{flex:1;padding:8px 2px;font-size:13px;white-space:nowrap}
+  #metric{display:flex;width:100%}
+  #metric button{flex:1}
   .dates{display:grid;grid-template-columns:1fr auto 1fr}
   .range-note{font-size:12px}
   /* tabs: one swipeable row */
@@ -469,6 +481,13 @@ body.modal-open{overflow:hidden}
           <label class="sr" for="to" data-i18n="to">To</label><input type="date" id="to">
         </div>
       </div>
+      <div>
+        <span class="lbl" data-i18n="metricLbl" style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;display:block;margin-bottom:4px">Measure by</span>
+        <div class="seg" id="metric" role="group" aria-label="Metric">
+          <button data-m="posts" data-i18n="mPosts" aria-pressed="true">Posts</button>
+          <button data-m="impressions" data-i18n="mImp" aria-pressed="false">Impressions</button>
+        </div>
+      </div>
       <div class="range-note" id="rangeNote"></div>
     </div>
   </section>
@@ -512,6 +531,7 @@ body.modal-open{overflow:hidden}
   const SENT = ["Positive", "Negative", "Neutral"];
   const SENT_COLOR = { Positive: "#14a05a", Negative: "#e5484d", Neutral: "#8d97aa", Pending: "#cfd6e3" };
   const nf = new Intl.NumberFormat("en-US");
+  const nfc = new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 1 });
   const $ = (s, r) => (r || document).querySelector(s);
 
   // ---------- i18n (EN / JP) ----------
@@ -526,7 +546,7 @@ body.modal-open{overflow:hidden}
       shown: (r, m) => `${r} shown of ${m} matching posts`, inTopic: (t) => ` (${t} in this topic and date range)`, sortedBy: (c) => ` \u00b7 sorted by ${c}`,
       hMacro: "Overall Top Brand Mentions", hTopic: (n) => `Top ${n} Mentions`,
       kPosts: "Posts", kAccounts: "Accounts", kImpressions: "Impressions", kLikes: "Likes", kRetweets: "Retweets", kReplies: "Replies", kQuotes: "Quotes", kBookmarks: "Bookmarks",
-      sentRatio: "Sentiment ratio", perDay: "Posts per day (JST)", topAcc: "Top accounts by impressions", noData: "No data", postsWord: "posts", nPosts: (n) => `${n} posts`,
+      sentRatio: "Sentiment ratio", perDay: "Posts per day (JST)", perDayImp: "Impressions per day (JST)", impWord: "impressions", metricLbl: "Measure by", mPosts: "Posts", mImp: "Impressions", topAcc: "Top accounts by impressions", noData: "No data", postsWord: "posts", nPosts: (n) => `${n} posts`,
       cRank: "#", cDate: "Date (JST)", cAccount: "Account", cOrig: "Original (JP)", cEn: "English (LLM translation)", cSent: "Sentiment", cImage: "Image", cPost: "Post",
       cImpressions: "Impressions", cLikes: "Likes", cReplies: "Replies", cQuotes: "Quotes", cRetweets: "Retweets", cBookmarks: "Bookmarks", cClicks: "URL Clicks",
       sortBy: (c) => `Sort by ${c}`,
@@ -562,7 +582,7 @@ body.modal-open{overflow:hidden}
       shown: (r, m) => `\u8a72\u5f53 ${m}\u4ef6\u4e2d ${r}\u4ef6\u3092\u8868\u793a`, inTopic: (t) => `\uff08\u3053\u306e\u30c8\u30d4\u30c3\u30af\u30fb\u671f\u9593\u5185\u306f ${t}\u4ef6\uff09`, sortedBy: (c) => ` \u00b7 ${c}\u9806`,
       hMacro: "\u5168\u4f53\u30d6\u30e9\u30f3\u30c9\u8a00\u53ca\uff08\u4e0a\u4f4d\uff09", hTopic: (n) => `${n}\uff08\u4e0a\u4f4d\u8a00\u53ca\uff09`,
       kPosts: "\u6295\u7a3f\u6570", kAccounts: "\u30a2\u30ab\u30a6\u30f3\u30c8\u6570", kImpressions: "\u30a4\u30f3\u30d7\u30ec\u30c3\u30b7\u30e7\u30f3", kLikes: "\u3044\u3044\u306d", kRetweets: "\u30ea\u30dd\u30b9\u30c8", kReplies: "\u30ea\u30d7\u30e9\u30a4", kQuotes: "\u5f15\u7528", kBookmarks: "\u30d6\u30c3\u30af\u30de\u30fc\u30af",
-      sentRatio: "\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8\u6bd4\u7387", perDay: "\u65e5\u5225\u6295\u7a3f\u6570\uff08JST\uff09", topAcc: "\u30a4\u30f3\u30d7\u30ec\u30c3\u30b7\u30e7\u30f3\u4e0a\u4f4d\u30a2\u30ab\u30a6\u30f3\u30c8", noData: "\u30c7\u30fc\u30bf\u306a\u3057", postsWord: "\u6295\u7a3f", nPosts: (n) => `${n}\u4ef6`,
+      sentRatio: "\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8\u6bd4\u7387", perDayImp: "日別インプレッション数（JST）", impWord: "インプレッション", metricLbl: "集計単位", mPosts: "投稿数", mImp: "インプレッション", perDay: "\u65e5\u5225\u6295\u7a3f\u6570\uff08JST\uff09", topAcc: "\u30a4\u30f3\u30d7\u30ec\u30c3\u30b7\u30e7\u30f3\u4e0a\u4f4d\u30a2\u30ab\u30a6\u30f3\u30c8", noData: "\u30c7\u30fc\u30bf\u306a\u3057", postsWord: "\u6295\u7a3f", nPosts: (n) => `${n}\u4ef6`,
       cRank: "#", cDate: "\u65e5\u6642\uff08JST\uff09", cAccount: "\u30a2\u30ab\u30a6\u30f3\u30c8", cOrig: "\u539f\u6587\uff08JP\uff09", cEn: "\u82f1\u8a33\uff08LLM\u7ffb\u8a33\uff09", cSent: "\u30bb\u30f3\u30c1\u30e1\u30f3\u30c8", cImage: "\u753b\u50cf", cPost: "\u6295\u7a3f",
       cImpressions: "\u30a4\u30f3\u30d7\u30ec\u30c3\u30b7\u30e7\u30f3", cLikes: "\u3044\u3044\u306d", cReplies: "\u30ea\u30d7\u30e9\u30a4", cQuotes: "\u5f15\u7528", cRetweets: "\u30ea\u30dd\u30b9\u30c8", cBookmarks: "\u30d6\u30c3\u30af\u30de\u30fc\u30af", cClicks: "URL\u30af\u30ea\u30c3\u30af",
       sortBy: (c) => `${c}\u3067\u4e26\u3079\u66ff\u3048`,
@@ -596,6 +616,8 @@ body.modal-open{overflow:hidden}
     ovSent: (p, n, u) => `${p} positive \u00b7 ${n} negative \u00b7 ${u} neutral`, ovSentPending: "Sentiment pending",
     ovOfficial: (o, n) => `${o} of ${n} posts from the official account`, ovNoOfficial: "No official-account posts",
     ovMatrix: "Mentions by topic", ovMatrixHint: "Share of each brand's posts. Click a number to open the posts.", ovTotal: "All mentions",
+    ovTrendImp: "Impressions per day (JST)", ovMatrixHintImp: "Share of each brand's impressions. Click a number to open the posts.",
+    ovSentImp: (p, n, u) => `${p}% positive \u00b7 ${n}% negative \u00b7 ${u}% neutral (by impressions)`,
     ovTrend: "Posts per day (JST)", ovTop: "Posts across competitors", ovTopNone: "No competitor posts in this date range.",
     footerComp: "Competitor data comes from the same pipeline as the XM Monitor: Japanese posts with at least 10 likes whose own text names the brand. \"Official\" marks posts from the brand's own X account; they are kept but can be hidden. Sentiment is the tone toward the named brand; translations are machine-generated. Impressions = X view count at the last fetch. Times are shown in JST.",
     qAfterTxtBrand: (n) => `Each post is checked again: the text itself must contain ${n}, and a bare short name counts only next to a trading word. Look-alike meanings (for example a radio station with the same initials) are dropped and not published. Posts from the brand's own official account are always kept and marked Official. A post is listed under a topic when its own text contains one of that topic's words (see "Matched keywords"), so topic counts add up to more than the total.`,
@@ -607,6 +629,8 @@ body.modal-open{overflow:hidden}
     ovSent: (p, n, u) => `ポジティブ${p} \u00b7 ネガティブ${n} \u00b7 中立${u}`, ovSentPending: "センチメント未判定",
     ovOfficial: (o, n) => `${n}件中${o}件が公式アカウントの投稿`, ovNoOfficial: "公式アカウントの投稿なし",
     ovMatrix: "トピック別の言及数", ovMatrixHint: "各ブランドの投稿に占める割合です。数字をクリックすると投稿を表示します。", ovTotal: "全言及",
+    ovTrendImp: "日別インプレッション数（JST）", ovMatrixHintImp: "各ブランドのインプレッションに占める割合です。数字をクリックすると投稿を表示します。",
+    ovSentImp: (p, n, u) => `ポジティブ${p}% \u00b7 ネガティブ${n}% \u00b7 中立${u}%（インプレッション基準）`,
     ovTrend: "日別投稿数（JST）", ovTop: "競合の投稿一覧", ovTopNone: "この期間の競合投稿はありません。",
     footerComp: "競合データはXMモニターと同じパイプラインで収集しています（いいね10件以上で、本文にブランド名を含む日本語投稿）。「公式」はブランド公式Xアカウントの投稿で、保持されますが非表示にできます。センチメントは該当ブランドに対するトーン、翻訳は機械翻訳です。インプレッション＝最終取得時点の表示回数。時刻はJSTです。",
     qAfterTxtBrand: (n) => `取得した各投稿を再確認します。本文に${n}が含まれること、短い名称のみの場合は取引関連語と一緒の場合のみ対象です。同じ頭文字の別の意味（例：ラジオ局）は除外し、公開しません。ブランド公式アカウントの投稿は常に保持し「公式」と表示します。投稿は、本文にそのトピックのワードが含まれる場合に該当トピックへ分類されるため（「該当キーワード」列を参照）、トピック別件数の合計は全体を上回ります。`,
@@ -628,7 +652,7 @@ body.modal-open{overflow:hidden}
     manifest: null, all: [],
     tab: "macro", preset: "7", from: "", to: "",
     qOpen: false, sort: { key: "impressions", dir: -1 }, limit: 100,
-    q: "", sentiment: "all", feedBrand: "all", minLikes: 0, hidePromo: false, hideOfficial: false, open: new Set(),
+    metric: "posts", q: "", sentiment: "all", feedBrand: "all", minLikes: 0, hidePromo: false, hideOfficial: false, open: new Set(),
   };
   // one dataset per store: "xm" (data/) and one per competitor (data/competitors/<id>/)
   const DS = new Map();
@@ -646,6 +670,10 @@ body.modal-open{overflow:hidden}
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//i.test(u) ? u : "");
   const fmt = (n) => (n == null ? "-" : nf.format(n));
+  const isImp = () => state.metric === "impressions";
+  const weight = (p) => (isImp() ? p.impressions || 0 : 1);
+  const sumW = (arr) => arr.reduce((a, p) => a + weight(p), 0);
+  const fmtM = (n) => (isImp() ? nfc.format(n) : fmt(n));
   const jstShift = (iso) => new Date(Date.parse(iso) + 9 * 3600e3).toISOString();
   const jstDay = (iso) => jstShift(iso).slice(0, 10);
   const jstTime = (iso) => jstShift(iso).slice(11, 16);
@@ -738,6 +766,8 @@ body.modal-open{overflow:hidden}
     $("#foot").textContent = t(comp ? "footerComp" : "footer");
   }
 
+  const syncMetric = () => document.querySelectorAll("#metric button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.m === state.metric)));
+
   function renderChrome() {
     const m = state.manifest;
     const ms = activeKeys().map((k) => dsOf(k).manifest);
@@ -748,6 +778,7 @@ body.modal-open{overflow:hidden}
     u.innerHTML = `<i></i><span>${IS_DEMO ? esc(t("demo")) + " &middot; " : ""}${esc(t("updated", gen ? jstShift(gen).slice(0, 16).replace("T", " ") + " JST" : "-"))}</span>`;
     renderTitles(); renderNav();
     document.querySelectorAll("#presets button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.p === state.preset)));
+    syncMetric();
     $("#from").value = state.from; $("#to").value = state.to;
     const cnt = {}; const inr = inRange();
     m.topics.forEach((tp) => (cnt[tp.id] = forTab(inr, tp.id).length));
@@ -760,9 +791,9 @@ body.modal-open{overflow:hidden}
     $("#rangeNote").textContent = state.from ? t("showingRange", state.from, state.to) + (pend ? t("awaiting", pend) : "") : "";
   }
 
-  function sentimentCounts(rows) {
+  function sentimentCounts(rows, imp = isImp()) {
     const c = { Positive: 0, Negative: 0, Neutral: 0, Pending: 0 };
-    rows.forEach((p) => { c[p.sentiment && SENT.includes(p.sentiment) ? p.sentiment : "Pending"]++; });
+    rows.forEach((p) => { c[p.sentiment && SENT.includes(p.sentiment) ? p.sentiment : "Pending"] += imp ? p.impressions || 0 : 1; });
     return c;
   }
 
@@ -778,15 +809,15 @@ body.modal-open{overflow:hidden}
     const rated = c.Positive + c.Negative + c.Neutral;
     const leg = ["Positive", "Negative", "Neutral", "Pending"].map((k) => {
       const base = k === "Pending" ? tot : rated; const pct = base ? ((c[k] / base) * 100).toFixed(1) : "0.0";
-      return `<div><span class="dot" style="background:${SENT_COLOR[k]}"></span>${esc(sentLabel(k))}<b>${k === "Pending" ? c[k] : pct + "%"}</b></div>`;
+      return `<div><span class="dot" style="background:${SENT_COLOR[k]}"></span>${esc(sentLabel(k))}<b>${k === "Pending" ? fmtM(c[k]) : pct + "%"}</b></div>`;
     }).join("");
-    return `<div class="donut-wrap"><svg width="140" height="140" viewBox="0 0 140 140" role="img" aria-label="${esc(t("sentRatio"))}">${segs}<text x="70" y="68" text-anchor="middle" font-size="22" font-weight="800" fill="#1b2437">${tot}</text><text x="70" y="86" text-anchor="middle" font-size="11" fill="#667085">${esc(t("postsWord"))}</text></svg><div class="legend">${leg}</div></div>`;
+    return `<div class="donut-wrap"><svg width="140" height="140" viewBox="0 0 140 140" role="img" aria-label="${esc(t("sentRatio"))}">${segs}<text x="70" y="68" text-anchor="middle" font-size="22" font-weight="800" fill="#1b2437">${fmtM(tot)}</text><text x="70" y="86" text-anchor="middle" font-size="11" fill="#667085">${esc(t(isImp() ? "impWord" : "postsWord"))}</text></svg><div class="legend">${leg}</div></div>`;
   }
 
   function dailyChart(rows) {
     if (!rows.length) return `<div class="empty" style="padding:30px">${esc(t("noData"))}</div>`;
     const days = {};
-    rows.forEach((p) => { const d = jstDay(p.created_at); days[d] = (days[d] || 0) + 1; });
+    rows.forEach((p) => { const d = jstDay(p.created_at); days[d] = (days[d] || 0) + weight(p); });
     const keys = Object.keys(days).sort(); const first = keys[0], last = keys[keys.length - 1];
     const span = Math.round((Date.parse(last) - Date.parse(first)) / 864e5) + 1;
     const series = []; for (let i = 0; i < span; i++) { const d = addDays(first, i); series.push([d, days[d] || 0]); }
@@ -794,7 +825,7 @@ body.modal-open{overflow:hidden}
     const bars = series.map(([d, n], i) => {
       const h = max ? ((H - 50) * n) / max : 0; const x = pad + i * ((W - pad * 2) / series.length) + 1.5;
       const lbl = series.length <= 8 || i % Math.ceil(series.length / 5) === 0 ? `<text x="${x + bw / 2}" y="${H - 6}" font-size="9.5" text-anchor="middle" fill="#667085">${d.slice(5)}</text>` : "";
-      return `<g><rect x="${x}" y="${H - 22 - h}" width="${bw}" height="${Math.max(h, n ? 2 : 0)}" rx="3" style="fill:var(--accent)"><title>${d}: ${t("nPosts", n)}</title></rect>${n && series.length <= 16 ? `<text x="${x + bw / 2}" y="${H - 26 - h}" font-size="10" text-anchor="middle" fill="#344056" font-weight="700">${n}</text>` : ""}${lbl}</g>`;
+      return `<g><rect x="${x}" y="${H - 22 - h}" width="${bw}" height="${Math.max(h, n ? 2 : 0)}" rx="3" style="fill:var(--accent)"><title>${d}: ${isImp() ? fmt(n) + " " + t("impWord") : t("nPosts", n)}</title></rect>${n && series.length <= 16 ? `<text x="${x + bw / 2}" y="${H - 26 - h}" font-size="10" text-anchor="middle" fill="#344056" font-weight="700">${fmtM(n)}</text>` : ""}${lbl}</g>`;
     }).join("");
     return `<svg class="bars" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("perDay"))}"><line x1="${pad}" x2="${W - pad}" y1="${H - 22}" y2="${H - 22}" stroke="#e4e8f0"/>${bars}</svg>`;
   }
@@ -955,7 +986,7 @@ body.modal-open{overflow:hidden}
       <section class="kpis" aria-label="Totals">${kp.map(([k, v, hl]) => `<div class="panel kpi${hl ? " hl" : ""}"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join("")}</section>
       <section class="charts">
         <div class="panel card"><h3>${esc(t("sentRatio"))}</h3>${donut(sentimentCounts(every))}</div>
-        <div class="panel card"><h3>${esc(t("perDay"))}</h3>${dailyChart(every)}</div>
+        <div class="panel card"><h3>${esc(t(isImp() ? "perDayImp" : "perDay"))}</h3>${dailyChart(every)}</div>
         <div class="panel card"><h3>${esc(t("topAcc"))}</h3>${topAccounts(every)}</div>
       </section>
       ${feedHtml(rows, total)}`;
@@ -976,16 +1007,16 @@ body.modal-open{overflow:hidden}
   function trendChart(sets) {
     const days = []; for (let d = state.from; d && d <= state.to; d = addDays(d, 1)) days.push(d);
     if (!days.length) return `<div class="empty" style="padding:30px">${esc(t("noData"))}</div>`;
-    const series = sets.map((s) => { const m = {}; s.posts.forEach((p) => { const d = jstDay(p.created_at); m[d] = (m[d] || 0) + 1; }); return days.map((d) => m[d] || 0); });
-    const W = 520, H = 220, pl = 30, pr = 10, pt = 12, pb = 26;
+    const series = sets.map((s) => { const m = {}; s.posts.forEach((p) => { const d = jstDay(p.created_at); m[d] = (m[d] || 0) + weight(p); }); return days.map((d) => m[d] || 0); });
+    const W = 520, H = 220, pl = 38, pr = 10, pt = 12, pb = 26;
     const max = Math.max(1, ...[].concat(...series));
     const x = (i) => pl + (days.length > 1 ? (i * (W - pl - pr)) / (days.length - 1) : (W - pl - pr) / 2);
     const y = (v) => pt + (H - pt - pb) * (1 - v / max);
-    const grid = [0, max / 2, max].map((v) => `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e8f0"/><text x="${pl - 6}" y="${y(v) + 3.5}" font-size="10" text-anchor="end" fill="#667085">${Math.round(v)}</text>`).join("");
+    const grid = [0, max / 2, max].map((v) => `<line x1="${pl}" x2="${W - pr}" y1="${y(v)}" y2="${y(v)}" stroke="#e4e8f0"/><text x="${pl - 6}" y="${y(v) + 3.5}" font-size="10" text-anchor="end" fill="#667085">${fmtM(Math.round(v))}</text>`).join("");
     const step = Math.max(1, Math.ceil(days.length / 6));
     const xl = days.map((d, i) => (i % step === 0 ? `<text x="${x(i)}" y="${H - 8}" font-size="10" text-anchor="middle" fill="#667085">${d.slice(5)}</text>` : "")).join("");
     const lines = sets.map((s, k) => `<polyline fill="none" stroke="${esc(s.color)}" stroke-width="${s.bench ? 2 : 2.4}" stroke-linejoin="round" stroke-linecap="round"${s.bench ? ` stroke-dasharray="5 4"` : ""} points="${series[k].map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ")}"><title>${esc(s.name)}</title></polyline>`).join("");
-    const leg = sets.map((s, k) => `<span${s.bench ? ` class="bm" title="${esc(t("ovBenchTip"))}"` : ""} style="--bc:${esc(s.color)}"><i></i>${esc(s.name)}${s.bench ? ` <small>(${esc(t("ovBench"))})</small>` : ""} <b>${series[k].reduce((a, b) => a + b, 0)}</b></span>`).join("");
+    const leg = sets.map((s, k) => `<span${s.bench ? ` class="bm" title="${esc(t("ovBenchTip"))}"` : ""} style="--bc:${esc(s.color)}"><i></i>${esc(s.name)}${s.bench ? ` <small>(${esc(t("ovBench"))})</small>` : ""} <b>${fmtM(series[k].reduce((a, b) => a + b, 0))}</b></span>`).join("");
     return `<svg class="trend" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(t("ovTrend"))}">${grid}${xl}${lines}</svg><div class="tleg">${leg}</div>`;
   }
 
@@ -993,22 +1024,24 @@ body.modal-open{overflow:hidden}
     const sets = overviewSets();
     const content = $("#content"); content.style.removeProperty("--accent");
     const cards = sets.map((s) => {
-      const sp = s.posts.filter((p) => !p.is_official); const c = sentimentCounts(sp); const stot = sp.length; const tot = s.posts.length;
+      const sp = s.posts.filter((p) => !p.is_official); const c = sentimentCounts(sp); const cp = sentimentCounts(sp, false); const stot = c.Positive + c.Negative + c.Neutral + c.Pending; const tot = s.posts.length;
       const sum = (k) => s.posts.reduce((a, p) => a + (p[k] || 0), 0);
       const accounts = new Set(s.posts.map((p) => p.account_handle)).size;
       const seg = stot ? ["Positive", "Negative", "Neutral", "Pending"].filter((k) => c[k]).map((k) => `<i style="width:${((c[k] / stot) * 100).toFixed(1)}%;background:${SENT_COLOR[k]}" title="${esc(sentLabel(k))}: ${c[k]}"></i>`).join("") : "";
-      const rated = c.Positive + c.Negative + c.Neutral;
+      const rated = cp.Positive + cp.Negative + cp.Neutral;
+      const rw = c.Positive + c.Negative + c.Neutral; const pc = (x) => (rw ? Math.round((x / rw) * 100) : 0);
+      const note = isImp() ? t("ovSentImp", pc(c.Positive), pc(c.Negative), pc(c.Neutral)) : t("ovSent", c.Positive, c.Negative, c.Neutral);
       return `<a class="bcard${s.bench ? " bench" : ""}" href="${s.bench ? "#view=xm" : "#view=comp&brand=" + encodeURIComponent(s.key)}" ${goAttrs(s)} style="--bc:${esc(s.color)}">
         <div class="bn"><i class="bdot2"></i>${esc(s.name)}${s.bench ? `<small>${esc(t("ovBench"))}</small>` : ""}</div>
         <div class="big">${fmt(tot)}<span> ${esc(t("postsWord"))}</span></div>
         <div class="bmini"><div><span>${esc(t("kAccounts"))}</span><b>${fmt(accounts)}</b></div><div><span>${esc(t("kImpressions"))}</span><b>${fmt(sum("impressions"))}</b></div><div><span>${esc(t("kLikes"))}</span><b>${fmt(sum("likes"))}</b></div></div>
-        <div class="sbar">${seg}</div><div class="snote">${esc(rated ? t("ovSent", c.Positive, c.Negative, c.Neutral) : t("ovSentPending"))}</div>
+        <div class="sbar">${seg}</div><div class="snote">${esc(rated ? note : t("ovSentPending"))}</div>
         ${s.bench ? "" : `<div class="snote">${esc(s.official ? t("ovOfficial", s.official, s.all.length) : t("ovNoOfficial"))}</div>`}
         <div class="go">${esc(t(s.bench ? "ovOpenXm" : "ovOpen"))} &rarr;</div></a>`;
     }).join("");
 
     const topics = state.manifest.topics;
-    const counts = {}; sets.forEach((s) => { counts[s.key] = {}; topics.forEach((tp) => { counts[s.key][tp.id] = forTab(s.posts, tp.id).length; }); });
+    const counts = {}; sets.forEach((s) => { counts[s.key] = {}; topics.forEach((tp) => { counts[s.key][tp.id] = sumW(forTab(s.posts, tp.id)); }); });
     const mxHead = sets.map((s) => `<th scope="col" style="--bc:${esc(s.color)}"><i class="bdot2"></i>${esc(s.name)}</th>`).join("");
     const mxRows = topics.map((tp) => {
       const total = tp.id === "macro";
@@ -1016,7 +1049,7 @@ body.modal-open{overflow:hidden}
         const n = counts[s.key][tp.id], all = counts[s.key].macro;
         const max = Math.max(1, ...topics.filter((x) => x.id !== "macro").map((x) => counts[s.key][x.id]));
         const share = !total && all ? Math.round((n / all) * 100) : null;
-        return `<td><button ${goAttrs(s)} data-tab="${esc(tp.id)}" style="--bc:${esc(s.color)};--h:${total ? 0 : Math.round((n / max) * 45)}%"${n ? "" : " disabled"}><b>${fmt(n)}</b>${share != null ? `<small>${share}%</small>` : ""}</button></td>`;
+        return `<td><button ${goAttrs(s)} data-tab="${esc(tp.id)}" style="--bc:${esc(s.color)};--h:${total ? 0 : Math.round((n / max) * 45)}%"${n ? "" : " disabled"}><b>${fmtM(n)}</b>${share != null ? `<small>${share}%</small>` : ""}</button></td>`;
       }).join("");
       return `<tr class="${total ? "tot" : ""}"><th scope="row">${esc(total ? t("ovTotal") : topicName(tp))}</th>${cells}</tr>`;
     }).join("");
@@ -1030,8 +1063,8 @@ body.modal-open{overflow:hidden}
       <div class="ovbar"><label class="check"><input type="checkbox" id="ho"${state.hideOfficial ? " checked" : ""}> ${esc(t("hideOfficial"))}</label></div>
       <section class="bgrid" aria-label="${esc(t("ovTitle"))}">${cards}</section>
       <section class="ovgrid">
-        <div class="panel card"><h3>${esc(t("ovMatrix"))}<small>${esc(t("ovMatrixHint"))}</small></h3><div class="mxw"><table class="mx"><thead><tr><th></th>${mxHead}</tr></thead><tbody>${mxRows}</tbody></table></div></div>
-        <div class="panel card"><h3>${esc(t("ovTrend"))}</h3>${trendChart(sets)}</div>
+        <div class="panel card"><h3>${esc(t("ovMatrix"))}<small>${esc(t(isImp() ? "ovMatrixHintImp" : "ovMatrixHint"))}</small></h3><div class="mxw"><table class="mx"><thead><tr><th></th>${mxHead}</tr></thead><tbody>${mxRows}</tbody></table></div></div>
+        <div class="panel card"><h3>${esc(t(isImp() ? "ovTrendImp" : "ovTrend"))}</h3>${trendChart(sets)}</div>
       </section>
       <h3 class="feedh">${esc(t("ovTop"))}</h3>
       ${feedHtml(feed.rows, feed.total)}`;
@@ -1090,6 +1123,7 @@ body.modal-open{overflow:hidden}
     const h = new URLSearchParams();
     if (state.view === "comp") { h.set("view", "comp"); h.set("brand", state.brand); }
     if (!isOverview()) h.set("tab", state.tab);
+    if (isImp()) h.set("metric", "impressions");
     h.set("range", state.preset); h.set("sort", state.sort.key); h.set("dir", state.sort.dir < 0 ? "desc" : "asc");
     if (state.preset === "custom") { h.set("from", state.from); h.set("to", state.to); }
     return h.toString();
@@ -1100,6 +1134,7 @@ body.modal-open{overflow:hidden}
     if (h.get("view") === "comp") state.view = "comp";
     if (/^[a-z0-9_-]{1,32}$/.test(h.get("brand") || "")) state.brand = h.get("brand");
     if (h.get("tab")) state.tab = h.get("tab");
+    if (h.get("metric") === "impressions") state.metric = "impressions";
     const r = h.get("range"); if (r && ["7", "14", "30", "all", "custom"].includes(r)) state.preset = r;
     if (state.preset === "custom" && /^\d{4}-\d\d-\d\d$/.test(h.get("from") || "") && /^\d{4}-\d\d-\d\d$/.test(h.get("to") || "")) { state.from = h.get("from"); state.to = h.get("to"); } else if (state.preset === "custom") state.preset = "7";
     if (COLS.some((c) => c[0] === h.get("sort") && c[2])) state.sort.key = h.get("sort");
@@ -1110,6 +1145,7 @@ body.modal-open{overflow:hidden}
   document.addEventListener("click", (e) => {
     const t = e.target.closest("button, a"); if (!t) return;
     if (t.dataset.view || t.dataset.brand) { e.preventDefault(); go(t.dataset.view, t.dataset.brand, t.dataset.tab); }
+    else if (t.dataset.m) { state.metric = t.dataset.m === "impressions" ? "impressions" : "posts"; syncMetric(); renderBody(); writeHash(); }
     else if (t.dataset.p) { state.preset = t.dataset.p; refreshView(); }
     else if (t.dataset.t) { state.tab = t.dataset.t; renderChrome(); renderContent(); writeHash(); }
     else if (t.dataset.sort) { const k = t.dataset.sort; state.sort = state.sort.key === k ? { key: k, dir: -state.sort.dir } : { key: k, dir: -1 }; renderBody(); writeHash(); }
@@ -1125,7 +1161,7 @@ body.modal-open{overflow:hidden}
   });
   window.addEventListener("hashchange", () => {
     const cur = location.hash.slice(1); if (cur === hashNow()) return;
-    state.view = "xm"; state.brand = "overview"; state.sort = { key: "impressions", dir: -1 };
+    state.view = "xm"; state.brand = "overview"; state.metric = "posts"; state.sort = { key: "impressions", dir: -1 };
     readHash(); if (state.view === "comp" && !state.index) state.view = "xm";
     closeModal(true); refreshView();
   });

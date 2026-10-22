@@ -60,7 +60,8 @@ class RelevanceTests(unittest.TestCase):
         for t in ["APFG M7 XM-7 GBB ガスブローバックライフル", "トンプソンXMのバレル", "BMW XM　ラルテ デザイン",
                   "XM-01 でボールデフを試した", "デナン・ゲー XM-02 考察 #ガンプラ #プレバン #Gジェネ", "グリフハック終わってから「xmが足りません」#ingress"]:
             self.assertFalse(check_relevance(t)[0], t)
-        for t in ["今週もxmのデモトレ大会やってみるか", "XM 今日、建値ガードのSLを貫通", "XMでMT4とMT5どっち？"]:
+        for t in ["今週もxmのデモトレ大会やってみるか", "XM 今日、建値ガードのSLを貫通", "XMでMT4とMT5どっち？",
+                  "XMは安心って思ってたらまさかの、VPSが止まるとは", "XMの自動売買の記事に載っているEA選びの基準"]:
             self.assertTrue(check_relevance(t)[0], t)
 
     def test_non_match_phrase(self):

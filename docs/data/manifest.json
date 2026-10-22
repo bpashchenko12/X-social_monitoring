@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T11:12:08Z",
+  "generated_at": "2026-10-22T11:26:44Z",
   "latest_post_at": "2026-10-22T10:59:37Z",
   "pending_enrichment": 0,
   "schema_version": 1,
@@ -30,7 +30,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 225
+      "posts": 227
     },
     {
       "id": "campaigns",
@@ -76,7 +76,7 @@
         "IB"
       ],
       "name": "Trading Environment",
-      "posts": 39
+      "posts": 40
     },
     {
       "id": "deposit_withdrawal",
@@ -156,7 +156,7 @@
       "max_date": "2026-10-22T10:59:37Z",
       "min_date": "2026-10-18T15:50:48Z",
       "posts": 197,
-      "relevant_posts": 24,
+      "relevant_posts": 26,
       "week": "2026-W43"
     }
   ]

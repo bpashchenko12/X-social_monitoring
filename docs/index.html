@@ -690,7 +690,7 @@ body.modal-open{overflow:hidden}
   const val = (p, k) => (k === "created_at" ? Date.parse(p.created_at) : p[k] == null ? -1 : p[k]);
 
   async function getJSON(path, bust) {
-    const r = await fetch(`${BASE}/${path}${bust ? "?t=" + Date.now() : ""}`, { cache: bust ? "no-store" : "default" });
+    const r = await fetch(`${BASE}/${path}${bust ? "?t=" + Date.now() : ""}`, { cache: bust ? "no-store" : "no-cache" });
     if (!r.ok) throw new Error(`${path}: HTTP ${r.status}`);
     return r.json();
   }

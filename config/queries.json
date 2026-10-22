@@ -9,7 +9,7 @@
   "price_per_1k_usd": 0.15,
   "min_billed_items": 1,
   "run_overhead_usd": 0.01,
-  "budget_usd": 2.0,
+  "budget_usd": 4.0,
   "brand_base": [
     "XMTrading",
     "XMトレーディング",

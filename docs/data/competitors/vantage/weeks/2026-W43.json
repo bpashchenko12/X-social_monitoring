@@ -5573,11 +5573,11 @@
       "account_handle": "Myforex_CS",
       "account_name": "Myforex | 最新のマーケット情報を配信",
       "bookmarks": 22,
-      "content_en": null,
+      "content_en": "[Trending] A post says Onamae.com VPS losses \"all came back\"\n\nAs high-value damage from unauthorized access continues to pile up, there are reports that some people received compensation from their brokers.\n\n◆ Reports currently confirmed\nTradeview (consultation procedure also described):\nhttps://t.co/PW2TvBNa6i\n\nDecodeFX:\nhttps://t.co/NJMZ1pA2in\n\nWe have only checked the posts and have not confirmed any official communication from the brokers, but if you suffered similar damage, it may be worth a look.\n\nFrom yesterday through today,\n\n・Titan FX\n・Vantage Trading\n・MyFX Markets\n・BigBoss\n・Ultima Markets\n\nhave sent warning emails urging password changes, and each broker appears to be aware of and monitoring the situation.",
       "content_original": "【話題】お名前.com VPSの損失「全て戻ってきた」との投稿も\n\n不正アクセスによる高額被害が相次ぐ中、ブローカー側から補填を受けられたとの報告が出ています。\n\n◆ 現在確認されている報告\nTradeview（相談手順の記載もあり）：\nhttps://t.co/PW2TvBNa6i\n\nDecodeFX：\nhttps://t.co/NJMZ1pA2in\n\nあくまで投稿を確認したのみでブローカーからの正式な連絡を確認したわけではありませんが、同様の被害に遭われた方は参考にしてみる価値があります。\n\n昨日から本日にかけて、\n\n・Titan FX\n・Vantage Trading\n・MyFX Markets\n・BigBoss\n・Ultima Markets\n\n上記ブローカーからパスワード変更を促す注意喚起メールが届いており、各ブローカー側も事態を把握・注視している模様です。",
       "created_at": "2026-10-23T03:29:05Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-10-23T13:17:01Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-10-23T11:07:22Z",
       "id": "2113472752849928292",
@@ -5592,7 +5592,7 @@
       "relevant": true,
       "replies": 3,
       "retweets": 6,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {},
       "topics": [
         "macro"

@@ -10981,11 +10981,11 @@
       "account_handle": "pokopan359",
       "account_name": "まいにちポコパンダ🥐🐼",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "HFM is in flames all over the place, and riding on that, the names of all sorts of overseas FX brokers are coming up. I thought it was only XM or HFM, but with XM the spreads are wider, so there's the reassurance that it doesn't spike.",
       "content_original": "HFMで色んな所で炎上してるけど、それに便乗して色んな海外のFX業者の名前が出てきてるね。XMかHFMくらいしか無いなって思ってたけど、XMはスプレッドが広い分飛ばない安心感はあるね",
       "created_at": "2026-10-18T05:30:13Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-10-23T13:17:01Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-10-23T11:01:13Z",
       "id": "2111691299401408671",
@@ -11000,7 +11000,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "environment": [
           "スプレッド"

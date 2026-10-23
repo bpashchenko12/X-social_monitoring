@@ -2689,11 +2689,11 @@
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
       "bookmarks": 5,
-      "content_en": null,
+      "content_en": "Exness wrap-up\n\nThe organizational command structure hasn't changed one bit.\n\nFor better or worse, it is undoubtedly the world's No.1 FX broker.\n\nThere were IB partners from many different countries.\n\nJapan 🇯🇵 is a cash-cow, profitable region, so I'd like them to try a bit harder, but I suppose that's impossible.",
       "content_original": "exness総括\n\n組織指示体制は何一つ変わってませんでした\n\n良くも悪くも世界No.1のFXブローカーである事は間違いありません\n\n色んな国のIBパートナーが居ました\n\n日本🇯🇵はドル箱黒字エリアなんだからもうちょっと頑張って欲しいけど無理だろうなって所感ですね",
       "created_at": "2026-10-18T10:17:50Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-10-23T13:17:01Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-10-23T11:05:59Z",
       "id": "2111763681432465640",
@@ -2708,7 +2708,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 3,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "environment": [
           "IB"

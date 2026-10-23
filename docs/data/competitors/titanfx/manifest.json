@@ -4,9 +4,9 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-10-22T11:26:44Z",
-  "latest_post_at": "2026-10-22T10:32:15Z",
-  "pending_enrichment": 0,
+  "generated_at": "2026-10-23T11:10:11Z",
+  "latest_post_at": "2026-10-23T10:53:28Z",
+  "pending_enrichment": 3,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 73
+      "posts": 76
     },
     {
       "id": "campaigns",
@@ -90,7 +90,7 @@
         "Zero Point"
       ],
       "name": "Trading Environment",
-      "posts": 6
+      "posts": 7
     },
     {
       "id": "deposit_withdrawal",
@@ -159,16 +159,16 @@
       "file": "weeks/2026-W42.json",
       "max_date": "2026-10-18T10:55:20Z",
       "min_date": "2026-10-11T18:59:00Z",
-      "posts": 66,
+      "posts": 68,
       "relevant_posts": 14,
       "week": "2026-W42"
     },
     {
       "file": "weeks/2026-W43.json",
-      "max_date": "2026-10-22T10:32:15Z",
+      "max_date": "2026-10-23T10:53:28Z",
       "min_date": "2026-10-18T21:29:00Z",
-      "posts": 59,
-      "relevant_posts": 12,
+      "posts": 68,
+      "relevant_posts": 15,
       "week": "2026-W43"
     }
   ]

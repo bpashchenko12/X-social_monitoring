@@ -50,11 +50,12 @@ def search_spec(cfg):
     }
 
 
-def build_queries(cfg, today):
-    """Return one query spec per topic. `today` is a date (UTC)."""
-    since = today - timedelta(days=cfg["window_days"])
+def build_queries(cfg, today, since=None, until=None):
+    """Return one query spec per topic. `today` is a date (UTC).
+    `since`/`until` (dates) optionally slice the window so a slice stays under the item cap."""
+    since = since or today - timedelta(days=cfg["window_days"])
     tail = (f"{_tail_filters(cfg)}lang:{cfg['language']} -filter:retweets min_faves:{cfg['min_faves']} "
-            f"since:{since.isoformat()}")
+            f"since:{since.isoformat()}" + (f" until:{until.isoformat()}" if until else ""))
     mixed = cfg.get("quote_mixed_script", False)
     base = _group(cfg["brand_base"], mixed)
     out = []

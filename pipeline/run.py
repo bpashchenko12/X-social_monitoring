@@ -38,7 +38,7 @@ def _finalize(cfg):
 
 
 def cmd_plan(args, cfg):
-    qs = _select(build_queries(cfg, args.today), args.only)
+    qs = _select(build_queries(cfg, args.today, args.since, args.until), args.only)
     spent = apify.spent_usd()
     total = 0.0
     for q in qs:
@@ -58,7 +58,7 @@ def cmd_plan(args, cfg):
 
 def cmd_fetch(args, cfg):
     token = load_env_token()
-    qs = _select(build_queries(cfg, args.today), args.only)
+    qs = _select(build_queries(cfg, args.today, args.since, args.until), args.only)
     spent_run = 0.0
     for q in qs:
         inp = dict(q["input"])
@@ -70,7 +70,7 @@ def cmd_fetch(args, cfg):
                                         query_id=q["id"])
         fetched = datetime.strptime(meta["fetched_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=UTC)
         posts, dropped = normalize_items(items, q["id"], cfg.get("brand_non_matches", []), fetched)
-        since_dt = datetime.combine(args.today - timedelta(days=cfg["window_days"]), time.min, tzinfo=UTC)
+        since_dt = datetime.combine(args.since or args.today - timedelta(days=cfg["window_days"]), time.min, tzinfo=UTC)
         posts, below = apply_thresholds(posts, cfg["min_faves"], since_dt)
         excluded = sum(1 for p in posts if not p["relevant"])
         posts = [redact_excluded(p) for p in posts]
@@ -209,6 +209,8 @@ def main(argv=None):
         p.add_argument("--days", type=int, help="override window_days (backfill)")
         p.add_argument("--sort", choices=["Top", "Latest", "Latest + Top"], help="override config sort (different sort = different cache key)")
         p.add_argument("--today", type=date.fromisoformat, default=now_utc().date())
+        p.add_argument("--since", type=date.fromisoformat, help="slice start (default: today - window_days)")
+        p.add_argument("--until", type=date.fromisoformat, help="slice end (X until: is exclusive)")
         if name == "fetch":
             p.add_argument("--yes", action="store_true", help="confirm paid API calls")
             p.add_argument("--refresh", action="store_true", help="ignore cache (costs credits)")

@@ -4,8 +4,8 @@
     "id": "hfm",
     "name": "HFM"
   },
-  "generated_at": "2026-10-26T07:59:32Z",
-  "latest_post_at": "2026-10-26T07:00:59Z",
+  "generated_at": "2026-10-27T10:50:53Z",
+  "latest_post_at": "2026-10-27T10:13:21Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 63
+      "posts": 69
     },
     {
       "id": "campaigns",
@@ -51,7 +51,7 @@
         "HFMロイヤルティ"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 13
+      "posts": 16
     },
     {
       "id": "competitions",
@@ -103,7 +103,7 @@
         "入出金"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 17
+      "posts": 19
     },
     {
       "id": "account_types",
@@ -172,16 +172,16 @@
       "file": "weeks/2026-W43.json",
       "max_date": "2026-10-25T14:22:41Z",
       "min_date": "2026-10-18T15:23:16Z",
-      "posts": 344,
+      "posts": 356,
       "relevant_posts": 11,
       "week": "2026-W43"
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-26T07:00:59Z",
-      "min_date": "2026-10-25T17:02:10Z",
-      "posts": 27,
-      "relevant_posts": 0,
+      "max_date": "2026-10-27T10:13:21Z",
+      "min_date": "2026-10-25T16:56:10Z",
+      "posts": 72,
+      "relevant_posts": 6,
       "week": "2026-W44"
     }
   ]

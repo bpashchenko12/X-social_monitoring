@@ -4,8 +4,8 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-10-26T07:59:32Z",
-  "latest_post_at": "2026-10-26T07:32:26Z",
+  "generated_at": "2026-10-27T10:50:53Z",
+  "latest_post_at": "2026-10-27T10:41:13Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 20
+      "posts": 22
     },
     {
       "id": "campaigns",
@@ -135,7 +135,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 8
+      "posts": 9
     }
   ],
   "weeks": [
@@ -151,16 +151,16 @@
       "file": "weeks/2026-W43.json",
       "max_date": "2026-10-25T14:59:31Z",
       "min_date": "2026-10-18T15:00:24Z",
-      "posts": 523,
+      "posts": 544,
       "relevant_posts": 8,
       "week": "2026-W43"
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-26T07:32:26Z",
+      "max_date": "2026-10-27T10:41:13Z",
       "min_date": "2026-10-25T15:00:47Z",
-      "posts": 50,
-      "relevant_posts": 2,
+      "posts": 156,
+      "relevant_posts": 4,
       "week": "2026-W44"
     }
   ]

@@ -4,8 +4,8 @@
     "id": "vantage",
     "name": "Vantage"
   },
-  "generated_at": "2026-10-28T08:11:42Z",
-  "latest_post_at": "2026-10-28T07:58:07Z",
+  "generated_at": "2026-10-29T07:45:53Z",
+  "latest_post_at": "2026-10-29T07:28:01Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -36,7 +36,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 14
+      "posts": 15
     },
     {
       "id": "campaigns",
@@ -142,16 +142,16 @@
       "file": "weeks/2026-W43.json",
       "max_date": "2026-10-25T14:59:05Z",
       "min_date": "2026-10-18T20:00:01Z",
-      "posts": 721,
+      "posts": 744,
       "relevant_posts": 7,
       "week": "2026-W43"
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-28T07:58:07Z",
+      "max_date": "2026-10-29T07:28:01Z",
       "min_date": "2026-10-25T15:04:27Z",
-      "posts": 243,
-      "relevant_posts": 4,
+      "posts": 356,
+      "relevant_posts": 5,
       "week": "2026-W44"
     }
   ]

@@ -4,8 +4,8 @@
     "id": "hfm",
     "name": "HFM"
   },
-  "generated_at": "2026-10-30T08:34:23Z",
-  "latest_post_at": "2026-10-30T08:10:01Z",
+  "generated_at": "2026-10-30T10:55:56Z",
+  "latest_post_at": "2026-10-30T10:20:21Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -172,15 +172,15 @@
       "file": "weeks/2026-W43.json",
       "max_date": "2026-10-25T14:52:08Z",
       "min_date": "2026-10-18T15:23:16Z",
-      "posts": 365,
+      "posts": 367,
       "relevant_posts": 11,
       "week": "2026-W43"
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T08:10:01Z",
+      "max_date": "2026-10-30T10:20:21Z",
       "min_date": "2026-10-25T16:56:10Z",
-      "posts": 238,
+      "posts": 259,
       "relevant_posts": 28,
       "week": "2026-W44"
     }

@@ -4,8 +4,8 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-10-30T08:34:23Z",
-  "latest_post_at": "2026-10-30T08:01:24Z",
+  "generated_at": "2026-10-30T10:55:56Z",
+  "latest_post_at": "2026-10-30T10:24:05Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -165,17 +165,17 @@
     },
     {
       "file": "weeks/2026-W43.json",
-      "max_date": "2026-10-25T14:42:55Z",
+      "max_date": "2026-10-25T14:48:31Z",
       "min_date": "2026-10-18T21:29:00Z",
-      "posts": 507,
+      "posts": 510,
       "relevant_posts": 16,
       "week": "2026-W43"
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T08:01:24Z",
+      "max_date": "2026-10-30T10:24:05Z",
       "min_date": "2026-10-25T15:02:15Z",
-      "posts": 358,
+      "posts": 391,
       "relevant_posts": 12,
       "week": "2026-W44"
     }

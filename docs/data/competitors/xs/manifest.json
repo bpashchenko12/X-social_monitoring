@@ -4,8 +4,8 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-10-30T08:34:23Z",
-  "latest_post_at": "2026-10-30T08:23:36Z",
+  "generated_at": "2026-10-30T10:55:56Z",
+  "latest_post_at": "2026-10-30T10:39:25Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -151,15 +151,15 @@
       "file": "weeks/2026-W43.json",
       "max_date": "2026-10-25T14:59:31Z",
       "min_date": "2026-10-18T15:00:24Z",
-      "posts": 576,
+      "posts": 579,
       "relevant_posts": 8,
       "week": "2026-W43"
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T08:23:36Z",
+      "max_date": "2026-10-30T10:39:25Z",
       "min_date": "2026-10-25T15:00:47Z",
-      "posts": 453,
+      "posts": 496,
       "relevant_posts": 9,
       "week": "2026-W44"
     }

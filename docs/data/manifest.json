@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T08:34:23Z",
-  "latest_post_at": "2026-10-30T08:07:13Z",
+  "generated_at": "2026-10-30T10:55:55Z",
+  "latest_post_at": "2026-10-30T10:23:16Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -30,7 +30,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 283
+      "posts": 284
     },
     {
       "id": "campaigns",
@@ -161,10 +161,10 @@
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T08:07:13Z",
+      "max_date": "2026-10-30T10:23:16Z",
       "min_date": "2026-10-25T15:00:47Z",
-      "posts": 427,
-      "relevant_posts": 27,
+      "posts": 462,
+      "relevant_posts": 28,
       "week": "2026-W44"
     }
   ]

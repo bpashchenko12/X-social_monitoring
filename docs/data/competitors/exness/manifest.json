@@ -4,8 +4,8 @@
     "id": "exness",
     "name": "Exness"
   },
-  "generated_at": "2026-10-30T08:34:23Z",
-  "latest_post_at": "2026-10-30T08:06:07Z",
+  "generated_at": "2026-10-30T10:55:56Z",
+  "latest_post_at": "2026-10-30T10:42:02Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -163,15 +163,15 @@
       "file": "weeks/2026-W43.json",
       "max_date": "2026-10-25T14:52:08Z",
       "min_date": "2026-10-18T15:53:50Z",
-      "posts": 193,
+      "posts": 194,
       "relevant_posts": 19,
       "week": "2026-W43"
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T08:06:07Z",
+      "max_date": "2026-10-30T10:42:02Z",
       "min_date": "2026-10-25T15:10:56Z",
-      "posts": 163,
+      "posts": 193,
       "relevant_posts": 27,
       "week": "2026-W44"
     }

@@ -4,8 +4,8 @@
     "id": "exness",
     "name": "Exness"
   },
-  "generated_at": "2026-10-30T10:55:56Z",
-  "latest_post_at": "2026-10-30T10:42:02Z",
+  "generated_at": "2026-11-03T07:52:30Z",
+  "latest_post_at": "2026-11-03T07:12:40Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 103
+      "posts": 116
     },
     {
       "id": "campaigns",
@@ -87,7 +87,7 @@
         "IB"
       ],
       "name": "Trading Environment",
-      "posts": 27
+      "posts": 29
     },
     {
       "id": "deposit_withdrawal",
@@ -104,7 +104,7 @@
         "決済"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 21
+      "posts": 24
     },
     {
       "id": "account_types",
@@ -169,11 +169,19 @@
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T10:42:02Z",
+      "max_date": "2026-11-01T12:59:50Z",
       "min_date": "2026-10-25T15:10:56Z",
-      "posts": 193,
-      "relevant_posts": 27,
+      "posts": 220,
+      "relevant_posts": 34,
       "week": "2026-W44"
+    },
+    {
+      "file": "weeks/2026-W45.json",
+      "max_date": "2026-11-03T07:12:40Z",
+      "min_date": "2026-11-01T23:05:24Z",
+      "posts": 35,
+      "relevant_posts": 6,
+      "week": "2026-W45"
     }
   ]
 }

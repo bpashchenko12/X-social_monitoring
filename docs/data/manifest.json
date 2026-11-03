@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-30T10:55:55Z",
-  "latest_post_at": "2026-10-30T10:23:16Z",
+  "generated_at": "2026-11-03T07:52:30Z",
+  "latest_post_at": "2026-11-03T07:22:44Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -30,7 +30,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 284
+      "posts": 306
     },
     {
       "id": "campaigns",
@@ -43,7 +43,7 @@
         "プロモーション"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 116
+      "posts": 119
     },
     {
       "id": "competitions",
@@ -54,7 +54,7 @@
         "トレードバトル"
       ],
       "name": "Competitions & Events",
-      "posts": 9
+      "posts": 10
     },
     {
       "id": "environment",
@@ -76,7 +76,7 @@
         "IB"
       ],
       "name": "Trading Environment",
-      "posts": 52
+      "posts": 61
     },
     {
       "id": "deposit_withdrawal",
@@ -89,7 +89,7 @@
         "クレジットカード"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 93
+      "posts": 97
     },
     {
       "id": "account_types",
@@ -107,7 +107,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 112
+      "posts": 119
     }
   ],
   "weeks": [
@@ -161,11 +161,19 @@
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T10:23:16Z",
+      "max_date": "2026-11-01T13:51:04Z",
       "min_date": "2026-10-25T15:00:47Z",
-      "posts": 462,
-      "relevant_posts": 28,
+      "posts": 598,
+      "relevant_posts": 39,
       "week": "2026-W44"
+    },
+    {
+      "file": "weeks/2026-W45.json",
+      "max_date": "2026-11-03T07:22:44Z",
+      "min_date": "2026-11-01T15:22:39Z",
+      "posts": 115,
+      "relevant_posts": 11,
+      "week": "2026-W45"
     }
   ]
 }

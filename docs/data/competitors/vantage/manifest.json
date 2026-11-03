@@ -4,8 +4,8 @@
     "id": "vantage",
     "name": "Vantage"
   },
-  "generated_at": "2026-10-30T10:55:56Z",
-  "latest_post_at": "2026-10-30T10:45:00Z",
+  "generated_at": "2026-11-03T07:52:30Z",
+  "latest_post_at": "2026-11-03T06:54:45Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -36,7 +36,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 16
+      "posts": 19
     },
     {
       "id": "campaigns",
@@ -92,7 +92,7 @@
         "IB"
       ],
       "name": "Trading Environment",
-      "posts": 3
+      "posts": 4
     },
     {
       "id": "deposit_withdrawal",
@@ -109,7 +109,7 @@
         "決済"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 6
+      "posts": 8
     },
     {
       "id": "account_types",
@@ -126,7 +126,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 5
+      "posts": 6
     }
   ],
   "weeks": [
@@ -148,11 +148,19 @@
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-10-30T10:45:00Z",
+      "max_date": "2026-11-01T14:57:57Z",
       "min_date": "2026-10-25T15:04:27Z",
-      "posts": 530,
-      "relevant_posts": 6,
+      "posts": 743,
+      "relevant_posts": 7,
       "week": "2026-W44"
+    },
+    {
+      "file": "weeks/2026-W45.json",
+      "max_date": "2026-11-03T06:54:45Z",
+      "min_date": "2026-11-01T15:03:05Z",
+      "posts": 107,
+      "relevant_posts": 2,
+      "week": "2026-W45"
     }
   ]
 }

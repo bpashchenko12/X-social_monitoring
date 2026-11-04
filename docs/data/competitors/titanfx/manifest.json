@@ -4,8 +4,8 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-11-03T08:12:25Z",
-  "latest_post_at": "2026-11-03T06:43:13Z",
+  "generated_at": "2026-11-04T11:28:14Z",
+  "latest_post_at": "2026-11-04T09:12:04Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 91
+      "posts": 95
     },
     {
       "id": "campaigns",
@@ -175,16 +175,16 @@
       "file": "weeks/2026-W44.json",
       "max_date": "2026-11-01T14:48:02Z",
       "min_date": "2026-10-25T15:02:15Z",
-      "posts": 566,
+      "posts": 617,
       "relevant_posts": 12,
       "week": "2026-W44"
     },
     {
       "file": "weeks/2026-W45.json",
-      "max_date": "2026-11-03T06:43:13Z",
+      "max_date": "2026-11-04T09:12:04Z",
       "min_date": "2026-11-01T15:13:02Z",
-      "posts": 113,
-      "relevant_posts": 2,
+      "posts": 204,
+      "relevant_posts": 6,
       "week": "2026-W45"
     }
   ]

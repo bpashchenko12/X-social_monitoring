@@ -4,8 +4,8 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-11-04T11:28:14Z",
-  "latest_post_at": "2026-11-04T09:12:04Z",
+  "generated_at": "2026-11-06T08:14:47Z",
+  "latest_post_at": "2026-11-06T07:31:47Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 95
+      "posts": 100
     },
     {
       "id": "campaigns",
@@ -51,7 +51,7 @@
         "入金キャンペーン"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 13
+      "posts": 14
     },
     {
       "id": "competitions",
@@ -90,7 +90,7 @@
         "Zero Point"
       ],
       "name": "Trading Environment",
-      "posts": 8
+      "posts": 9
     },
     {
       "id": "deposit_withdrawal",
@@ -173,18 +173,18 @@
     },
     {
       "file": "weeks/2026-W44.json",
-      "max_date": "2026-11-01T14:48:02Z",
+      "max_date": "2026-11-01T14:54:09Z",
       "min_date": "2026-10-25T15:02:15Z",
-      "posts": 617,
+      "posts": 633,
       "relevant_posts": 12,
       "week": "2026-W44"
     },
     {
       "file": "weeks/2026-W45.json",
-      "max_date": "2026-11-04T09:12:04Z",
+      "max_date": "2026-11-06T07:31:47Z",
       "min_date": "2026-11-01T15:13:02Z",
-      "posts": 204,
-      "relevant_posts": 6,
+      "posts": 331,
+      "relevant_posts": 11,
       "week": "2026-W45"
     }
   ]

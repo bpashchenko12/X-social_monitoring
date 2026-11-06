@@ -4,8 +4,8 @@
     "id": "vantage",
     "name": "Vantage"
   },
-  "generated_at": "2026-11-04T11:28:14Z",
-  "latest_post_at": "2026-11-04T09:47:08Z",
+  "generated_at": "2026-11-06T08:14:47Z",
+  "latest_post_at": "2026-11-06T08:03:54Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -150,15 +150,15 @@
       "file": "weeks/2026-W44.json",
       "max_date": "2026-11-01T14:57:57Z",
       "min_date": "2026-10-25T15:04:27Z",
-      "posts": 795,
+      "posts": 816,
       "relevant_posts": 7,
       "week": "2026-W44"
     },
     {
       "file": "weeks/2026-W45.json",
-      "max_date": "2026-11-04T09:47:08Z",
+      "max_date": "2026-11-06T08:03:54Z",
       "min_date": "2026-11-01T15:03:05Z",
-      "posts": 261,
+      "posts": 459,
       "relevant_posts": 2,
       "week": "2026-W45"
     }

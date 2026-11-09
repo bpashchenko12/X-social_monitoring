@@ -3,31 +3,31 @@
     {
       "color": "#e8590c",
       "id": "hfm",
-      "latest_post_at": "2026-11-06T07:43:43Z",
+      "latest_post_at": "2026-11-09T07:22:03Z",
       "name": "HFM",
       "path": "competitors/hfm",
-      "posts": 108
+      "posts": 113
     },
     {
       "color": "#0c8599",
       "id": "exness",
-      "latest_post_at": "2026-11-06T07:36:26Z",
+      "latest_post_at": "2026-11-09T07:30:42Z",
       "name": "Exness",
       "path": "competitors/exness",
-      "posts": 122
+      "posts": 133
     },
     {
       "color": "#5f3dc4",
       "id": "titanfx",
-      "latest_post_at": "2026-11-06T07:31:47Z",
+      "latest_post_at": "2026-11-09T07:35:28Z",
       "name": "Titan FX",
       "path": "competitors/titanfx",
-      "posts": 100
+      "posts": 102
     },
     {
       "color": "#d6336c",
       "id": "vantage",
-      "latest_post_at": "2026-11-06T08:03:54Z",
+      "latest_post_at": "2026-11-09T07:55:09Z",
       "name": "Vantage",
       "path": "competitors/vantage",
       "posts": 19
@@ -35,13 +35,13 @@
     {
       "color": "#1c7ed6",
       "id": "xs",
-      "latest_post_at": "2026-11-06T08:02:14Z",
+      "latest_post_at": "2026-11-09T08:00:03Z",
       "name": "XS",
       "path": "competitors/xs",
-      "posts": 35
+      "posts": 36
     }
   ],
-  "generated_at": "2026-11-06T08:14:47Z",
-  "latest_post_at": "2026-11-06T08:03:54Z",
+  "generated_at": "2026-11-09T08:20:17Z",
+  "latest_post_at": "2026-11-09T08:00:03Z",
   "schema_version": 1
 }

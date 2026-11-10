@@ -4,8 +4,8 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-11-09T08:20:16Z",
-  "latest_post_at": "2026-11-09T08:00:03Z",
+  "generated_at": "2026-11-10T09:50:07Z",
+  "latest_post_at": "2026-11-10T09:34:19Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 36
+      "posts": 39
     },
     {
       "id": "campaigns",
@@ -93,7 +93,7 @@
         "コピー取引"
       ],
       "name": "Trading Environment",
-      "posts": 13
+      "posts": 16
     },
     {
       "id": "deposit_withdrawal",
@@ -167,16 +167,16 @@
       "file": "weeks/2026-W45.json",
       "max_date": "2026-11-08T14:33:02Z",
       "min_date": "2026-11-01T15:39:43Z",
-      "posts": 564,
+      "posts": 583,
       "relevant_posts": 7,
       "week": "2026-W45"
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-09T08:00:03Z",
+      "max_date": "2026-11-10T09:34:19Z",
       "min_date": "2026-11-08T15:09:46Z",
-      "posts": 45,
-      "relevant_posts": 0,
+      "posts": 137,
+      "relevant_posts": 3,
       "week": "2026-W46"
     }
   ]

@@ -358,7 +358,7 @@ class CompetitorTests(unittest.TestCase):
     def test_every_query_has_brand_anchor_and_six_queries(self):
         for bid, cfg in self.cfgs.items():
             if self.C.is_industry(self.brands[bid]):
-                continue  # the industry entry has its own topic list
+                continue  # the industry entry has its own topic list (tests/test_industry.py)
             qs = build_queries(cfg, date(2026, 10, 20))
             self.assertEqual([q["id"] for q in qs],
                              ["macro", "campaigns", "competitions", "environment", "deposit_withdrawal", "account_types"])

@@ -7,7 +7,8 @@ Safety model (many people use the published data, so a bad run must never reach 
   * The window override used for cheap incremental scrapes never leaks into the public manifest.
   * Spend is capped per calendar month (Apify and LLM) and every failure is e-mailed.
 
-Exit codes: 0 = ok, 2 = published but degraded (e.g. LLM down, budget hit), 1 = failed (rolled back).
+Exit codes: 0 = ok, 3 = published but degraded (e.g. LLM down, budget hit), 1 = failed (rolled back).
+(2 is deliberately unused: argparse exits 2 on a bad command line, which must never look like success.)
 """
 import glob
 import json
@@ -27,13 +28,19 @@ AUTOMATION_PATH = os.path.join(ROOT, "config", "automation.json")
 REVIEW_PATH = os.path.join(ROOT, "data", "review_queue.json")
 LAST_RUN_PATH = os.path.join(ROOT, "data", "last_run.json")
 RUNS_LOG_PATH = os.path.join(ROOT, "data", "auto_runs.jsonl")
-OK, FAILED, DEGRADED = 0, 1, 2
+OK, FAILED, DEGRADED = 0, 1, 3
 
 DEFAULTS = {
     "incremental_window_days": 2, "sweep_window_days": 7, "sweep_weekday_jst": 0, "sweep_before_hour_jst": 12,
     "sweep_max_age_days": 8, "cache_ttl_hours": 6, "stale_after_hours": 36, "max_pending_warn": 25,
-    "llm": {"model": "anthropic/claude-sonnet-5.5", "fallback_model": None, "monthly_budget_usd": 10,
-            "max_posts_per_run": 150, "batch_max_items": 6, "batch_max_chars": 5000},
+    # competitors + industry are scraped once a day (runs that start before this hour JST) and on sweeps;
+    # the other daily run only refreshes XM. `--scope all|xm` overrides.
+    "full_before_hour_jst": 12,
+    # hitting the per-query item cap in an incremental run is a note, not a degraded run (no alert e-mail)
+    "cap_hits_degrade": False,
+    "llm": {"model": "anthropic/claude-sonnet-5.5", "fallback_model": None, "monthly_budget_usd": 15,
+            "max_posts_per_run": 150, "max_industry_posts_per_run": 40, "batch_max_items": 6,
+            "batch_max_chars": 5000},
     "alert": {"subject_prefix": "[XM Monitor]", "on_degraded": True, "on_success": False},
 }
 SECRET_NAMES = ("APIFY_TOKEN", "OPENROUTER_API_KEY", "SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASSWORD",
@@ -85,31 +92,47 @@ def decide_mode(now, acfg, forced="auto", last_sweep_at=None):
     return "incremental"
 
 
+def decide_scope(now, acfg, forced="auto", mode="incremental"):
+    """'all' (XM + competitors + industry) or 'xm' (XM only, the cheap second daily run).
+    Auto: everything on a sweep and on runs that start before `full_before_hour_jst` (the JST morning run)."""
+    if forced in ("all", "xm"):
+        return forced
+    if mode == "sweep" or now.astimezone(JST).hour < acfg["full_before_hour_jst"]:
+        return "all"
+    return "xm"
+
+
 # ---- stores ---------------------------------------------------------------------
 
-class Store:
-    """One independent post store (XM or a competitor brand)."""
+PRIORITY = {"xm": 0, "competitor": 1, "industry": 2}   # translation order when the per-run cap bites
 
-    def __init__(self, scope, brand, weeks_dir, data_dir, finalize, official=()):
+
+class Store:
+    """One independent post store: XM (kind 'xm'), a competitor brand, or the industry entry."""
+
+    def __init__(self, scope, brand, weeks_dir, data_dir, finalize, official=(), kind="competitor"):
         self.scope, self.brand, self.weeks_dir, self.data_dir = scope, brand, weeks_dir, data_dir
         self.finalize = finalize
         self.official = {h.lower().lstrip("@") for h in official}
+        self.kind = kind
+        self.priority = PRIORITY.get(kind, 1)
 
 
 def real_stores(cfg, comp=None):
-    """XM store + one per competitor brand, finalised with the CANONICAL config (7-day window), so the
-    public manifest never reflects the shorter incremental window."""
+    """XM store + one per competitor brand (+ the industry store), finalised with the CANONICAL config (7-day
+    window), so the public manifest never reflects the shorter incremental window."""
     def fin_xm():
         store.retag_all(cfg["topics"])
         return store.rebuild_manifest(cfg["topics"], search=search_spec(cfg))
-    stores = [Store("xm", "XMTrading", WEEKS_DIR, DATA_DIR, fin_xm)]
+    stores = [Store("xm", "XMTrading", WEEKS_DIR, DATA_DIR, fin_xm, kind="xm")]
     if comp:
         by_id = {b["id"]: b for b in comp["brands"]}
         for c in competitors.all_brand_cfgs(cfg, comp):
             bid = c["brand"]["id"]
             data_dir, weeks_dir = competitors.brand_dirs(bid)
             stores.append(Store(bid, c["brand"]["name"], weeks_dir, data_dir,
-                                (lambda c=c: competitors.finalize_brand(c)), by_id[bid].get("official_handles", [])))
+                                (lambda c=c: competitors.finalize_brand(c)), by_id[bid].get("official_handles", []),
+                                kind="industry" if competitors.is_industry(by_id[bid]) else "competitor"))
     return stores
 
 
@@ -260,20 +283,33 @@ def scrape_live(cfg, comp, acfg, mode, today, token):
 
 # ---- enrichment -----------------------------------------------------------------
 
+def _id_num(pid):
+    return int(pid) if pid.isdigit() else 0
+
+
 def _collect_candidates(stores):
+    """Posts still lacking a translation/sentiment, one entry per post id across stores.
+    Order: XM first, then competitors, then industry; newest first within each."""
     by_id, conflicts = {}, 0
     for st in stores:
         for e in enrich.export_queue(st.weeks_dir):
             d = by_id.setdefault(e["id"], {"id": e["id"], "text": e["text"], "handle": e["handle"],
-                                           "brands": [], "official_for": [], "targets": []})
+                                           "likes": 0, "priority": st.priority, "brands": [],
+                                           "official_for": [], "industry_brands": [], "targets": []})
             if d["text"] != e["text"]:
                 conflicts += 1
                 continue
             d["brands"].append(st.brand)
             d["targets"].append(st)
+            d["likes"] = max(d["likes"], int(e.get("likes") or 0))
+            d["priority"] = min(d["priority"], st.priority)
+            if st.kind == "industry":
+                d["industry_brands"].append(st.brand)
             if e["handle"].lower().lstrip("@") in st.official:
                 d["official_for"].append(st.brand)
-    return sorted(by_id.values(), key=lambda d: int(d["id"]) if d["id"].isdigit() else 0, reverse=True), conflicts
+    for d in by_id.values():
+        d["industry_only"] = len(d["industry_brands"]) == len(d["brands"])
+    return sorted(by_id.values(), key=lambda d: (d["priority"], -_id_num(d["id"]))), conflicts
 
 
 def enrich_stores(stores, client, model, glossary, llm_cfg, limit=None):
@@ -288,12 +324,21 @@ def enrich_stores(stores, client, model, glossary, llm_cfg, limit=None):
         else:
             todo.append(d)
     cap = limit if limit is not None else int(llm_cfg.get("max_posts_per_run", 150))
-    stats["deferred"] = max(0, len(todo) - cap)
+    ind_cap = llm_cfg.get("max_industry_posts_per_run")
+    if ind_cap is not None:
+        # The industry feed is high-volume and low-priority: keep the most-liked posts that exist only
+        # there, defer the rest (they stay "pending" and are picked up when volume allows).
+        ind = [d for d in todo if d["industry_only"]]
+        if len(ind) > int(ind_cap):
+            keep = {d["id"] for d in sorted(ind, key=lambda d: (-d["likes"], -_id_num(d["id"])))[:int(ind_cap)]}
+            todo = [d for d in todo if not d["industry_only"] or d["id"] in keep]
+            stats["deferred_industry"] = len(ind) - len(keep)
+    stats["deferred"] = max(0, len(todo) - cap) + stats.get("deferred_industry", 0)
     todo = todo[:cap]
     if not todo:
         return stats
     items = [{"id": d["id"], "text": d["text"], "handle": d["handle"], "brands": d["brands"],
-              "official_for": d["official_for"]} for d in todo]
+              "official_for": d["official_for"], "industry_brands": d["industry_brands"]} for d in todo]
     out = translate.translate_items(client, model, items, glossary, llm_cfg)
     stats["held"].update(out["held"])
     stats["stopped"], stats["llm_cost_usd"] = out["stopped"], round(out["cost_usd"], 4)
@@ -340,13 +385,14 @@ def _ledger_rows(path):
 def run_auto(cfg, acfg, *, stores, now=None, mode="auto", env=None, comp=None, scrape=None, client_factory=None,
              glossary=None, snapshot_dir=DATA_DIR, finalize_extra=None, ledger_path=LEDGER_PATH,
              review_path=REVIEW_PATH, last_run_path=LAST_RUN_PATH, runs_log_path=RUNS_LOG_PATH,
-             skip_scrape=False, skip_enrich=False, enrich_limit=None, send_alerts=True, log=print):
+             skip_scrape=False, skip_enrich=False, enrich_limit=None, send_alerts=True, log=print, scope="auto"):
     """Run one unattended cycle. -> report dict (report["exit_code"] is the process exit code)."""
     now = now or now_utc()
     env = env if env is not None else os.environ
     prev = read_json(last_run_path, {}) or {}
     mode = decide_mode(now, acfg, mode, prev.get("last_sweep_at"))
-    report = {"started_at": iso(now), "mode": mode, "degraded": [], "notes": [], "errors": [],
+    scope = decide_scope(now, acfg, scope, mode)
+    report = {"started_at": iso(now), "mode": mode, "scope": scope, "degraded": [], "notes": [], "errors": [],
               "scrape": None, "enrich": None, "gates": {"errors": [], "warnings": []}}
     degraded = report["degraded"]
 
@@ -366,7 +412,10 @@ def run_auto(cfg, acfg, *, stores, now=None, mode="auto", env=None, comp=None, s
             token = env.get("APIFY_TOKEN")
             if not token:
                 raise RuntimeError("APIFY_TOKEN is not set")
-            sc = (scrape or scrape_live)(cfg, comp, acfg, mode, now.date(), token)
+            sc = (scrape or scrape_live)(cfg, comp if scope == "all" else None, acfg, mode, now.date(), token)
+            if scope == "xm" and comp:
+                report["notes"].append("competitors and the industry feed were not scraped in this run "
+                                       "(they are refreshed once a day, in the morning run)")
             sc.setdefault("failed", [])
             rows = _ledger_rows(ledger_path)[ledger_before:]
             capped = [r.get("query_id") for r in rows if int(r.get("items", 0)) >= int(cfg["max_items"])]
@@ -381,7 +430,8 @@ def run_auto(cfg, acfg, *, stores, now=None, mode="auto", env=None, comp=None, s
             if sc["requests"] and sc["items"] == 0:
                 degraded.append("every Apify query returned 0 items (actor outage or blocking?)")
             if capped:
-                (degraded if mode == "incremental" else report["notes"]).append(
+                strict = mode == "incremental" and acfg.get("cap_hits_degrade")
+                (degraded if strict else report["notes"]).append(
                     f"{len(capped)} query(ies) hit the {cfg['max_items']}-item cap ({', '.join(capped[:5])})"
                     + ("; some posts may be missed until the next weekly sweep" if mode == "incremental" else ""))
             if sc.get("ok", 0) == 0 and sc["failed"]:
@@ -420,12 +470,17 @@ def run_auto(cfg, acfg, *, stores, now=None, mode="auto", env=None, comp=None, s
         report["notes"] += g_warn
         pending = sum(s["pending"] for s in after.values())
         report["pending_after"] = pending
+        # the industry feed is capped per run on purpose, so its backlog must not raise an alert
+        industry_scopes = {st.scope for st in stores if st.kind == "industry"}
+        pending_core = sum(s["pending"] for k, s in after.items() if k not in industry_scopes)
+        if pending != pending_core:
+            report["pending_industry"] = pending - pending_core
         report["stores"] = {k: {"posts": len(v["ids"]), "relevant": v["relevant"], "pending": v["pending"]}
                             for k, v in after.items()}
         if g_err:
             raise _GateFailure(g_err)
-        if pending > acfg["max_pending_warn"]:
-            degraded.append(f"{pending} posts are still pending translation (threshold {acfg['max_pending_warn']})")
+        if pending_core > acfg["max_pending_warn"]:
+            degraded.append(f"{pending_core} posts are still pending translation (threshold {acfg['max_pending_warn']})")
         if flags:  # only after the gates passed, so a rolled-back run leaves no trace
             update_review_queue(flags, review_path, flag_model, now)
         status = "degraded" if degraded else "ok"
@@ -458,8 +513,8 @@ def _write_reports(report, prev, last_run_path, runs_log_path, now):
     ok = report["status"] in ("ok", "degraded")
     doc = dict(report)
     doc["last_success_at"] = report["finished_at"] if ok else prev.get("last_success_at")
-    swept = (ok and report["mode"] == "sweep" and report.get("scrape") is not None
-             and not report["scrape"]["failed"])
+    swept = (ok and report["mode"] == "sweep" and report.get("scope", "all") == "all"
+             and report.get("scrape") is not None and not report["scrape"]["failed"])
     doc["last_sweep_at"] = report["finished_at"] if swept else prev.get("last_sweep_at")
     write_json_atomic(last_run_path, doc)
     sc, en = report.get("scrape") or {}, report.get("enrich") or {}
@@ -470,7 +525,8 @@ def _write_reports(report, prev, last_run_path, runs_log_path, now):
 
 
 def summarize(report):
-    lines = [f"Status: {report['status'].upper()}   mode: {report['mode']}   finished: {report['finished_at']}"]
+    lines = [f"Status: {report['status'].upper()}   mode: {report['mode']}   scope: {report.get('scope', 'all')}"
+             f"   finished: {report['finished_at']}"]
     sc, en = report.get("scrape"), report.get("enrich")
     if sc:
         lines.append(f"Scrape: {sc.get('ok', 0)} queries ok, {len(sc['failed'])} failed, {sc.get('items', 0)} items, "
@@ -480,7 +536,9 @@ def summarize(report):
                      f"review, ${en['llm_cost_usd']:.2f} LLM (model {en['model']}, "
                      f"month ${en.get('llm_month_spent_usd', 0):.2f})")
     if "pending_after" in report:
-        lines.append(f"Pending translation after run: {report['pending_after']}")
+        lines.append(f"Pending translation after run: {report['pending_after']}"
+                     + (f" (of which industry feed: {report['pending_industry']})"
+                        if report.get("pending_industry") else ""))
     for key, title in (("errors", "ERRORS"), ("degraded", "PROBLEMS")):
         if report[key]:
             lines.append(f"{title}:")
@@ -508,22 +566,31 @@ def _maybe_alert(report, acfg, env, log):
 
 # ---- live entry point (CLI) -------------------------------------------------------
 
-def plan_live(cfg, comp, acfg, mode, today, env):
+def plan_live(cfg, comp, acfg, mode, today, env, scope="all"):
     """Free dry-run: what a real run would do and what it could cost."""
     days = acfg["sweep_window_days"] if mode == "sweep" else acfg["incremental_window_days"]
     fetch_cfg = dict(cfg, window_days=days)
     since = today - timedelta(days=days)
     total, n, cached = 0.0, 0, 0
-    cfgs = [("xm", fetch_cfg)] + ([(c["brand"]["id"], c) for c in competitors.all_brand_cfgs(fetch_cfg, comp)] if comp else [])
-    for scope, c in cfgs:
-        for q in build_queries(c, today, since if scope == "xm" else None):
+    cfgs = [("xm", fetch_cfg)]
+    if comp and scope == "all":
+        cfgs += [(c["brand"]["id"], c) for c in competitors.all_brand_cfgs(fetch_cfg, comp)]
+    for key, c in cfgs:
+        for q in build_queries(c, today, since if key == "xm" else None):
             n += 1
             inp = dict(q["input"])
-            hit = os.path.exists(apify.cache_path(c["actor"], inp))
+            path = apify.cache_path(c["actor"], inp)
+            hit = False
+            if os.path.exists(path):
+                try:
+                    hit = apify._cache_fresh(read_json(path), acfg["cache_ttl_hours"], now_utc())
+                except (ValueError, TypeError, AttributeError):
+                    hit = False
             cached += hit
             total += 0.0 if hit else apify.estimate_cost(inp["maxItems"], c)
     spent, limit, label = apify.budget_status(cfg)
-    return {"mode": mode, "window_days": days, "queries": n, "cached": cached, "max_cost_usd": round(total, 2),
+    return {"mode": mode, "scope": scope, "window_days": days, "queries": n, "cached": cached,
+            "max_cost_usd": round(total, 2),
             "apify_spent": spent, "apify_limit": limit, "apify_budget": label}
 
 
@@ -535,8 +602,9 @@ def run_live(args, cfg):
     stores = real_stores(cfg, comp)
     prev = read_json(LAST_RUN_PATH, {}) or {}
     mode = decide_mode(now_utc(), acfg, args.mode, prev.get("last_sweep_at"))
+    scope = decide_scope(now_utc(), acfg, getattr(args, "scope", "auto"), mode)
     if args.dry_run:
-        plan = plan_live(cfg, comp, acfg, mode, now_utc().date(), env)
+        plan = plan_live(cfg, comp, acfg, mode, now_utc().date(), env, scope)
         pending = sum(s["pending"] for s in collect_state(stores).values())
         led = apify.spent_usd(llm.LLM_LEDGER_PATH, now_utc().strftime("%Y-%m"))
         print(json.dumps(dict(plan, pending_translation=pending, llm_month_spent=led,
@@ -557,6 +625,6 @@ def run_live(args, cfg):
 
     rep = run_auto(cfg, acfg, stores=stores, mode=args.mode, env=env, comp=comp, client_factory=factory,
                    finalize_extra=finalize_extra, skip_scrape=args.skip_scrape, skip_enrich=args.skip_enrich,
-                   enrich_limit=args.max_enrich)
+                   enrich_limit=args.max_enrich, scope=scope)
     print(summarize(rep))
     return rep["exit_code"]

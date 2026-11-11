@@ -41,8 +41,8 @@ def completion(content, cost=0.01, finish="stop", model="m"):
             "usage": {"prompt_tokens": 100, "completion_tokens": 50, "cost": cost}}
 
 
-def mkpost(pid, text, created="2026-11-09T01:00:00Z", en=None, sent=None, relevant=True, handle="user1"):
-    p = {"id": pid, "created_at": created, "account_handle": handle,
+def mkpost(pid, text, created="2026-11-09T01:00:00Z", en=None, sent=None, relevant=True, handle="user1", likes=10):
+    p = {"id": pid, "created_at": created, "account_handle": handle, "likes": likes,
          "content_original": text if relevant else "", "content_en": en, "sentiment": sent,
          "topics": ["macro"], "relevant": relevant}
     if not relevant:

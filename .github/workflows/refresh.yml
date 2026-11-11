@@ -14,6 +14,11 @@ on:
         type: choice
         options: [auto, incremental, sweep]
         default: auto
+      scope:
+        description: "auto = everything in the morning run and on Monday sweeps, XM only in the evening run; all = XM + competitors + industry; xm = XM only"
+        type: choice
+        options: [auto, all, xm]
+        default: auto
       llm_only:
         description: "Skip scraping (no Apify cost): only translate pending posts. Use for the first LLM test."
         type: boolean
@@ -47,7 +52,8 @@ jobs:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: python -m pipeline.run llm-check
 
-      # Exit codes: 0 ok, 2 published but degraded (warning), 1 failed and rolled back.
+      # Exit codes: 0 ok, 3 published but degraded (warning), 1 failed and rolled back.
+      # Any other code (e.g. 2 = bad command line, 128+ = killed) is treated as a failure.
       # The step itself never fails so that spend ledgers are committed even after a rollback;
       # the "Enforce result" step below turns code 1 into a red run.
       - name: Scrape, translate, validate
@@ -62,13 +68,14 @@ jobs:
           ALERT_EMAIL_TO: ${{ secrets.ALERT_EMAIL_TO }}
           ALERT_EMAIL_FROM: ${{ secrets.ALERT_EMAIL_FROM }}
           MODE: ${{ inputs.mode || 'auto' }}
+          SCOPE: ${{ inputs.scope || 'auto' }}
           EXTRA: ${{ inputs.llm_only && '--skip-scrape' || '' }}
         run: |
           set +e
-          python -m pipeline.run auto --yes --mode "$MODE" $EXTRA
+          python -m pipeline.run auto --yes --mode "$MODE" --scope "$SCOPE" $EXTRA
           code=$?
           echo "code=$code" >> "$GITHUB_OUTPUT"
-          if [ "$code" = 2 ]; then echo "::warning::Run published but degraded; see the e-mail / data/last_run.json"; fi
+          if [ "$code" = 3 ]; then echo "::warning::Run published but degraded; see the e-mail / data/last_run.json"; fi
           exit 0
 
       - name: Commit data
@@ -76,7 +83,11 @@ jobs:
         run: |
           git config user.name "xm-monitor-bot"
           git config user.email "xm-monitor-bot@users.noreply.github.com"
-          git add docs/data data/runs.jsonl data/llm_runs.jsonl data/last_run.json data/auto_runs.jsonl data/review_queue.json 2>/dev/null || true
+          # `git add` aborts the WHOLE command if one pathspec is missing (e.g. no LLM call yet
+          # means no llm_runs.jsonl), so add only the paths that exist.
+          for p in docs/data data/runs.jsonl data/llm_runs.jsonl data/last_run.json data/auto_runs.jsonl data/review_queue.json; do
+            if [ -e "$p" ]; then git add -- "$p"; fi
+          done
           if git diff --cached --quiet; then echo "nothing to commit"; exit 0; fi
           git commit -m "data: auto refresh $(date -u +%FT%H:%MZ) (exit ${{ steps.auto.outputs.code }})"
           for i in 1 2 3 4 5; do
@@ -91,7 +102,7 @@ jobs:
         if: ${{ steps.auto.outputs.code != '' }}
         run: |
           code='${{ steps.auto.outputs.code }}'
-          if [ "$code" = 0 ] || [ "$code" = 2 ]; then exit 0; fi
+          if [ "$code" = 0 ] || [ "$code" = 3 ]; then exit 0; fi
           echo "::error::pipeline failed (exit $code); published data was restored from the snapshot"
           exit 1
 

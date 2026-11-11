@@ -6,6 +6,7 @@ committed to git like the Apify one).
 """
 import json
 import os
+import re
 import socket
 import time
 import urllib.error
@@ -33,6 +34,14 @@ class LLMBudgetError(LLMFatal):
 def _scrub(text, secret):
     text = str(text)
     return text.replace(secret, "***") if secret else text
+
+
+def _clean_body(raw, secret, limit=200):
+    """Readable one-line error text: HTML block pages (corporate proxies) become plain words."""
+    text = re.sub(r"<(script|style)\b.*?</\1>", " ", raw, flags=re.S | re.I)
+    text = re.sub(r"<[^>]+>", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return _scrub(text, secret)[:limit]
 
 
 class OpenRouter:
@@ -107,7 +116,7 @@ class OpenRouter:
                 self.requests += 1
                 data = self._request("/chat/completions", payload)
             except urllib.error.HTTPError as e:
-                body = _scrub(e.read().decode("utf-8", "replace")[:300], self._key)
+                body = _clean_body(e.read().decode("utf-8", "replace")[:3000], self._key)
                 if e.code in (401, 403):
                     raise LLMFatal(f"OpenRouter auth error {e.code}: {body}") from None
                 if e.code == 402:

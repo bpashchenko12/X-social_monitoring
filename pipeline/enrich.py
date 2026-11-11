@@ -17,7 +17,7 @@ def export_queue(weeks_dir=WEEKS_DIR, limit=None):
                 continue
             if p.get("content_en") is None or p.get("sentiment") is None:
                 queue.append({"id": p["id"], "text": p["content_original"], "topics": p["topics"],
-                              "handle": p["account_handle"]})
+                              "handle": p["account_handle"], "likes": p.get("likes") or 0})
     return queue[:limit] if limit else queue
 
 

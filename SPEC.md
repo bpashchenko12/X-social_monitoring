@@ -214,7 +214,7 @@ A post is kept only if it names the brand in its text: a `strong` term, or a `ba
 
 ### 11.5 Dashboard
 
-View switch "XM Monitor | Competitors". Competitors view: brand pills and an overview matrix (posts, accounts, impressions, sentiment, per-topic counts per brand), then per-brand pages with the same tabs, KPIs, charts, filters, table and CSV as section 10. Hash routing keeps the selected view, brand and tab in the URL.
+View switch "XM Monitor | Competitors | Industry" (the last two appear only when their data exists; Industry is described in 11.9). Competitors view: brand pills and an overview matrix (posts, accounts, impressions, sentiment, per-topic counts per brand), then per-brand pages with the same tabs, KPIs, charts, filters, table and CSV as section 10. Hash routing keeps the selected view, brand and tab in the URL.
 
 ### 11.6 CSV and CI
 
@@ -232,6 +232,18 @@ Only posts returned by the scraper are published. Test inputs in `tests/fixtures
 4. Review excluded and kept posts, adjust the terms, re-run the fetch (cached input costs nothing).
 5. Enrich (`enrich-export --scope <id>`, translate in full, `enrich-import`), then `python3 -m pipeline.run manifest`.
 
+### 11.9 Industry view (base term 海外FX)
+
+A third dashboard tab, "Industry", shows what Japanese users post about the offshore-FX industry as a whole (requested by Nozawa-san, with the new December regulation in mind). It is not a broker: it is a pseudo-brand in `config/competitors.json` with `"kind": "industry"`, id `industry`, `query_terms` / `text_terms.strong` = `海外FX`, and keeps its own store `docs/data/competitors/industry/`.
+
+- Topics (tabs): Overall (macro), Campaigns & Cashback, Trading Environment, Deposit & Withdrawal, Reputation & Customer Experience, Regulation, Fraud & Security. The first four come from the base taxonomy (only the ones listed in the entry's `topics`), the last two are the entry's `extra_topics`. The keyword lists come from the project file "Competitors and Industry Queries". XM-only topics (Competitions, Account Types) are not used.
+- Queries: `("海外FX") (kw OR kw ...) lang:ja -filter:retweets min_faves:10 since:...`, six per run (about $0.04 each, cap 200 items). Relevance: the post text itself must contain 海外FX (NFKC-normalised, so full-width letters and hashtags count); an author name/handle match alone does not.
+- `competitors/index.json` lists it under its own `industry` key, never in `brands`, so the Competitors overview and older dashboards never mix it in. The tab appears only when the key exists; deep links to a missing view fall back to XM Monitor.
+- Sentiment is the tone toward the overseas-FX industry (praise/trust/benefits = Positive; complaints, scam warnings, regulation worries = Negative; factual or promotional = Neutral), not toward XM. The prompt addition (`translate.INDUSTRY_PROMPT`) is used only for batches that contain an industry post.
+- Volume control: the feed carries about 15 relevant posts a day. At most `llm.max_industry_posts_per_run` (40) industry-only posts are translated per run, most-liked first, after XM and competitor posts; the rest stay "Translation pending" in the dashboard and are picked up later. The industry backlog never raises the pending-translation alert (it is reported as `pending_industry`).
+- Cadence and cost: competitors and industry are refreshed once a day (see 12.1); `--scope all|xm|auto` overrides.
+
+- Scope: the morning run (starts before 12:00 JST) and every sweep scrape everything (XM, competitors, industry); the evening run scrapes XM only (competitors and industry change slowly and cost about $0.96 of the $1.10 a full run costs). `--scope all|xm` or the workflow input `scope` overrides. An XM-only sweep does not count as a sweep. Expected Apify spend: about $37-45 a month (budget `monthly_budget_usd` $50); LLM about $6-12 (budget $15).
 ## 12. Automation and deployment
 
 - `refresh.yml`: cron twice a day (22:30 and 11:30 UTC = 07:30 and 20:30 JST) + `workflow_dispatch`. Steps: checkout, unit tests, `auto --yes` (scrape, translate, gates), commit `docs/data` + ledgers/reports with a push retry loop, enforce the exit code, e-mail on workflow failure. Secrets: see README.
@@ -256,7 +268,7 @@ Many people use the published data, so a bad run must never reach it.
 4. Gates after the run: no post id lost, relevant count not dropped by more than max(3, 2%), no overwritten translation, excluded stubs carry no content, week files/manifest structurally valid and consistent.
 5. Spend: Apify `monthly_budget_usd` (calendar month, UTC, ledger `data/runs.jsonl`); LLM `llm.monthly_budget_usd` (ledger `data/llm_runs.jsonl`); per-run cap `llm.max_posts_per_run`; a budget stop is a degraded run, never a crash. Fatal LLM errors (auth, credits, unknown model) stop LLM calls for the run.
 6. Untrusted input: posts are passed to the model as JSON data with an explicit instruction not to follow them; output is only accepted through the validators and JSON schema, so an injected instruction cannot publish anything that fails the checks.
-7. Reports: `data/last_run.json` (latest report), `data/auto_runs.jsonl` (one line per run). Exit codes 0 ok / 2 degraded / 1 failed. E-mail on 1 and 2 (`config/automation.json` `alert`). Secrets are scrubbed from logs, reports and e-mails.
+7. Reports: `data/last_run.json` (latest report), `data/auto_runs.jsonl` (one line per run). Exit codes 0 ok / 3 degraded / 1 failed (2 is left unused on purpose: argparse uses it for bad arguments). E-mail on 1 and 3 (`config/automation.json` `alert`). Secrets are scrubbed from logs, reports and e-mails.
 8. The dashboard never shows `enriched_by`; machine translations carry `enriched_by: llm:<model>` in the data only.
 
 ## 13. Test plan

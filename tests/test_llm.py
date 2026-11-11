@@ -118,6 +118,16 @@ class LLMClientTests(unittest.TestCase):
             c.chat([], "m")
         self.assertNotIn(KEY, str(cm.exception))
 
+    def test_html_block_page_is_flattened_in_the_error(self):
+        page = "<html><head><title>Application Blocked</title><style>#c{border:1px}</style></head><body><p>Access to this site is blocked</p></body></html>"
+        c = self.client(http_error(503, page), http_error(503, page), http_error(503, page))
+        with self.assertRaises(LLMError) as cm:
+            c.chat([], "m")
+        msg = str(cm.exception)
+        self.assertIn("Application Blocked Access to this site is blocked", msg)
+        self.assertNotIn("<", msg)
+        self.assertNotIn("border", msg)
+
     def test_corrupt_ledger_line_is_ignored(self):
         with open(self.ledger, "w", encoding="utf-8") as f:
             f.write("{not json\n")

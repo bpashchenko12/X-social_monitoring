@@ -61,13 +61,13 @@ class AutoBase(unittest.TestCase):
             return dict({"ok": 1, "failed": [], "window_days": 2}, **extra)
         return scrape
 
-    def run_auto(self, **kw):
+    def run_auto(self, acfg=None, **kw):
         args = dict(stores=self.stores, now=NOW, mode="incremental", env={"APIFY_TOKEN": "t"},
                     scrape=self.ok_scrape(), client_factory=lambda: FakeLLM(), glossary=GLOSS,
                     snapshot_dir=self.data, ledger_path=self.ledger, review_path=self.review,
                     last_run_path=self.last, runs_log_path=self.log, send_alerts=False, log=self.messages.append)
         args.update(kw)
-        return auto.run_auto(CFG, ACFG, **args)
+        return auto.run_auto(CFG, acfg or ACFG, **args)
 
     def manifest(self):
         return jload(os.path.join(self.data, "manifest.json"))
@@ -133,7 +133,7 @@ class DegradedTests(AutoBase):
     def test_llm_fatal_publishes_scrape_but_leaves_posts_pending(self):
         new = [mkpost("4", "XMのサポートが丁寧", created="2026-11-10T01:00:00Z")]
         rep = self.run_auto(scrape=self.ok_scrape(new=new), client_factory=lambda: FakeLLM(fatal="no credits"))
-        self.assertEqual((rep["status"], rep["exit_code"]), ("degraded", 2))
+        self.assertEqual((rep["status"], rep["exit_code"]), ("degraded", auto.DEGRADED))
         posts = read_posts(self.weeks)
         self.assertIn("4", posts)  # new post stored
         self.assertIsNone(posts["4"]["content_en"])
@@ -144,7 +144,7 @@ class DegradedTests(AutoBase):
 
     def test_no_llm_client_configured(self):
         rep = self.run_auto(client_factory=None)
-        self.assertEqual(rep["exit_code"], 2)
+        self.assertEqual(rep["exit_code"], auto.DEGRADED)
 
     def test_validation_failures_are_held_not_published(self):
         rep = self.run_auto(client_factory=lambda: FakeLLM(answer=lambda p: "PWNED 出金"))
@@ -153,29 +153,32 @@ class DegradedTests(AutoBase):
 
     def test_apify_budget_stop(self):
         rep = self.run_auto(scrape=self.ok_scrape(budget_stopped=True))
-        self.assertEqual(rep["exit_code"], 2)
+        self.assertEqual(rep["exit_code"], auto.DEGRADED)
         self.assertTrue(any("budget" in d for d in rep["degraded"]))
 
     def test_failed_queries_degrade(self):
         rep = self.run_auto(scrape=self.ok_scrape(failed=[{"unit": "xm/macro", "error": "HTTP 500"}]))
-        self.assertEqual(rep["exit_code"], 2)
+        self.assertEqual(rep["exit_code"], auto.DEGRADED)
 
     def test_all_queries_failing_degrades(self):
         def scrape(cfg, comp, acfg, mode, today, token):
             return {"ok": 0, "failed": [{"unit": "xm/macro", "error": "x"}], "window_days": 2}
         rep = self.run_auto(scrape=scrape)
-        self.assertEqual(rep["exit_code"], 2)
+        self.assertEqual(rep["exit_code"], auto.DEGRADED)
         self.assertTrue(any("no query succeeded" in d for d in rep["degraded"]))
 
     def test_zero_items_everywhere_degrades(self):
         rep = self.run_auto(scrape=self.ok_scrape(items=0))
         self.assertTrue(any("0 items" in d for d in rep["degraded"]))
 
-    def test_cap_hit_degrades_incremental_but_is_a_note_in_sweep(self):
+    def test_cap_hit_is_a_note_by_default_and_degrades_only_when_configured(self):
         cap = int(CFG["max_items"])
         rep = self.run_auto(scrape=self.ok_scrape(items=cap), mode="incremental")
-        self.assertEqual(rep["exit_code"], 2)
-        rep = self.run_auto(scrape=self.ok_scrape(items=cap), mode="sweep")
+        self.assertEqual(rep["exit_code"], 0)  # no alert e-mail for a cap hit
+        self.assertTrue(any("cap" in n and "weekly sweep" in n for n in rep["notes"]))
+        rep = self.run_auto(acfg=dict(ACFG, cap_hits_degrade=True), scrape=self.ok_scrape(items=cap), mode="incremental")
+        self.assertEqual(rep["exit_code"], auto.DEGRADED)
+        rep = self.run_auto(acfg=dict(ACFG, cap_hits_degrade=True), scrape=self.ok_scrape(items=cap), mode="sweep")
         self.assertEqual(rep["exit_code"], 0)
         self.assertTrue(any("cap" in n for n in rep["notes"]))
 
@@ -183,7 +186,7 @@ class DegradedTests(AutoBase):
         old = (NOW - timedelta(hours=80)).strftime("%Y-%m-%dT%H:%M:%SZ")
         jdump(self.last, {"last_success_at": old})
         rep = self.run_auto()
-        self.assertEqual(rep["exit_code"], 2)
+        self.assertEqual(rep["exit_code"], auto.DEGRADED)
         self.assertTrue(any("missed" in d for d in rep["degraded"]))
 
     def test_too_many_pending_degrades(self):
@@ -355,8 +358,14 @@ class AlertingTests(AutoBase):
     def test_alert_failure_never_changes_the_outcome(self):
         with mock.patch.object(auto.alert, "send_email", lambda s, b, e: (False, "smtp down")):
             rep = self.run_auto(send_alerts=True, client_factory=lambda: FakeLLM(fatal="x"))
-        self.assertEqual(rep["exit_code"], 2)
+        self.assertEqual(rep["exit_code"], auto.DEGRADED)
         self.assertTrue(any("NOT sent" in m for m in self.messages))
+
+
+class ExitCodeContractTests(unittest.TestCase):
+    def test_codes_are_distinct_and_avoid_argparse_exit_2(self):
+        self.assertEqual((auto.OK, auto.FAILED), (0, 1))
+        self.assertNotIn(auto.DEGRADED, (0, 1, 2))  # argparse exits 2 on bad arguments
 
 
 class ModeTests(unittest.TestCase):
@@ -377,15 +386,15 @@ class ModeTests(unittest.TestCase):
 class ConfigTests(unittest.TestCase):
     def test_partial_or_missing_config_falls_back_to_defaults(self):
         with tempfile.TemporaryDirectory() as d:
-            self.assertEqual(auto.load_automation(os.path.join(d, "none.json"))["llm"]["monthly_budget_usd"], 10)
+            self.assertEqual(auto.load_automation(os.path.join(d, "none.json"))["llm"]["monthly_budget_usd"], 15)
             p = os.path.join(d, "a.json")
             jdump(p, {"llm": {"model": "x/y"}, "cache_ttl_hours": 1})
             a = auto.load_automation(p)
-            self.assertEqual((a["llm"]["model"], a["llm"]["monthly_budget_usd"], a["cache_ttl_hours"]), ("x/y", 10, 1))
+            self.assertEqual((a["llm"]["model"], a["llm"]["monthly_budget_usd"], a["cache_ttl_hours"]), ("x/y", 15, 1))
 
     def test_shipped_config_is_sane(self):
-        self.assertEqual(ACFG["llm"]["monthly_budget_usd"], 10)
-        self.assertEqual(CFG["monthly_budget_usd"], 40)
+        self.assertEqual(ACFG["llm"]["monthly_budget_usd"], 15)
+        self.assertEqual(CFG["monthly_budget_usd"], 50)
         self.assertLess(ACFG["incremental_window_days"], ACFG["sweep_window_days"])
 
     def test_build_env_reads_dotenv_but_real_env_wins(self):

@@ -13,9 +13,9 @@ python3 -m pipeline.run csv                 # exports/<topic>.csv
 python3 -m pipeline.run manifest            # rebuild manifests (XM + competitors)
 python3 -m pipeline.run competitors-lint    # validate config/competitors.json
 python3 -m pipeline.run competitors-plan    # free dry run for competitors
-python3 -m pipeline.run competitors-fetch --yes   # paid; HFM, Exness, Titan FX, Vantage, XS
+python3 -m pipeline.run competitors-fetch --yes   # paid; HFM, Exness, Titan FX, Vantage, XS and the Industry feed (--brands industry for only that)
 python3 -m pipeline.run auto --dry-run      # free preview of the unattended cycle
-python3 -m pipeline.run auto --yes          # paid: scrape + LLM translate + gates (what CI runs)
+python3 -m pipeline.run auto --yes          # paid: scrape + LLM translate + gates (what CI runs); --scope all|xm|auto
 python3 -m pipeline.run llm-check           # verify OpenRouter key + model id (a few cents)
 python3 -m unittest discover -s tests -t .  # tests
 ```
@@ -40,13 +40,17 @@ Every shown post has a complete English translation (no summaries, no truncation
 
 The dashboard asks for a company e-mail (4 allowed domains) and remembers it in a cookie. It is a soft gate only (not secure). Optional visitor logging: [tools/visitor-log/README.md](tools/visitor-log/README.md); disabled while `LOG_URL` in `docs/index.html` is empty.
 
+## Industry tab
+
+A third dashboard tab, "Industry", shows what Japanese users post about the offshore-FX industry as a whole (base term `海外FX`; topics: overall, campaigns, trading environment, deposit & withdrawal, reputation, regulation/fraud/security). It is a pseudo-brand (`"kind": "industry"`) in `config/competitors.json` with its own store `docs/data/competitors/industry/`, listed under the `industry` key of `competitors/index.json`. Sentiment there is the tone toward the industry, not toward XM. Most-liked posts are translated first (cap `llm.max_industry_posts_per_run`, 40 per run); the rest show "Translation pending" until picked up. Rules: SPEC section 11.9.
+
 ## Automatic refresh (twice a day)
 
-`.github/workflows/refresh.yml` runs at 07:30 and 20:30 JST (cron `30 22 * * *` and `30 11 * * *` UTC) and manually (`workflow_dispatch`, optional mode). Each run: unit tests, scrape (2-day window; Monday morning JST and whenever the last sweep is older than 8 days: 7-day sweep that refreshes metrics), LLM translation + sentiment, quality gates, commit.
-Safety and rules: SPEC section 12.2. Exit codes: 0 ok, 2 published but degraded (warning + e-mail), 1 failed (data restored, e-mail).
+`.github/workflows/refresh.yml` runs at 07:30 and 20:30 JST (cron `30 22 * * *` and `30 11 * * *` UTC) and manually (`workflow_dispatch`, optional mode and scope). The morning run and every Monday sweep refresh everything (XM, competitors, industry); the evening run refreshes XM only to save cost (`scope` input or `--scope all|xm` overrides). Each run: unit tests, scrape (2-day window; Monday morning JST and whenever the last sweep is older than 8 days: 7-day sweep that refreshes metrics), LLM translation + sentiment, quality gates, commit.
+Safety and rules: SPEC section 12.2. Exit codes: 0 ok, 3 published but degraded (warning + e-mail), 1 failed (data restored, e-mail); anything else (e.g. 2 = bad arguments) fails the workflow.
 
 Repository secrets: `APIFY_TOKEN`, `OPENROUTER_API_KEY`, `SMTP_HOST`, `SMTP_PORT` (587 STARTTLS or 465 SSL), `SMTP_USER`, `SMTP_PASSWORD`, `ALERT_EMAIL_TO` (comma separated), `ALERT_EMAIL_FROM`.
-Settings: `config/automation.json` (model, LLM budget $10/month, windows, alert switches), `config/queries.json` (`monthly_budget_usd` $40), `config/glossary.json` (translation vocabulary).
+Settings: `config/automation.json` (model, LLM budget $15/month, windows, scope hour, alert switches), `config/queries.json` (`monthly_budget_usd` $50; expected Apify spend about $37-45 a month), `config/glossary.json` (translation vocabulary).
 
 First-time setup:
 1. Create an OpenRouter key and set a spending limit on the key itself (second line of defence next to our ledger).

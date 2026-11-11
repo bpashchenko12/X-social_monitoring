@@ -36,6 +36,11 @@ OUTPUT: return ONLY one JSON object, no markdown:
 {"results":[{"id":"<id>","content_en":"<translation>","sentiments":[{"brand":"<brand>","sentiment":"Positive|Negative|Neutral","not_about_brand":false,"reason":""}]}]}
 One result per input post, same ids, no extra keys."""
 
+# Added to the system prompt only when a post carries an "industry_brands" entry (the Industry tab).
+INDUSTRY_PROMPT = """
+
+INDUSTRY ENTRIES: a name listed in a post's "industry_brands" is not a broker. It is the topic "overseas FX industry" (海外FX: offshore FX brokers as a whole). For that name, give the tone of the post toward the overseas FX industry or offshore brokers in general: Positive = praise, trust, benefits, recommendation of the offshore-FX environment; Negative = complaints, fraud or scam warnings, distrust, worry about regulation or crackdowns, problems; Neutral = factual, news, promotional without evaluative language, or only a passing mention. Use "not_about_brand": true only if the post is not about FX trading at all. Ratings for other brokers listed on the same post are independent of this one."""
+
 
 def load_glossary(path=GLOSSARY_PATH):
     try:
@@ -55,11 +60,14 @@ def build_messages(items, glossary):
         p = {"id": it["id"], "author": it.get("handle", ""), "brands": list(it["brands"]), "text": it["text"]}
         if it.get("official_for"):
             p["official_for"] = list(it["official_for"])
+        if it.get("industry_brands"):
+            p["industry_brands"] = list(it["industry_brands"])
         if it.get("problems"):
             p["previous_problems"] = list(it["problems"])
         posts.append(p)
     user = {"glossary": glossary["terms"], "posts": posts}
-    return [{"role": "system", "content": SYSTEM_PROMPT},
+    system = SYSTEM_PROMPT + (INDUSTRY_PROMPT if any(p.get("industry_brands") for p in posts) else "")
+    return [{"role": "system", "content": system},
             {"role": "user", "content": json.dumps(user, ensure_ascii=False)}]
 
 

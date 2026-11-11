@@ -1,10 +1,12 @@
 {
   "_comment": "Settings of the unattended `pipeline.run auto` job. Secrets are NOT stored here (GitHub secrets / .env).",
-  "schedule_note": "Cron lives in .github/workflows/refresh.yml: 07:30 JST (22:30 UTC) and 20:30 JST (11:30 UTC). The morning slot on Monday (JST) is a full sweep.",
+  "schedule_note": "Cron lives in .github/workflows/refresh.yml: 07:30 JST (22:30 UTC) and 20:30 JST (11:30 UTC). The morning run refreshes everything (XM, competitors, industry); the evening run refreshes XM only. The morning slot on Monday (JST) is a full 7-day sweep.",
   "incremental_window_days": 2,
   "sweep_window_days": 7,
   "sweep_weekday_jst": 0,
   "sweep_before_hour_jst": 12,
+  "full_before_hour_jst": 12,
+  "cap_hits_degrade": false,
   "cache_ttl_hours": 6,
   "stale_after_hours": 36,
   "max_pending_warn": 25,
@@ -13,7 +15,7 @@
     "base_url": "https://openrouter.ai/api/v1",
     "model": "anthropic/claude-sonnet-5.5",
     "fallback_model": null,
-    "monthly_budget_usd": 10,
+    "monthly_budget_usd": 15,
     "temperature": 0,
     "max_tokens": 8000,
     "batch_max_items": 6,
@@ -23,6 +25,7 @@
     "retry_backoff_s": 4,
     "assumed_usd_per_mtok": {"prompt": 6.0, "completion": 30.0},
     "max_posts_per_run": 150,
+    "max_industry_posts_per_run": 40,
     "verify_model_listing": true
   },
   "alert": {

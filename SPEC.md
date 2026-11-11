@@ -150,8 +150,7 @@ GitHub Models (the free "GitHub LLM" inference API) was retired on 2026-07-30, s
 
 - Pipeline writes new posts with `content_en = null`, `sentiment = null` (shown in the dashboard as "pending").
 - `pipeline/enrich.py export` writes `data/enrichment_queue.json` (id, original text, topics, current metrics).
-- Enrichment is done by the Copilot agent in VS Code (translation JP->EN, sentiment, relevance review) and written back with `pipeline/enrich.py import <file>`. No API key involved.
-- Optional later: an automated provider (e.g. an Azure AI Foundry or other LLM key as a GitHub secret) can be plugged into the same import interface.
+- Enrichment is done either by the Copilot agent in VS Code (translation JP->EN, sentiment, relevance review) written back with `pipeline/enrich.py import <file>`, or unattended by an LLM through OpenRouter (section 12.2). Both use the same import interface.
 
 Sentiment definition: tone toward XMTrading in the post. Positive = praise, satisfaction, endorsement; Negative = complaint, warning, distrust, problem; Neutral = factual/informational, neutral promos (including affiliate promotion without evaluative language), ambiguous. Exactly one label.
 
@@ -235,9 +234,30 @@ Only posts returned by the scraper are published. Test inputs in `tests/fixtures
 
 ## 12. Automation and deployment
 
-- `refresh.yml`: weekly cron (Monday 01:00 UTC = 10:00 JST) + `workflow_dispatch`. Steps: checkout, unit tests, `fetch --yes`, `competitors-fetch --yes`, `manifest`, commit `docs/data` + ledger, push. Secret `APIFY_TOKEN` in repo secrets.
+- `refresh.yml`: cron twice a day (22:30 and 11:30 UTC = 07:30 and 20:30 JST) + `workflow_dispatch`. Steps: checkout, unit tests, `auto --yes` (scrape, translate, gates), commit `docs/data` + ledgers/reports with a push retry loop, enforce the exit code, e-mail on workflow failure. Secrets: see README.
 - Pages: serve from `main` branch `/docs`. Public access accepted by the owner (business-org account, public repo).
-- New posts arrive un-enriched; enrichment is a separate explicit step (section 8).
+- Concurrency group `refresh` (no cancel): runs are serialised.
+
+### 12.1 Schedule and windows
+
+- Incremental run: window `incremental_window_days` (2), cached responses older than `cache_ttl_hours` are ignored.
+- Sweep run: window 7 days; chosen on Monday before 12:00 JST or when the last clean sweep is older than `sweep_max_age_days` (8). It re-reads metrics and catches posts that crossed the like threshold late.
+- The public manifest always shows the canonical 7-day search spec, never the shortened window.
+- A query that returns the 200-item cap is degraded in incremental mode (posts may be missed) and a note in sweep mode.
+- If the previous successful run is older than `stale_after_hours` (36) the run reports missed runs (GitHub cron is best-effort).
+
+### 12.2 Unattended enrichment and safety model
+
+Many people use the published data, so a bad run must never reach it.
+
+1. Snapshot of `docs/data` before any write; any gate failure or crash restores it (exit 1, e-mail).
+2. The model proposes, deterministic validators decide (`pipeline/validate.py`): non-empty, no preamble/refusal/truncation marker/guessed ending, not much shorter than the source, every number preserved (万/億/千/割 expanded, no invented numbers), URLs/ASCII hashtags/@handles preserved, no untranslated Japanese unless flagged as slang or on the glossary `keep` list. One retry with the concrete problems and smaller batches; a post that still fails stays `pending` (not published) and is reported.
+3. Existing translations are never overwritten (`keep_existing_translation`). Posts are never deleted or excluded automatically: the model's "not about this brand" opinion goes to `data/review_queue.json` for a human.
+4. Gates after the run: no post id lost, relevant count not dropped by more than max(3, 2%), no overwritten translation, excluded stubs carry no content, week files/manifest structurally valid and consistent.
+5. Spend: Apify `monthly_budget_usd` (calendar month, UTC, ledger `data/runs.jsonl`); LLM `llm.monthly_budget_usd` (ledger `data/llm_runs.jsonl`); per-run cap `llm.max_posts_per_run`; a budget stop is a degraded run, never a crash. Fatal LLM errors (auth, credits, unknown model) stop LLM calls for the run.
+6. Untrusted input: posts are passed to the model as JSON data with an explicit instruction not to follow them; output is only accepted through the validators and JSON schema, so an injected instruction cannot publish anything that fails the checks.
+7. Reports: `data/last_run.json` (latest report), `data/auto_runs.jsonl` (one line per run). Exit codes 0 ok / 2 degraded / 1 failed. E-mail on 1 and 2 (`config/automation.json` `alert`). Secrets are scrubbed from logs, reports and e-mails.
+8. The dashboard never shows `enriched_by`; machine translations carry `enriched_by: llm:<model>` in the data only.
 
 ## 13. Test plan
 

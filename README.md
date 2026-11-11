@@ -14,8 +14,14 @@ python3 -m pipeline.run manifest            # rebuild manifests (XM + competitor
 python3 -m pipeline.run competitors-lint    # validate config/competitors.json
 python3 -m pipeline.run competitors-plan    # free dry run for competitors
 python3 -m pipeline.run competitors-fetch --yes   # paid; HFM, Exness, Titan FX, Vantage, XS
+python3 -m pipeline.run auto --dry-run      # free preview of the unattended cycle
+python3 -m pipeline.run auto --yes          # paid: scrape + LLM translate + gates (what CI runs)
+python3 -m pipeline.run llm-check           # verify OpenRouter key + model id (a few cents)
 python3 -m unittest discover -s tests -t .  # tests
 ```
+
+Manual `fetch` / `enrich-import` and the unattended workflow write the same files: run `git pull` first and push soon after, or the bot's next push will have to rebase onto your change.
+Note: `fetch --days N` / `competitors-fetch --days N` write the shortened window into the public manifest; use them only for backfills and rerun `manifest`/`auto` afterwards.
 
 Token: `APIFY_TOKEN` env var or a git-ignored `.env` file (`APIFY_TOKEN=...`). Never commit it.
 
@@ -34,10 +40,20 @@ Every shown post has a complete English translation (no summaries, no truncation
 
 The dashboard asks for a company e-mail (4 allowed domains) and remembers it in a cookie. It is a soft gate only (not secure). Optional visitor logging: [tools/visitor-log/README.md](tools/visitor-log/README.md); disabled while `LOG_URL` in `docs/index.html` is empty.
 
-## Weekly refresh
+## Automatic refresh (twice a day)
 
-`.github/workflows/refresh.yml` runs Mondays 01:00 UTC (also manually). Requires the repository secret `APIFY_TOKEN`.
-New posts appear with "pending" translation/sentiment until enriched (`enrich-export` -> translate -> `enrich-import`).
+`.github/workflows/refresh.yml` runs at 07:30 and 20:30 JST (cron `30 22 * * *` and `30 11 * * *` UTC) and manually (`workflow_dispatch`, optional mode). Each run: unit tests, scrape (2-day window; Monday morning JST and whenever the last sweep is older than 8 days: 7-day sweep that refreshes metrics), LLM translation + sentiment, quality gates, commit.
+Safety and rules: SPEC section 12.2. Exit codes: 0 ok, 2 published but degraded (warning + e-mail), 1 failed (data restored, e-mail).
+
+Repository secrets: `APIFY_TOKEN`, `OPENROUTER_API_KEY`, `SMTP_HOST`, `SMTP_PORT` (587 STARTTLS or 465 SSL), `SMTP_USER`, `SMTP_PASSWORD`, `ALERT_EMAIL_TO` (comma separated), `ALERT_EMAIL_FROM`.
+Settings: `config/automation.json` (model, LLM budget $10/month, windows, alert switches), `config/queries.json` (`monthly_budget_usd` $40), `config/glossary.json` (translation vocabulary).
+
+First-time setup:
+1. Create an OpenRouter key and set a spending limit on the key itself (second line of defence next to our ledger).
+2. Locally: put `OPENROUTER_API_KEY=...` in `.env`, run `python3 -m pipeline.run llm-check`. If the model id is unknown, set `llm.model` / `llm.fallback_model` in `config/automation.json` (the id `anthropic/claude-sonnet-5.5` was not verifiable when written).
+3. Check `python3 -m pipeline.run auto --dry-run` (shows budgets, key and alert status).
+4. Add the secrets, run the workflow once manually, check the e-mail test: `python3 -m pipeline.run alert --subject test --body test`.
+5. Keep the Apify monthly cap in line with the Apify balance. GitHub disables scheduled workflows after 60 days without repo activity (the data commits count as activity).
 
 ## Publish (GitHub Pages)
 

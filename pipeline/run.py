@@ -9,6 +9,10 @@
   python3 -m pipeline.run competitors-lint            (free static checks of config/competitors.json)
   python3 -m pipeline.run competitors-plan  [--brands ID ...] [--only TOPIC ...] [--days N]
   python3 -m pipeline.run competitors-fetch --yes [--brands ID ...] [--only TOPIC ...] [--days N]
+  python3 -m pipeline.run auto [--dry-run | --yes] [--mode auto|incremental|sweep] [--skip-scrape] [--skip-enrich]
+                               [--max-enrich N]      (unattended cycle; exit 0 ok / 2 degraded / 1 failed)
+  python3 -m pipeline.run llm-check                  (verify the OpenRouter key + model id with a tiny paid call)
+  python3 -m pipeline.run alert --subject S --body B (send an alert e-mail; used by CI on failure)
 """
 import argparse
 import json
@@ -16,7 +20,7 @@ import os
 import sys
 from datetime import date, datetime, time, timedelta
 
-from . import apify, competitors, enrich, export_csv, store
+from . import alert, apify, auto, competitors, enrich, export_csv, llm, store, translate
 from .common import ROOT, UTC, load_config, load_env_token, now_utc, write_json_atomic
 from .normalize import apply_thresholds, normalize_items, redact_excluded
 from .queries import build_queries, search_spec, sort_key
@@ -53,7 +57,8 @@ def cmd_plan(args, cfg):
         total += est
         print(f"[{q['id']}] maxItems={inp['maxItems']} est=${est:.2f} {'(cached)' if hit else ''}")
         print(f"    {q['query']}")
-    print(f"planned max spend ${total:.2f}; already spent ${spent:.2f}; budget ${cfg['budget_usd']:.2f}")
+    spent, limit, label = apify.budget_status(cfg)
+    print(f"planned max spend ${total:.2f}; already spent ${spent:.2f}; {label} budget ${limit:.2f}")
 
 
 def cmd_fetch(args, cfg):
@@ -67,7 +72,7 @@ def cmd_fetch(args, cfg):
         if args.sort:
             inp[sort_key(cfg)] = args.sort
         items, meta = apify.fetch_items(cfg["actor"], inp, cfg, token, yes=args.yes, refresh=args.refresh,
-                                        query_id=q["id"])
+                                        query_id=q["id"], max_age_hours=getattr(args, "max_age_hours", None))
         fetched = datetime.strptime(meta["fetched_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=UTC)
         posts, dropped = normalize_items(items, q["id"], cfg.get("brand_non_matches", []), fetched)
         since_dt = datetime.combine(args.since or args.today - timedelta(days=cfg["window_days"]), time.min, tzinfo=UTC)
@@ -183,7 +188,8 @@ def cmd_comp_plan(args, cfg):
             total += est
             print(f"[{c['brand']['id']}/{q['id']}] maxItems={inp['maxItems']} est=${est:.2f} {'(cached)' if hit else ''}")
             print(f"    {q['query']}")
-    print(f"planned max spend ${total:.2f}; already spent ${apify.spent_usd():.2f}; budget ${cfg['budget_usd']:.2f}")
+    spent, limit, label = apify.budget_status(cfg)
+    print(f"planned max spend ${total:.2f}; already spent ${spent:.2f}; {label} budget ${limit:.2f}")
 
 
 def cmd_comp_fetch(args, cfg):
@@ -196,6 +202,33 @@ def cmd_comp_fetch(args, cfg):
         competitors.finalize_brand(c)
     competitors.write_index(competitors.all_brand_cfgs(cfg, comp))
     print(f"done. spent this run ${spent:.4f}; ledger total ${apify.spent_usd():.4f}")
+
+
+def cmd_auto(args, cfg):
+    sys.exit(auto.run_live(args, cfg))
+
+
+def cmd_alert(args, cfg):
+    sent, err = alert.send_email(args.subject, args.body)
+    print("alert e-mail sent" if sent else f"alert e-mail NOT sent: {err}")
+
+
+def cmd_llm_check(args, cfg):
+    """Verify key + model id end to end with two tiny posts (a few cents)."""
+    acfg = auto.load_automation()
+    env = auto.build_env()
+    try:
+        client = llm.OpenRouter(env.get("OPENROUTER_API_KEY"), acfg["llm"])
+        model, note = client.resolve_model()
+    except llm.LLMError as e:
+        print(f"llm-check failed: {e}")
+        sys.exit(1)
+    print(f"model: {model} {note}")
+    items = [{"id": "1", "text": "XMの出金が3日で届いた。16万5,000円。対応も早くて満足 #海外FX", "handle": "x", "brands": ["XMTrading"]},
+             {"id": "2", "text": "XMでスリトレ入金しようか迷う https://example.com/a", "handle": "y", "brands": ["XMTrading"]}]
+    out = translate.translate_items(client, model, items, translate.load_glossary(), acfg["llm"])
+    print(json.dumps(out, ensure_ascii=False, indent=2))
+    sys.exit(0 if len(out["ok"]) == len(items) else 1)
 
 
 def main(argv=None):
@@ -235,6 +268,17 @@ def main(argv=None):
     p.add_argument("--by", default="copilot")
     sub.add_parser("csv")
     sub.add_parser("manifest")
+    p = sub.add_parser("auto")
+    p.add_argument("--mode", choices=["auto", "incremental", "sweep"], default="auto")
+    p.add_argument("--dry-run", action="store_true", help="free preview; no network, no writes")
+    p.add_argument("--yes", action="store_true", help="confirm paid Apify/LLM calls")
+    p.add_argument("--skip-scrape", action="store_true")
+    p.add_argument("--skip-enrich", action="store_true")
+    p.add_argument("--max-enrich", type=int, help="cap posts sent to the LLM in this run")
+    sub.add_parser("llm-check")
+    p = sub.add_parser("alert")
+    p.add_argument("--subject", required=True)
+    p.add_argument("--body", default="")
     args = ap.parse_args(argv)
     cfg = load_config()
     if getattr(args, "days", None):
@@ -242,7 +286,8 @@ def main(argv=None):
     {"plan": cmd_plan, "fetch": cmd_fetch, "enrich-export": cmd_enrich_export,
      "enrich-import": cmd_enrich_import, "csv": cmd_csv, "manifest": cmd_manifest,
      "competitors-lint": cmd_comp_lint, "competitors-plan": cmd_comp_plan,
-     "competitors-fetch": cmd_comp_fetch}[args.cmd](args, cfg)
+     "competitors-fetch": cmd_comp_fetch, "auto": cmd_auto, "alert": cmd_alert,
+     "llm-check": cmd_llm_check}[args.cmd](args, cfg)
 
 
 if __name__ == "__main__":

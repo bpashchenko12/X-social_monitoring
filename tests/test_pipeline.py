@@ -260,7 +260,9 @@ class ApifyTests(unittest.TestCase):
         self.raw = os.path.join(self.tmp.name, "raw")
         self.ledger = os.path.join(self.tmp.name, "runs.jsonl")
         self.calls = []
-        self.cfg = dict(CFG, budget_usd=0.10, price_per_1k_usd=0.40, min_billed_items=50, run_overhead_usd=0.0)
+        # monthly_budget_usd=None pins the lifetime-budget behaviour (queries.json now sets a monthly cap)
+        self.cfg = dict(CFG, budget_usd=0.10, monthly_budget_usd=None, price_per_1k_usd=0.40, min_billed_items=50,
+                        run_overhead_usd=0.0)
         self.inp = {"searchTerms": ["q"], "maxItems": 100, "sort": "Top"}
 
     def tearDown(self):

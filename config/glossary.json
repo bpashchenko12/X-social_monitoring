@@ -1,0 +1,32 @@
+{
+  "_comment": "Guidance for the unattended translator. `terms`: preferred English for Japanese FX vocabulary. `keep`: tokens that stay in the original script (not counted as untranslated Japanese). Edit freely; changes apply to posts translated from now on.",
+  "terms": {
+    "ゼロカット": "zero-cut (negative balance protection)",
+    "追証": "margin call (additional deposit demand)",
+    "ロスカット": "stop-out (forced liquidation)",
+    "ロスカット水準": "stop-out level",
+    "入金ボーナス": "deposit bonus",
+    "口座開設ボーナス": "account-opening bonus",
+    "約定力": "order execution quality",
+    "約定拒否": "order rejection",
+    "滑り": "slippage",
+    "スリッページ": "slippage",
+    "スキャルピング": "scalping",
+    "ナンピン": "averaging down (adding to a losing position)",
+    "両建て": "hedging with simultaneous long and short positions",
+    "海外FX": "overseas FX",
+    "国内FX": "domestic (Japan-regulated) FX",
+    "出金拒否": "withdrawal refusal",
+    "出金": "withdrawal",
+    "入金": "deposit",
+    "スワップ": "swap",
+    "レバレッジ": "leverage",
+    "スプレッド": "spread",
+    "アフィリエイト": "affiliate",
+    "XMP": "XM Points (loyalty points)",
+    "EA": "EA (expert advisor, automated trading program)",
+    "指標": "economic indicator release",
+    "窓開け": "price gap at market open"
+  },
+  "keep": ["KIWAMI極", "XMTrading", "XMトレーディング", "Titan FX", "TitanFX", "Exness", "HFM", "XS.com", "MT4", "MT5", "TradingView"]
+}

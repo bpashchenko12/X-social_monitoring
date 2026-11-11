@@ -5,7 +5,7 @@ import os
 import urllib.error
 import urllib.request
 
-from .common import LEDGER_PATH, RAW_DIR, iso, now_utc, write_json_atomic
+from .common import LEDGER_PATH, RAW_DIR, iso, now_utc, parse_dt, write_json_atomic
 
 API = "https://api.apify.com/v2"
 
@@ -29,15 +29,33 @@ def estimate_cost(n_items, cfg):
     return round(billed * cfg["price_per_1k_usd"] / 1000.0 + float(cfg.get("run_overhead_usd", 0.0)), 4)
 
 
-def spent_usd(ledger_path=LEDGER_PATH):
+def spent_usd(ledger_path=LEDGER_PATH, month=None):
+    """Total ledger spend; `month` ('YYYY-MM', UTC) restricts it to that calendar month.
+    Unparsable ledger lines are skipped (a corrupt line must not stop the pipeline)."""
     total = 0.0
     if os.path.exists(ledger_path):
         with open(ledger_path, encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
-                if line:
-                    total += float(json.loads(line).get("cost_usd", 0) or 0)
+                if not line:
+                    continue
+                try:
+                    row = json.loads(line)
+                    if month and not str(row.get("ts", "")).startswith(month):
+                        continue
+                    total += float(row.get("cost_usd", 0) or 0)
+                except (ValueError, TypeError, AttributeError):
+                    continue
     return round(total, 4)
+
+
+def budget_status(cfg, ledger_path=LEDGER_PATH, now=None):
+    """(spent, limit, label). `monthly_budget_usd` (calendar month, UTC) replaces the lifetime
+    `budget_usd` when configured, so an unattended pipeline does not stop for good."""
+    if cfg.get("monthly_budget_usd") is not None:
+        month = (now or now_utc()).strftime("%Y-%m")
+        return spent_usd(ledger_path, month), float(cfg["monthly_budget_usd"]), "monthly"
+    return spent_usd(ledger_path), float(cfg["budget_usd"]), "lifetime"
 
 
 def _append_ledger(entry, ledger_path):
@@ -50,21 +68,31 @@ def cache_path(actor, inp, raw_dir=RAW_DIR):
     return os.path.join(raw_dir, f"{input_hash(actor, inp)}.json")
 
 
+def _cache_fresh(cached, max_age_hours, now):
+    if max_age_hours is None:
+        return True
+    ts = parse_dt(cached.get("fetched_at"))
+    return ts is not None and (now - ts).total_seconds() <= max_age_hours * 3600
+
+
 def fetch_items(actor, inp, cfg, token, *, yes=False, refresh=False, query_id="",
-                raw_dir=RAW_DIR, ledger_path=LEDGER_PATH, urlopen=urllib.request.urlopen):
-    """Return (items, meta). Hits the API only when needed, allowed, and within budget."""
+                raw_dir=RAW_DIR, ledger_path=LEDGER_PATH, urlopen=urllib.request.urlopen,
+                max_age_hours=None, now=None):
+    """Return (items, meta). Hits the API only when needed, allowed, and within budget.
+    `max_age_hours`: a cache entry older than this counts as a miss (None = never expires)."""
     path = cache_path(actor, inp, raw_dir)
     if os.path.exists(path) and not refresh:
         with open(path, encoding="utf-8") as f:
             cached = json.load(f)
-        return cached["items"], {"cached": True, "cost_usd": 0.0, "fetched_at": cached["fetched_at"]}
+        if _cache_fresh(cached, max_age_hours, now or now_utc()):
+            return cached["items"], {"cached": True, "cost_usd": 0.0, "fetched_at": cached["fetched_at"]}
 
     max_items = int(inp.get("maxItems", 0))
     upper = estimate_cost(max_items, cfg)
-    already = spent_usd(ledger_path)
-    if already + upper > cfg["budget_usd"]:
+    already, limit, label = budget_status(cfg, ledger_path, now)
+    if already + upper > limit:
         raise BudgetError(
-            f"budget exceeded: spent ${already:.2f} + planned up to ${upper:.2f} > budget ${cfg['budget_usd']:.2f}")
+            f"budget exceeded: spent ${already:.2f} + planned up to ${upper:.2f} > {label} budget ${limit:.2f}")
     if not yes:
         raise ConfirmationRequired("paid Apify call requires --yes")
     if not token:

@@ -225,7 +225,8 @@ def fetch_brand(cfg, comp_brand, args, token):
         if args.sort:
             inp[sort_key(cfg)] = args.sort
         items, meta = apify.fetch_items(cfg["actor"], inp, cfg, token, yes=args.yes, refresh=args.refresh,
-                                        query_id=f"{cfg['brand']['id']}/{q['id']}")
+                                        query_id=f"{cfg['brand']['id']}/{q['id']}",
+                                        max_age_hours=getattr(args, "max_age_hours", None))
         fetched = datetime.strptime(meta["fetched_at"], "%Y-%m-%dT%H:%M:%SZ").replace(tzinfo=UTC)
         posts, dropped = normalize_items(items, q["id"], cfg.get("brand_non_matches", []), fetched, relevance)
         for p in posts:

@@ -21,8 +21,10 @@ def export_queue(weeks_dir=WEEKS_DIR, limit=None):
     return queue[:limit] if limit else queue
 
 
-def import_updates(updates, weeks_dir=WEEKS_DIR, by="copilot", brand_name="XMTrading"):
-    """updates: list of {id, content_en, sentiment, [relevant], [exclude_reason]}. Returns counts."""
+def import_updates(updates, weeks_dir=WEEKS_DIR, by="copilot", brand_name="XMTrading",
+                   keep_existing_translation=False):
+    """updates: list of {id, content_en, sentiment, [relevant], [exclude_reason]}. Returns counts.
+    `keep_existing_translation`: never overwrite a content_en that is already set (unattended runs)."""
     by_id = {}
     for u in updates:
         if u.get("sentiment") is not None and u["sentiment"] not in SENTIMENTS:
@@ -36,7 +38,7 @@ def import_updates(updates, weeks_dir=WEEKS_DIR, by="copilot", brand_name="XMTra
             u = by_id.get(pid)
             if not u:
                 continue
-            if u.get("content_en") is not None:
+            if u.get("content_en") is not None and not (keep_existing_translation and p.get("content_en")):
                 p["content_en"] = u["content_en"]
             if u.get("sentiment") is not None:
                 p["sentiment"] = u["sentiment"]

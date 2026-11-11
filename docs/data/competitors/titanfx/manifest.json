@@ -4,8 +4,8 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-11-10T09:50:07Z",
-  "latest_post_at": "2026-11-10T09:27:34Z",
+  "generated_at": "2026-11-11T10:04:51Z",
+  "latest_post_at": "2026-11-11T09:41:22Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 106
+      "posts": 108
     },
     {
       "id": "campaigns",
@@ -107,7 +107,7 @@
         "決済"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 5
+      "posts": 6
     },
     {
       "id": "account_types",
@@ -183,16 +183,16 @@
       "file": "weeks/2026-W45.json",
       "max_date": "2026-11-08T14:57:50Z",
       "min_date": "2026-11-01T15:13:02Z",
-      "posts": 585,
+      "posts": 604,
       "relevant_posts": 13,
       "week": "2026-W45"
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-10T09:27:34Z",
+      "max_date": "2026-11-11T09:41:22Z",
       "min_date": "2026-11-08T15:21:40Z",
-      "posts": 142,
-      "relevant_posts": 4,
+      "posts": 218,
+      "relevant_posts": 6,
       "week": "2026-W46"
     }
   ]

@@ -613,10 +613,14 @@ body.modal-open{overflow:hidden}
       qWindow: (d, b) => `週次更新で直近${d}日間` + (b ? `（初回は${b}日間）` : ""), qSort: (s) => `並び順: ${s}`, qMax: (n) => `1リクエストあたり最大${n}件`,
       qAfter: "取得後のチェック", qAfterTxt: "取得した各投稿を再確認します。本文にXMTrading / XMトレーディング / #XM / @XM… が含まれること、単独の「XM」は取引関連語（ボーナス・入金・レバレッジなど）と一緒の場合のみ対象です。それ以外（ガンダムXM-01、ラジコン等）は除外し、公開しません。投稿は、本文にそのトピックのワードが含まれる場合に限り該当トピックに分類されます（「該当キーワード」列を参照）。複数トピックのワードを含む投稿はそれぞれに表示されるため、トピック別件数の合計は全体を上回ります。",
       qSince: "since: は実行のたびに実際の開始日に置き換わります。",
-      topics: { macro: "\u5168\u4f53\u30d6\u30e9\u30f3\u30c9\u8a00\u53ca", campaigns: "\u30ad\u30e3\u30f3\u30da\u30fc\u30f3\u30fb\u30ad\u30e3\u30c3\u30b7\u30e5\u30d0\u30c3\u30af", competitions: "\u30b3\u30f3\u30c6\u30b9\u30c8\u30fb\u30a4\u30d9\u30f3\u30c8", environment: "\u53d6\u5f15\u74b0\u5883", deposit_withdrawal: "\u5165\u51fa\u91d1", account_types: "\u53e3\u5ea7\u30bf\u30a4\u30d7" },
+      topics: { macro: "\u5168\u4f53\u30d6\u30e9\u30f3\u30c9\u8a00\u53ca", campaigns: "\u30ad\u30e3\u30f3\u30da\u30fc\u30f3\u30fb\u30ad\u30e3\u30c3\u30b7\u30e5\u30d0\u30c3\u30af", competitions: "\u30b3\u30f3\u30c6\u30b9\u30c8\u30fb\u30a4\u30d9\u30f3\u30c8", environment: "\u53d6\u5f15\u74b0\u5883", deposit_withdrawal: "\u5165\u51fa\u91d1", account_types: "\u53e3\u5ea7\u30bf\u30a4\u30d7", reputation: "評判・顧客体験", regulation: "規制・詐欺・セキュリティ" },
     },
   };
   Object.assign(I18N.en, {
+    navInd: "Industry", titleInd: "Overseas FX Industry X Monitor", subtitleInd: "Japanese posts about the overseas FX industry (海外FX) - ranked by engagement",
+    hMacroInd: "Overall Top Overseas FX Posts", topicMacroInd: "Overall Overseas FX", qBrandOnlyInd: "none - every post that mentions the base term",
+    footerInd: "Industry data comes from the same pipeline as the XM Monitor, but the base term is 海外FX instead of a brand name: Japanese posts with at least 10 likes whose own text contains 海外FX. It shows what users discuss about the offshore-FX industry as a whole; it is not about any single broker. Sentiment is the tone toward the overseas FX industry, not toward XM. Translations are machine-generated and the most-liked posts are translated first, so some posts can show \"Translation pending\". Impressions = X view count at the last fetch. Times are shown in JST.",
+    qAfterTxtInd: "Each post is checked again: the text itself must contain 海外FX (a match on the author's name or handle alone does not count). A post is listed under a topic when its own text contains one of that topic's words (see \"Matched keywords\"), so topic counts add up to more than the total. Posts can mention several brokers or none; this view is about the industry as a whole.",
     navXm: "XM Monitor", navComp: "Competitors", titleComp: "Competitor X Mention Monitor", subtitleComp: "Japanese posts mentioning competing brokers - ranked by engagement",
     ovTab: "Overview", official: "Official", officialTip: "Posted by the brand's own X account", hideOfficial: "Hide official accounts",
     ovTitle: "Competitor overview", ovSub: (a, b) => `Posts from ${a} to ${b}. XM is shown as the benchmark.`, ovBench: "benchmark", ovBenchTip: "Dashed line: XMTrading, shown for comparison", ovOpen: "Open brand", ovOpenXm: "Open XM Monitor",
@@ -630,6 +634,10 @@ body.modal-open{overflow:hidden}
     qAfterTxtBrand: (n) => `Each post is checked again: the text itself must contain ${n}, and a bare short name counts only next to a trading word. Look-alike meanings (for example a radio station with the same initials) are dropped and not published. Posts from the brand's own official account are always kept and marked Official. A post is listed under a topic when its own text contains one of that topic's words (see "Matched keywords"), so topic counts add up to more than the total.`,
   });
   Object.assign(I18N.ja, {
+    navInd: "業界", titleInd: "海外FX業界 X モニター", subtitleInd: "海外FXに関する日本語投稿 ― エンゲージメント順",
+    hMacroInd: "海外FX全体の投稿（上位）", topicMacroInd: "海外FX全体", qBrandOnlyInd: "なし（基本ワードを含むすべての投稿）",
+    footerInd: "業界データはXMモニターと同じパイプラインで収集していますが、ブランド名ではなく「海外FX」を基本ワードにしています（いいね10件以上で、本文に「海外FX」を含む日本語投稿）。海外FX業界全体についてユーザーが何を話題にしているかを示し、特定のブローカーに関するものではありません。センチメントはXMではなく海外FX業界に対するトーン、翻訳は機械翻訳です。いいねの多い投稿から順に翻訳するため、「翻訳待ち」と表示される投稿があります。インプレッション＝最終取得時点の表示回数。時刻はJSTです。",
+    qAfterTxtInd: "取得した各投稿を再確認します。本文に「海外FX」が含まれることが条件で、投稿者名やハンドル名の一致だけでは対象になりません。投稿は、本文にそのトピックのワードが含まれる場合に該当トピックへ分類されるため（「該当キーワード」列を参照）、トピック別件数の合計は全体を上回ります。複数のブローカー、またはブローカー名なしの投稿も含まれます。この画面はブランドではなく業界全体を対象としています。",
     navXm: "XM モニター", navComp: "競合比較", titleComp: "競合 X メンションモニター", subtitleComp: "競合ブローカーを言及する日本語投稿 ― エンゲージメント順",
     ovTab: "概要", official: "公式", officialTip: "ブランド公式Xアカウントの投稿", hideOfficial: "公式アカウントを非表示",
     ovTitle: "競合の概要", ovSub: (a, b) => `${a} 〜 ${b} の投稿。XMを基準として表示しています。`, ovBench: "基準", ovBenchTip: "破線：比較用のXMTrading", ovOpen: "ブランドを開く", ovOpenXm: "XMモニターを開く",
@@ -646,8 +654,9 @@ body.modal-open{overflow:hidden}
   const initLang = qs.get("lang") || savedLang || ((navigator.language || "").toLowerCase().startsWith("ja") ? "ja" : "en");
   let LANG = initLang === "ja" ? "ja" : "en";
   const t = (k, ...a) => { const v = (I18N[LANG][k] !== undefined ? I18N[LANG][k] : I18N.en[k]); return typeof v === "function" ? v(...a) : v; };
-  const topicName = (tp) => (I18N[LANG].topics || {})[tp.id] || tp.name;
+  const topicName = (tp) => (isInd() && tp.id === "macro" ? t("topicMacroInd") : (I18N[LANG].topics || {})[tp.id] || tp.name);
   const topicHeading = (tp) => {
+    if (state.view === "ind") return tp.id === "macro" ? t("hMacroInd") : t("hTopic", topicName(tp));
     const b = state.view === "comp" ? brandById(state.brand) : null;
     const base = tp.id === "macro" ? t("hMacro") : t("hTopic", topicName(tp));
     return b ? `${b.name}: ${base}` : base;
@@ -661,17 +670,28 @@ body.modal-open{overflow:hidden}
     qOpen: false, sort: { key: "impressions", dir: -1 }, limit: 100,
     metric: "posts", q: "", sentiment: "all", feedBrand: "all", minLikes: 0, hidePromo: false, hideOfficial: false, open: new Set(),
   };
-  // one dataset per store: "xm" (data/) and one per competitor (data/competitors/<id>/)
+  // one dataset per store: "xm" (data/), one per competitor and the industry store (data/competitors/<id>/)
   const DS = new Map();
   const dsOf = (key) => {
     let d = DS.get(key);
     if (!d) { d = { key, prefix: key === "xm" ? "" : `competitors/${key}/`, manifest: null, weeks: new Map(), all: [] }; DS.set(key, d); }
     return d;
   };
-  const brandById = (id) => (state.index ? state.index.brands.find((b) => b.id === id) : null) || null;
+  const hasComp = () => !!(state.index && state.index.brands && state.index.brands.length);
+  const hasInd = () => !!(state.index && state.index.industry);
+  const isInd = () => state.view === "ind" && hasInd();
+  const compBrand = (id) => (state.index ? state.index.brands.find((b) => b.id === id) : null) || null;
+  const brandById = (id) => compBrand(id) || (hasInd() && state.index.industry.id === id ? state.index.industry : null);
   const isOverview = () => state.view === "comp" && state.brand === "overview";
-  const curKey = () => (state.view === "comp" && state.brand !== "overview" ? state.brand : "xm");
-  const activeKeys = () => (state.view !== "comp" ? ["xm"] : (isOverview() ? ["xm"] : []).concat(state.index.brands.map((b) => b.id)));
+  const curBrand = () => (isInd() ? state.index.industry : state.view === "comp" ? compBrand(state.brand) : null);
+  const curKey = () => (isInd() ? state.index.industry.id : state.view === "comp" && state.brand !== "overview" ? state.brand : "xm");
+  const activeKeys = () => (isInd() ? [state.index.industry.id] : state.view !== "comp" ? ["xm"] : (isOverview() ? ["xm"] : []).concat(state.index.brands.map((b) => b.id)));
+  // fall back to the XM view when the requested view does not exist (older data, bad link)
+  const fixView = () => {
+    if (state.view === "comp" && !hasComp()) state.view = "xm";
+    if (state.view === "ind" && !hasInd()) state.view = "xm";
+    if (state.view === "comp" && state.brand !== "overview" && !compBrand(state.brand)) state.brand = "overview";
+  };
 
   // ---------- helpers ----------
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -705,7 +725,11 @@ body.modal-open{overflow:hidden}
     return d;
   }
   async function loadIndex(bust) {
-    try { state.index = await getJSON("competitors/index.json", bust); if (!state.index.brands || !state.index.brands.length) state.index = null; } catch (e) { state.index = null; }
+    try {
+      state.index = await getJSON("competitors/index.json", bust);
+      if (!Array.isArray(state.index.brands)) state.index.brands = [];
+      if (!state.index.brands.length && !state.index.industry) state.index = null;
+    } catch (e) { state.index = null; }
   }
 
   function resolveRange(keys) {
@@ -754,8 +778,8 @@ body.modal-open{overflow:hidden}
 
   // ---------- rendering ----------
   function renderNav() {
-    const comp = state.view === "comp" && !!state.index;
-    const views = [["xm", t("navXm"), ""]].concat(state.index ? [["comp", t("navComp"), state.index.brands.length]] : []);
+    const comp = state.view === "comp" && hasComp();
+    const views = [["xm", t("navXm"), ""]].concat(hasComp() ? [["comp", t("navComp"), state.index.brands.length]] : [], hasInd() ? [["ind", t("navInd"), ""]] : []);
     $("#views").innerHTML = views.map(([v, l, n]) => `<button class="vt" data-view="${v}"${v === "comp" && state.view !== "comp" ? ` data-brand="overview"` : ""} aria-current="${state.view === v ? "page" : "false"}">${esc(l)}${n !== "" ? `<span class="vn">${n}</span>` : ""}</button>`).join("");
     const bb = $("#brands");
     bb.hidden = !comp;
@@ -767,11 +791,11 @@ body.modal-open{overflow:hidden}
   }
 
   function renderTitles() {
-    const comp = state.view === "comp";
-    $("#h1").textContent = t(comp ? "titleComp" : "title");
-    $("#sub1").textContent = t(comp ? "subtitleComp" : "subtitle");
-    document.title = t(comp ? "titleComp" : "title");
-    $("#foot").textContent = t(comp ? "footerComp" : "footer");
+    const sfx = state.view === "comp" ? "Comp" : state.view === "ind" ? "Ind" : "";
+    $("#h1").textContent = t("title" + sfx);
+    $("#sub1").textContent = t("subtitle" + sfx);
+    document.title = t("title" + sfx);
+    $("#foot").textContent = t("footer" + sfx);
   }
 
   const syncMetric = () => document.querySelectorAll("[data-m]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.m === state.metric)));
@@ -940,10 +964,10 @@ body.modal-open{overflow:hidden}
       <summary>&#128270; ${esc(t("qTitle"))} <small>${esc(t("qSub"))}</small></summary>
       <div class="qbody">
         <div class="qrow"><b>${esc(t("qMust"))}</b>${chips(s.brand || [], "brand")}</div>
-        <div class="qrow"><b>${esc(t("qTopicWords"))}</b>${kw.length ? chips(kw, "") : `<span class="qnote">${esc(t("qBrandOnly"))}</span>`}</div>
+        <div class="qrow"><b>${esc(t("qTopicWords"))}</b>${kw.length ? chips(kw, "") : `<span class="qnote">${esc(t(isInd() ? "qBrandOnlyInd" : "qBrandOnly"))}</span>`}</div>
         <div class="qrow"><b>${esc(t("qFilters"))}</b>${chips(flt, "flt")}</div>
         ${q ? `<div class="qrow"><b>${esc(t("qExact"))}</b><div><div class="qcode"><code>${esc(q)}</code><button data-copy="${esc(q)}">${esc(t("qCopy"))}</button></div><div class="qnote" style="margin-top:5px">${esc(t("qSince"))}</div></div></div>` : ""}
-        <div class="qrow"><b>${esc(t("qAfter"))}</b><div class="qnote">${esc(state.view === "comp" ? t("qAfterTxtBrand", (s.brand || []).join(" / ")) : t("qAfterTxt"))}</div></div>
+        <div class="qrow"><b>${esc(t("qAfter"))}</b><div class="qnote">${esc(t(isInd() ? "qAfterTxtInd" : state.view === "comp" ? "qAfterTxtBrand" : "qAfterTxt", (s.brand || []).join(" / ")))}</div></div>
       </div></details>`;
   }
 
@@ -983,13 +1007,14 @@ body.modal-open{overflow:hidden}
     const accounts = new Set(every.map((p) => p.account_handle)).size;
     const kp = [[t("kPosts"), fmt(every.length), 1], [t("kAccounts"), fmt(accounts), 1], [t("kImpressions"), fmt(sum("impressions")), 0], [t("kLikes"), fmt(sum("likes")), 0], [t("kRetweets"), fmt(sum("retweets")), 0], [t("kReplies"), fmt(sum("replies")), 0], [t("kQuotes"), fmt(sum("quotes")), 0], [t("kBookmarks"), fmt(sum("bookmarks")), 0]];
     const sortCol = COLS.find((c) => c[0] === state.sort.key);
-    const bc = state.view === "comp" ? brandById(state.brand) : null;
+    const bc = curBrand();
     const content = $("#content");
     if (bc) content.style.setProperty("--accent", bc.color); else content.style.removeProperty("--accent");
-    const crumbs = bc ? `<nav class="crumbs" aria-label="Breadcrumb"><button data-brand="overview">${esc(t("navComp"))}</button><span>/</span><button data-brand="${esc(bc.id)}" data-tab="macro">${esc(bc.name)}</button><span>/</span><b>${esc(topicName(topic))}</b></nav>` : "";
+    const crumbs = bc && isInd() ? `<nav class="crumbs" aria-label="Breadcrumb"><button data-view="ind" data-tab="macro">${esc(t("navInd"))}</button><span>/</span><b>${esc(topicName(topic))}</b></nav>`
+      : bc ? `<nav class="crumbs" aria-label="Breadcrumb"><button data-brand="overview">${esc(t("navComp"))}</button><span>/</span><button data-brand="${esc(bc.id)}" data-tab="macro">${esc(bc.name)}</button><span>/</span><b>${esc(topicName(topic))}</b></nav>` : "";
     content.innerHTML = `
       ${crumbs}
-      <h2 class="title">${bc ? `<span class="bdot"></span>` : ""}${esc(topicHeading(topic))}</h2>
+      <h2 class="title">${bc && !isInd() ? `<span class="bdot"></span>` : ""}${esc(topicHeading(topic))}</h2>
       <p class="sub">${esc(t("shown", rows.length, matched))}${matched !== total ? esc(t("inTopic", total)) : ""}${esc(t("sortedBy", sortCol ? t(sortCol[1]) : state.sort.key))}</p>
       ${searchPanel(topic)}
       <section class="kpis" aria-label="Totals">${kp.map(([k, v, hl]) => `<div class="panel kpi${hl ? " hl" : ""}"><div class="k">${esc(k)}</div><div class="v">${v}</div></div>`).join("")}</section>
@@ -1106,7 +1131,7 @@ body.modal-open{overflow:hidden}
     if (view) state.view = view;
     if (brand) state.brand = brand;
     if (tab) state.tab = tab;
-    if (state.view === "comp" && !state.index) state.view = "xm";
+    fixView();
     closeModal(true);
     refreshView(); window.scrollTo(0, 0);
   }
@@ -1131,6 +1156,7 @@ body.modal-open{overflow:hidden}
   function hashNow() {
     const h = new URLSearchParams();
     if (state.view === "comp") { h.set("view", "comp"); h.set("brand", state.brand); }
+    else if (state.view === "ind") h.set("view", "ind");
     if (!isOverview()) h.set("tab", state.tab);
     if (isImp()) h.set("metric", "impressions");
     h.set("range", state.preset); h.set("sort", state.sort.key); h.set("dir", state.sort.dir < 0 ? "desc" : "asc");
@@ -1141,6 +1167,7 @@ body.modal-open{overflow:hidden}
   function readHash() {
     const h = new URLSearchParams(location.hash.slice(1));
     if (h.get("view") === "comp") state.view = "comp";
+    else if (h.get("view") === "ind") state.view = "ind";
     if (/^[a-z0-9_-]{1,32}$/.test(h.get("brand") || "")) state.brand = h.get("brand");
     if (h.get("tab")) state.tab = h.get("tab");
     if (h.get("metric") === "impressions") state.metric = "impressions";
@@ -1171,7 +1198,7 @@ body.modal-open{overflow:hidden}
   window.addEventListener("hashchange", () => {
     const cur = location.hash.slice(1); if (cur === hashNow()) return;
     state.view = "xm"; state.brand = "overview"; state.metric = "posts"; state.sort = { key: "impressions", dir: -1 };
-    readHash(); if (state.view === "comp" && !state.index) state.view = "xm";
+    readHash(); fixView();
     closeModal(true); refreshView();
   });
   document.addEventListener("toggle", (e) => { if (e.target.id === "qbox") state.qOpen = e.target.open; }, true);
@@ -1277,8 +1304,7 @@ body.modal-open{overflow:hidden}
     else { let seen = false; try { seen = !!sessionStorage.getItem("xm_logged"); } catch (e) { /* ignore */ } if (!seen) logVisit(USER, "visit"); }
     applyStatic(); skeleton();
     await loadIndex(true);
-    if (state.view === "comp" && !state.index) state.view = "xm";
-    if (state.view === "comp" && state.brand !== "overview" && !brandById(state.brand)) state.brand = "overview";
+    fixView();
     if (!(await refreshView(true))) $("#updated").innerHTML = `<i style='background:#e5484d'></i><span>${esc(t("noDataChip"))}</span>`;
   })();
 })();

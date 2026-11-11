@@ -1,0 +1,193 @@
+{
+  "brand": {
+    "color": "#2b8a3e",
+    "id": "industry",
+    "kind": "industry",
+    "name": "Overseas FX industry"
+  },
+  "generated_at": "2026-11-11T16:14:53Z",
+  "latest_post_at": "2026-11-11T14:17:16Z",
+  "pending_enrichment": 212,
+  "schema_version": 1,
+  "search": {
+    "brand": [
+      "海外FX"
+    ],
+    "exclude_retweets": true,
+    "initial_backfill_days": 30,
+    "language": "ja",
+    "max_items": 200,
+    "min_faves": 10,
+    "queries": {
+      "campaigns": "(\"海外FX\") (ボーナス OR キャッシュバック OR プロモ OR キャンペーン OR リワード OR ロイヤルティ OR ポイント OR 特典 OR ミッション OR 紹介 OR 抽選 OR 賞金) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "deposit_withdrawal": "(\"海外FX\") (出金 OR 着金 OR 入金 OR 銀行 OR クレジットカード OR デビットカード OR bitwallet OR STICPAY OR 仮想通貨 OR 暗号資産 OR ウォレット OR 決済 OR 送金 OR 返金 OR 手数料 OR 入出金制限) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "environment": "(\"海外FX\") (スプレッド OR スリッページ OR 約定 OR リクオート OR サーバー OR 障害 OR MT4 OR MT5 OR レバレッジ OR アプリ OR TradingView OR 取引条件 OR ゼロカット OR 追証 OR ロスカット OR EA OR IB OR 自動売買 OR コピートレード) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "macro": "(\"海外FX\") lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "regulation": "(\"海外FX\") (金融ライセンス OR 規制 OR 金融庁 OR 無登録 OR 監督 OR 信託保全 OR 分別管理 OR 投資者保護 OR 詐欺 OR 偽サイト OR なりすまし OR ハッカー OR ハッキング OR 不正アクセス OR 不正ログイン OR 乗っ取り OR 個人情報流出 OR 情報漏洩 OR マルウェア OR ウイルス OR フィッシング OR 資金持ち逃げ OR 夜逃げ OR 業者が飛ぶ OR 弁護士 OR 消費者センター) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>",
+      "reputation": "(\"海外FX\") (口コミ OR 評判 OR レビュー OR 体験談 OR 感想 OR おすすめ OR 人気 OR 信頼 OR 安全 OR 危険 OR 怪しい OR サポート OR 問い合わせ OR 対応 OR 返信 OR 本人確認 OR KYC OR 口座凍結 OR 利用規約) lang:ja -filter:retweets min_faves:10 since:<run date - 7 days>"
+    },
+    "sort": "Latest + Top",
+    "window_days": 7
+  },
+  "topics": [
+    {
+      "id": "macro",
+      "keywords": [],
+      "name": "Overall Brand Mention",
+      "posts": 212
+    },
+    {
+      "id": "campaigns",
+      "keywords": [
+        "ボーナス",
+        "キャッシュバック",
+        "プロモ",
+        "キャンペーン",
+        "リワード",
+        "ロイヤルティ",
+        "ポイント",
+        "特典",
+        "ミッション",
+        "紹介",
+        "抽選",
+        "賞金"
+      ],
+      "name": "Campaigns & Cashback",
+      "posts": 37
+    },
+    {
+      "id": "environment",
+      "keywords": [
+        "スプレッド",
+        "スリッページ",
+        "約定",
+        "リクオート",
+        "サーバー",
+        "障害",
+        "MT4",
+        "MT5",
+        "レバレッジ",
+        "アプリ",
+        "TradingView",
+        "取引条件",
+        "ゼロカット",
+        "追証",
+        "ロスカット",
+        "EA",
+        "IB",
+        "自動売買",
+        "コピートレード"
+      ],
+      "name": "Trading Environment",
+      "posts": 66
+    },
+    {
+      "id": "deposit_withdrawal",
+      "keywords": [
+        "出金",
+        "着金",
+        "入金",
+        "銀行",
+        "クレジットカード",
+        "デビットカード",
+        "bitwallet",
+        "STICPAY",
+        "仮想通貨",
+        "暗号資産",
+        "ウォレット",
+        "決済",
+        "送金",
+        "返金",
+        "手数料",
+        "入出金制限"
+      ],
+      "name": "Deposit & Withdrawal",
+      "posts": 117
+    },
+    {
+      "id": "reputation",
+      "keywords": [
+        "口コミ",
+        "評判",
+        "レビュー",
+        "体験談",
+        "感想",
+        "おすすめ",
+        "人気",
+        "信頼",
+        "安全",
+        "危険",
+        "怪しい",
+        "サポート",
+        "問い合わせ",
+        "対応",
+        "返信",
+        "本人確認",
+        "KYC",
+        "口座凍結",
+        "利用規約"
+      ],
+      "name": "Reputation & Customer Experience",
+      "posts": 48
+    },
+    {
+      "id": "regulation",
+      "keywords": [
+        "金融ライセンス",
+        "規制",
+        "金融庁",
+        "無登録",
+        "監督",
+        "信託保全",
+        "分別管理",
+        "投資者保護",
+        "詐欺",
+        "偽サイト",
+        "なりすまし",
+        "ハッカー",
+        "ハッキング",
+        "不正アクセス",
+        "不正ログイン",
+        "乗っ取り",
+        "個人情報流出",
+        "情報漏洩",
+        "マルウェア",
+        "ウイルス",
+        "フィッシング",
+        "資金持ち逃げ",
+        "夜逃げ",
+        "業者が飛ぶ",
+        "弁護士",
+        "消費者センター"
+      ],
+      "name": "Regulation, Fraud & Security",
+      "posts": 56
+    }
+  ],
+  "weeks": [
+    {
+      "file": "weeks/2026-W44.json",
+      "max_date": "2026-11-01T14:09:49Z",
+      "min_date": "2026-10-28T00:05:34Z",
+      "posts": 45,
+      "relevant_posts": 40,
+      "week": "2026-W44"
+    },
+    {
+      "file": "weeks/2026-W45.json",
+      "max_date": "2026-11-08T14:49:53Z",
+      "min_date": "2026-11-01T15:05:47Z",
+      "posts": 258,
+      "relevant_posts": 144,
+      "week": "2026-W45"
+    },
+    {
+      "file": "weeks/2026-W46.json",
+      "max_date": "2026-11-11T14:17:16Z",
+      "min_date": "2026-11-08T15:38:43Z",
+      "posts": 256,
+      "relevant_posts": 28,
+      "week": "2026-W46"
+    }
+  ]
+}

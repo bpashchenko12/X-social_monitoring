@@ -47,11 +47,20 @@ def brand_dirs(brand_id):
     return data_dir, os.path.join(data_dir, "weeks")
 
 
+def is_industry(brand):
+    return brand.get("kind") == "industry"
+
+
 def brand_cfg(base_cfg, comp, brand):
-    """Config in the same shape as queries.json, for one competitor."""
+    """Config in the same shape as queries.json, for one competitor.
+
+    The industry entry (kind = "industry", base term 海外FX) is not a broker: it lists only the topics it
+    wants (plus its own `extra_topics`), so a missing base topic is not an error for it."""
     aliases = comp.get("topic_aliases", {})
     topics = []
-    for t in base_cfg["topics"]:
+    base = [t for t in base_cfg["topics"]
+            if not is_industry(brand) or t["id"] == "macro" or t["id"] in brand["topics"]]
+    for t in base + [{"id": x["id"], "name": x["name"]} for x in brand.get("extra_topics", [])]:
         kws = [] if t["id"] == "macro" else list(brand["topics"].get(t["id"], []))
         topic = {"id": t["id"], "name": t["name"], "keywords": kws}
         al = {k: v for k, v in aliases.items() if k in kws}
@@ -72,6 +81,8 @@ def brand_cfg(base_cfg, comp, brand):
         quote_mixed_script=True,
         brand={"id": brand["id"], "name": brand["name"], "color": brand.get("color")},
     )
+    if brand.get("kind"):  # only set when non-default, so existing brand manifests stay unchanged
+        cfg["brand"]["kind"] = brand["kind"]
     return cfg
 
 
@@ -149,6 +160,11 @@ def lint_brand(cfg, comp_brand, today):
     for tid in comp_brand["topics"]:
         if tid not in known:
             errs.append(f"{bid}: unknown topic id {tid!r}")
+    ids = [t["id"] for t in cfg["topics"]]
+    if len(ids) != len(set(ids)):
+        errs.append(f"{bid}: duplicate topic id (extra_topics clashes with a base topic?)")
+    if is_industry(comp_brand) and len(ids) < 2:
+        errs.append(f"{bid}: an industry entry needs at least one keyword topic")
     for t in cfg["topics"]:
         if t["id"] == "macro":
             continue
@@ -234,19 +250,27 @@ def finalize_brand(cfg):
 
 
 def write_index(cfgs):
-    """docs/data/competitors/index.json: the dashboard's entry point to the competitor stores."""
-    brands, latest = [], None
+    """docs/data/competitors/index.json: the dashboard's entry point to the competitor stores.
+    The industry store is listed under its own `industry` key (never in `brands`), so competitor
+    comparisons and older dashboards never mix it in."""
+    brands, industry, latest = [], None, None
     for cfg in cfgs:
         b = cfg["brand"]
         m = read_json(os.path.join(brand_dirs(b["id"])[0], "manifest.json"), {}) or {}
         weeks = m.get("weeks", [])
-        brands.append({"id": b["id"], "name": b["name"], "color": b.get("color"),
-                       "path": f"competitors/{b['id']}",
-                       "posts": sum(w.get("relevant_posts", w.get("posts", 0)) for w in weeks),
-                       "latest_post_at": m.get("latest_post_at")})
+        entry = {"id": b["id"], "name": b["name"], "color": b.get("color"),
+                 "path": f"competitors/{b['id']}",
+                 "posts": sum(w.get("relevant_posts", w.get("posts", 0)) for w in weeks),
+                 "latest_post_at": m.get("latest_post_at")}
+        if b.get("kind") == "industry":
+            industry = entry
+        else:
+            brands.append(entry)
         lp = m.get("latest_post_at")
         if lp and (latest is None or lp > latest):
             latest = lp
     index = {"schema_version": 1, "generated_at": iso(now_utc()), "latest_post_at": latest, "brands": brands}
+    if industry:
+        index["industry"] = industry
     write_json_atomic(os.path.join(COMP_DIR, "index.json"), index)
     return index

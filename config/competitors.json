@@ -105,6 +105,30 @@
         "deposit_withdrawal": ["出金", "着金", "入金", "入金方法", "銀行", "クレカ", "クレジットカード", "bitwallet", "入出金", "決済", "ウォレット"],
         "account_types": ["スタンダード", "スタンダード口座", "Standard", "セント口座", "Cent", "プロ口座", "Pro", "エリート", "エリート口座", "Elite", "クラシック", "クラシック口座", "Classic", "エクストラ", "エクストラ口座", "Extra", "口座"]
       }
+    },
+    {
+      "id": "industry",
+      "kind": "industry",
+      "name": "Overseas FX industry",
+      "color": "#2b8a3e",
+      "_comment": "Not a broker: what Japanese users say about the offshore-FX industry as a whole (base term 海外FX). Lives in its own dashboard tab; only the topics listed here are used, plus `extra_topics`. Sentiment for these posts is about the industry/topic, not about XM.",
+      "query_terms": ["海外FX"],
+      "text_terms": {
+        "strong": ["海外FX"],
+        "bare": []
+      },
+      "non_matches": [],
+      "extra_topics": [
+        {"id": "reputation", "name": "Reputation & Customer Experience"},
+        {"id": "regulation", "name": "Regulation, Fraud & Security"}
+      ],
+      "topics": {
+        "campaigns": ["ボーナス", "キャッシュバック", "プロモ", "キャンペーン", "リワード", "ロイヤルティ", "ポイント", "特典", "ミッション", "紹介", "抽選", "賞金"],
+        "environment": ["スプレッド", "スリッページ", "約定", "リクオート", "サーバー", "障害", "MT4", "MT5", "レバレッジ", "アプリ", "TradingView", "取引条件", "ゼロカット", "追証", "ロスカット", "EA", "IB", "自動売買", "コピートレード"],
+        "deposit_withdrawal": ["出金", "着金", "入金", "銀行", "クレジットカード", "デビットカード", "bitwallet", "STICPAY", "仮想通貨", "暗号資産", "ウォレット", "決済", "送金", "返金", "手数料", "入出金制限"],
+        "reputation": ["口コミ", "評判", "レビュー", "体験談", "感想", "おすすめ", "人気", "信頼", "安全", "危険", "怪しい", "サポート", "問い合わせ", "対応", "返信", "本人確認", "KYC", "口座凍結", "利用規約"],
+        "regulation": ["金融ライセンス", "規制", "金融庁", "無登録", "監督", "信託保全", "分別管理", "投資者保護", "詐欺", "偽サイト", "なりすまし", "ハッカー", "ハッキング", "不正アクセス", "不正ログイン", "乗っ取り", "個人情報流出", "情報漏洩", "マルウェア", "ウイルス", "フィッシング", "資金持ち逃げ", "夜逃げ", "業者が飛ぶ", "弁護士", "消費者センター"]
+      }
     }
   ]
 }

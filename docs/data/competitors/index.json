@@ -41,14 +41,14 @@
       "posts": 41
     }
   ],
-  "generated_at": "2026-11-11T16:14:53Z",
+  "generated_at": "2026-11-11T16:53:32Z",
   "industry": {
     "color": "#2b8a3e",
     "id": "industry",
     "latest_post_at": "2026-11-11T14:17:16Z",
     "name": "Overseas FX industry",
     "path": "competitors/industry",
-    "posts": 212
+    "posts": 211
   },
   "latest_post_at": "2026-11-11T14:17:16Z",
   "schema_version": 1

@@ -5,9 +5,9 @@
     "kind": "industry",
     "name": "Overseas FX industry"
   },
-  "generated_at": "2026-11-11T16:14:53Z",
+  "generated_at": "2026-11-11T16:53:32Z",
   "latest_post_at": "2026-11-11T14:17:16Z",
-  "pending_enrichment": 212,
+  "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 212
+      "posts": 211
     },
     {
       "id": "campaigns",
@@ -53,7 +53,7 @@
         "賞金"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 37
+      "posts": 36
     },
     {
       "id": "environment",
@@ -79,7 +79,7 @@
         "コピートレード"
       ],
       "name": "Trading Environment",
-      "posts": 66
+      "posts": 65
     },
     {
       "id": "deposit_withdrawal",
@@ -178,7 +178,7 @@
       "max_date": "2026-11-08T14:49:53Z",
       "min_date": "2026-11-01T15:05:47Z",
       "posts": 258,
-      "relevant_posts": 144,
+      "relevant_posts": 143,
       "week": "2026-W45"
     },
     {

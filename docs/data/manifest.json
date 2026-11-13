@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T12:49:29Z",
-  "latest_post_at": "2026-11-13T10:06:53Z",
+  "generated_at": "2026-11-13T13:05:49Z",
+  "latest_post_at": "2026-11-13T12:42:35Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -177,9 +177,9 @@
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-13T10:06:53Z",
+      "max_date": "2026-11-13T12:42:35Z",
       "min_date": "2026-11-08T15:18:02Z",
-      "posts": 541,
+      "posts": 592,
       "relevant_posts": 22,
       "week": "2026-W46"
     }

@@ -4,8 +4,8 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-11-13T12:49:29Z",
-  "latest_post_at": "2026-11-13T10:15:58Z",
+  "generated_at": "2026-11-13T13:05:49Z",
+  "latest_post_at": "2026-11-13T12:50:44Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -189,9 +189,9 @@
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-13T10:15:58Z",
+      "max_date": "2026-11-13T12:50:44Z",
       "min_date": "2026-11-08T15:21:40Z",
-      "posts": 454,
+      "posts": 478,
       "relevant_posts": 12,
       "week": "2026-W46"
     }

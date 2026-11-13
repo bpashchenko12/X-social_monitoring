@@ -4,8 +4,8 @@
     "id": "vantage",
     "name": "Vantage"
   },
-  "generated_at": "2026-11-13T12:49:29Z",
-  "latest_post_at": "2026-11-13T10:15:38Z",
+  "generated_at": "2026-11-13T13:05:49Z",
+  "latest_post_at": "2026-11-13T12:49:41Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -164,9 +164,9 @@
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-13T10:15:38Z",
+      "max_date": "2026-11-13T12:49:41Z",
       "min_date": "2026-11-08T15:03:22Z",
-      "posts": 606,
+      "posts": 685,
       "relevant_posts": 1,
       "week": "2026-W46"
     }

@@ -4,8 +4,8 @@
     "id": "exness",
     "name": "Exness"
   },
-  "generated_at": "2026-11-13T12:49:29Z",
-  "latest_post_at": "2026-11-13T10:20:12Z",
+  "generated_at": "2026-11-13T13:05:49Z",
+  "latest_post_at": "2026-11-13T12:34:18Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -185,9 +185,9 @@
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-13T10:20:12Z",
+      "max_date": "2026-11-13T12:34:18Z",
       "min_date": "2026-11-08T16:52:42Z",
-      "posts": 196,
+      "posts": 218,
       "relevant_posts": 18,
       "week": "2026-W46"
     }

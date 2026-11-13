@@ -5,8 +5,8 @@
     "kind": "industry",
     "name": "Overseas FX industry"
   },
-  "generated_at": "2026-11-13T12:49:30Z",
-  "latest_post_at": "2026-11-13T08:07:45Z",
+  "generated_at": "2026-11-13T13:05:50Z",
+  "latest_post_at": "2026-11-13T11:51:53Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -183,9 +183,9 @@
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-13T08:07:45Z",
+      "max_date": "2026-11-13T11:51:53Z",
       "min_date": "2026-11-08T15:38:43Z",
-      "posts": 368,
+      "posts": 372,
       "relevant_posts": 41,
       "week": "2026-W46"
     }

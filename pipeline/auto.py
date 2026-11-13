@@ -602,6 +602,8 @@ def plan_live(cfg, comp, acfg, mode, today, env, scope="all"):
 def run_live(args, cfg):
     """Compose the real dependencies and run. Returns the exit code."""
     acfg = load_automation()
+    if getattr(args, "fresh", False):
+        acfg = dict(acfg, cache_ttl_hours=0)
     env = build_env()
     comp = competitors.load_competitors() if os.path.exists(competitors.COMP_CONFIG_PATH) else None
     stores = real_stores(cfg, comp)

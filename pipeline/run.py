@@ -9,7 +9,7 @@
   python3 -m pipeline.run competitors-lint            (free static checks of config/competitors.json)
   python3 -m pipeline.run competitors-plan  [--brands ID ...] [--only TOPIC ...] [--days N]
   python3 -m pipeline.run competitors-fetch --yes [--brands ID ...] [--only TOPIC ...] [--days N]
-  python3 -m pipeline.run auto [--dry-run | --yes] [--mode auto|incremental|sweep] [--scope auto|all|xm] [--skip-scrape] [--skip-enrich]
+  python3 -m pipeline.run auto [--dry-run | --yes] [--mode auto|incremental|sweep] [--scope auto|all|xm] [--skip-scrape] [--skip-enrich] [--fresh]
                                [--max-enrich N]      (unattended cycle; exit 0 ok / 3 degraded / 1 failed)
   python3 -m pipeline.run llm-check                  (verify the OpenRouter key + model id with a tiny paid call)
   python3 -m pipeline.run alert --subject S --body B (send an alert e-mail; used by CI on failure)
@@ -278,6 +278,7 @@ def main(argv=None):
     p.add_argument("--dry-run", action="store_true", help="free preview; no network, no writes")
     p.add_argument("--yes", action="store_true", help="confirm paid Apify/LLM calls")
     p.add_argument("--skip-scrape", action="store_true")
+    p.add_argument("--fresh", action="store_true", help="ignore the Apify cache (always re-scrape; costs credits)")
     p.add_argument("--skip-enrich", action="store_true")
     p.add_argument("--max-enrich", type=int, help="cap posts sent to the LLM in this run")
     sub.add_parser("llm-check")

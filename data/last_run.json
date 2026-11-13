@@ -3,68 +3,68 @@
   "enrich": null,
   "errors": [],
   "exit_code": 0,
-  "finished_at": "2026-11-13T10:10:53Z",
+  "finished_at": "2026-11-13T10:42:24Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-13T10:10:53Z",
+  "last_success_at": "2026-11-13T10:42:24Z",
   "last_sweep_at": "2026-11-12T11:21:24Z",
   "mode": "incremental",
   "notes": [
-    "1 query(ies) hit the 200-item cap (titanfx/campaigns); some posts may be missed until the next weekly sweep"
+    "2 query(ies) hit the 200-item cap (titanfx/campaigns, titanfx/deposit_withdrawal); some posts may be missed until the next weekly sweep"
   ],
   "pending_after": 0,
-  "pending_industry": 0,
   "scope": "all",
   "scrape": {
     "budget_stopped": false,
     "capped": [
-      "titanfx/campaigns"
+      "titanfx/campaigns",
+      "titanfx/deposit_withdrawal"
     ],
     "failed": [],
-    "items": 3360,
+    "items": 3437,
     "ok": 42,
     "requests": 42,
-    "spent_usd": 0.924,
+    "spent_usd": 0.9358,
     "window_days": 2
   },
-  "started_at": "2026-11-13T09:57:11Z",
+  "started_at": "2026-11-13T10:25:24Z",
   "status": "ok",
   "stores": {
     "exness": {
-      "pending": 5,
-      "posts": 887,
+      "pending": 0,
+      "posts": 937,
       "relevant": 151
     },
     "hfm": {
-      "pending": 2,
-      "posts": 1622,
+      "pending": 0,
+      "posts": 1646,
       "relevant": 123
     },
     "industry": {
-      "pending": 6,
+      "pending": 0,
       "posts": 793,
       "relevant": 235
     },
     "titanfx": {
-      "pending": 4,
-      "posts": 2291,
+      "pending": 0,
+      "posts": 2320,
       "relevant": 114
     },
     "vantage": {
-      "pending": 1,
-      "posts": 3141,
+      "pending": 0,
+      "posts": 3174,
       "relevant": 20
     },
     "xm": {
-      "pending": 4,
-      "posts": 3141,
+      "pending": 0,
+      "posts": 3189,
       "relevant": 374
     },
     "xs": {
-      "pending": 1,
-      "posts": 2682,
+      "pending": 0,
+      "posts": 2728,
       "relevant": 47
     }
   }

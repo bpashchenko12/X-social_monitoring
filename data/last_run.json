@@ -3,33 +3,30 @@
   "enrich": null,
   "errors": [],
   "exit_code": 0,
-  "finished_at": "2026-11-13T10:42:24Z",
+  "finished_at": "2026-11-13T12:49:30Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-13T10:42:24Z",
+  "last_success_at": "2026-11-13T12:49:30Z",
   "last_sweep_at": "2026-11-12T11:21:24Z",
   "mode": "incremental",
   "notes": [
-    "2 query(ies) hit the 200-item cap (titanfx/campaigns, titanfx/deposit_withdrawal); some posts may be missed until the next weekly sweep"
+    "competitors and the industry feed were not scraped in this run (they are refreshed once a day, in the morning run)"
   ],
   "pending_after": 0,
-  "scope": "all",
+  "scope": "xm",
   "scrape": {
     "budget_stopped": false,
-    "capped": [
-      "titanfx/campaigns",
-      "titanfx/deposit_withdrawal"
-    ],
+    "capped": [],
     "failed": [],
-    "items": 3437,
-    "ok": 42,
-    "requests": 42,
-    "spent_usd": 0.9358,
+    "items": 0,
+    "ok": 6,
+    "requests": 0,
+    "spent_usd": 0,
     "window_days": 2
   },
-  "started_at": "2026-11-13T10:25:24Z",
+  "started_at": "2026-11-13T12:49:28Z",
   "status": "ok",
   "stores": {
     "exness": {

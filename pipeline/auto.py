@@ -38,7 +38,8 @@ DEFAULTS = {
     "full_before_hour_jst": 12,
     # hitting the per-query item cap in an incremental run is a note, not a degraded run (no alert e-mail)
     "cap_hits_degrade": False,
-    "llm": {"model": "anthropic/claude-sonnet-5.5", "fallback_model": None, "monthly_budget_usd": 15,
+    # enabled=False: no OpenRouter calls; pending posts are translated manually (in the IDE) via enrich-export/import
+    "llm": {"enabled": True, "model": "anthropic/claude-sonnet-5.5", "fallback_model": None, "monthly_budget_usd": 15,
             "max_posts_per_run": 150, "max_industry_posts_per_run": 40, "batch_max_items": 6,
             "batch_max_chars": 5000},
     "alert": {"subject_prefix": "[XM Monitor]", "on_degraded": True, "on_success": False},
@@ -437,7 +438,8 @@ def run_auto(cfg, acfg, *, stores, now=None, mode="auto", env=None, comp=None, s
             if sc.get("ok", 0) == 0 and sc["failed"]:
                 degraded.append("no query succeeded")
         # --- enrich
-        if not skip_enrich:
+        llm_on = acfg["llm"].get("enabled", True)
+        if not skip_enrich and llm_on:
             try:
                 if client_factory is None:
                     raise llm.LLMFatal("no LLM client configured")
@@ -470,6 +472,9 @@ def run_auto(cfg, acfg, *, stores, now=None, mode="auto", env=None, comp=None, s
         report["notes"] += g_warn
         pending = sum(s["pending"] for s in after.values())
         report["pending_after"] = pending
+        if not llm_on and pending:
+            report["notes"].append(f"LLM translation is switched off (llm.enabled=false): {pending} post(s) wait for "
+                                   f"manual translation (enrich-export / enrich-import)")
         # the industry feed is capped per run on purpose, so its backlog must not raise an alert
         industry_scopes = {st.scope for st in stores if st.kind == "industry"}
         pending_core = sum(s["pending"] for k, s in after.items() if k not in industry_scopes)
@@ -609,6 +614,7 @@ def run_live(args, cfg):
         led = apify.spent_usd(llm.LLM_LEDGER_PATH, now_utc().strftime("%Y-%m"))
         print(json.dumps(dict(plan, pending_translation=pending, llm_month_spent=led,
                               llm_budget=acfg["llm"].get("monthly_budget_usd"), model=acfg["llm"]["model"],
+                              llm_enabled=bool(acfg["llm"].get("enabled", True)),
                               openrouter_key_set=bool(env.get("OPENROUTER_API_KEY")),
                               alerts_configured=alert.configured(env)), indent=2))
         return OK

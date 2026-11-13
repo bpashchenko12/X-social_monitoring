@@ -11,6 +11,8 @@
   "stale_after_hours": 36,
   "max_pending_warn": 25,
   "llm": {
+    "enabled": false,
+    "enabled_note": "false = no OpenRouter calls at all; new posts stay 'Translation pending' until translated manually in the IDE (python3 -m pipeline.run enrich-export, then enrich-import). Set true to switch the unattended LLM back on.",
     "provider": "openrouter",
     "base_url": "https://openrouter.ai/api/v1",
     "model": "anthropic/claude-sonnet-5.5",

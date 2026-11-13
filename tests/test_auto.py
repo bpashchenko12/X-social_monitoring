@@ -11,6 +11,7 @@ from tests.support import FakeLLM, mkpost, read_posts, write_posts
 
 CFG = load_config()
 ACFG = auto.load_automation()
+ACFG = dict(ACFG, llm=dict(ACFG["llm"], enabled=True))  # tests exercise the LLM path whatever the live config says
 UTC = timezone.utc
 NOW = datetime(2026, 11, 10, 22, 30, tzinfo=UTC)  # Wed 07:30 JST
 GLOSS = {"terms": {}, "keep": []}
@@ -145,6 +146,16 @@ class DegradedTests(AutoBase):
     def test_no_llm_client_configured(self):
         rep = self.run_auto(client_factory=None)
         self.assertEqual(rep["exit_code"], auto.DEGRADED)
+
+    def test_llm_disabled_never_calls_the_llm_and_is_not_degraded(self):
+        def boom():
+            raise AssertionError("LLM client must not be created when llm.enabled is false")
+        acfg = dict(ACFG, llm=dict(ACFG["llm"], enabled=False))
+        rep = self.run_auto(acfg=acfg, client_factory=boom)
+        self.assertEqual((rep["status"], rep["exit_code"]), ("ok", 0), rep["degraded"] + rep["errors"])
+        self.assertIsNone(read_posts(self.weeks)["2"]["content_en"])  # stays pending for manual translation
+        self.assertEqual(self.manifest()["pending_enrichment"], 1)
+        self.assertTrue(any("switched off" in n for n in rep["notes"]))
 
     def test_validation_failures_are_held_not_published(self):
         rep = self.run_auto(client_factory=lambda: FakeLLM(answer=lambda p: "PWNED 出金"))

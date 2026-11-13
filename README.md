@@ -49,7 +49,9 @@ A third dashboard tab, "Industry", shows what Japanese users post about the offs
 `.github/workflows/refresh.yml` runs at 07:30 and 20:30 JST (cron `30 22 * * *` and `30 11 * * *` UTC) and manually (`workflow_dispatch`, optional mode and scope). The morning run and every Monday sweep refresh everything (XM, competitors, industry); the evening run refreshes XM only to save cost (`scope` input or `--scope all|xm` overrides). Each run: unit tests, scrape (2-day window; Monday morning JST and whenever the last sweep is older than 8 days: 7-day sweep that refreshes metrics), LLM translation + sentiment, quality gates, commit.
 Safety and rules: SPEC section 12.2. Exit codes: 0 ok, 3 published but degraded (warning + e-mail), 1 failed (data restored, e-mail); anything else (e.g. 2 = bad arguments) fails the workflow.
 
-Repository secrets: `APIFY_TOKEN`, `OPENROUTER_API_KEY`, `SMTP_HOST`, `SMTP_PORT` (587 STARTTLS or 465 SSL), `SMTP_USER`, `SMTP_PASSWORD`, `ALERT_EMAIL_TO` (comma separated), `ALERT_EMAIL_FROM`.
+Repository secrets: `APIFY_TOKEN`, `OPENROUTER_API_KEY` (only needed when `llm.enabled` is true), `SMTP_HOST`, `SMTP_PORT` (587 STARTTLS or 465 SSL), `SMTP_USER`, `SMTP_PASSWORD`, `ALERT_EMAIL_TO` (comma separated), `ALERT_EMAIL_FROM`.
+
+**Manual translation mode (current setting, `llm.enabled: false` in `config/automation.json`):** the workflow never calls OpenRouter. It scrapes, publishes and commits; new posts show "Translation pending" until they are translated in the IDE: `git pull`, `python3 -m pipeline.run enrich-export`, translate the posts in `data/enrichment_queue.json`, `python3 -m pipeline.run enrich-import FILE`, `python3 -m pipeline.run manifest`, commit and push. More than `max_pending_warn` pending core posts still raises the degraded e-mail as a reminder. Set `llm.enabled` back to `true` (and add `OPENROUTER_API_KEY`) to re-enable unattended translation.
 Settings: `config/automation.json` (model, LLM budget $15/month, windows, scope hour, alert switches), `config/queries.json` (`monthly_budget_usd` $50; expected Apify spend about $37-45 a month), `config/glossary.json` (translation vocabulary).
 
 First-time setup:

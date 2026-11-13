@@ -216,6 +216,9 @@ def cmd_alert(args, cfg):
 def cmd_llm_check(args, cfg):
     """Verify key + model id end to end with two tiny posts (a few cents)."""
     acfg = auto.load_automation()
+    if not acfg["llm"].get("enabled", True):
+        print("llm-check skipped: llm.enabled is false in config/automation.json (manual translation mode)")
+        return
     env = auto.build_env()
     try:
         client = llm.OpenRouter(env.get("OPENROUTER_API_KEY"), acfg["llm"])

@@ -4,9 +4,11 @@ name: Refresh X mention data
 # GitHub cron is best-effort (runs can start late or be skipped) and scheduled workflows are
 # disabled after 60 days without repository activity; the pipeline detects missed runs itself.
 on:
-  schedule:
-    - cron: "30 22 * * *"   # 07:30 JST
-    - cron: "30 11 * * *"   # 20:30 JST
+  # SCHEDULE SWITCHED OFF while the refresh runs locally (tools/launchd). To go fully automated, add the
+  # APIFY_TOKEN secret and uncomment these three lines:
+  # schedule:
+  #   - cron: "30 22 * * *"   # 07:30 JST
+  #   - cron: "30 11 * * *"   # 20:30 JST
   workflow_dispatch:
     inputs:
       mode:

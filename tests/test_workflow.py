@@ -28,9 +28,11 @@ class WorkflowTests(unittest.TestCase):
     def test_only_one_run_at_a_time(self):
         self.assertRegex(self.text, r"concurrency:\s+group: refresh\s+cancel-in-progress: false")
 
-    def test_both_japan_peaks_are_scheduled(self):
-        crons = re.findall(r'cron: "([^"]+)"', self.text)
-        self.assertEqual(sorted(crons), ["30 11 * * *", "30 22 * * *"])
+    def test_both_japan_peaks_are_prepared_and_schedule_is_off_while_running_locally(self):
+        # The cron lines stay in the file (commented) so going fully automated is a small change.
+        commented = re.findall(r'#\s*-\s*cron: "([^"]+)"', self.text)
+        self.assertEqual(sorted(commented), ["30 11 * * *", "30 22 * * *"])
+        self.assertEqual(re.findall(r'^\s*-\s*cron:', self.text, re.M), [])  # nothing active
 
     def test_manual_runs_can_choose_the_scope_and_it_reaches_the_command(self):
         self.assertRegex(self.text, r"scope:\s+description:[^\n]*\n\s+type: choice\s+options: \[auto, all, xm\]")

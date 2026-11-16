@@ -3,65 +3,67 @@
   "enrich": null,
   "errors": [],
   "exit_code": 0,
-  "finished_at": "2026-11-13T16:30:07Z",
+  "finished_at": "2026-11-16T16:35:40Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-13T16:30:07Z",
+  "last_success_at": "2026-11-16T16:35:40Z",
   "last_sweep_at": "2026-11-12T11:21:24Z",
   "mode": "incremental",
   "notes": [
-    "competitors and the industry feed were not scraped in this run (they are refreshed once a day, in the morning run)"
+    "competitors and the industry feed were not scraped in this run (they are refreshed once a day, in the morning run)",
+    "LLM translation is switched off (llm.enabled=false): 31 post(s) wait for manual translation (enrich-export / enrich-import)"
   ],
-  "pending_after": 0,
+  "pending_after": 31,
+  "pending_industry": 20,
   "scope": "xm",
   "scrape": {
     "budget_stopped": false,
     "capped": [],
     "failed": [],
-    "items": 0,
+    "items": 345,
     "ok": 6,
-    "requests": 0,
-    "spent_usd": 0,
+    "requests": 6,
+    "spent_usd": 0.1118,
     "window_days": 2
   },
-  "started_at": "2026-11-13T16:30:06Z",
+  "started_at": "2026-11-16T16:30:05Z",
   "status": "ok",
   "stores": {
     "exness": {
-      "pending": 0,
-      "posts": 959,
-      "relevant": 151
+      "pending": 1,
+      "posts": 983,
+      "relevant": 152
     },
     "hfm": {
       "pending": 0,
-      "posts": 1695,
+      "posts": 1736,
       "relevant": 124
     },
     "industry": {
-      "pending": 0,
-      "posts": 797,
-      "relevant": 235
+      "pending": 20,
+      "posts": 853,
+      "relevant": 255
     },
     "titanfx": {
-      "pending": 0,
-      "posts": 2344,
-      "relevant": 114
+      "pending": 3,
+      "posts": 2513,
+      "relevant": 117
     },
     "vantage": {
       "pending": 0,
-      "posts": 3253,
+      "posts": 3451,
       "relevant": 20
     },
     "xm": {
-      "pending": 0,
-      "posts": 3240,
-      "relevant": 374
+      "pending": 7,
+      "posts": 3455,
+      "relevant": 381
     },
     "xs": {
       "pending": 0,
-      "posts": 2782,
+      "posts": 2957,
       "relevant": 47
     }
   }

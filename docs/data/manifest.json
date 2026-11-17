@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-17T13:37:19Z",
-  "latest_post_at": "2026-11-17T09:54:28Z",
+  "generated_at": "2026-11-17T16:33:14Z",
+  "latest_post_at": "2026-11-17T16:06:41Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -179,15 +179,15 @@
       "file": "weeks/2026-W46.json",
       "max_date": "2026-11-15T14:58:47Z",
       "min_date": "2026-11-08T15:18:02Z",
-      "posts": 712,
+      "posts": 714,
       "relevant_posts": 28,
       "week": "2026-W46"
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-17T09:54:28Z",
+      "max_date": "2026-11-17T16:06:41Z",
       "min_date": "2026-11-15T15:01:28Z",
-      "posts": 226,
+      "posts": 268,
       "relevant_posts": 2,
       "week": "2026-W47"
     }

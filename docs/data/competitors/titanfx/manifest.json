@@ -4,9 +4,9 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-11-16T16:35:39Z",
-  "latest_post_at": "2026-11-16T07:25:24Z",
-  "pending_enrichment": 3,
+  "generated_at": "2026-11-17T08:43:21Z",
+  "latest_post_at": "2026-11-17T07:09:40Z",
+  "pending_enrichment": 7,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 117
+      "posts": 121
     },
     {
       "id": "campaigns",
@@ -107,7 +107,7 @@
         "決済"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 6
+      "posts": 7
     },
     {
       "id": "account_types",
@@ -127,7 +127,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 6
+      "posts": 7
     }
   ],
   "weeks": [
@@ -191,16 +191,16 @@
       "file": "weeks/2026-W46.json",
       "max_date": "2026-11-15T14:55:57Z",
       "min_date": "2026-11-08T15:21:40Z",
-      "posts": 592,
+      "posts": 593,
       "relevant_posts": 12,
       "week": "2026-W46"
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-16T07:25:24Z",
+      "max_date": "2026-11-17T07:09:40Z",
       "min_date": "2026-11-15T15:11:56Z",
-      "posts": 55,
-      "relevant_posts": 3,
+      "posts": 80,
+      "relevant_posts": 7,
       "week": "2026-W47"
     }
   ]

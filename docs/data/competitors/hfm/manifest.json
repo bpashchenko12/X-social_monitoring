@@ -4,9 +4,9 @@
     "id": "hfm",
     "name": "HFM"
   },
-  "generated_at": "2026-11-16T16:35:39Z",
-  "latest_post_at": "2026-11-16T07:51:21Z",
-  "pending_enrichment": 0,
+  "generated_at": "2026-11-17T08:43:21Z",
+  "latest_post_at": "2026-11-17T08:13:30Z",
+  "pending_enrichment": 1,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 124
+      "posts": 125
     },
     {
       "id": "campaigns",
@@ -194,18 +194,18 @@
     },
     {
       "file": "weeks/2026-W46.json",
-      "max_date": "2026-11-15T14:13:42Z",
+      "max_date": "2026-11-15T14:55:57Z",
       "min_date": "2026-11-08T15:19:10Z",
-      "posts": 321,
+      "posts": 326,
       "relevant_posts": 11,
       "week": "2026-W46"
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-16T07:51:21Z",
+      "max_date": "2026-11-17T08:13:30Z",
       "min_date": "2026-11-15T15:11:56Z",
-      "posts": 17,
-      "relevant_posts": 0,
+      "posts": 52,
+      "relevant_posts": 1,
       "week": "2026-W47"
     }
   ]

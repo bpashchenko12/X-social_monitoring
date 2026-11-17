@@ -4,9 +4,9 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-11-17T08:43:22Z",
-  "latest_post_at": "2026-11-17T08:30:14Z",
-  "pending_enrichment": 2,
+  "generated_at": "2026-11-17T13:37:19Z",
+  "latest_post_at": "2026-11-17T10:02:17Z",
+  "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -52,7 +52,7 @@
         "特典"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 6
+      "posts": 7
     },
     {
       "id": "competitions",
@@ -70,7 +70,7 @@
         "抽選会"
       ],
       "name": "Competitions & Events",
-      "posts": 2
+      "posts": 3
     },
     {
       "id": "environment",
@@ -181,9 +181,9 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-17T08:30:14Z",
+      "max_date": "2026-11-17T10:02:17Z",
       "min_date": "2026-11-15T15:02:30Z",
-      "posts": 141,
+      "posts": 181,
       "relevant_posts": 2,
       "week": "2026-W47"
     }

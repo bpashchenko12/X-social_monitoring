@@ -4,9 +4,9 @@
     "id": "vantage",
     "name": "Vantage"
   },
-  "generated_at": "2026-11-17T16:33:15Z",
-  "latest_post_at": "2026-11-17T10:04:46Z",
-  "pending_enrichment": 0,
+  "generated_at": "2026-11-18T08:41:10Z",
+  "latest_post_at": "2026-11-18T08:32:37Z",
+  "pending_enrichment": 1,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -36,7 +36,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 21
+      "posts": 22
     },
     {
       "id": "campaigns",
@@ -69,7 +69,7 @@
         "イベント"
       ],
       "name": "Competitions & Events",
-      "posts": 0
+      "posts": 1
     },
     {
       "id": "environment",
@@ -126,7 +126,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 6
+      "posts": 7
     }
   ],
   "weeks": [
@@ -172,10 +172,10 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-17T10:04:46Z",
+      "max_date": "2026-11-18T08:32:37Z",
       "min_date": "2026-11-15T15:11:56Z",
-      "posts": 230,
-      "relevant_posts": 1,
+      "posts": 348,
+      "relevant_posts": 2,
       "week": "2026-W47"
     }
   ]

@@ -4,8 +4,8 @@
     "id": "hfm",
     "name": "HFM"
   },
-  "generated_at": "2026-11-17T16:33:14Z",
-  "latest_post_at": "2026-11-17T09:28:45Z",
+  "generated_at": "2026-11-18T08:41:10Z",
+  "latest_post_at": "2026-11-18T08:26:25Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -202,9 +202,9 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-17T09:28:45Z",
+      "max_date": "2026-11-18T08:26:25Z",
       "min_date": "2026-11-15T15:11:56Z",
-      "posts": 64,
+      "posts": 111,
       "relevant_posts": 1,
       "week": "2026-W47"
     }

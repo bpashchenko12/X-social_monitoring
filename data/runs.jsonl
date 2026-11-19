@@ -1046,3 +1046,9 @@
 {"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0178, "input_hash": "bee6cce955abc505", "items": 52, "query_id": "industry/deposit_withdrawal", "ts": "2026-11-19T08:40:39Z"}
 {"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0164, "input_hash": "908ad338c0ed250f", "items": 43, "query_id": "industry/reputation", "ts": "2026-11-19T08:40:49Z"}
 {"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0156, "input_hash": "f8b3026abc1e6f76", "items": 37, "query_id": "industry/regulation", "ts": "2026-11-19T08:40:56Z"}
+{"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0202, "input_hash": "9ce59a15382309f0", "items": 68, "query_id": "macro", "ts": "2026-11-19T16:30:27Z"}
+{"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0188, "input_hash": "6725c10de3f28483", "items": 59, "query_id": "campaigns", "ts": "2026-11-19T16:31:02Z"}
+{"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0166, "input_hash": "51f4ac24ca3e7078", "items": 44, "query_id": "competitions", "ts": "2026-11-19T16:31:31Z"}
+{"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0188, "input_hash": "1a80e97a2e65cd5f", "items": 59, "query_id": "environment", "ts": "2026-11-19T16:31:55Z"}
+{"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0199, "input_hash": "d28932daa615e344", "items": 66, "query_id": "deposit_withdrawal", "ts": "2026-11-19T16:32:33Z"}
+{"actor": "xquik~x-tweet-scraper", "cost_usd": 0.0196, "input_hash": "0e114f399b24f098", "items": 64, "query_id": "account_types", "ts": "2026-11-19T16:32:54Z"}

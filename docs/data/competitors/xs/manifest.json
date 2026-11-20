@@ -4,9 +4,9 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-11-19T16:32:54Z",
-  "latest_post_at": "2026-11-19T08:35:00Z",
-  "pending_enrichment": 2,
+  "generated_at": "2026-11-20T08:50:37Z",
+  "latest_post_at": "2026-11-20T08:30:00Z",
+  "pending_enrichment": 3,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 51
+      "posts": 52
     },
     {
       "id": "campaigns",
@@ -181,10 +181,10 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-19T08:35:00Z",
+      "max_date": "2026-11-20T08:30:00Z",
       "min_date": "2026-11-15T15:02:30Z",
-      "posts": 379,
-      "relevant_posts": 4,
+      "posts": 471,
+      "relevant_posts": 5,
       "week": "2026-W47"
     }
   ]

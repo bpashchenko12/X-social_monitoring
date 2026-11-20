@@ -4,9 +4,9 @@
     "id": "vantage",
     "name": "Vantage"
   },
-  "generated_at": "2026-11-19T16:32:54Z",
-  "latest_post_at": "2026-11-19T08:21:32Z",
-  "pending_enrichment": 1,
+  "generated_at": "2026-11-20T08:50:37Z",
+  "latest_post_at": "2026-11-20T08:30:01Z",
+  "pending_enrichment": 2,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -36,7 +36,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 22
+      "posts": 23
     },
     {
       "id": "campaigns",
@@ -109,7 +109,7 @@
         "決済"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 10
+      "posts": 11
     },
     {
       "id": "account_types",
@@ -126,7 +126,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 7
+      "posts": 8
     }
   ],
   "weeks": [
@@ -172,10 +172,10 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-19T08:21:32Z",
+      "max_date": "2026-11-20T08:30:01Z",
       "min_date": "2026-11-15T15:11:56Z",
-      "posts": 464,
-      "relevant_posts": 2,
+      "posts": 571,
+      "relevant_posts": 3,
       "week": "2026-W47"
     }
   ]

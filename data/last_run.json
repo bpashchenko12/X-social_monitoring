@@ -1,72 +1,71 @@
 {
   "degraded": [
-    "34 posts are still pending translation (threshold 25)"
+    "46 posts are still pending translation (threshold 25)"
   ],
   "enrich": null,
   "errors": [],
   "exit_code": 3,
-  "finished_at": "2026-11-19T16:32:55Z",
+  "finished_at": "2026-11-20T08:50:37Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-19T16:32:55Z",
+  "last_success_at": "2026-11-20T08:50:37Z",
   "last_sweep_at": "2026-11-12T11:21:24Z",
   "mode": "incremental",
   "notes": [
-    "competitors and the industry feed were not scraped in this run (they are refreshed once a day, in the morning run)",
-    "LLM translation is switched off (llm.enabled=false): 50 post(s) wait for manual translation (enrich-export / enrich-import)"
+    "LLM translation is switched off (llm.enabled=false): 70 post(s) wait for manual translation (enrich-export / enrich-import)"
   ],
-  "pending_after": 50,
-  "pending_industry": 16,
-  "scope": "xm",
+  "pending_after": 70,
+  "pending_industry": 24,
+  "scope": "all",
   "scrape": {
     "budget_stopped": false,
     "capped": [],
     "failed": [],
-    "items": 360,
-    "ok": 6,
-    "requests": 6,
-    "spent_usd": 0.1139,
+    "items": 986,
+    "ok": 42,
+    "requests": 42,
+    "spent_usd": 0.5691,
     "window_days": 2
   },
-  "started_at": "2026-11-19T16:30:05Z",
+  "started_at": "2026-11-20T08:30:06Z",
   "status": "degraded",
   "stores": {
     "exness": {
-      "pending": 10,
-      "posts": 1111,
-      "relevant": 168
+      "pending": 12,
+      "posts": 1153,
+      "relevant": 170
     },
     "hfm": {
-      "pending": 4,
-      "posts": 1866,
-      "relevant": 129
+      "pending": 6,
+      "posts": 1895,
+      "relevant": 131
     },
     "industry": {
-      "pending": 16,
-      "posts": 955,
-      "relevant": 283
+      "pending": 24,
+      "posts": 966,
+      "relevant": 291
     },
     "titanfx": {
-      "pending": 4,
-      "posts": 2617,
-      "relevant": 125
+      "pending": 9,
+      "posts": 2641,
+      "relevant": 130
     },
     "vantage": {
-      "pending": 1,
-      "posts": 3878,
-      "relevant": 22
+      "pending": 2,
+      "posts": 3985,
+      "relevant": 23
     },
     "xm": {
-      "pending": 13,
-      "posts": 3903,
-      "relevant": 395
+      "pending": 14,
+      "posts": 3978,
+      "relevant": 396
     },
     "xs": {
-      "pending": 2,
-      "posts": 3282,
-      "relevant": 51
+      "pending": 3,
+      "posts": 3374,
+      "relevant": 52
     }
   }
 }

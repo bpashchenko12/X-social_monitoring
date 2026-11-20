@@ -4,9 +4,9 @@
     "id": "hfm",
     "name": "HFM"
   },
-  "generated_at": "2026-11-19T16:32:54Z",
-  "latest_post_at": "2026-11-19T08:00:01Z",
-  "pending_enrichment": 4,
+  "generated_at": "2026-11-20T08:50:36Z",
+  "latest_post_at": "2026-11-20T08:23:11Z",
+  "pending_enrichment": 6,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 129
+      "posts": 131
     },
     {
       "id": "campaigns",
@@ -51,7 +51,7 @@
         "HFMロイヤルティ"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 44
+      "posts": 45
     },
     {
       "id": "competitions",
@@ -202,10 +202,10 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-19T08:00:01Z",
+      "max_date": "2026-11-20T08:23:11Z",
       "min_date": "2026-11-15T15:11:56Z",
-      "posts": 142,
-      "relevant_posts": 5,
+      "posts": 171,
+      "relevant_posts": 7,
       "week": "2026-W47"
     }
   ]

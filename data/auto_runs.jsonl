@@ -15,3 +15,4 @@
 {"apify_usd": 0.6852, "held": null, "llm_usd": null, "mode": "incremental", "pending": 48, "status": "degraded", "translated": null, "ts": "2026-11-19T08:40:57Z"}
 {"apify_usd": 0.1139, "held": null, "llm_usd": null, "mode": "incremental", "pending": 50, "status": "degraded", "translated": null, "ts": "2026-11-19T16:32:55Z"}
 {"apify_usd": 0.5691, "held": null, "llm_usd": null, "mode": "incremental", "pending": 70, "status": "degraded", "translated": null, "ts": "2026-11-20T08:50:37Z"}
+{"apify_usd": 0.1251, "held": null, "llm_usd": null, "mode": "sweep", "pending": 75, "status": "degraded", "translated": null, "ts": "2026-11-20T16:33:39Z"}

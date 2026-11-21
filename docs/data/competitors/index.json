@@ -3,53 +3,53 @@
     {
       "color": "#e8590c",
       "id": "hfm",
-      "latest_post_at": "2026-11-20T08:23:11Z",
+      "latest_post_at": "2026-11-21T04:47:18Z",
       "name": "HFM",
       "path": "competitors/hfm",
-      "posts": 131
+      "posts": 133
     },
     {
       "color": "#0c8599",
       "id": "exness",
-      "latest_post_at": "2026-11-20T08:30:00Z",
+      "latest_post_at": "2026-11-21T09:01:49Z",
       "name": "Exness",
       "path": "competitors/exness",
-      "posts": 170
+      "posts": 175
     },
     {
       "color": "#5f3dc4",
       "id": "titanfx",
-      "latest_post_at": "2026-11-20T05:19:24Z",
+      "latest_post_at": "2026-11-21T09:12:06Z",
       "name": "Titan FX",
       "path": "competitors/titanfx",
-      "posts": 130
+      "posts": 133
     },
     {
       "color": "#d6336c",
       "id": "vantage",
-      "latest_post_at": "2026-11-20T08:30:01Z",
+      "latest_post_at": "2026-11-21T10:16:22Z",
       "name": "Vantage",
       "path": "competitors/vantage",
-      "posts": 23
+      "posts": 24
     },
     {
       "color": "#1c7ed6",
       "id": "xs",
-      "latest_post_at": "2026-11-20T08:30:00Z",
+      "latest_post_at": "2026-11-21T11:00:03Z",
       "name": "XS",
       "path": "competitors/xs",
-      "posts": 52
+      "posts": 53
     }
   ],
-  "generated_at": "2026-11-20T16:33:39Z",
+  "generated_at": "2026-11-21T11:39:09Z",
   "industry": {
     "color": "#2b8a3e",
     "id": "industry",
-    "latest_post_at": "2026-11-20T02:41:54Z",
+    "latest_post_at": "2026-11-21T04:15:55Z",
     "name": "Overseas FX industry",
     "path": "competitors/industry",
-    "posts": 291
+    "posts": 301
   },
-  "latest_post_at": "2026-11-20T08:30:01Z",
+  "latest_post_at": "2026-11-21T11:00:03Z",
   "schema_version": 1
 }

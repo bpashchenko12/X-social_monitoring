@@ -4,9 +4,9 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-11-20T16:33:38Z",
-  "latest_post_at": "2026-11-20T08:30:00Z",
-  "pending_enrichment": 3,
+  "generated_at": "2026-11-21T11:39:09Z",
+  "latest_post_at": "2026-11-21T11:00:03Z",
+  "pending_enrichment": 4,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 52
+      "posts": 53
     },
     {
       "id": "campaigns",
@@ -111,7 +111,7 @@
         "ウォレット"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 17
+      "posts": 18
     },
     {
       "id": "account_types",
@@ -175,16 +175,16 @@
       "file": "weeks/2026-W46.json",
       "max_date": "2026-11-15T14:46:43Z",
       "min_date": "2026-11-08T15:09:46Z",
-      "posts": 755,
+      "posts": 757,
       "relevant_posts": 11,
       "week": "2026-W46"
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-20T08:30:00Z",
+      "max_date": "2026-11-21T11:00:03Z",
       "min_date": "2026-11-15T15:02:30Z",
-      "posts": 471,
-      "relevant_posts": 5,
+      "posts": 530,
+      "relevant_posts": 6,
       "week": "2026-W47"
     }
   ]

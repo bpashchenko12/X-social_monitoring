@@ -4,9 +4,9 @@
     "id": "exness",
     "name": "Exness"
   },
-  "generated_at": "2026-11-21T16:57:23Z",
-  "latest_post_at": "2026-11-21T09:01:49Z",
-  "pending_enrichment": 17,
+  "generated_at": "2026-11-22T11:11:43Z",
+  "latest_post_at": "2026-11-22T09:16:34Z",
+  "pending_enrichment": 20,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 175
+      "posts": 178
     },
     {
       "id": "campaigns",
@@ -123,7 +123,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 29
+      "posts": 30
     }
   ],
   "weeks": [
@@ -193,10 +193,10 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-21T09:01:49Z",
+      "max_date": "2026-11-22T09:16:34Z",
       "min_date": "2026-11-15T15:03:01Z",
-      "posts": 190,
-      "relevant_posts": 23,
+      "posts": 226,
+      "relevant_posts": 26,
       "week": "2026-W47"
     }
   ]

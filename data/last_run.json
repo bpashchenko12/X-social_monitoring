@@ -1,77 +1,71 @@
 {
   "degraded": [
-    "1 query(ies) failed: titanfx/competitions: RuntimeError: Apify HTTP 502: <html>\r\n<head><title>502 Bad Gateway</title></head",
-    "78 posts are still pending translation (threshold 25)"
+    "107 posts are still pending translation (threshold 25)"
   ],
   "enrich": null,
   "errors": [],
   "exit_code": 3,
-  "finished_at": "2026-11-22T11:11:44Z",
+  "finished_at": "2026-11-23T09:24:39Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-22T11:11:44Z",
+  "last_success_at": "2026-11-23T09:24:39Z",
   "last_sweep_at": "2026-11-21T11:39:09Z",
   "mode": "incremental",
   "notes": [
-    "LLM translation is switched off (llm.enabled=false): 119 post(s) wait for manual translation (enrich-export / enrich-import)"
+    "LLM translation is switched off (llm.enabled=false): 152 post(s) wait for manual translation (enrich-export / enrich-import)"
   ],
-  "pending_after": 119,
-  "pending_industry": 41,
+  "pending_after": 152,
+  "pending_industry": 45,
   "scope": "all",
   "scrape": {
     "budget_stopped": false,
     "capped": [],
-    "failed": [
-      {
-        "error": "RuntimeError: Apify HTTP 502: <html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n",
-        "unit": "titanfx/competitions"
-      }
-    ],
-    "items": 726,
-    "ok": 41,
-    "requests": 41,
-    "spent_usd": 0.5205,
+    "failed": [],
+    "items": 1238,
+    "ok": 42,
+    "requests": 48,
+    "spent_usd": 0.667,
     "window_days": 2
   },
-  "started_at": "2026-11-22T08:30:07Z",
+  "started_at": "2026-11-23T08:30:05Z",
   "status": "degraded",
   "stores": {
     "exness": {
-      "pending": 20,
-      "posts": 1204,
-      "relevant": 178
+      "pending": 23,
+      "posts": 1242,
+      "relevant": 181
     },
     "hfm": {
-      "pending": 8,
-      "posts": 1916,
-      "relevant": 133
+      "pending": 9,
+      "posts": 1954,
+      "relevant": 134
     },
     "industry": {
-      "pending": 41,
-      "posts": 988,
-      "relevant": 308
+      "pending": 45,
+      "posts": 996,
+      "relevant": 312
     },
     "titanfx": {
-      "pending": 14,
-      "posts": 2675,
-      "relevant": 135
+      "pending": 15,
+      "posts": 2703,
+      "relevant": 136
     },
     "vantage": {
       "pending": 3,
-      "posts": 4138,
+      "posts": 4330,
       "relevant": 24
     },
     "xm": {
-      "pending": 29,
-      "posts": 4248,
-      "relevant": 411
+      "pending": 47,
+      "posts": 4436,
+      "relevant": 429
     },
     "xs": {
-      "pending": 4,
-      "posts": 3524,
-      "relevant": 53
+      "pending": 10,
+      "posts": 3707,
+      "relevant": 59
     }
   }
 }

@@ -4,9 +4,9 @@
     "id": "exness",
     "name": "Exness"
   },
-  "generated_at": "2026-11-22T11:11:43Z",
-  "latest_post_at": "2026-11-22T09:16:34Z",
-  "pending_enrichment": 20,
+  "generated_at": "2026-11-23T09:24:38Z",
+  "latest_post_at": "2026-11-23T08:15:52Z",
+  "pending_enrichment": 23,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 178
+      "posts": 181
     },
     {
       "id": "campaigns",
@@ -193,11 +193,19 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-22T09:16:34Z",
+      "max_date": "2026-11-22T12:29:27Z",
       "min_date": "2026-11-15T15:03:01Z",
-      "posts": 226,
-      "relevant_posts": 26,
+      "posts": 246,
+      "relevant_posts": 27,
       "week": "2026-W47"
+    },
+    {
+      "file": "weeks/2026-W48.json",
+      "max_date": "2026-11-23T08:15:52Z",
+      "min_date": "2026-11-22T16:51:53Z",
+      "posts": 18,
+      "relevant_posts": 2,
+      "week": "2026-W48"
     }
   ]
 }

@@ -4,9 +4,9 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-11-22T11:11:43Z",
-  "latest_post_at": "2026-11-22T10:30:27Z",
-  "pending_enrichment": 4,
+  "generated_at": "2026-11-23T09:24:39Z",
+  "latest_post_at": "2026-11-23T09:10:03Z",
+  "pending_enrichment": 10,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 53
+      "posts": 59
     },
     {
       "id": "campaigns",
@@ -93,7 +93,7 @@
         "コピー取引"
       ],
       "name": "Trading Environment",
-      "posts": 21
+      "posts": 26
     },
     {
       "id": "deposit_withdrawal",
@@ -135,7 +135,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 14
+      "posts": 16
     }
   ],
   "weeks": [
@@ -181,11 +181,19 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-22T10:30:27Z",
+      "max_date": "2026-11-22T14:32:44Z",
       "min_date": "2026-11-15T15:02:30Z",
-      "posts": 619,
-      "relevant_posts": 6,
+      "posts": 741,
+      "relevant_posts": 10,
       "week": "2026-W47"
+    },
+    {
+      "file": "weeks/2026-W48.json",
+      "max_date": "2026-11-23T09:10:03Z",
+      "min_date": "2026-11-22T15:31:43Z",
+      "posts": 61,
+      "relevant_posts": 2,
+      "week": "2026-W48"
     }
   ]
 }

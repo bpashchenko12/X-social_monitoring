@@ -4,9 +4,9 @@
     "id": "titanfx",
     "name": "Titan FX"
   },
-  "generated_at": "2026-11-22T11:11:43Z",
-  "latest_post_at": "2026-11-22T09:27:26Z",
-  "pending_enrichment": 14,
+  "generated_at": "2026-11-23T09:24:39Z",
+  "latest_post_at": "2026-11-23T08:00:40Z",
+  "pending_enrichment": 15,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -35,7 +35,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 135
+      "posts": 136
     },
     {
       "id": "campaigns",
@@ -51,7 +51,7 @@
         "入金キャンペーン"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 18
+      "posts": 19
     },
     {
       "id": "competitions",
@@ -197,11 +197,19 @@
     },
     {
       "file": "weeks/2026-W47.json",
-      "max_date": "2026-11-22T09:27:26Z",
+      "max_date": "2026-11-22T11:10:03Z",
       "min_date": "2026-11-15T15:11:56Z",
-      "posts": 213,
+      "posts": 230,
       "relevant_posts": 21,
       "week": "2026-W47"
+    },
+    {
+      "file": "weeks/2026-W48.json",
+      "max_date": "2026-11-23T08:00:40Z",
+      "min_date": "2026-11-22T23:05:37Z",
+      "posts": 11,
+      "relevant_posts": 1,
+      "week": "2026-W48"
     }
   ]
 }

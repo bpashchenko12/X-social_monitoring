@@ -36,11 +36,11 @@
       "account_handle": "ShoheiFX",
       "account_name": "しょへい",
       "bookmarks": 10,
-      "content_en": null,
+      "content_en": "Regarding bank transfers to overseas FX, I've also been asking brokers various things over meals, and the general opinion is \"payment collection agents seem to say it works too, so you can keep using it for a while.\"\n\nBut as someone who posts about various things on social media, I can't possibly recommend to people \"They say bank transfers are possible! No problem! Let's deposit by bank transfer!\" and I can't take responsibility, so of course I can't say that.\n\nAll I can say is, \"I don't recommend it, but if you do it, use an account you don't normally use.\"\n\nI've deposited and withdrawn several million yen myself and had my account temporarily frozen, and at that time I also had other payments to make, so I panicked and was in trouble. I can't recommend to others something that can't be said to be completely safe.",
       "content_original": "海外FXへの銀行送金ついて、僕もブローカーに対して飯食いながら色々聞いているのですが、大体は「収納代行もなんか行けるって言ってるし今後もしばらくは継続して使えるよ」という意見。\n\nただ、SNSで色々発信している者としては「銀行送金できるって！問題ないって！銀行送金で入金やっちゃお！」なんて人にすすめられるわけがないし、責任も取れないので言えるわけないですよね。\n\nせめて言えるのは、「おすすめはしないけど、やるなら普段使ってない口座でやりな」ってことくらい。\n\n僕も数百万入出金してて一時凍結されたことあるし、その時は別の支払いもあって焦ったし困った。完全に大丈夫とは言えないものは、人にすすめられないよね。",
       "created_at": "2026-11-23T02:25:32Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-23T11:03:06Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-23T09:14:54Z",
       "id": "2124690786294046844",
@@ -55,7 +55,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Negative",
       "topic_hits": {
         "deposit_withdrawal": [
           "出金",

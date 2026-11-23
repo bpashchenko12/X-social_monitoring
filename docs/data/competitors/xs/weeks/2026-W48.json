@@ -439,11 +439,11 @@
       "account_handle": "hidefxgold03",
       "account_name": "Hide fx",
       "bookmarks": 1,
-      "content_en": null,
+      "content_en": "After breaking above 3,550.00, which side will the pullback low remain on?\n\nAs of 07:00 on November 23, gold (XAUUSDs) on XS's MT5 is at 3,534.69. What I look at first on TradingView is, when a move above 3,550.00 appears on the 1-hour chart, the position of the pullback low formed afterward. Rather than the moment it breaks the round number, I look at where it stopped falling once it was pushed back.\n\n【If it returns upward】\nIf it breaks above 3,550.00 and the pullback low on the 1-hour chart stays above it, next I look at 3,600.00 to 3,619.90. 3,600.00 is a round number and 3,619.90 is the previous day's low. A move reaching the lower edge of the band and a move recovering to the previous day's low are separated in my testing notes too. Further above, today's open of 3,631.91 and high of 3,636.67 sit close together. Even if it breaks the previous day's low, this band is for watching whether the rebound continues beyond it.\n\n【If it's pushed down】\nEven if it breaks above 3,550.00, if it returns below it on a pullback, I review the area from the recent trough of 3,514.58 on the 4-hour chart to today's low of 3,502.78. If today's low is broken, the round number 3,500.00 sits below it. If a wick making a new low appears, I record whether the 1-hour close returned to the band or stayed below 3,500.00.\n\nOn the 4-hour chart, SMA20 is at 3,694.23 and SMA50 is at 3,832.53, with the current price below both. In my range testing, when the 1-hour pullback low rises, I record that position and then check whether a bottoming is also visible on the 4-hour chart. Moves that extended without any pullback are tallied separately from cases where a pullback low could be confirmed.\n\nTrade at your own judgment. I share these testing notes in the open chat in my profile, \"Hide Gold FX Study Group.\"",
       "content_original": "3,550.00を越えたあと、押し安値はどちら側に残る？\n\n11月23日07:00時点、XSのMT5でゴールド（XAUUSDs）は3,534.69。TradingViewで僕がまず見るのは、1時間足で3,550.00を越える動きが出たとき、そのあとにできる押し安値の位置です。キリ番を越えた瞬間より、いったん押されたときにどこで下げ止まったかを見ます。\n\n【上に戻す場合】\n3,550.00を越え、1時間足で押し安値がその上に残るなら、次は3,600.00〜3,619.90を見ます。3,600.00はキリ番、3,619.90は前日安値。帯の下端に届く動きと、前日安値まで取り戻す動きは、検証メモでも分けます。さらに上には今日の始値3,631.91と高値3,636.67が近くに並んでいます。前日安値を越えた場合も、その先で戻りが続くかを見るための帯です。\n\n【下に押される場合】\n3,550.00を越えても、押しでその下に戻るなら、4時間足の直近の谷3,514.58から今日の安値3,502.78までを見直します。今日の安値を割ると、その下にキリ番の3,500.00が控えています。安値更新のヒゲが出たら、1時間足の終値が帯に戻ったか、3,500.00より下に残ったかを記録します。\n\n4時間足ではSMA20が3,694.23、SMA50が3,832.53で、現在値はどちらよりも下。僕のレンジ検証では、1時間足の押し安値が切り上がったら、その位置を記録してから、4時間足でも下げ止まりが見えるかを確認します。押しが入らずに伸びた動きは、押し安値を確認できた場面と分けて集計します。\n\n売買は自分の判断で。こうした検証メモは、プロフィールのオープンチャット「Hide Gold FX研究会」で共有しています。",
       "created_at": "2026-11-22T23:31:10Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-23T11:03:06Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-23T08:59:18Z",
       "id": "2124646902587355256",
@@ -458,7 +458,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "environment": [
           "MT5"
@@ -1406,11 +1406,11 @@
       "account_handle": "Gold15M",
       "account_name": "Gold15分足のM",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "When I got back, the counter EA was done\nOn an XS cent account, initial margin of 110 USD matched to the drawdown, monthly return about 19%\nIf the drawdown doesn't hit, the capital is recovered in half a year\nThe backtest drawdown is 107 USD, so that works out to no stop-out even once in 3 years\nIn the backtest, that is\nIt does cut losses, though\nI'll start testing on a demo account right away https://t.co/ApzMrUnpYN",
       "content_original": "帰ってきたらカウンターEAが完成していた\nXSセント口座で初期証拠金はDDに合わせて110USD、月利約19%\nDDに掛からなければ半年で資金回収\nバックテスト上のDDが107USDですので3年間一度もロスカはしてない計算です\nバックテスト上はね\n損切りはしますよ\n早速デモ口座で検証開始します https://t.co/ApzMrUnpYN",
       "created_at": "2026-11-23T08:15:19Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-23T11:03:06Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-23T09:14:25Z",
       "id": "2124778810931560746",
@@ -1425,7 +1425,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "account_types": [
           "セント口座",

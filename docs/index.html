@@ -306,6 +306,7 @@ body.locked{overflow:hidden}
 .gate-card p{margin:0;color:var(--muted);line-height:1.6}
 .gate-card label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-top:10px}
 .gate-card input{width:100%;font-size:16px;min-height:50px;padding:10px 14px 10px 44px;border:1.5px solid #d5dbe8;border-radius:12px;background:#f8f9fc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='5' width='18' height='14' rx='3'/%3E%3Cpath d='M4 7l8 6 8-6'/%3E%3C/svg%3E") no-repeat 14px center;transition:border-color .15s,box-shadow .15s,background-color .15s}
+.gate-card input[type=password]{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='5' y='11' width='14' height='9' rx='2'/%3E%3Cpath d='M8 11V8a4 4 0 0 1 8 0v3'/%3E%3C/svg%3E")}
 .gate-card input::placeholder{color:#9aa3b5}
 .gate-card input:hover{border-color:#b8c1d6}
 .gate-card input:focus{outline:0;background-color:#fff;border-color:var(--accent);box-shadow:0 0 0 4px #3b6cff26}
@@ -520,6 +521,8 @@ body.modal-open{overflow:hidden}
     <p data-i18n="gateText">Enter your company e-mail address to open the dashboard.</p>
     <label for="gate-email" data-i18n="gateLabel">Work e-mail</label>
     <input type="email" id="gate-email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" required data-i18n-ph="gatePh" placeholder="name@xmtrading.com">
+    <label for="gate-pass" data-i18n="gatePwLabel">Password</label>
+    <input type="password" id="gate-pass" autocomplete="current-password" autocapitalize="none" spellcheck="false" required data-i18n-ph="gatePwPh" placeholder="Password">
     <div class="gate-err" id="gate-err" role="alert"></div>
     <button class="btn primary" type="submit" data-i18n="gateBtn">Continue</button>
     <p class="gate-note" data-i18n="gateNote">Your e-mail and visit time are recorded.</p>
@@ -560,6 +563,7 @@ body.modal-open{overflow:hidden}
       close: "Close", cMatch: "Matched keywords", mkNone: "Brand mention only", sortLabel: "Sort by", dirTip: "Reverse order",
       gateTitle: "Sign in with your work e-mail", gateText: "Enter your company e-mail address to open the dashboard. Access is limited to XM / Trading Point staff.",
       gateLabel: "Work e-mail", gatePh: "name@xmtrading.com", gateBtn: "Continue",
+      gatePwLabel: "Password", gatePwPh: "Password", gateBadPw: "Incorrect password.",
       gateBad: "This e-mail is not on the allowed list. Use an address ending in @xmtrading.com, @xm.com, @trading-point.com or @tradingpoint.com.",
       gateNote: "Your e-mail and visit time are recorded for access tracking. A cookie keeps you signed in on this browser for 6 months.",
       signedAs: (e) => `Signed in as ${e}`, signOut: "Sign out",
@@ -596,6 +600,7 @@ body.modal-open{overflow:hidden}
       close: "閉じる", cMatch: "該当キーワード", mkNone: "ブランド言及のみ", sortLabel: "並び替え", dirTip: "順序を反転",
       gateTitle: "会社のメールアドレスでログイン", gateText: "ダッシュボードを開くには会社のメールアドレスを入力してください。XM / Trading Point の関係者のみ利用できます。",
       gateLabel: "会社メールアドレス", gatePh: "name@xmtrading.com", gateBtn: "続ける",
+      gatePwLabel: "パスワード", gatePwPh: "パスワード", gateBadPw: "パスワードが正しくありません。",
       gateBad: "このメールアドレスは許可されていません。@xmtrading.com、@xm.com、@trading-point.com、@tradingpoint.com のいずれかで終わるアドレスを入力してください。",
       gateNote: "アクセス管理のため、メールアドレスと訪問日時を記録します。Cookie により、このブラウザでは6か月間ログイン状態が保持されます。",
       signedAs: (e) => `${e} としてログイン中`, signOut: "ログアウト",
@@ -1247,8 +1252,21 @@ body.modal-open{overflow:hidden}
   const LOG_KEY = "";   // anon / publishable key (safe to publish: it can only insert)
   const ALLOWED_DOMAINS = ["xmtrading.com", "xm.com", "trading-point.com", "tradingpoint.com"];
   const ACCESS_KEY = "xm_access";
+  const PASS_KEY = "xm_pass";
+  // SHA-256 of "xm-monitor:" + password (client-side soft gate: the hash is visible in the page source)
+  const PASS_HASH = "3d051bae24c4b87b0cf6c83a41b718902fb9dc9868a3b1838af02b5cdfa6522c";
   const COOKIE_PATH = location.pathname.replace(/[^/]*$/, "") || "/";
   let USER = "";
+  async function hashPass(p) {
+    const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("xm-monitor:" + p));
+    return Array.from(new Uint8Array(b), (x) => x.toString(16).padStart(2, "0")).join("");
+  }
+  function readPass() {
+    let v = ""; const m = document.cookie.match(/(?:^|;\s*)xm_pass=([^;]*)/);
+    if (m) v = m[1];
+    if (!v) { try { v = localStorage.getItem(PASS_KEY) || ""; } catch (e) { v = ""; } }
+    return v === PASS_HASH;
+  }
   const allowedEmail = (v) => {
     const s = String(v || "").trim().toLowerCase();
     const m = /^[a-z0-9._%+'-]+@([a-z0-9-]+(?:\.[a-z0-9-]+)+)$/.exec(s);
@@ -1258,15 +1276,18 @@ body.modal-open{overflow:hidden}
     let v = ""; const m = document.cookie.match(/(?:^|;\s*)xm_access=([^;]*)/);
     if (m) { try { v = decodeURIComponent(m[1]); } catch (e) { v = ""; } }
     if (!v) { try { v = localStorage.getItem(ACCESS_KEY) || ""; } catch (e) { v = ""; } }
-    return allowedEmail(v);
+    return readPass() ? allowedEmail(v) : "";
   }
   function saveAccess(em) {
-    document.cookie = `${ACCESS_KEY}=${encodeURIComponent(em)}; max-age=15552000; path=${COOKIE_PATH}; SameSite=Lax${location.protocol === "https:" ? "; Secure" : ""}`;
-    try { localStorage.setItem(ACCESS_KEY, em); } catch (e) { /* storage unavailable */ }
+    const sec = location.protocol === "https:" ? "; Secure" : "";
+    document.cookie = `${ACCESS_KEY}=${encodeURIComponent(em)}; max-age=15552000; path=${COOKIE_PATH}; SameSite=Lax${sec}`;
+    document.cookie = `${PASS_KEY}=${PASS_HASH}; max-age=15552000; path=${COOKIE_PATH}; SameSite=Lax${sec}`;
+    try { localStorage.setItem(ACCESS_KEY, em); localStorage.setItem(PASS_KEY, PASS_HASH); } catch (e) { /* storage unavailable */ }
   }
   function clearAccess() {
     document.cookie = `${ACCESS_KEY}=; max-age=0; path=${COOKIE_PATH}; SameSite=Lax`;
-    try { localStorage.removeItem(ACCESS_KEY); sessionStorage.removeItem("xm_logged"); } catch (e) { /* ignore */ }
+    document.cookie = `${PASS_KEY}=; max-age=0; path=${COOKIE_PATH}; SameSite=Lax`;
+    try { localStorage.removeItem(ACCESS_KEY); localStorage.removeItem(PASS_KEY); sessionStorage.removeItem("xm_logged"); } catch (e) { /* ignore */ }
   }
   function logVisit(email, kind) {
     try { sessionStorage.setItem("xm_logged", "1"); } catch (e) { /* ignore */ }
@@ -1279,15 +1300,19 @@ body.modal-open{overflow:hidden}
   }
   function askEmail() {
     return new Promise((resolve) => {
-      const g = $("#gate"), f = $("#gate-form"), i = $("#gate-email"), err = $("#gate-err");
+      const g = $("#gate"), f = $("#gate-form"), i = $("#gate-email"), pw = $("#gate-pass"), err = $("#gate-err");
       document.body.classList.add("locked"); g.hidden = false;
       document.querySelectorAll("header.hero, main").forEach((n) => { n.inert = true; });
       i.focus();
-      i.addEventListener("input", () => { err.textContent = ""; err.removeAttribute("data-i18n"); i.removeAttribute("aria-invalid"); });
-      f.addEventListener("submit", (e) => {
+      const clearErr = () => { err.textContent = ""; err.removeAttribute("data-i18n"); i.removeAttribute("aria-invalid"); pw.removeAttribute("aria-invalid"); };
+      i.addEventListener("input", clearErr); pw.addEventListener("input", clearErr);
+      f.addEventListener("submit", async (e) => {
         e.preventDefault();
         const em = allowedEmail(i.value);
         if (!em) { i.setAttribute("aria-invalid", "true"); err.dataset.i18n = "gateBad"; err.textContent = t("gateBad"); i.focus(); return; }
+        let ok = false;
+        try { ok = (await hashPass(pw.value)) === PASS_HASH; } catch (e2) { ok = false; }
+        if (!ok) { pw.setAttribute("aria-invalid", "true"); err.dataset.i18n = "gateBadPw"; err.textContent = t("gateBadPw"); pw.focus(); return; }
         saveAccess(em); logVisit(em, "signin");
         g.hidden = true; document.body.classList.remove("locked");
         document.querySelectorAll("header.hero, main").forEach((n) => { n.inert = false; });

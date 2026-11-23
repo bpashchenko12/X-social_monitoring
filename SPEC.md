@@ -49,7 +49,7 @@ Topic tagging is deterministic and text-based, not taken from the query that ret
 
 ### 3.1 Access gate
 
-The dashboard asks for an e-mail first. Accepted domains: `xmtrading.com`, `xm.com`, `trading-point.com`, `tradingpoint.com` (exact match, no subdomains). The address is kept in a cookie (180 days) and localStorage. This is a client-side soft gate: addresses are not verified and `docs/data/*.json` stays publicly reachable. Optional visitor logging (`LOG_URL` / `LOG_KEY` in `docs/index.html`) is off by default; see `tools/visitor-log/`.
+The dashboard asks for an e-mail and a shared password first. The password is checked client-side against a salted SHA-256 (`PASS_HASH` in `docs/index.html`, salt prefix `xm-monitor:`); a cookie `xm_pass` holding the hash is required next to `xm_access`, so changing the hash signs everyone out. Accepted domains: `xmtrading.com`, `xm.com`, `trading-point.com`, `tradingpoint.com` (exact match, no subdomains). The address is kept in a cookie (180 days) and localStorage. This is a client-side soft gate: addresses are not verified and `docs/data/*.json` stays publicly reachable. Optional visitor logging (`LOG_URL` / `LOG_KEY` in `docs/index.html`) is off by default; see `tools/visitor-log/`.
 
 ## 4. Phase 1 test parameters
 

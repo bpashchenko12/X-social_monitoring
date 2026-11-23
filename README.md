@@ -38,7 +38,7 @@ Every shown post has a complete English translation (no summaries, no truncation
 
 ## Access gate
 
-The dashboard asks for a company e-mail (4 allowed domains) and remembers it in a cookie. It is a soft gate only (not secure). Optional visitor logging: [tools/visitor-log/README.md](tools/visitor-log/README.md); disabled while `LOG_URL` in `docs/index.html` is empty.
+The dashboard asks for a company e-mail (4 allowed domains) and a shared password, and remembers both in a cookie. To change the password, set `PASS_HASH` in `docs/index.html` to `printf '%s' 'xm-monitor:<new password>' | shasum -a 256` (everyone is asked again). It is a soft gate only (not secure: the hash is in the page source and `docs/data/*.json` stays public). Optional visitor logging: [tools/visitor-log/README.md](tools/visitor-log/README.md); disabled while `LOG_URL` in `docs/index.html` is empty.
 
 ## Industry tab
 

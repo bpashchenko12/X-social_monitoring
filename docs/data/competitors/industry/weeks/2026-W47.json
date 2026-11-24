@@ -5095,11 +5095,11 @@
       "account_handle": "prompter_note",
       "account_name": "Lumina | AI資産運用＆ブログ自律化",
       "bookmarks": 10,
-      "content_en": null,
+      "content_en": "[Must-read] 6 math checks so you don't get fooled by MT5 backtests of the \"free gold EAs\" circulating on X\n\nPeople keep losing 1-2 million yen on EAs handed out free on condition of opening an account via an IB (introducing broker). When spotting dubious reports, ignore the flashy net profit and check just these 6 points.\n\n1. Is the header above \"Currency: JPY\" cropped out? The header shows broker name, spread, external commission (about $7 round trip per lot on a Raw account) and period. If it is trimmed, the test was very often run in a commission-free, favorable environment.\n\n2. Check the tick count and \"OnTester result\". If ticks / bars is exactly 4.0x, it is a simplified 1-minute OHLC simulation, not real ticks. A non-zero \"OnTester result\" indicates over-optimization (curve fitting) to that period only.\n\n3. Look at \"equity relative drawdown\" and \"maximum consecutive loss amount\", not the \"max DD x%\" in the text. Dividing by the larger balance after late profits makes \"DD 18%\" look small. If the starting balance is 1M yen and max DD is 1.5M yen, an early drawdown means instant stop-out.\n\n4. Abnormal \"Z-Score\" and trade counts. With an extremely negative Z-Score (-100 or lower) and 100-200+ max consecutive wins/losses, the structure is holding about 200 positions of 0.01 lot (effectively 2 lots) in a clump and closing them all at once. If the expected gain per trade is only a few hundred yen, commissions and slippage on a real account wipe out the profit, leaving only the distributor's IB rewards (ultra high-turnover lots).\n\n5. The \"backtesting prohibited to protect the logic\" trap. In MQL5, allowing the tester only for a verified account number (ACCOUNT_LOGIN) takes a few lines. Blocking pre-verification while saying \"if you want to check, deposit and run it on a live account\" is extremely dangerous.\n\n6. Do they reply instantly to \"account opening\" questions but completely ignore questions about numbers and specs? Accounts that answer IB-funnel comments like \"Can I get it for free?\" within minutes but never answer technical questions such as \"Is the external commission/relative DD consistent?\" or \"Show the report with header\", and quietly rewrite inconvenient figures behind the scenes, deserve caution.\n\nA system with a real edge has no need to hide its code skeleton, its verification tests or the live-account logs of losing days. Before putting in your funds, stop and check what's behind the numbers.",
       "content_original": "【保存版】Xで流れてくる「無料ゴールドEA」のMT5バックテストに騙されないための6つの数理チェックリスト\n\n海外FXの口座開設（IB）を条件に無料で配られるEAで、100万〜200万円を溶かす人が後を絶ちません。怪しいレポートを見抜くときは、派手な純損益ではなく「この6点」だけ確認してください。\n\n1. 「通貨: JPY」より上のヘッダーが切り落とされていないか\n上部ヘッダーにはブローカー名・スプレッド・外付け手数料（Raw口座なら1ロット往復約$7）・期間が出ます。ここをトリミングしている場合、手数料ゼロの甘い環境で回しているケースが非常に多いです。\n\n2. ティック数と「OnTester 結果」を見る\n「ティック数 ÷ バー数 ＝ ぴったり4.0倍」ならリアルティックではなく1分足OHLCの簡易シミュレーションです。また「OnTester 結果」に0以外の値があれば、その期間だけに合わせた過剰最適化（カーブフィッティング）の痕跡です。\n\n3. 本文の「最大DD ◯%」ではなく「証拠金相対DD」と「最大連敗損失額」を見る\n後半に利益が膨らんだ後の分母で割れば「DD 18%」と小さく見せられます。見るべきは「証拠金相対ドローダウン」と「最大連敗損失額」。初期100万円で最大DD 150万円なら、稼働序盤に引いた瞬間に即ロスカットです。\n\n4. 「Z-Score」と「取引回数」の異常値\nZ-Scoreが極端なマイナス（-100以下など）で最大連勝・連敗が100〜200回を超えている場合、0.01ロットを約200本（実質2ロット）も団子で抱えて一斉決済する構造です。1回あたりの期待利得が数百円レベルだと実口座の手数料とスリッページで利益が消え、配布者のIB報酬（超高回転ロット）だけが残ります。\n\n5. 「ロジック保護のためバックテスト禁止仕様」の罠\nMQL5では「認証済み口座番号（ACCOUNT_LOGIN）でのみテスター許可」は数行で実装できます。実口座で動かせば売買履歴は全部見えるのに、事前検証だけ塞いで「確かめたいなら実口座に入金して回して」と言うのは極めて危険です。\n\n6. 「口座開設の質問」には即レスするのに、「数字・仕様の質問」だけ完全スルーしていないか\n「無料でもらえますか？」というIB誘導につながるコメントには数分で返信するのに、「外付け手数料や相対DDの整合性は？」「ヘッダー付きレポートを見せて」といった技術的・数理的な質問には一切答えず、裏で都合の悪い表記だけこっそり書き換えるアカウントは要注意です。\n\n本当に優位性のあるシステムなら、コードの骨格も、検証テストも、負けた日のリアル口座ログも隠す必要はありません。大切な資金を入れる前に、必ず数字の裏側を一度立ち止まって確認してみてください。",
       "created_at": "2026-11-22T11:00:00Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124457865322615155",
@@ -5114,7 +5114,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 3,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "deposit_withdrawal": [
           "入金",

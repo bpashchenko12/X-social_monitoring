@@ -5,9 +5,9 @@
     "kind": "industry",
     "name": "Overseas FX industry"
   },
-  "generated_at": "2026-11-24T09:39:54Z",
+  "generated_at": "2026-11-24T15:43:11Z",
   "latest_post_at": "2026-11-24T03:58:32Z",
-  "pending_enrichment": 13,
+  "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 325
+      "posts": 324
     },
     {
       "id": "campaigns",
@@ -202,7 +202,7 @@
       "max_date": "2026-11-24T03:58:32Z",
       "min_date": "2026-11-22T15:30:04Z",
       "posts": 16,
-      "relevant_posts": 13,
+      "relevant_posts": 12,
       "week": "2026-W48"
     }
   ]

@@ -1,35 +1,35 @@
 {
   "posts": {
     "2124525830219129117": {
-      "account_followers": 3882,
-      "account_handle": "chibihime0707",
-      "account_name": "-------------博多ちびひめ🍀*゜---------------------------",
+      "account_followers": null,
+      "account_handle": "",
+      "account_name": "",
       "bookmarks": 0,
       "content_en": null,
-      "content_original": "あの海外FX🏀のアカウントが\n22日ポストされていないことに\n今更気付いたのだけど\nどこかに行ってしまったのだろうか…",
+      "content_original": "",
       "created_at": "2026-11-22T15:30:04Z",
-      "enriched_at": null,
-      "enriched_by": null,
-      "exclude_reason": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
+      "exclude_reason": "llm: not about the overseas FX industry",
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124525830219129117",
       "image_url": null,
-      "impressions": 319,
+      "impressions": null,
       "is_promo": false,
-      "lang": "ja",
+      "lang": null,
       "last_seen": "2026-11-24T09:31:55Z",
-      "likes": 10,
+      "likes": 0,
       "metrics_updated_at": "2026-11-24T09:31:55Z",
       "quotes": 0,
-      "relevant": true,
+      "relevant": false,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {},
       "topics": [
         "macro"
       ],
-      "url": "https://x.com/chibihime0707/status/2124525830219129117",
+      "url": "https://x.com/i/status/2124525830219129117",
       "url_clicks": null
     },
     "2124643297960640543": {
@@ -111,11 +111,11 @@
       "account_handle": "Haruka_kanata52",
       "account_name": "̷T̷̷E̷̷T̷̷S̷̷U̷̷Y̷̷A̷",
       "bookmarks": 3,
-      "content_en": null,
+      "content_en": "The world of overseas FX\nThere are plenty of fraudsters distributing EAs via IB, and people who find them and pounce as if they'd won a trophy are all either fraudsters or IB beggars.\nWe traders just calmly do what we need to do.\nFor the beggars who rub off on you, a fake smile is enough; don't get too involved.\nTariTari / バリバリ / Manechan\nRun EAs with CB linked\nThat is Team TETSUYA https://t.co/bNbukiZkOE",
       "content_original": "海外FXの世界\nEAをIB配布する詐欺師が沢山いるそれを見つけては鬼の首を取ったように絡むのは全員詐欺師かIB乞食\n俺達トレーダーは淡々とやるべき事をやるのみ\n朱に交われば赤くなる乞食には愛想笑いだけでいい深く関わるな\nタリタリ\nバリバリ\nマネチャ\nCB紐付けでEAを稼働する\nそれがチームTETSUYA https://t.co/bNbukiZkOE",
       "created_at": "2026-11-23T02:51:14Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124697250593132809",
@@ -130,7 +130,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "environment": [
           "EA",
@@ -184,11 +184,11 @@
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
       "bookmarks": 1,
-      "content_en": null,
+      "content_en": "[Overseas FX] HFM holds a 100% deposit bonus for November! Up to 45,000 yen [Nov 11 - Nov 25, 2026: limited period]\nhttps://t.co/D6p1ODhdXn https://t.co/6W7qREQy2d",
       "content_original": "【海外FX】HFM(エイチエフエム)で11月の100%入金ボーナスが開催！最大45,000円【2026年11月11日〜11月25日:期間限定】 / https://t.co/D6p1ODhdXn https://t.co/6W7qREQy2d",
       "created_at": "2026-11-23T10:11:38Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124808081809002932",
@@ -203,7 +203,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "ボーナス"
@@ -225,11 +225,11 @@
       "account_handle": "TraderHAYA",
       "account_name": "HAYA＠FX投資家",
       "bookmarks": 3,
-      "content_en": null,
+      "content_en": "It looks like overseas FX brokers can get hacked too.\n\nBe sure to enable two-factor authentication!\n\nIf you're worried, strengthen your own defenses, such as changing your password regularly!",
       "content_original": "海外FXブローカーもハッキングされる可能性が出てきてますね。\n\n必ず二段階認証をするようにしましょう！\n\n不安な方はパスワードもこまめに変えるなど自己対策を強化してくださいね！",
       "created_at": "2026-11-23T10:16:10Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124809224526143854",
@@ -244,7 +244,7 @@
       "relevant": true,
       "replies": 2,
       "retweets": 3,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "regulation": [
           "ハッキング"
@@ -262,11 +262,11 @@
       "account_handle": "7actgive",
       "account_name": "たかＢ",
       "bookmarks": 1,
-      "content_en": null,
+      "content_en": "Sometimes people say they do second-scalping in overseas FX, but that's surely minute-scalping. And whether they're really winning is doubtful 🤨 Indeed.\n\nBecause you can't do second-scalping in an imported car 😓",
       "content_original": "たまに海外fxで秒スキャ言うてる人いるけど、ぜったいあれは分スキャですよね😰しかも本当に勝ってるかは怪しい🤨実に。\n\nだって、外車で秒スキャはできないもん😓",
       "created_at": "2026-11-23T10:31:54Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124813182992781787",
@@ -281,7 +281,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Negative",
       "topic_hits": {
         "reputation": [
           "怪しい"
@@ -299,11 +299,11 @@
       "account_handle": "iroha2000fx",
       "account_name": "いろは / FXとeBayで生きてるYouTuber",
       "bookmarks": 2,
-      "content_en": null,
+      "content_en": "[Sharing the lot calculator I've been using lately ♪]\n\nWhen trading off the charts every day, I think everyone finds lot calculation a hassle.\n\nI've shared a free calculator site in the past, in both my YouTube videos and PDF materials (\"I calculate with this site\"), but it has drawbacks:\n\n* Every calculation takes time.\n* Typing in entry and stop-loss values each time is tedious.\n* A typo can throw the lot size off and cause an unexpected loss.\n* So you worry whether it's really correct and have to double-check.\n\nWhen the scenario has been clear for hours and there is time before entry it's fine, but when you want to enter right away you get flustered, which makes mistakes more likely - a vicious circle. With no time before entry and a tedious calculation, you can't focus on chart analysis and misjudgments become more likely.\n\nAfter searching around I found a very handy tool and I'm using it now: \"Easy Order\" (links to my blog article).\nhttps://t.co/rIqMKqNjE0…\n\nAs explained in the blog, you don't type in numbers - you just drag three horizontal lines (entry, stop-loss, take-profit) up and down on MT4 and it automatically calculates the appropriate lot size. Market, limit and stop orders can be placed with one click, and the risk-reward ratio is displayed automatically. It removes the stress and worry of lot and risk-reward calculations.\n\nIt works with overseas FX brokers such as XM, which I use, and also with CFDs and crypto, so there is no need to split tools by asset class.\n\nIt isn't free, but at 4,500 yen it's quite reasonable. Many people who trade the same way as me already use this tool.\nhttps://t.co/rIqMKqNjE0…\n\nIt frees you from all the hassle of lot calculation so you can concentrate on chart analysis. I recommend it to anyone who struggles with lot or risk-reward calculations - quietly sharing it on the last night of the long weekend. 😁",
       "content_original": "【最近私が使ってるロット計算ツールシェアしておきます♪】\n\n日々チャートを見てトレードをやっていくうえで、やはり皆さん面倒に感じるのがロット計算だと思うんですよ。\n\n私はyoutubeのほうでもPDF教材のほうでも、\n\n「このサイトの計算ツールで計算してますよ～」\n\nってことで便利な無料の計算ツールを一つ過去にシェアしてますが、\n\nデメリットとして、\n\n※毎回の計算に時間がかかる。\n\n※エントリーや損切り額の数値をいちいち入力するのが面倒\n\n※もし数字の入力ミスをするとロットがズレて想定外の損失を生むリスクがある。\n\n※なので本当に合っているか不安になってよく確認する手間がある。\n\nというものがあるのは否めません。\n\n数時間前からシナリオが明確で、エントリーまで時間的余裕がある時はまだいいですけど、すぐにエントリーしたい時なんかは特に焦りますよね？\n\nそして焦ればミスが発生しやすくなるという悪循環です。\n\nエントリーまで時間的余裕が無いのに計算が煩わしいとなると、チャート分析にも集中できなくなりますから判断ミスも起きやすくなります。\n\nそこで色々探した結果、超便利な計算ツールを見つけましたので今はこれを使っています。\n\n「Easy Order」というツールです。（私のブログ記事に飛びます。）\n↓\nhttps://t.co/rIqMKqNjE0…\n\nブログの中でも詳しく説明してますが、これが便利なのはいちいち数字を入れて計算しなくても、エントリー、損切り、利確の三つの水平線をただMT4上で上下にズラすだけ！！\n\n損切りはこの辺だな、エントリーはこの辺にしよう、って感じの感覚的な操作で水平線を上下させるだけで自動で適正なロット数を計算してくれるんですよ！\n\nしかも成り行き、指値、逆指値もワンクリックで発注可能です！\n\nこれ使うと面倒な計算をしなくても適正なロット数が秒速でわかるんでエントリー前のロット決めが革命的に楽になります♪\n\nしかもリスクリワードがどのくらいなのかも自動的に表示されます。\n\n今まで抱えていたロット計算やリスクリワード計算のストレスや煩わしさ、小難しさ、ミスしたらどうしようという不安などなどが一瞬で解決してしまう神ツールです。\n\nしかも私が使っているXMなどの海外FX会社にも対応していますし、為替通貨以外のCFDや仮想通貨銘柄にも対応しています。\n\nですから為替通貨はこのツールで、仮想通貨は別のツールで、みたいに分ける必要もありません。\n\n流石に無料ではありませんが、お値段４５００円でかなりリーズナブルなのも魅力です。\n\n毎回の煩わしいロット計算から解放されて、一度購入するだけでこの先ずーっとロット計算やリスクリワードの計算が楽になることを考えるとお買い得なのは間違いないと思います。\n\nXを見てると私と同じ手法でトレードしている方々はこのツール使っている方が既に割と多いですね。\n\nhttps://t.co/rIqMKqNjE0…\n\n大げさじゃなく、ロット計算の全ての煩わしさから解放されてめちゃくちゃ楽になりますし、チャート分析だけに集中できるようになります。\n\nロット計算やリスクリワードの計算で悩まれている方、苦手意識を持たれている方には本当にお勧めですので一応連休最終日の夜にそーっとシェアしておきますね。😁",
       "created_at": "2026-11-23T12:00:03Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124835365534274008",
@@ -318,7 +318,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "campaigns": [
           "リワード"
@@ -348,11 +348,11 @@
       "account_handle": "animal2432",
       "account_name": "海外FX初心者の方",
       "bookmarks": 11,
-      "content_en": null,
+      "content_en": "[Today only 🔥] 13,000 yen bonus 🎁 at XM! Enter code [DXYQ7] to qualify ✨ Check the opportunity before depositing 👇 https://t.co/wNbt0EQYuo #OverseasFX #PR https://t.co/axDFpTVtPW",
       "content_original": "【今だけ🔥】XMで13,000円ボーナス🎁コード【DXYQ7】入力で対象✨入金前にチャンスをチェック👇 https://t.co/wNbt0EQYuo #海外FX #PR https://t.co/axDFpTVtPW",
       "created_at": "2026-11-23T19:34:47Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124949802832241074",
@@ -367,7 +367,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "ボーナス"
@@ -389,11 +389,11 @@
       "account_handle": "XMTradingNews",
       "account_name": "XMTrading速報",
       "bookmarks": 6,
-      "content_en": null,
+      "content_en": "📈 [Reliable support system]\nAt XMTrading, a dedicated support team helps with your trading questions and concerns.\nWe provide a trading environment that first-time users can use with confidence.\nDetails here 👇 https://t.co/p4PAXfDPwb\n#PR #XMTrading #OverseasFX",
       "content_original": "📈【安心のサポート体制】\nXMTradingでは、お取引に関するご質問やお困りごとを専任サポートチームがサポート。\n初めての方にも安心してご利用いただける取引環境を提供しています。\n詳しくはこちら👇 https://t.co/p4PAXfDPwb\n#PR #XMTrading #海外FX",
       "created_at": "2026-11-23T19:45:40Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2124952544199995647",
@@ -408,7 +408,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "reputation": [
           "サポート"
@@ -457,11 +457,11 @@
       "account_handle": "ForexFanclub",
       "account_name": "海外FXふぁんくらぶ公式",
       "bookmarks": 41,
-      "content_en": null,
+      "content_en": "[Limited campaign] $500 100% deposit bonus!\nJust enter \"FCLUB\" on your additional account!\nUntil 11/30 - deadline approaching, so be quick ✨\nDetails in the comments 👇\n\n＼Repost campaign／\nA chance to win 500 yen Amazon gift cards right now for 20 people!\n📝 How to enter\n1⃣ Follow this account\n2⃣ Repost this post (until 11/30)\n#XM #XMTrading #OverseasFX #Bonus",
       "content_original": "【限定キャンペーン】$500の100％入金ボーナス！\n追加口座に「FCLUB」と入力するだけ！\n11/30まで締め切り間際なのでお早めに✨\n詳細はコメント欄から👇\n\n＼リポストキャンペーン／\n20名様にアマギフ500円分が今すぐ当たるチャンス！\n📝応募方法\n1⃣ このアカウントをフォロー\n2⃣ この投稿をリポスト（11/30まで）\n#XM #XMTrading #海外FX #ボーナス",
       "created_at": "2026-11-23T23:15:00Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2125005222473048110",
@@ -476,7 +476,7 @@
       "relevant": true,
       "replies": 10,
       "retweets": 511,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "ボーナス",
@@ -499,11 +499,11 @@
       "account_handle": "GOLDinui",
       "account_name": "RYO｜FX",
       "bookmarks": 2,
-      "content_en": null,
+      "content_en": "As background: most overseas FX accounts don't issue margin calls. (Forced stop-out ends it immediately; the balance doesn't go negative.)\n\nBut before that happens, you can sometimes hold on by voluntarily adding funds. I arbitrarily call this \"voluntary margin top-up\".\nHave you ever done it? https://t.co/I04oVn3xwG",
       "content_original": "ちなみに前提知識として、大抵の海外FX口座は追証の請求は発生しません。(強制ロスカで即終了。残高マイナスにはならない。)\n\nただ、そうなる前に自主的に追証を差し入れることでなんとか耐えたりすることがあります。私は勝手に「自主追証」と呼んでいます。\n皆さんはやったことありますか？ https://t.co/I04oVn3xwG",
       "created_at": "2026-11-24T02:39:04Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2125056580089794561",
@@ -518,7 +518,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "environment": [
           "追証"
@@ -536,11 +536,11 @@
       "account_handle": "Myforex_CS",
       "account_name": "Myforex | 最新のマーケット情報を配信",
       "bookmarks": 8,
-      "content_en": null,
+      "content_en": "[Notice] Latest: Can overseas FX domestic bank transfers still be used from December onward?\n\nIn addition to the 7 companies I posted about earlier, I have now confirmed replies from XM and HFM.\n\n🆕XMTrading / Deposits and withdrawals work as usual, but if problems arise they will adjust priorities and procedures\n\n🆕HFM / Still available, no restrictions planned; if problems occur they will guide customers to other payment methods\n\n📌BigBoss / Use from December onward is undecided at this point\n\n📌Exness / Available from December onward, no suspension planned at this point\n\n📌FXGT / Details not yet finalized, so they cannot give guidance\n\n📌ThreeTrader / Still gathering information and considering; cannot share anything confirmed\n\n📌Titan FX / No suspension planned at this point, but they will respond as the situation requires\n\n📌XS / No suspension planned at this point, but they recommend methods such as crypto\n\n📌VantageTrading / Still available, but they recommend transfers via stablecoins\n\nI'm putting together an article with the details! 📝\n\n👇 What changes in December? What is the revised Payment Services Act?\nhttps://t.co/Y12j4prQ4O",
       "content_original": "【注目】最新版：12月以降も海外FXの国内銀行送金を使える？\n\n先日投稿した7社に加え、XM・HFMからの回答も確認しました。\n\n🆕XMTrading\n通常どおり入出金可能だが問題が生じた場合は優先順位・手続きを調整する\n\n🆕HFM\n引き続き利用可能で制限の予定もなし、問題が発生した場合は他の決済方法を案内する\n\n📌BigBoss\n現時点で12月以降の利用については未定\n\n📌Exness\n12月以降も利用可能、停止の予定も現時点ではなし\n\n📌FXGT\n現時点では詳細が確定しておらず案内できない\n\n📌ThreeTrader\n情報収集・検討している段階で確定した情報を伝えることはできない\n\n📌Titan FX\n現時点で停止の予定はないが状況に応じて対応していく\n\n📌XS\n現時点で停止する予定はないが仮想通貨などの方法を推奨\n\n📌VantageTrading\n引き続き利用可能だがステーブルコインでの送金を推奨\n\n詳細はただいま記事にまとめています！📝\n\n👇12月に何がかわる？改正資金決済法とは？\nhttps://t.co/Y12j4prQ4O",
       "created_at": "2026-11-24T03:01:08Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2125062131376931177",
@@ -555,7 +555,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "deposit_withdrawal": [
           "出金",
@@ -579,11 +579,11 @@
       "account_handle": "nekota834",
       "account_name": "nekota",
       "bookmarks": 15,
-      "content_en": null,
+      "content_en": "JFXCOM Binary Options\n\n✅ 10,000 yen cashback for opening a new account\nFrom here https://t.co/QqXbIsXCTm\n\n✅ Conditions\n- Cashback is credited to your account after account opening + identity verification (KYC) is completed\n\n#FX #OverseasFX #BO #BinaryOptions #JFXCOM https://t.co/iZSgPKGcVz",
       "content_original": "JFXCOMバイナリーオプション   \n\n✅新規口座開設10,000円キャッシュバック  \nこちらからhttps://t.co/QqXbIsXCTm\n\n✅受け取り条件  \n・口座開設+本人確認（KYC）完了後キャッシュバックがアカウントに付与されます   \n\n#FX #海外FX #BO #バイナリーオプション #JFXCOM https://t.co/iZSgPKGcVz",
       "created_at": "2026-11-24T03:58:32Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2125076574957678620",
@@ -598,7 +598,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "キャッシュバック"

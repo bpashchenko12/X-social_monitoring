@@ -4517,11 +4517,11 @@
       "account_handle": "fenix_satou",
       "account_name": "ぽっぽlv99",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "For some reason the XS main account kept going read-only on and off at XS, so I withdrew funds and started with 2 million yen.\n\nCB 300k, morning session 480k, evening session 680k.\n\nFirst day, the Malaysia session finished at just under 1.5 million. Good night.\nhttps://t.co/yL2INd8jH1",
       "content_original": "xsでなぜかxsメイン口座がリードオンリーになったりならなかったりしてたので資金抜き200万スタート。\n\nCB30万、朝活48万、夜活68万\n\n初日マレーシア活は150万弱でフィニッシュです。おやすみなさい。 https://t.co/yL2INd8jH1",
       "created_at": "2026-11-23T19:07:45Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:13:51Z",
       "id": "2124943002548490679",
@@ -4536,7 +4536,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "account_types": [
           "口座"
@@ -5019,11 +5019,11 @@
       "account_handle": "hidefxgold03",
       "account_name": "Hide fx",
       "bookmarks": 1,
-      "content_en": null,
+      "content_en": "Gold, which had topped 3,636.67, is back below it this morning.\n\nAs of 06:56 on Nov 24, XS's MT5 (XAUUSDs) is at 3,633.45. Today's daily high is 3,689.71, which briefly exceeded the previous day's high of 3,636.67. On TradingView, the first thing I look at is where the previous day's high and the 4-hour SMA20 (3,639.23) are close together - I treat the daily level and the 4H moving average as one band.\n\nLooking back at yesterday's no-trade situation: Nov 23 07:00 at 3,534.69, near last week's low of 3,502.78. In my verification, I wouldn't mark a rebound just because it's near a low; I record which level it manages to clear on the way back up. This morning I'll do that check around the previous day's high.\n\n[If it returns upward] Whether a 4H bar closes above 3,639.23. If it does, I watch how far the pullback continues between the round number 3,650.00 and today's high 3,689.71. The 4H SMA20 is below the SMA50 (3,783.12), so I note the direction of longer timeframes separately.\n\n[If it moves away downward] If the rebound stalls below the band, first the reaction at 3,600.00. If the decline continues there, I watch the band near today's open 3,553.93 and low 3,553.00. If it breaks below, the next observation is where the decline stops before 3,502.78, which is both last week's low and the 4H trough.\n\nWhat I note separately in my verification memo: whether the wick went beyond the band, and which side the 4H close stayed on. I don't judge by the morning price alone; I check after the bar is confirmed. Trade at your own judgment.\n\nI share these level verification memos in the open chat \"Hide Gold FX Study Group\" in my profile.",
       "content_original": "3,636.67を上回ったゴールドが、今朝はまたその下にいます。\n\n11月24日06:56時点、XSのMT5（XAUUSDs）は3,633.45。今日の日足高値は3,689.71で、前日高値3,636.67を一度上回っています。TradingViewで僕がまず見るのは、前日高値と4時間足のSMA20（3,639.23）が近いところ。日足の節目と4時間足の平均線を、ひとつの帯として見ています。\n\n昨日の見送り場面として振り返りたいのは、11月23日07:00の3,534.69。先週安値3,502.78に近い場面です。僕の検証なら、安値に近いという理由だけで反発の判定は入れず、上に戻った先でどの節目を越えられたかまで残します。今朝はその確認を、前日高値の周りでやります。\n\n【上に戻るなら】4時間足が3,639.23の上で引けるか。引けたら、キリ番3,650.00と今日の高値3,689.71の間で、どこまで戻りが続くかを見ます。4時間足のSMA20はSMA50（3,783.12）の下にあるので、長めの時間足の向きも別に記録しておきます。\n\n【下に離れるなら】帯の下で戻りが止まるなら、まず3,600.00での反応。そこでも下げが続くなら、今日の始値3,553.93と安値3,553.00が近い帯を見ます。ここを下回ると、先週安値であり4時間足の谷でもある3,502.78まで、どこで下げが止まるかが次の観察点です。\n\n僕が検証メモに分けて残すのは、ヒゲが帯を越えたか、4時間足の終値がどちら側に残ったか。朝の値だけで判定せず、足が確定してから照合します。売買は自分の判断で。\n\nこうした節目の検証メモは、プロフィールのオープンチャット「Hide Gold FX研究会」で共有しています。",
       "created_at": "2026-11-23T23:31:06Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:13:51Z",
       "id": "2125009273675817418",
@@ -5038,7 +5038,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "environment": [
           "MT5"
@@ -5614,11 +5614,11 @@
       "account_handle": "Myforex_CS",
       "account_name": "Myforex | 最新のマーケット情報を配信",
       "bookmarks": 8,
-      "content_en": null,
+      "content_en": "[Notice] Latest: Can overseas FX domestic bank transfers still be used from December onward?\n\nIn addition to the 7 companies I posted about earlier, I have now confirmed replies from XM and HFM.\n\n🆕XMTrading / Deposits and withdrawals work as usual, but if problems arise they will adjust priorities and procedures\n\n🆕HFM / Still available, no restrictions planned; if problems occur they will guide customers to other payment methods\n\n📌BigBoss / Use from December onward is undecided at this point\n\n📌Exness / Available from December onward, no suspension planned at this point\n\n📌FXGT / Details not yet finalized, so they cannot give guidance\n\n📌ThreeTrader / Still gathering information and considering; cannot share anything confirmed\n\n📌Titan FX / No suspension planned at this point, but they will respond as the situation requires\n\n📌XS / No suspension planned at this point, but they recommend methods such as crypto\n\n📌VantageTrading / Still available, but they recommend transfers via stablecoins\n\nI'm putting together an article with the details! 📝\n\n👇 What changes in December? What is the revised Payment Services Act?\nhttps://t.co/Y12j4prQ4O",
       "content_original": "【注目】最新版：12月以降も海外FXの国内銀行送金を使える？\n\n先日投稿した7社に加え、XM・HFMからの回答も確認しました。\n\n🆕XMTrading\n通常どおり入出金可能だが問題が生じた場合は優先順位・手続きを調整する\n\n🆕HFM\n引き続き利用可能で制限の予定もなし、問題が発生した場合は他の決済方法を案内する\n\n📌BigBoss\n現時点で12月以降の利用については未定\n\n📌Exness\n12月以降も利用可能、停止の予定も現時点ではなし\n\n📌FXGT\n現時点では詳細が確定しておらず案内できない\n\n📌ThreeTrader\n情報収集・検討している段階で確定した情報を伝えることはできない\n\n📌Titan FX\n現時点で停止の予定はないが状況に応じて対応していく\n\n📌XS\n現時点で停止する予定はないが仮想通貨などの方法を推奨\n\n📌VantageTrading\n引き続き利用可能だがステーブルコインでの送金を推奨\n\n詳細はただいま記事にまとめています！📝\n\n👇12月に何がかわる？改正資金決済法とは？\nhttps://t.co/Y12j4prQ4O",
       "created_at": "2026-11-24T03:01:08Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-24T15:42:58Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-24T09:13:51Z",
       "id": "2125062131376931177",
@@ -5633,7 +5633,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "deposit_withdrawal": [
           "出金",

@@ -3,66 +3,66 @@
   "enrich": null,
   "errors": [],
   "exit_code": 0,
-  "finished_at": "2026-11-25T09:04:12Z",
+  "finished_at": "2026-11-25T10:06:30Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-25T09:04:12Z",
+  "last_success_at": "2026-11-25T10:06:30Z",
   "last_sweep_at": "2026-11-21T11:39:09Z",
   "mode": "incremental",
   "notes": [
-    "LLM translation is switched off (llm.enabled=false): 24 post(s) wait for manual translation (enrich-export / enrich-import)"
+    "LLM translation is switched off (llm.enabled=false): 3 post(s) wait for manual translation (enrich-export / enrich-import)"
   ],
-  "pending_after": 24,
-  "pending_industry": 7,
+  "pending_after": 3,
+  "pending_industry": 2,
   "scope": "all",
   "scrape": {
     "budget_stopped": false,
     "capped": [],
     "failed": [],
-    "items": 1081,
+    "items": 1228,
     "ok": 42,
     "requests": 42,
-    "spent_usd": 0.584,
+    "spent_usd": 0.6058,
     "window_days": 2
   },
-  "started_at": "2026-11-25T08:30:05Z",
+  "started_at": "2026-11-25T09:32:25Z",
   "status": "ok",
   "stores": {
     "exness": {
-      "pending": 4,
-      "posts": 1353,
+      "pending": 0,
+      "posts": 1388,
       "relevant": 189
     },
     "hfm": {
       "pending": 0,
-      "posts": 2029,
+      "posts": 2037,
       "relevant": 136
     },
     "industry": {
-      "pending": 7,
-      "posts": 1019,
-      "relevant": 331
+      "pending": 2,
+      "posts": 1021,
+      "relevant": 333
     },
     "titanfx": {
-      "pending": 1,
-      "posts": 2763,
+      "pending": 0,
+      "posts": 2773,
       "relevant": 141
     },
     "vantage": {
-      "pending": 2,
-      "posts": 4555,
+      "pending": 0,
+      "posts": 4637,
       "relevant": 26
     },
     "xm": {
-      "pending": 7,
-      "posts": 4823,
-      "relevant": 449
+      "pending": 1,
+      "posts": 4878,
+      "relevant": 450
     },
     "xs": {
-      "pending": 3,
-      "posts": 4014,
+      "pending": 0,
+      "posts": 4068,
       "relevant": 64
     }
   }

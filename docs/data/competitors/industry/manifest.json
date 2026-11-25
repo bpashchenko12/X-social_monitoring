@@ -5,8 +5,8 @@
     "kind": "industry",
     "name": "Overseas FX industry"
   },
-  "generated_at": "2026-11-25T09:26:03Z",
-  "latest_post_at": "2026-11-25T07:03:46Z",
+  "generated_at": "2026-11-25T11:15:31Z",
+  "latest_post_at": "2026-11-25T09:00:04Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 331
+      "posts": 333
     },
     {
       "id": "campaigns",
@@ -102,7 +102,7 @@
         "入出金制限"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 174
+      "posts": 175
     },
     {
       "id": "reputation",
@@ -128,7 +128,7 @@
         "利用規約"
       ],
       "name": "Reputation & Customer Experience",
-      "posts": 72
+      "posts": 73
     },
     {
       "id": "regulation",
@@ -199,10 +199,10 @@
     },
     {
       "file": "weeks/2026-W48.json",
-      "max_date": "2026-11-25T07:03:46Z",
+      "max_date": "2026-11-25T09:00:04Z",
       "min_date": "2026-11-22T15:30:04Z",
-      "posts": 25,
-      "relevant_posts": 19,
+      "posts": 27,
+      "relevant_posts": 21,
       "week": "2026-W48"
     }
   ]

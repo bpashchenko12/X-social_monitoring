@@ -4,8 +4,8 @@
     "id": "xs",
     "name": "XS"
   },
-  "generated_at": "2026-11-25T09:26:02Z",
-  "latest_post_at": "2026-11-25T08:45:53Z",
+  "generated_at": "2026-11-25T11:15:30Z",
+  "latest_post_at": "2026-11-25T10:00:01Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -189,9 +189,9 @@
     },
     {
       "file": "weeks/2026-W48.json",
-      "max_date": "2026-11-25T08:45:53Z",
+      "max_date": "2026-11-25T10:00:01Z",
       "min_date": "2026-11-22T15:01:25Z",
-      "posts": 341,
+      "posts": 395,
       "relevant_posts": 8,
       "week": "2026-W48"
     }

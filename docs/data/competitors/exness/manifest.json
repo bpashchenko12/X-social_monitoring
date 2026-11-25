@@ -4,8 +4,8 @@
     "id": "exness",
     "name": "Exness"
   },
-  "generated_at": "2026-11-25T09:26:02Z",
-  "latest_post_at": "2026-11-25T08:30:00Z",
+  "generated_at": "2026-11-25T11:15:30Z",
+  "latest_post_at": "2026-11-25T09:30:21Z",
   "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
@@ -201,9 +201,9 @@
     },
     {
       "file": "weeks/2026-W48.json",
-      "max_date": "2026-11-25T08:30:00Z",
+      "max_date": "2026-11-25T09:30:21Z",
       "min_date": "2026-11-22T15:00:52Z",
-      "posts": 113,
+      "posts": 148,
       "relevant_posts": 10,
       "week": "2026-W48"
     }

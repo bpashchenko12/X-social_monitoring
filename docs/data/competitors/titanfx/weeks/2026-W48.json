@@ -1327,11 +1327,11 @@
       "account_handle": "TitanFXJP",
       "account_name": "Titan FX JP【公式】",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "Anthropic stock CFD, trading starts!\nAnthropic, the developer of the AI assistant \"Claude\", is now newly available as a Titan FX stock CFD!\nSymbol: Anthropic, PBC\nSupported platform: MT5\nLog in to the client cabinet here 👇\nhttps://t.co/Uu4fGhDQuo https://t.co/IFxMgmlOFx",
       "content_original": "Anthropic株式CFD、取引開始！\nAIアシスタント「Claude」の開発で注目を集めるAnthropic（アンソロピック）が、Titan FXの株式CFDに新登場！\nシンボル：Anthropic, PBC\n対応プラットフォーム：MT5\nクライアントキャビネットへのログインはこちら 👇\nhttps://t.co/Uu4fGhDQuo https://t.co/IFxMgmlOFx",
       "created_at": "2026-11-24T07:40:24Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-25T09:26:00Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-25T08:45:49Z",
       "id": "2125132412879593642",
@@ -1347,7 +1347,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "environment": [
           "MT5"

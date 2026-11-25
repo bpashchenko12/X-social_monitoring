@@ -4872,11 +4872,11 @@
       "account_handle": "yu_fx_riskguard",
       "account_name": "ゆう( ˙-˙ )FX &プロップトレーダー",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "Vantage Trading's year-end contest\nPrizes are paid down to 3000th place, so I'm trying it out, and luckily I'm currently within the top 100 in both ROI and profit categories, so if this holds\n\nprize of 60,000 yen x 2\n\nI might just leave it alone until the contest ends, like a chicken 🐓🤔\n#FX #vantage https://t.co/rbJMKowWqQ",
       "content_original": "vantage tradingの年末大会\n3000位まで賞金出るのでお試しでやってますが、運良く現時点でROIと利益額の両部門とも100位以内なので、このままなら\n\n賞金6万円✖️２\n\n大会終了までチキン🐓放置してもいいかもしれんな🤔\n#FX #vantage https://t.co/rbJMKowWqQ",
       "created_at": "2026-11-24T03:36:32Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-25T09:26:00Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-25T08:48:31Z",
       "id": "2125071040430956729",
@@ -4891,7 +4891,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "competitions": [
           "大会"
@@ -6893,11 +6893,11 @@
       "account_handle": "waitingkuma",
       "account_name": "プーさん",
       "bookmarks": 13,
-      "content_en": null,
+      "content_en": "When withdrawing crypto at Vantage, there's this field here, right??\n\nYou have to fill it in, but personal wallets like Trust Wallet or Bitget Wallet don't have it, do they??\n\nWhat does everyone do?! 💦💦 https://t.co/gH9w6Rewov",
       "content_original": "ヴァンテージで仮想通貨出金するときに、ここあるじゃないですか？？\n\nここ入力しないとダメなんですが、トラストウォレットとかビットゲットウォレットとかの個人ウォレットってここなくないですか？？\n\n皆様どうしてますか？！💦💦 https://t.co/gH9w6Rewov",
       "created_at": "2026-11-24T12:32:37Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-25T09:26:00Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-25T08:48:31Z",
       "id": "2125205951515123879",
@@ -6912,7 +6912,7 @@
       "relevant": true,
       "replies": 4,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Negative",
       "topic_hits": {
         "deposit_withdrawal": [
           "出金"

@@ -3,50 +3,49 @@
   "enrich": null,
   "errors": [],
   "exit_code": 0,
-  "finished_at": "2026-11-26T08:39:24Z",
+  "finished_at": "2026-11-26T16:32:50Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-26T08:39:24Z",
+  "last_success_at": "2026-11-26T16:32:50Z",
   "last_sweep_at": "2026-11-21T11:39:09Z",
   "mode": "incremental",
   "notes": [
-    "LLM translation is switched off (llm.enabled=false): 31 post(s) wait for manual translation (enrich-export / enrich-import)"
+    "competitors and the industry feed were not scraped in this run (they are refreshed once a day, in the morning run)"
   ],
-  "pending_after": 31,
-  "pending_industry": 11,
-  "scope": "all",
+  "pending_after": 0,
+  "scope": "xm",
   "scrape": {
     "budget_stopped": false,
     "capped": [],
     "failed": [],
-    "items": 1213,
-    "ok": 42,
-    "requests": 42,
-    "spent_usd": 0.6033,
+    "items": 329,
+    "ok": 6,
+    "requests": 6,
+    "spent_usd": 0.1093,
     "window_days": 2
   },
-  "started_at": "2026-11-26T08:30:06Z",
+  "started_at": "2026-11-26T16:30:05Z",
   "status": "ok",
   "stores": {
     "exness": {
-      "pending": 9,
+      "pending": 0,
       "posts": 1434,
       "relevant": 198
     },
     "hfm": {
-      "pending": 1,
+      "pending": 0,
       "posts": 2068,
       "relevant": 137
     },
     "industry": {
-      "pending": 11,
+      "pending": 0,
       "posts": 1033,
       "relevant": 344
     },
     "titanfx": {
-      "pending": 5,
+      "pending": 0,
       "posts": 2792,
       "relevant": 146
     },
@@ -56,12 +55,12 @@
       "relevant": 26
     },
     "xm": {
-      "pending": 4,
-      "posts": 5019,
+      "pending": 0,
+      "posts": 5074,
       "relevant": 454
     },
     "xs": {
-      "pending": 1,
+      "pending": 0,
       "posts": 4174,
       "relevant": 65
     }

@@ -14351,11 +14351,11 @@
       "account_handle": "hidefxgold03",
       "account_name": "Hide fx",
       "bookmarks": 7,
-      "content_en": null,
+      "content_en": "Gold fell to 3,426.61. Now that it has returned above the previous day's low, I'm watching two walls beyond it.\n\nYesterday I was watching where the rebound would stop up to the daily open. As of 06:50 this morning, price is above today's daily open of 3,558.59.\n\nXS's MT5 (XAUUSDs) price at the same time is 3,580.85. Cross-checking on TradingView, the 4-hour SMA20 (3,583.08) and today's daily high of 3,589.28 are close above. Since the moving average and the level where price actually stalled are close, I first treat these two together as the upper band.\n\n[Conditions for watching up]\nIf the 1-hour closes above 3,589.28 and subsequent pullbacks hold within the upper side of the band, next I want to see the reaction at the round number 3,600.00. If candles close above that too, the band from the previous day's high of 3,678.28 to this week's high of 3,689.71 is next to compare. The 4-hour SMA20 is below SMA50 (3,697.06), so I separate how the rebound progresses from the direction of the 4-hour chart.\n\n[Conditions for watching down]\nIf the rebound stalls at the upper band, I'll revisit the band from the previous day's low of 3,546.66 to today's open of 3,558.59. This morning it has recovered above both, so if the 1-hour closes below the previous day's low, I consider that it failed to hold the range regained this morning. In that case I check last week's low of 3,502.78 and, further down, this week's low of 3,426.61 in order.\n\nIn my verification, I don't count touching the upper band as \"the rebound continued\". I record separately the point of entering the band, where the 1-hour closed, and where the subsequent pullback stopped. The daily high and low alone don't show which levels acted as support along the way. While price is between the bands, I wait for which side's conditions line up.\n\nTrade at your own judgment.\nVerification notes for such situations are shared in the open chat \"Hide Gold FX Study Group\" in my profile.",
       "content_original": "3,426.61まで下げたゴールド。前日安値の上に戻った今、僕はその先の二つの壁を見ています。\n\n昨日は「戻りが日足の始値までのどこで止まるか」を見ていました。今朝06:50の時点では、価格は今日の日足始値3,558.59を上回っています。\n\nXSのMT5（XAUUSDs）で同時刻の価格は3,580.85。TradingViewで照らし合わせると、上には4時間足のSMA20（3,583.08）と今日の日足高値3,589.28が近接しています。移動平均と実際に値が止まった場所が近いので、まずはこの二つをまとめて上の帯として見ます。\n\n【上を見る条件】\n1時間足が3,589.28より上で引けて、その後の押しも帯の上側で収まるなら、次はキリ番の3,600.00での反応を見たい。そこより上でも足が引けるようなら、前日高値3,678.28から今週高値3,689.71までが次に比べる帯です。4時間足のSMA20はSMA50（3,697.06）の下にあるので、戻りの進み方と4時間足の向きは分けて見ます。\n\n【下を見る条件】\n戻りが上の帯で詰まったら、前日安値3,546.66から今日の始値3,558.59までの帯を見直します。今朝は両方の上まで戻しているので、1時間足が前日安値の下で引けるようなら、今朝取り戻した範囲を保てなかったと見ます。その場合は先週安値3,502.78、さらに下では今週安値3,426.61を順に確認します。\n\n僕の検証では、上の帯に触れた時点で「戻りが続いた」とは数えません。帯に入った時点、1時間足が引けた位置、その後の押しが止まった位置を別々に残します。日足の高値と安値だけでは、その途中でどの水準が支えになったかまでは分からないからです。帯の間にいるうちは、どちら側の条件がそろうか待ちます。\n\n売買は自分の判断で。\nこういう場面の検証メモは、プロフィールのオープンチャット「Hide Gold FX研究会」で共有しています。",
       "created_at": "2026-11-25T23:31:21Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:15Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:36:56Z",
       "id": "2125734111503630681",
@@ -14370,7 +14370,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "environment": [
           "MT5"

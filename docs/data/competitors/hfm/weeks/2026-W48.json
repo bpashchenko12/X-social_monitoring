@@ -2406,11 +2406,11 @@
       "account_handle": "pips_0000",
       "account_name": "ピプス📈🐕",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "The bonus is attractive but...\nI wish HFM let us use the bonus on cent accounts too, not just bonus accounts 😥",
       "content_original": "ボーナスは魅力的だけど…\nHFMはボーナス口座じゃなくてセント口座でもボーナス使えるようにしてほしいな〜😥",
       "created_at": "2026-11-24T13:54:19Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:15Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:32:10Z",
       "id": "2125226508327546961",
@@ -2425,7 +2425,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Negative",
       "topic_hits": {
         "account_types": [
           "セント口座",

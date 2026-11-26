@@ -4,9 +4,9 @@
     "id": "hfm",
     "name": "HFM"
   },
-  "generated_at": "2026-11-26T08:39:23Z",
+  "generated_at": "2026-11-26T10:27:27Z",
   "latest_post_at": "2026-11-26T07:06:34Z",
-  "pending_enrichment": 1,
+  "pending_enrichment": 0,
   "schema_version": 1,
   "search": {
     "brand": [

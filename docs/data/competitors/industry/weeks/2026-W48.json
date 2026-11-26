@@ -869,11 +869,11 @@
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
       "bookmarks": 42,
-      "content_en": null,
+      "content_en": "I rewrote it through to withdrawal\n\n[Easy GET] What is [HighLow] https://t.co/lUcG7FnGnu? Explaining the 10,000 yen cashback and features https://t.co/rvZoW59DPq #OverseasFX #NewAccountBonus from @manbou_sousai",
       "content_original": "出金までをリライトしました\n\n【カンタンGET】【ハイロー】https://t.co/lUcG7FnGnuとは？1万円キャッシュバックと特徴を解説 https://t.co/rvZoW59DPq #海外FX #新規口座開設ボーナス @manbou_sousaiより",
       "created_at": "2026-11-25T05:29:30Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125461856718643521",
@@ -888,7 +888,7 @@
       "relevant": true,
       "replies": 2,
       "retweets": 4,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "ボーナス"
@@ -1071,11 +1071,11 @@
       "account_handle": "YokaFXXM",
       "account_name": "YokaBlog｜海外FX・XM初心者ガイド",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "Opening an XM account.\n\nThe point is not to create an account for its own sake but to choose a trading environment that suits you.\n\nCheck not only account types and trading tools but also costs, deposit/withdrawal conditions and risks.\n\nI'd like to compare calmly before deciding.\n\n#XM #OverseasFX",
       "content_original": "XMの口座開設。\n\n口座を作ること自体が目的ではなく、自分に合う取引環境を選ぶことが大切です。\n\n口座タイプや取引ツールだけでなく、コスト・入出金条件・リスクも確認する。\n\n焦らず比較して判断したいですね。\n\n#XM #海外FX",
       "created_at": "2026-11-25T11:28:24Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125552177557188928",
@@ -1090,7 +1090,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "deposit_withdrawal": [
           "出金"
@@ -1108,11 +1108,11 @@
       "account_handle": "DrawingFX_nobuo",
       "account_name": "たけだのぶお",
       "bookmarks": 2,
-      "content_en": null,
+      "content_en": "There's a trend of \"if you trade gold, go overseas FX!\", but for currency pairs too: on Three Trader's Raw Zero account in JPY, USDJPY and EURUSD spreads are from 0.0 pips with an external commission of 400 yen per lot. The domestic USDJPY spread is standard at 0.2 I think, so of course you can't compete on spread alone, but considering USDJPY spreads from 0.4 pips and max leverage 1000x, overseas has become a level that enters the options for scalpers and beginners. The real strength of 1000x leverage isn't high-leverage trading, but that lowering effective leverage makes forced stop-outs less likely and you can limit the funds you put into the account (required margin is 1/40 of domestic), which is definitely a factor that reduces accidents for beginners who tend to hold losing positions.\n\nhttps://t.co/34C7t5ZcbG",
       "content_original": "ゴールドやるなら海外FX！の風潮はあるけど、通貨ペアに関しても、スリトレのRaw zero口座の円建てならドル円・ユーロドルのスプは0.0pips～で外付け手数料が1Lotあたり400円。国内のドル円スプは0.2が標準だと思うので、さすがスプだけで対抗はできないけど、ドル円スプ0.4pips～＆最大レバ1000倍って考えると、海外もスキャルピング勢や初心者の選択肢に挙がってくるレベルにはなったよな。レバ1000倍の真の強みはハイレバトレードではなくて、実効レバを下げれば強制ロスカットが生じにくかったり、そもそも口座に入れる資金を限定できる事（必要証拠金が国内の1/40で済む）で、これは結構塩漬けしがちな初心者の事故を減らせる要因なのは間違いない。\n\nhttps://t.co/34C7t5ZcbG",
       "created_at": "2026-11-25T13:28:45Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125582462659215821",
@@ -1127,7 +1127,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "deposit_withdrawal": [
           "手数料"
@@ -1149,11 +1149,11 @@
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
       "bookmarks": 5,
-      "content_en": null,
+      "content_en": "The reason Fintokei could run away with it is that it borrowed Axiory's servers and could funnel Axiory's customers.\n\nOn top of that, in the early days it continuously held monthly demo account contests with prizes, so it captured part of the overseas FX crowd, and that marketing blossomed.\n\nSo it's because it spent a lot of money in the early stage and then built the system.\n\nThat's what I think.",
       "content_original": "フィントケイが独走できたのはアキシオリーのサーバーを借りてアキシオリーの顧客を流せた事\n\nその上で初期に賞金付きデモ口座大会を継続的に毎月開催したので海外FX層を一部取り込めたマーケティングが花開いた\n\n従って初期の段階でお金を大量に使った上で体制を整えたから\n\nこれだと思いますよ",
       "created_at": "2026-11-25T15:07:12Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125607238744383584",
@@ -1168,7 +1168,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "campaigns": [
           "賞金"
@@ -1190,11 +1190,11 @@
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "Well, overseas FX brokers only have 2 options: spend heavily on trading conditions or run promotions.\n\nFor example, you can't beat Exness's trading conditions, so without a symbol with some edge it's tough.\n\nThat said, long-running overseas FX brokers get more deposits than everyone thinks, so I hear.",
       "content_original": "まぁ海外FXブローカーはトレード条件にお金を大量にかけるかプロモーションをやるか\n\nこの2択しか無いからね\n\n例えばexnessのトレード条件に勝てるわけないので何かしらの優位性があるシンボルが無いと厳しい\n\nただ、長く運営してる海外FXブローカーはみんなが思ってるより入金はあるって話し",
       "created_at": "2026-11-25T15:13:42Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125608874858483930",
@@ -1209,7 +1209,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "campaigns": [
           "プロモ"
@@ -1231,11 +1231,11 @@
       "account_handle": "XMTradingNews",
       "account_name": "XMTrading速報",
       "bookmarks": 6,
-      "content_en": null,
+      "content_en": "🔥 [A chance to start FX without a deposit]\nWith XMTrading you qualify for the 🎁 13,000 yen account opening bonus!\nExperience real trading before putting in your own funds 📈\nDetails here 👇 https://t.co/wpjkKX7VFA\n* Terms of use and conditions apply #PR #XMTrading #OverseasFX",
       "content_original": "🔥【入金なしでFXを始めるチャンス】\nXMTradingなら 🎁13,000円の口座開設ボーナス対象！\n自己資金を入れる前にリアル取引を体験📈\n詳細はこちら👇 https://t.co/wpjkKX7VFA\n※利用規約・適用条件あり #PR #XMTrading #海外FX",
       "created_at": "2026-11-25T20:33:37Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125689383848419351",
@@ -1250,7 +1250,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 3,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "ボーナス"
@@ -1276,11 +1276,11 @@
       "account_handle": "miiiikun85",
       "account_name": "みーくん@myEABook",
       "bookmarks": 84,
-      "content_en": null,
+      "content_en": "Crypto deposit/withdrawal routes for overseas FX\nIt's confusing so I organized and summarized all of it.\n\nThe grace period for bank deposits/withdrawals ends at the end of November.\n\n\"Now\", when many people are considering switching to crypto,\n\nI mapped out every transfer route and organized them by both \"safety\" and \"fees\",\n\nand summarized them in a video.\n\n- Which exchange should I use?\n- Which routes are safe and which are dangerous?\n- What about JPYC EX?\n\nI cover all these questions.\n\nIn the second half of the video I also introduce\n\n\"how I run regular deposit/withdrawal with almost 0 yen in fees\"\n\nthat I actually do, so please refer to it if you like.\n\nIt may be good to bookmark it so you can rewatch anytime.\n\nVideo is in the replies ↓\n\n#OverseasFX #Crypto",
       "content_original": "海外FXの仮想通貨入出金ルート\nややこしいから全て整理してまとめました。\n\n銀行入出金の猶予期間は\n11末で終わります。\n\n仮想通貨への切り替えを考えている人が多い\n\"今\"だからこそ\n\n送金ルートを全て洗い出して\n「安全性」と「手数料」の両面で整理し、\n\n動画でまとめました。\n\n・どこの取引所使えばいいの？\n・なにが安全でなにが危険なルート？\n・JPYC EXはどう？\n\nこのあたりの疑問に全て言及してます。\n\n動画後半には、僕が実際やってる\n\n「普段の入出金手数料をほぼ0円で運用する方法」\n\nも紹介してるので、良ければご参考にしてください。\n\nいつでも見返せるようブクマしておくといいかも。\n\n動画はリプ欄に↓\n\n#海外FX #仮想通貨",
       "created_at": "2026-11-25T21:56:07Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125710148127830366",
@@ -1295,7 +1295,7 @@
       "relevant": true,
       "replies": 2,
       "retweets": 5,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "campaigns": [
           "紹介"
@@ -1356,11 +1356,11 @@
       "account_handle": "kaigaitoushibiz",
       "account_name": "FXCodex.com （ex. みんなで海外FX.com ）",
       "bookmarks": 17,
-      "content_en": null,
+      "content_en": "From today, MetaMask cards can be issued in Japan and elsewhere too 👇\n\nMetaMask is a crypto wallet that supports JPYC as well as, of course, overseas FX deposits and withdrawals 👛\n\n(Virtual card only. No physical card) https://t.co/DxwldMEPtS",
       "content_original": "本日から、日本などでもメタマスクカード発行できます👇\n\nMetaMaskは海外FXの入金と出金はもちろん、JPYC対応の仮想通貨ウォレットです👛\n\n（バーチャルカードのみ。物理カードなし） https://t.co/DxwldMEPtS",
       "created_at": "2026-11-26T00:00:11Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125741371474825325",
@@ -1375,7 +1375,7 @@
       "relevant": true,
       "replies": 2,
       "retweets": 2,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "deposit_withdrawal": [
           "出金",
@@ -1400,11 +1400,11 @@
       "account_handle": "nekota834",
       "account_name": "nekota",
       "bookmarks": 4,
-      "content_en": null,
+      "content_en": "JFXCOM binary options\n\n✅ 10,000 yen cashback for opening a new account\n\nFrom here https://t.co/FVE08xKqzR\n\n✅ Conditions\n- The cashback is credited to your account after account opening + identity verification (KYC) is completed\n\n* Feel free to DM me if you have any questions!\n\n#FX #OverseasFX #BO #BinaryOptions #JFXCOM",
       "content_original": "JFXCOMバイナリーオプション       \n\n✅新規口座開設10,000円キャッシュバック     \n\nこちらからhttps://t.co/FVE08xKqzR\n\n✅受け取り条件    \n・口座開設+本人確認（KYC）完了後キャッシュバックがアカウントに付与されます\n\n※わからないことあれば気軽にDMください！       \n\n#FX #海外FX #BO #バイナリーオプション #JFXCOM",
       "created_at": "2026-11-26T01:05:00Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125757680317092031",
@@ -1419,7 +1419,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "キャッシュバック"
@@ -1442,11 +1442,11 @@
       "account_handle": "d9acOaMyTO99532",
       "account_name": "マンゼンADHD",
       "bookmarks": 2,
-      "content_en": null,
+      "content_en": "[To the victims of the GMO unauthorized access]\n\nFrom today, Nov 26, individual contact about GMO's sympathy payment (compensation) is scheduled to begin.\n\nI suffered about 11.8 million yen in damage in this incident and have applied for compensation.\n\nI'd like to connect with people in the same situation and exchange information.\n\n- Whether GMO has contacted you\n- How much the compensation was relative to the amount claimed\n- Full or partial compensation\n- Scheduled payment date\n\nIf you can provide information, please reply or DM me.\n\nLet's share information among victims and aim for full compensation.\n\nPlease help spread this as well.\n\n#GMO #Onamae.com #UnauthorizedAccess #HackingDamage #OverseasFX #Compensation",
       "content_original": "【GMO不正アクセス被害者の皆様へ】\n\n本日11月26日から、GMOのお見舞金（補償金）に関する個別連絡が開始される予定です。\n\n私は今回の事件で約1,180万円の被害を受け、補償申請をしています。\n\n同じ境遇の方とつながり、情報交換したいと考えています。\n\n・GMOから連絡が来たか\n・申請額に対して補償額はいくらだったか\n・全額補償か、一部補償か\n・振込予定日はいつか\n\n情報提供いただける方は、リプライまたはDMをお願いします。\n\n被害者同士で情報を共有し、全額補償の実現を目指しましょう。\n\nぜひ拡散にもご協力ください。\n\n#GMO #お名前ドットコム #不正アクセス #ハッキング被害 #海外FX #補償金",
       "created_at": "2026-11-26T01:21:14Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125761766542250032",
@@ -1461,7 +1461,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Negative",
       "topic_hits": {
         "regulation": [
           "ハッキング",
@@ -1480,11 +1480,11 @@
       "account_handle": "V_Cyber_phoenix",
       "account_name": "VEGA",
       "bookmarks": 0,
-      "content_en": null,
+      "content_en": "At the current monthly pace I could almost go full-time, but within 10 years or later the crackdown on overseas FX may also get tougher, so I think it's tough unless I gather 300-500 million yen and move into stocks first.\n\nIf there were a guarantee that overseas FX would stay in the current environment for 30 years, I'd quit my main job tomorrow 👶🏿",
       "content_original": "今の月次ベースだと専業になれなくもないけど　10年以内かそれ以降に海外FXの締め出しもキツくなる可能性もあるから3〜5億ぐらい集めて株に移行してからじゃないときついと思ってる\n\n30年海外FXが今の環境でいられるって保証があるなら明日にでも本業やめるわ👶🏿",
       "created_at": "2026-11-26T03:00:08Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-26T10:27:16Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-26T08:38:47Z",
       "id": "2125786655571538263",
@@ -1499,7 +1499,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Negative",
       "topic_hits": {},
       "topics": [
         "macro"

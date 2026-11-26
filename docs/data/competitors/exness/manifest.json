@@ -4,9 +4,9 @@
     "id": "exness",
     "name": "Exness"
   },
-  "generated_at": "2026-11-25T16:32:48Z",
-  "latest_post_at": "2026-11-25T09:30:21Z",
-  "pending_enrichment": 0,
+  "generated_at": "2026-11-26T08:39:23Z",
+  "latest_post_at": "2026-11-26T08:30:01Z",
+  "pending_enrichment": 9,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 189
+      "posts": 198
     },
     {
       "id": "campaigns",
@@ -50,7 +50,7 @@
         "リワードプログラム"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 11
+      "posts": 14
     },
     {
       "id": "competitions",
@@ -87,7 +87,7 @@
         "IB"
       ],
       "name": "Trading Environment",
-      "posts": 37
+      "posts": 40
     },
     {
       "id": "deposit_withdrawal",
@@ -104,7 +104,7 @@
         "決済"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 56
+      "posts": 60
     },
     {
       "id": "account_types",
@@ -123,7 +123,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 30
+      "posts": 31
     }
   ],
   "weeks": [
@@ -201,10 +201,10 @@
     },
     {
       "file": "weeks/2026-W48.json",
-      "max_date": "2026-11-25T09:30:21Z",
+      "max_date": "2026-11-26T08:30:01Z",
       "min_date": "2026-11-22T15:00:52Z",
-      "posts": 148,
-      "relevant_posts": 10,
+      "posts": 194,
+      "relevant_posts": 19,
       "week": "2026-W48"
     }
   ]

@@ -5,9 +5,9 @@
     "kind": "industry",
     "name": "Overseas FX industry"
   },
-  "generated_at": "2026-11-25T16:32:49Z",
-  "latest_post_at": "2026-11-25T09:00:04Z",
-  "pending_enrichment": 0,
+  "generated_at": "2026-11-26T08:39:24Z",
+  "latest_post_at": "2026-11-26T03:00:08Z",
+  "pending_enrichment": 11,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -34,7 +34,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 333
+      "posts": 344
     },
     {
       "id": "campaigns",
@@ -53,7 +53,7 @@
         "賞金"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 63
+      "posts": 69
     },
     {
       "id": "environment",
@@ -79,7 +79,7 @@
         "コピートレード"
       ],
       "name": "Trading Environment",
-      "posts": 81
+      "posts": 83
     },
     {
       "id": "deposit_withdrawal",
@@ -102,7 +102,7 @@
         "入出金制限"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 175
+      "posts": 182
     },
     {
       "id": "reputation",
@@ -128,7 +128,7 @@
         "利用規約"
       ],
       "name": "Reputation & Customer Experience",
-      "posts": 73
+      "posts": 77
     },
     {
       "id": "regulation",
@@ -161,7 +161,7 @@
         "消費者センター"
       ],
       "name": "Regulation, Fraud & Security",
-      "posts": 65
+      "posts": 66
     }
   ],
   "weeks": [
@@ -199,10 +199,10 @@
     },
     {
       "file": "weeks/2026-W48.json",
-      "max_date": "2026-11-25T09:00:04Z",
+      "max_date": "2026-11-26T03:00:08Z",
       "min_date": "2026-11-22T15:30:04Z",
-      "posts": 27,
-      "relevant_posts": 21,
+      "posts": 39,
+      "relevant_posts": 32,
       "week": "2026-W48"
     }
   ]

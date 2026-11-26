@@ -495,7 +495,7 @@
       "url_clicks": null
     },
     "2125056580089794561": {
-      "account_followers": 749,
+      "account_followers": 746,
       "account_handle": "GOLDinui",
       "account_name": "RYO｜FX",
       "bookmarks": 2,
@@ -508,12 +508,12 @@
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2125056580089794561",
       "image_url": "https://pbs.twimg.com/media/HX23sc3awAAeZFc.jpg",
-      "impressions": 596,
+      "impressions": 623,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:06:29Z",
-      "likes": 11,
-      "metrics_updated_at": "2026-11-25T10:06:29Z",
+      "last_seen": "2026-11-26T08:39:22Z",
+      "likes": 12,
+      "metrics_updated_at": "2026-11-26T08:39:22Z",
       "quotes": 0,
       "relevant": true,
       "replies": 1,
@@ -545,12 +545,12 @@
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2125062131376931177",
       "image_url": null,
-      "impressions": 3315,
+      "impressions": 3626,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:06:29Z",
+      "last_seen": "2026-11-26T08:39:22Z",
       "likes": 24,
-      "metrics_updated_at": "2026-11-25T10:06:29Z",
+      "metrics_updated_at": "2026-11-26T08:39:22Z",
       "quotes": 0,
       "relevant": true,
       "replies": 0,
@@ -575,7 +575,7 @@
       "url_clicks": null
     },
     "2125076574957678620": {
-      "account_followers": 578,
+      "account_followers": 582,
       "account_handle": "nekota834",
       "account_name": "nekota",
       "bookmarks": 26,
@@ -588,16 +588,16 @@
       "first_seen": "2026-11-24T09:31:55Z",
       "id": "2125076574957678620",
       "image_url": "https://pbs.twimg.com/media/HX3JXccawAAzPAs.jpg",
-      "impressions": 5005,
+      "impressions": 5118,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:05:57Z",
-      "likes": 45,
-      "metrics_updated_at": "2026-11-25T10:05:57Z",
+      "last_seen": "2026-11-26T08:39:18Z",
+      "likes": 44,
+      "metrics_updated_at": "2026-11-26T08:39:18Z",
       "quotes": 0,
       "relevant": true,
       "replies": 1,
-      "retweets": 3,
+      "retweets": 4,
       "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
@@ -617,7 +617,7 @@
       "url_clicks": null
     },
     "2125167165766856942": {
-      "account_followers": 6056,
+      "account_followers": 6073,
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
       "bookmarks": 1,
@@ -630,12 +630,12 @@
       "first_seen": "2026-11-25T08:59:21Z",
       "id": "2125167165766856942",
       "image_url": null,
-      "impressions": 1435,
+      "impressions": 1542,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:04:30Z",
+      "last_seen": "2026-11-26T08:38:53Z",
       "likes": 11,
-      "metrics_updated_at": "2026-11-25T10:04:30Z",
+      "metrics_updated_at": "2026-11-26T08:38:53Z",
       "quotes": 0,
       "relevant": true,
       "replies": 0,
@@ -670,7 +670,7 @@
       "impressions": null,
       "is_promo": false,
       "lang": null,
-      "last_seen": "2026-11-25T10:04:04Z",
+      "last_seen": "2026-11-26T08:38:47Z",
       "likes": 0,
       "metrics_updated_at": "2026-11-25T08:59:21Z",
       "quotes": 0,
@@ -685,7 +685,7 @@
       "url_clicks": null
     },
     "2125281825107104051": {
-      "account_followers": 21956,
+      "account_followers": 21955,
       "account_handle": "gopokun",
       "account_name": "つかさ",
       "bookmarks": 1,
@@ -698,12 +698,12 @@
       "first_seen": "2026-11-25T08:59:21Z",
       "id": "2125281825107104051",
       "image_url": null,
-      "impressions": 438,
+      "impressions": 520,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:05:32Z",
+      "last_seen": "2026-11-26T08:39:09Z",
       "likes": 13,
-      "metrics_updated_at": "2026-11-25T10:05:32Z",
+      "metrics_updated_at": "2026-11-26T08:39:09Z",
       "quotes": 0,
       "relevant": true,
       "replies": 0,
@@ -723,7 +723,7 @@
       "url_clicks": null
     },
     "2125325158160507296": {
-      "account_followers": 2703,
+      "account_followers": 2700,
       "account_handle": "animal2432",
       "account_name": "海外FX初心者の方",
       "bookmarks": 10,
@@ -736,12 +736,12 @@
       "first_seen": "2026-11-25T08:59:21Z",
       "id": "2125325158160507296",
       "image_url": "https://pbs.twimg.com/media/HX6r92yasAAOMyU.jpg",
-      "impressions": 3992,
+      "impressions": 4019,
       "is_promo": true,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:04:30Z",
+      "last_seen": "2026-11-26T08:38:53Z",
       "likes": 27,
-      "metrics_updated_at": "2026-11-25T10:04:30Z",
+      "metrics_updated_at": "2026-11-26T08:38:53Z",
       "quotes": 0,
       "relevant": true,
       "replies": 0,
@@ -776,7 +776,7 @@
       "impressions": null,
       "is_promo": false,
       "lang": null,
-      "last_seen": "2026-11-25T10:04:04Z",
+      "last_seen": "2026-11-26T08:38:47Z",
       "likes": 0,
       "metrics_updated_at": "2026-11-25T08:59:21Z",
       "quotes": 0,
@@ -791,10 +791,10 @@
       "url_clicks": null
     },
     "2125432570678841366": {
-      "account_followers": 578,
+      "account_followers": 582,
       "account_handle": "nekota834",
       "account_name": "nekota",
-      "bookmarks": 13,
+      "bookmarks": 20,
       "content_en": "JFXCOM binary options\n\n✅ 10,000 yen cashback for opening a new account\n\nFrom here: https://t.co/QqXbIsXCTm\n\n✅ Conditions\n- The cashback is credited to your account after account opening + identity verification (KYC) is completed\n\n#FX #OverseasFX #BO #BinaryOptions #JFXCOM https://t.co/bjOKp5XEyG",
       "content_original": "JFXCOMバイナリーオプション     \n\n✅新規口座開設10,000円キャッシュバック   \n\nこちらからhttps://t.co/QqXbIsXCTm\n\n✅受け取り条件   \n・口座開設+本人確認（KYC）完了後キャッシュバックがアカウントに付与されます     \n\n#FX #海外FX #BO #バイナリーオプション #JFXCOM https://t.co/bjOKp5XEyG",
       "created_at": "2026-11-25T03:33:08Z",
@@ -804,16 +804,16 @@
       "first_seen": "2026-11-25T08:59:21Z",
       "id": "2125432570678841366",
       "image_url": "https://pbs.twimg.com/media/HX8JrEKawAAz1RZ.jpg",
-      "impressions": 2439,
+      "impressions": 4402,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:05:57Z",
-      "likes": 31,
-      "metrics_updated_at": "2026-11-25T10:05:57Z",
+      "last_seen": "2026-11-26T08:39:18Z",
+      "likes": 54,
+      "metrics_updated_at": "2026-11-26T08:39:18Z",
       "quotes": 0,
       "relevant": true,
       "replies": 1,
-      "retweets": 1,
+      "retweets": 3,
       "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
@@ -833,7 +833,7 @@
       "url_clicks": null
     },
     "2125459820493111461": {
-      "account_followers": 1727,
+      "account_followers": 1728,
       "account_handle": "natsuki_no_tree",
       "account_name": "夏木",
       "bookmarks": 0,
@@ -846,12 +846,12 @@
       "first_seen": "2026-11-25T08:59:21Z",
       "id": "2125459820493111461",
       "image_url": null,
-      "impressions": 623,
+      "impressions": 994,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:04:04Z",
-      "likes": 11,
-      "metrics_updated_at": "2026-11-25T10:04:04Z",
+      "last_seen": "2026-11-26T08:38:47Z",
+      "likes": 14,
+      "metrics_updated_at": "2026-11-26T08:38:47Z",
       "quotes": 0,
       "relevant": true,
       "replies": 2,
@@ -864,11 +864,52 @@
       "url": "https://x.com/natsuki_no_tree/status/2125459820493111461",
       "url_clicks": null
     },
-    "2125468853891366913": {
-      "account_followers": 6056,
+    "2125461856718643521": {
+      "account_followers": 6073,
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
-      "bookmarks": 36,
+      "bookmarks": 42,
+      "content_en": null,
+      "content_original": "出金までをリライトしました\n\n【カンタンGET】【ハイロー】https://t.co/lUcG7FnGnuとは？1万円キャッシュバックと特徴を解説 https://t.co/rvZoW59DPq #海外FX #新規口座開設ボーナス @manbou_sousaiより",
+      "created_at": "2026-11-25T05:29:30Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125461856718643521",
+      "image_url": null,
+      "impressions": 17699,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:09Z",
+      "likes": 40,
+      "metrics_updated_at": "2026-11-26T08:39:09Z",
+      "quotes": 7,
+      "relevant": true,
+      "replies": 2,
+      "retweets": 4,
+      "sentiment": null,
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "出金"
+        ]
+      },
+      "topics": [
+        "macro",
+        "campaigns",
+        "deposit_withdrawal"
+      ],
+      "url": "https://x.com/manbou_sousai/status/2125461856718643521",
+      "url_clicks": null
+    },
+    "2125468853891366913": {
+      "account_followers": 6073,
+      "account_handle": "manbou_sousai",
+      "account_name": "まんぼう総裁(2代目)",
+      "bookmarks": 59,
       "content_en": "JFX is even hotter than overseas FX new-account bonuses\n\nThose who noticed are probably already doing it\n\nI'll explain why in the replies",
       "content_original": "JFXは海外FXの新規口座開設ボーナスより激アツですね\n\n気付いた人はもうやってると思いますけど\n\nそれが何故かをリプで解説します",
       "created_at": "2026-11-25T05:57:18Z",
@@ -878,16 +919,16 @@
       "first_seen": "2026-11-25T08:59:21Z",
       "id": "2125468853891366913",
       "image_url": null,
-      "impressions": 9708,
+      "impressions": 25573,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:04:30Z",
-      "likes": 44,
-      "metrics_updated_at": "2026-11-25T10:04:30Z",
+      "last_seen": "2026-11-26T08:39:18Z",
+      "likes": 84,
+      "metrics_updated_at": "2026-11-26T08:39:18Z",
       "quotes": 0,
       "relevant": true,
       "replies": 4,
-      "retweets": 1,
+      "retweets": 3,
       "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
@@ -902,7 +943,7 @@
       "url_clicks": null
     },
     "2125482367192318191": {
-      "account_followers": 38003,
+      "account_followers": 37992,
       "account_handle": "soratobi994",
       "account_name": "そらとび",
       "bookmarks": 0,
@@ -915,16 +956,16 @@
       "first_seen": "2026-11-25T10:04:04Z",
       "id": "2125482367192318191",
       "image_url": "https://pbs.twimg.com/media/HX86wdybAAAAnfi.jpg",
-      "impressions": 338,
+      "impressions": 1046,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:06:29Z",
-      "likes": 17,
-      "metrics_updated_at": "2026-11-25T10:06:29Z",
+      "last_seen": "2026-11-26T08:39:22Z",
+      "likes": 73,
+      "metrics_updated_at": "2026-11-26T08:39:22Z",
       "quotes": 0,
       "relevant": true,
       "replies": 3,
-      "retweets": 13,
+      "retweets": 60,
       "sentiment": "Positive",
       "topic_hits": {
         "deposit_withdrawal": [
@@ -944,10 +985,10 @@
       "url_clicks": null
     },
     "2125485579605528727": {
-      "account_followers": 16711,
+      "account_followers": 16767,
       "account_handle": "TraderHAYA",
       "account_name": "HAYA＠FX投資家",
-      "bookmarks": 15,
+      "bookmarks": 148,
       "content_en": "[On overseas FX deposit/withdrawal regulation]\n\nMany of you may be worried, but let's first understand it correctly.\n\nThe focus of this regulation is not \"overseas FX itself\" but the \"payment agents\".\n\nIt is not illegal for Japanese residents to use overseas FX and make deposits and withdrawals.\n\n■ About bank deposits/withdrawals\n\n- It doesn't look like bank deposits/withdrawals will suddenly all become unusable.\n- You may be asked to confirm transaction details and the source of funds.\n(As mentioned before, overseas FX is not illegal)\n- Depending on the bank, account restrictions or freezes are possible.\n\nEven if an account is frozen, your funds are not confiscated. However, confirmation and release may take time.\n\nI recommend separating your main bank used for living expenses and salary from the bank account used for overseas FX.\n\n■ About crypto deposits/withdrawals\n\nEach broker recommends using crypto for deposits and withdrawals.\n\nFrom now on, it is good to understand crypto deposit/withdrawal methods rather than relying only on bank transfers.\nI will put together the crypto deposit/withdrawal flow later.\n\n■ About credit cards\n\nThey remain available.\n\nHowever, in some cases withdrawals are made by bank transfer rather than refunded to the card, so check each broker's deposit/withdrawal rules in advance.\n\n■ Summary\n\nThis regulation does not prohibit the use of overseas FX.\n\nWhat matters is:\n\n- Secure multiple deposit/withdrawal methods\n- Separate living-expense and trading accounts\n- Keep transaction history and deposit/withdrawal records\n\nThere's no need to be overly anxious.\n\nIt's important to understand correct information and adapt to changes in the environment.\n\nThat said, this is only my personal opinion at this point. I'm also in talks with each broker, so let's keep updating with the latest information.",
       "content_original": "【海外FXの入出金規制について】\n\n不安に感じている方も多いと思いますが、まず正しく理解しておきましょう。\n\n今回の規制の焦点は「海外FXそのもの」ではなく「収納代行業者」です。\n\n日本居住者が海外FXを利用し、入出金すること自体が違法となるわけではありません。\n\n■ 銀行入出金について\n\n・銀行入出金が一斉に使えなくなるということは無さそうです。\n・取引内容や資金の出所について確認される可能性があります。\n（前述してますが海外FXは違法ではありません）\n・銀行によっては口座の利用制限や凍結の可能性もあります。\n\n口座が凍結されたからといって、資金が没収されるわけではありません。ただし、確認や解除に時間がかかる可能性はあります。\n\n生活費や給与振込に利用しているメインバンクと、海外FX用の銀行口座は分けておくことをおすすめします。\n\n■ 仮想通貨入出金について\n\n各ブローカーは仮想通貨での入出金利用を推奨しています。\n\n今後は銀行入出金だけに依存せず、仮想通貨での入出金方法も理解しておくと良いでしょう。\nこちらは後日仮想通貨入出金の導線をまとめておきます。\n\n■ クレジットカードについて\n\n引き続き利用可能です。\n\nただし、カードへの返金ではなく、銀行送金での出金となるケースもあるため、各ブローカーの入出金ルールを事前に確認しておきましょう。\n\n■ まとめ\n\n今回の規制は、海外FXの利用を禁止するものではありません。\n\n重要なのは、\n\n・入出金手段を複数確保する\n・生活用口座と取引用口座を分ける\n・取引履歴や入出金記録を保管する\n\n過度に不安になる必要はありません。\n\n正しい情報を理解し、環境の変化に対応していくことが大切です。\n\nただあくまで現時点での個人的な意見ではあります。勿論各ブローカーとも話しをしている段階ですので、常に最新の情報を更新していきましょう。",
       "created_at": "2026-11-25T07:03:46Z",
@@ -957,16 +998,16 @@
       "first_seen": "2026-11-25T08:59:21Z",
       "id": "2125485579605528727",
       "image_url": null,
-      "impressions": 5046,
+      "impressions": 39894,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:06:29Z",
-      "likes": 45,
-      "metrics_updated_at": "2026-11-25T10:06:29Z",
+      "last_seen": "2026-11-26T08:39:22Z",
+      "likes": 224,
+      "metrics_updated_at": "2026-11-26T08:39:22Z",
       "quotes": 0,
       "relevant": true,
-      "replies": 2,
-      "retweets": 3,
+      "replies": 4,
+      "retweets": 16,
       "sentiment": "Neutral",
       "topic_hits": {
         "deposit_withdrawal": [
@@ -994,10 +1035,10 @@
       "url_clicks": null
     },
     "2125514849396342925": {
-      "account_followers": 2920,
+      "account_followers": 2926,
       "account_handle": "makotonari_sf6",
       "account_name": "金溶｜投資でお金が溶けてる人💸",
-      "bookmarks": 3,
+      "bookmarks": 7,
       "content_en": "[Sad news] An overseas FX trader who got by on odd jobs while growing 300,000 yen of seed money into 30 million yen loses 99.7% of his assets in just 1 day.\n\n* Information from a follower. Permission to use the image was granted.\n\n- March: 300,000 yen\n- June: 2 million yen\n- August: 4 million yen\n- Nov 8: 7 million yen\n- Nov 9: 30 million yen\n- Nov 10: 100,000 yen\n\nThanks to having given his parents 1.1 million yen when he was in profit, he says he should manage tax funds and living expenses for now.\n\nAnd today he declared his exit.\n\nHis last words:\n\n\"Wait for me, market\"\n\nThe lot size was insane to begin with... 😭",
       "content_original": "【悲報】単発バイトで生活を凌ぎながら種銭30万円を3,000万円まで増やした海外FX戦士、わずか1日で資産の99.7%を失う。\n\n※フォロワーからの情報提供。画像の使用許可頂いています。\n\n・3月：30万円\n・6月：200万円\n・8月：400万円\n・11月8日：700万円\n・11月9日：3,000万円\n・11月10日：10万円\n\n利益が出た際に親へ110万円を渡していたおかげで、納税資金と当面の生活費はなんとかなりそうとのこと。\n\nそして本日、退場を宣言。\n\n最後に残した言葉は、\n\n「待ってろよ相場」\n\nそもそもロットがイカれてるよ…😭",
       "created_at": "2026-11-25T09:00:04Z",
@@ -1007,22 +1048,463 @@
       "first_seen": "2026-11-25T10:04:04Z",
       "id": "2125514849396342925",
       "image_url": "https://pbs.twimg.com/media/HX4wBuza8AAqOHG.jpg",
-      "impressions": 897,
+      "impressions": 4561,
       "is_promo": false,
       "lang": "ja",
-      "last_seen": "2026-11-25T10:06:29Z",
-      "likes": 11,
-      "metrics_updated_at": "2026-11-25T10:06:29Z",
-      "quotes": 0,
+      "last_seen": "2026-11-26T08:39:22Z",
+      "likes": 33,
+      "metrics_updated_at": "2026-11-26T08:39:22Z",
+      "quotes": 1,
       "relevant": true,
-      "replies": 0,
-      "retweets": 1,
+      "replies": 1,
+      "retweets": 3,
       "sentiment": "Negative",
       "topic_hits": {},
       "topics": [
         "macro"
       ],
       "url": "https://x.com/makotonari_sf6/status/2125514849396342925",
+      "url_clicks": null
+    },
+    "2125552177557188928": {
+      "account_followers": 207,
+      "account_handle": "YokaFXXM",
+      "account_name": "YokaBlog｜海外FX・XM初心者ガイド",
+      "bookmarks": 0,
+      "content_en": null,
+      "content_original": "XMの口座開設。\n\n口座を作ること自体が目的ではなく、自分に合う取引環境を選ぶことが大切です。\n\n口座タイプや取引ツールだけでなく、コスト・入出金条件・リスクも確認する。\n\n焦らず比較して判断したいですね。\n\n#XM #海外FX",
+      "created_at": "2026-11-25T11:28:24Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125552177557188928",
+      "image_url": null,
+      "impressions": 292,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:09Z",
+      "likes": 12,
+      "metrics_updated_at": "2026-11-26T08:39:09Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 0,
+      "sentiment": null,
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金"
+        ]
+      },
+      "topics": [
+        "macro",
+        "deposit_withdrawal"
+      ],
+      "url": "https://x.com/YokaFXXM/status/2125552177557188928",
+      "url_clicks": null
+    },
+    "2125582462659215821": {
+      "account_followers": 20218,
+      "account_handle": "DrawingFX_nobuo",
+      "account_name": "たけだのぶお",
+      "bookmarks": 2,
+      "content_en": null,
+      "content_original": "ゴールドやるなら海外FX！の風潮はあるけど、通貨ペアに関しても、スリトレのRaw zero口座の円建てならドル円・ユーロドルのスプは0.0pips～で外付け手数料が1Lotあたり400円。国内のドル円スプは0.2が標準だと思うので、さすがスプだけで対抗はできないけど、ドル円スプ0.4pips～＆最大レバ1000倍って考えると、海外もスキャルピング勢や初心者の選択肢に挙がってくるレベルにはなったよな。レバ1000倍の真の強みはハイレバトレードではなくて、実効レバを下げれば強制ロスカットが生じにくかったり、そもそも口座に入れる資金を限定できる事（必要証拠金が国内の1/40で済む）で、これは結構塩漬けしがちな初心者の事故を減らせる要因なのは間違いない。\n\nhttps://t.co/34C7t5ZcbG",
+      "created_at": "2026-11-25T13:28:45Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125582462659215821",
+      "image_url": "https://pbs.twimg.com/media/HX-V-LxboAAlPDj.png",
+      "impressions": 3300,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:09Z",
+      "likes": 25,
+      "metrics_updated_at": "2026-11-26T08:39:09Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 1,
+      "sentiment": null,
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "手数料"
+        ],
+        "environment": [
+          "ロスカット"
+        ]
+      },
+      "topics": [
+        "macro",
+        "environment",
+        "deposit_withdrawal"
+      ],
+      "url": "https://x.com/DrawingFX_nobuo/status/2125582462659215821",
+      "url_clicks": null
+    },
+    "2125607238744383584": {
+      "account_followers": 6073,
+      "account_handle": "manbou_sousai",
+      "account_name": "まんぼう総裁(2代目)",
+      "bookmarks": 5,
+      "content_en": null,
+      "content_original": "フィントケイが独走できたのはアキシオリーのサーバーを借りてアキシオリーの顧客を流せた事\n\nその上で初期に賞金付きデモ口座大会を継続的に毎月開催したので海外FX層を一部取り込めたマーケティングが花開いた\n\n従って初期の段階でお金を大量に使った上で体制を整えたから\n\nこれだと思いますよ",
+      "created_at": "2026-11-25T15:07:12Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125607238744383584",
+      "image_url": null,
+      "impressions": 3589,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:18Z",
+      "likes": 17,
+      "metrics_updated_at": "2026-11-26T08:39:18Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 0,
+      "sentiment": null,
+      "topic_hits": {
+        "campaigns": [
+          "賞金"
+        ],
+        "environment": [
+          "サーバー"
+        ]
+      },
+      "topics": [
+        "macro",
+        "campaigns",
+        "environment"
+      ],
+      "url": "https://x.com/manbou_sousai/status/2125607238744383584",
+      "url_clicks": null
+    },
+    "2125608874858483930": {
+      "account_followers": 6073,
+      "account_handle": "manbou_sousai",
+      "account_name": "まんぼう総裁(2代目)",
+      "bookmarks": 0,
+      "content_en": null,
+      "content_original": "まぁ海外FXブローカーはトレード条件にお金を大量にかけるかプロモーションをやるか\n\nこの2択しか無いからね\n\n例えばexnessのトレード条件に勝てるわけないので何かしらの優位性があるシンボルが無いと厳しい\n\nただ、長く運営してる海外FXブローカーはみんなが思ってるより入金はあるって話し",
+      "created_at": "2026-11-25T15:13:42Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125608874858483930",
+      "image_url": null,
+      "impressions": 2728,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:09Z",
+      "likes": 19,
+      "metrics_updated_at": "2026-11-26T08:39:09Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 1,
+      "sentiment": null,
+      "topic_hits": {
+        "campaigns": [
+          "プロモ"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ]
+      },
+      "topics": [
+        "macro",
+        "campaigns",
+        "deposit_withdrawal"
+      ],
+      "url": "https://x.com/manbou_sousai/status/2125608874858483930",
+      "url_clicks": null
+    },
+    "2125689383848419351": {
+      "account_followers": 1677,
+      "account_handle": "XMTradingNews",
+      "account_name": "XMTrading速報",
+      "bookmarks": 6,
+      "content_en": null,
+      "content_original": "🔥【入金なしでFXを始めるチャンス】\nXMTradingなら 🎁13,000円の口座開設ボーナス対象！\n自己資金を入れる前にリアル取引を体験📈\n詳細はこちら👇 https://t.co/wpjkKX7VFA\n※利用規約・適用条件あり #PR #XMTrading #海外FX",
+      "created_at": "2026-11-25T20:33:37Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125689383848419351",
+      "image_url": null,
+      "impressions": 2469,
+      "is_promo": true,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:18Z",
+      "likes": 19,
+      "metrics_updated_at": "2026-11-26T08:39:18Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 3,
+      "sentiment": null,
+      "topic_hits": {
+        "campaigns": [
+          "ボーナス"
+        ],
+        "deposit_withdrawal": [
+          "入金"
+        ],
+        "reputation": [
+          "利用規約"
+        ]
+      },
+      "topics": [
+        "macro",
+        "campaigns",
+        "deposit_withdrawal",
+        "reputation"
+      ],
+      "url": "https://x.com/XMTradingNews/status/2125689383848419351",
+      "url_clicks": null
+    },
+    "2125710148127830366": {
+      "account_followers": 6537,
+      "account_handle": "miiiikun85",
+      "account_name": "みーくん@myEABook",
+      "bookmarks": 84,
+      "content_en": null,
+      "content_original": "海外FXの仮想通貨入出金ルート\nややこしいから全て整理してまとめました。\n\n銀行入出金の猶予期間は\n11末で終わります。\n\n仮想通貨への切り替えを考えている人が多い\n\"今\"だからこそ\n\n送金ルートを全て洗い出して\n「安全性」と「手数料」の両面で整理し、\n\n動画でまとめました。\n\n・どこの取引所使えばいいの？\n・なにが安全でなにが危険なルート？\n・JPYC EXはどう？\n\nこのあたりの疑問に全て言及してます。\n\n動画後半には、僕が実際やってる\n\n「普段の入出金手数料をほぼ0円で運用する方法」\n\nも紹介してるので、良ければご参考にしてください。\n\nいつでも見返せるようブクマしておくといいかも。\n\n動画はリプ欄に↓\n\n#海外FX #仮想通貨",
+      "created_at": "2026-11-25T21:56:07Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125710148127830366",
+      "image_url": null,
+      "impressions": 11147,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:22Z",
+      "likes": 66,
+      "metrics_updated_at": "2026-11-26T08:39:22Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 2,
+      "retweets": 5,
+      "sentiment": null,
+      "topic_hits": {
+        "campaigns": [
+          "紹介"
+        ],
+        "deposit_withdrawal": [
+          "出金",
+          "仮想通貨",
+          "送金",
+          "手数料"
+        ],
+        "reputation": [
+          "安全",
+          "危険"
+        ]
+      },
+      "topics": [
+        "macro",
+        "campaigns",
+        "deposit_withdrawal",
+        "reputation"
+      ],
+      "url": "https://x.com/miiiikun85/status/2125710148127830366",
+      "url_clicks": null
+    },
+    "2125718769591083511": {
+      "account_followers": null,
+      "account_handle": "",
+      "account_name": "",
+      "bookmarks": 0,
+      "content_en": null,
+      "content_original": "",
+      "created_at": "2026-11-25T22:30:23Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": "no Overseas FX industry token in post text (match was on author name/handle or a different word)",
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125718769591083511",
+      "image_url": null,
+      "impressions": null,
+      "is_promo": false,
+      "lang": null,
+      "last_seen": "2026-11-26T08:38:47Z",
+      "likes": 0,
+      "metrics_updated_at": "2026-11-26T08:38:47Z",
+      "quotes": 0,
+      "relevant": false,
+      "replies": 0,
+      "retweets": 0,
+      "sentiment": null,
+      "topics": [
+        "macro"
+      ],
+      "url": "https://x.com/i/status/2125718769591083511",
+      "url_clicks": null
+    },
+    "2125741371474825325": {
+      "account_followers": 4092,
+      "account_handle": "kaigaitoushibiz",
+      "account_name": "FXCodex.com （ex. みんなで海外FX.com ）",
+      "bookmarks": 17,
+      "content_en": null,
+      "content_original": "本日から、日本などでもメタマスクカード発行できます👇\n\nMetaMaskは海外FXの入金と出金はもちろん、JPYC対応の仮想通貨ウォレットです👛\n\n（バーチャルカードのみ。物理カードなし） https://t.co/DxwldMEPtS",
+      "created_at": "2026-11-26T00:00:11Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125741371474825325",
+      "image_url": "https://pbs.twimg.com/media/HYAlp9dW8AAe64a.png",
+      "impressions": 3432,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:18Z",
+      "likes": 33,
+      "metrics_updated_at": "2026-11-26T08:39:18Z",
+      "quotes": 1,
+      "relevant": true,
+      "replies": 2,
+      "retweets": 2,
+      "sentiment": null,
+      "topic_hits": {
+        "deposit_withdrawal": [
+          "出金",
+          "入金",
+          "仮想通貨",
+          "ウォレット"
+        ],
+        "reputation": [
+          "対応"
+        ]
+      },
+      "topics": [
+        "macro",
+        "deposit_withdrawal",
+        "reputation"
+      ],
+      "url": "https://x.com/kaigaitoushibiz/status/2125741371474825325",
+      "url_clicks": null
+    },
+    "2125757680317092031": {
+      "account_followers": 582,
+      "account_handle": "nekota834",
+      "account_name": "nekota",
+      "bookmarks": 4,
+      "content_en": null,
+      "content_original": "JFXCOMバイナリーオプション       \n\n✅新規口座開設10,000円キャッシュバック     \n\nこちらからhttps://t.co/FVE08xKqzR\n\n✅受け取り条件    \n・口座開設+本人確認（KYC）完了後キャッシュバックがアカウントに付与されます\n\n※わからないことあれば気軽にDMください！       \n\n#FX #海外FX #BO #バイナリーオプション #JFXCOM",
+      "created_at": "2026-11-26T01:05:00Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125757680317092031",
+      "image_url": "https://pbs.twimg.com/media/HYA1VNibEAEtb5F.jpg",
+      "impressions": 1084,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:18Z",
+      "likes": 16,
+      "metrics_updated_at": "2026-11-26T08:39:18Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 1,
+      "retweets": 0,
+      "sentiment": null,
+      "topic_hits": {
+        "campaigns": [
+          "キャッシュバック"
+        ],
+        "reputation": [
+          "本人確認",
+          "KYC"
+        ]
+      },
+      "topics": [
+        "macro",
+        "campaigns",
+        "reputation"
+      ],
+      "url": "https://x.com/nekota834/status/2125757680317092031",
+      "url_clicks": null
+    },
+    "2125761766542250032": {
+      "account_followers": 928,
+      "account_handle": "d9acOaMyTO99532",
+      "account_name": "マンゼンADHD",
+      "bookmarks": 2,
+      "content_en": null,
+      "content_original": "【GMO不正アクセス被害者の皆様へ】\n\n本日11月26日から、GMOのお見舞金（補償金）に関する個別連絡が開始される予定です。\n\n私は今回の事件で約1,180万円の被害を受け、補償申請をしています。\n\n同じ境遇の方とつながり、情報交換したいと考えています。\n\n・GMOから連絡が来たか\n・申請額に対して補償額はいくらだったか\n・全額補償か、一部補償か\n・振込予定日はいつか\n\n情報提供いただける方は、リプライまたはDMをお願いします。\n\n被害者同士で情報を共有し、全額補償の実現を目指しましょう。\n\nぜひ拡散にもご協力ください。\n\n#GMO #お名前ドットコム #不正アクセス #ハッキング被害 #海外FX #補償金",
+      "created_at": "2026-11-26T01:21:14Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125761766542250032",
+      "image_url": null,
+      "impressions": 2210,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:39:22Z",
+      "likes": 19,
+      "metrics_updated_at": "2026-11-26T08:39:22Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 1,
+      "sentiment": null,
+      "topic_hits": {
+        "regulation": [
+          "ハッキング",
+          "不正アクセス"
+        ]
+      },
+      "topics": [
+        "macro",
+        "regulation"
+      ],
+      "url": "https://x.com/d9acOaMyTO99532/status/2125761766542250032",
+      "url_clicks": null
+    },
+    "2125786655571538263": {
+      "account_followers": 2306,
+      "account_handle": "V_Cyber_phoenix",
+      "account_name": "VEGA",
+      "bookmarks": 0,
+      "content_en": null,
+      "content_original": "今の月次ベースだと専業になれなくもないけど　10年以内かそれ以降に海外FXの締め出しもキツくなる可能性もあるから3〜5億ぐらい集めて株に移行してからじゃないときついと思ってる\n\n30年海外FXが今の環境でいられるって保証があるなら明日にでも本業やめるわ👶🏿",
+      "created_at": "2026-11-26T03:00:08Z",
+      "enriched_at": null,
+      "enriched_by": null,
+      "exclude_reason": null,
+      "first_seen": "2026-11-26T08:38:47Z",
+      "id": "2125786655571538263",
+      "image_url": null,
+      "impressions": 979,
+      "is_promo": false,
+      "lang": "ja",
+      "last_seen": "2026-11-26T08:38:47Z",
+      "likes": 20,
+      "metrics_updated_at": "2026-11-26T08:38:47Z",
+      "quotes": 0,
+      "relevant": true,
+      "replies": 0,
+      "retweets": 1,
+      "sentiment": null,
+      "topic_hits": {},
+      "topics": [
+        "macro"
+      ],
+      "url": "https://x.com/V_Cyber_phoenix/status/2125786655571538263",
       "url_clicks": null
     }
   },

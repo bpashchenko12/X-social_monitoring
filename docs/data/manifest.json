@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-11-25T16:32:48Z",
-  "latest_post_at": "2026-11-25T16:20:57Z",
-  "pending_enrichment": 1,
+  "generated_at": "2026-11-26T08:39:23Z",
+  "latest_post_at": "2026-11-26T08:19:14Z",
+  "pending_enrichment": 4,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -30,7 +30,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 451
+      "posts": 454
     },
     {
       "id": "campaigns",
@@ -43,7 +43,7 @@
         "プロモーション"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 178
+      "posts": 179
     },
     {
       "id": "competitions",
@@ -89,7 +89,7 @@
         "クレジットカード"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 159
+      "posts": 161
     },
     {
       "id": "account_types",
@@ -107,7 +107,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 168
+      "posts": 171
     }
   ],
   "weeks": [
@@ -193,10 +193,10 @@
     },
     {
       "file": "weeks/2026-W48.json",
-      "max_date": "2026-11-25T16:20:57Z",
+      "max_date": "2026-11-26T08:19:14Z",
       "min_date": "2026-11-22T15:12:15Z",
-      "posts": 536,
-      "relevant_posts": 28,
+      "posts": 627,
+      "relevant_posts": 31,
       "week": "2026-W48"
     }
   ]

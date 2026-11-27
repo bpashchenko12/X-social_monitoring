@@ -3843,11 +3843,11 @@
       "account_handle": "manbou_sousai",
       "account_name": "まんぼう総裁(2代目)",
       "bookmarks": 14,
-      "content_en": null,
+      "content_en": "[Overseas FX] HFM \"Bonus Hunter\" is running! Get up to 150,000 yen in deposit bonuses with a 45,000 yen no-deposit account [Latest Nov 2026] https://t.co/e7hPkD1LOh #OverseasFX #NewAccountBonus from @manbou_sousai",
       "content_original": "【海外FX】HFM(エイチエフエム)「ボーナスハンター」開催中！入金不要の45,000円口座で最大150,000円の入金ボーナスをGET【2026年11月最新】 https://t.co/e7hPkD1LOh #海外FX #新規口座開設ボーナス @manbou_sousaiより",
       "created_at": "2026-11-26T05:41:52Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-27T10:46:41Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-27T08:32:37Z",
       "id": "2125827356904534211",
@@ -3862,7 +3862,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "account_types": [
           "口座"
@@ -3920,11 +3920,11 @@
       "account_handle": "Princess_M555",
       "account_name": "お美沙🌷Princess-M💰爆益舎",
       "bookmarks": 4,
-      "content_en": null,
+      "content_en": "The Bonus Hunter campaign has come from HFM! 😍\n\nActually I've been an HFM user for quite a long time, and I've withdrawn several times; the withdrawal speed is impressively fast!\nOf course I've never had a withdrawal problem!\nI vouch for the reassurance of HFM withdrawals! 💯\n\nCampaign details in the quoted post by Manbou 👇",
       "content_original": "HFMからボーナスハンターキャンペーンきてっぞ！😍\n\n実は私はかなり古くからのHFMユーザーで、これまで何度か出金しましたが出金スピードは感動的に早いです！\nもちろん一度も出金トラブルありませんでした！\nHFMの出金の安心感には太鼓判押しますわ！💯\n\nキャンペーン詳細は引用元まんぼうさんPOSTへ　👇",
       "created_at": "2026-11-26T06:05:48Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-27T10:46:41Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-27T08:32:37Z",
       "id": "2125833378671013976",
@@ -3939,7 +3939,7 @@
       "relevant": true,
       "replies": 1,
       "retweets": 1,
-      "sentiment": null,
+      "sentiment": "Positive",
       "topic_hits": {
         "campaigns": [
           "ボーナス",

@@ -17581,11 +17581,11 @@
       "account_handle": "hidefxgold03",
       "account_name": "Hide fx",
       "bookmarks": 3,
-      "content_en": null,
+      "content_en": "The week that broke 3,502.78. On Friday I'm watching how far gold has recovered into last week's range.\n\nAs of 06:59 on Nov 27, XS's MT5 (XAUUSDs) is at 3,565.91. This week's high is 3,689.71 and low 3,426.61. Price went below last week's low of 3,502.78 at one point, and this morning's price is above it. When reviewing the week, I record separately \"how far the range widened mid-week\" and \"where it is as of Friday\".\n\n[Upside: 3,600.00-3,607.08]\n3,600.00 is a round number, and 3,607.08 is the high up to this morning and the most recent 4-hour peak. Price is below the 4-hour SMA20 (3,577.43), and SMA20 is also below SMA50 (3,661.92). If a 4-hour close breaks this upper band, next I watch from around SMA50 up to this week's high of 3,689.71. I want to compare how close a rebound past the recent peak gets to the previous peak.\n\n[Downside: 3,500.00-3,502.78]\nThe axis for my Friday review is this band where the round number and last week's low overlap. When it tests lower again, I first record the position where the wick went outside the band, and once the candle is confirmed, check whether the close stayed inside or outside the band. If the 4-hour closes below the band, I watch how far the rebounding candles can recover between there and this week's low of 3,426.61. If it closes back at the band, I also record that position and review it after the weekend.\n\nIn my range verification, even for candles that passed the same line, I record wick and close positions separately. When price passed on both sides of last week's low, as it did this week, it makes it easier to cross-check the low left on the daily chart against the range price recovered afterwards. Trade at your own judgment.\n\nVerification notes for weekly reviews are shared in the open chat \"Hide Gold FX Study Group\" in my profile.",
       "content_original": "3,502.78を割った週。金曜のゴールドは、先週のレンジにどこまで戻せたかを見ています。\n\n11月27日06:59時点、XSのMT5（XAUUSDs）は3,565.91。今週は高値3,689.71、安値3,426.61。先週安値3,502.78を下回る場面があり、今朝の価格はその上です。週を振り返るとき、僕はこの「週の途中でどこまでレンジを広げたか」と「金曜の時点でどこにいるか」を分けて記録します。\n\n【上は3,600.00〜3,607.08】\n3,600.00はキリ番で、3,607.08は今朝までの高値であり、4時間足の直近の山。今の価格は4時間足のSMA20（3,577.43）の下で、SMA20もSMA50（3,661.92）の下です。この上の帯を4時間足の終値で越えたら、次はSMA50付近から今週高値3,689.71までを見ます。直近の山を越えた戻りが、その前の山にどこまで近づくかを比べたいところです。\n\n【下は3,500.00〜3,502.78】\n金曜の振り返りで軸にするのは、キリ番と先週安値が重なるこの帯です。再び下を試す場面では、まずヒゲが帯の外に出た位置を記録し、足が確定したら終値が帯の内外どちらに残ったかを確認します。4時間足が帯の下で引けたら、今週安値3,426.61までの間で、戻す足がどこまで戻せるかを見ます。帯まで戻って引けた場合も、その位置を残して週明けに見返します。\n\n僕のレンジ検証では、同じラインを通過した足でも、ヒゲと終値の位置は別々に残します。今週のように先週安値の両側を通ったとき、日足に残った安値と、その後に価格が戻った範囲を照合しやすくなるからです。売買は自分の判断で。\n\n週ごとの見返しに使う検証メモは、プロフィールのオープンチャット「Hide Gold FX研究会」で共有しています。",
       "created_at": "2026-11-26T23:31:24Z",
-      "enriched_at": null,
-      "enriched_by": null,
+      "enriched_at": "2026-11-27T10:46:41Z",
+      "enriched_by": "copilot",
       "exclude_reason": null,
       "first_seen": "2026-11-27T08:37:07Z",
       "id": "2126096514460303364",
@@ -17600,7 +17600,7 @@
       "relevant": true,
       "replies": 0,
       "retweets": 0,
-      "sentiment": null,
+      "sentiment": "Neutral",
       "topic_hits": {
         "environment": [
           "MT5"

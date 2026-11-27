@@ -3,66 +3,67 @@
   "enrich": null,
   "errors": [],
   "exit_code": 0,
-  "finished_at": "2026-11-26T16:32:50Z",
+  "finished_at": "2026-11-27T08:39:56Z",
   "gates": {
     "errors": [],
     "warnings": []
   },
-  "last_success_at": "2026-11-26T16:32:50Z",
+  "last_success_at": "2026-11-27T08:39:56Z",
   "last_sweep_at": "2026-11-21T11:39:09Z",
   "mode": "incremental",
   "notes": [
-    "competitors and the industry feed were not scraped in this run (they are refreshed once a day, in the morning run)"
+    "LLM translation is switched off (llm.enabled=false): 20 post(s) wait for manual translation (enrich-export / enrich-import)"
   ],
-  "pending_after": 0,
-  "scope": "xm",
+  "pending_after": 20,
+  "pending_industry": 13,
+  "scope": "all",
   "scrape": {
     "budget_stopped": false,
     "capped": [],
     "failed": [],
-    "items": 329,
-    "ok": 6,
-    "requests": 6,
-    "spent_usd": 0.1093,
+    "items": 1237,
+    "ok": 42,
+    "requests": 42,
+    "spent_usd": 0.6073,
     "window_days": 2
   },
-  "started_at": "2026-11-26T16:30:05Z",
+  "started_at": "2026-11-27T08:30:04Z",
   "status": "ok",
   "stores": {
     "exness": {
       "pending": 0,
-      "posts": 1434,
+      "posts": 1497,
       "relevant": 198
     },
     "hfm": {
-      "pending": 0,
-      "posts": 2068,
-      "relevant": 137
+      "pending": 2,
+      "posts": 2103,
+      "relevant": 139
     },
     "industry": {
-      "pending": 0,
-      "posts": 1033,
-      "relevant": 344
+      "pending": 13,
+      "posts": 1049,
+      "relevant": 357
     },
     "titanfx": {
       "pending": 0,
-      "posts": 2792,
+      "posts": 2806,
       "relevant": 146
     },
     "vantage": {
       "pending": 0,
-      "posts": 4769,
+      "posts": 4897,
       "relevant": 26
     },
     "xm": {
-      "pending": 0,
-      "posts": 5074,
-      "relevant": 454
+      "pending": 4,
+      "posts": 5189,
+      "relevant": 458
     },
     "xs": {
-      "pending": 0,
-      "posts": 4174,
-      "relevant": 65
+      "pending": 1,
+      "posts": 4295,
+      "relevant": 66
     }
   }
 }

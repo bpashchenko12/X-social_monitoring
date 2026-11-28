@@ -4,9 +4,9 @@
     "id": "vantage",
     "name": "Vantage"
   },
-  "generated_at": "2026-11-27T16:32:23Z",
-  "latest_post_at": "2026-11-27T08:30:00Z",
-  "pending_enrichment": 0,
+  "generated_at": "2026-11-28T08:40:04Z",
+  "latest_post_at": "2026-11-28T08:27:06Z",
+  "pending_enrichment": 1,
   "schema_version": 1,
   "search": {
     "brand": [
@@ -36,7 +36,7 @@
       "id": "macro",
       "keywords": [],
       "name": "Overall Brand Mention",
-      "posts": 26
+      "posts": 27
     },
     {
       "id": "campaigns",
@@ -53,7 +53,7 @@
         "ミッション"
       ],
       "name": "Campaigns & Cashback",
-      "posts": 0
+      "posts": 1
     },
     {
       "id": "competitions",
@@ -109,7 +109,7 @@
         "決済"
       ],
       "name": "Deposit & Withdrawal",
-      "posts": 12
+      "posts": 13
     },
     {
       "id": "account_types",
@@ -126,7 +126,7 @@
         "口座"
       ],
       "name": "Account Types",
-      "posts": 9
+      "posts": 10
     }
   ],
   "weeks": [
@@ -180,10 +180,10 @@
     },
     {
       "file": "weeks/2026-W48.json",
-      "max_date": "2026-11-27T08:30:00Z",
+      "max_date": "2026-11-28T08:27:06Z",
       "min_date": "2026-11-22T15:13:05Z",
-      "posts": 630,
-      "relevant_posts": 2,
+      "posts": 745,
+      "relevant_posts": 3,
       "week": "2026-W48"
     }
   ]
